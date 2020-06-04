@@ -14,7 +14,7 @@ Criar um aplicativo que realize a listagem de filmes e exibição dos detalhes:
   - Requisição para listar os detalhes https://developers.themoviedb.org/3/movies/get-movie-details
     - Ex.: https://api.themoviedb.org/3/movie/454626?api_key=00000&language=pt-BR
     
-* Se precisar de ajuda para o SSH no GitHub:
+* Se opcionalmente quiser fazer o clone via SSH, segue ajuda do GitHub:
   - https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
   - Se for usar o ssh para clone, este comando ajuda a salvar a chave de forma local: 
     - ssh-add -K ~/.ssh/id_rsa
