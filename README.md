@@ -10,7 +10,9 @@ Criar um aplicativo que realize a listagem de filmes e exibição dos detalhes:
   - A listagem de filmes deve ser consultada na API https://developers.themoviedb.org/3/getting-started/introduction 
     Ao se cadastrar você receberá uma chave de acesso, que deverá ser usada nas requisições. 
   - Requisição para listar as tendências https://developers.themoviedb.org/3/trending/get-trending
+    - Ex.: https://api.themoviedb.org/3/trending/all/week?api_key=00000&language=pt-BR
   - Requisição para listar os detalhes https://developers.themoviedb.org/3/movies/get-movie-details
+    - Ex.: https://api.themoviedb.org/3/movie/454626?api_key=00000f&language=pt-BR
 
 * Ao iniciar a avaliação:
   - Faça um fork deste projeto
