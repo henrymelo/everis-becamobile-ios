@@ -21,6 +21,7 @@ Criar um aplicativo que realize a listagem de filmes e exibição dos detalhes:
   
 * Ao iniciar a avaliação:
   - Faça um fork deste projeto
+  - Fazer o cadastro no site para consumir a API
   
 * Mandando bem na avaliação:
   - Realize quantos commits puder, não queremos somente a solução final; queremos saber como você chegou lá. Sua evolução vale tanto quanto o resultado final.
