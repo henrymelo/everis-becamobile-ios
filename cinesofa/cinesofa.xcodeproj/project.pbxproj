@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		037D15539920A15C9D0CE14D /* Pods_cinesofa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FB7E0A5027D4C58681AD7D /* Pods_cinesofa.framework */; };
 		DF07615525A74A1500D6C14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF07615425A74A1500D6C14E /* AppDelegate.swift */; };
 		DF07615725A74A1500D6C14E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF07615625A74A1500D6C14E /* ViewController.swift */; };
 		DF07615A25A74A1500D6C14E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF07615825A74A1500D6C14E /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35FB7E0A5027D4C58681AD7D /* Pods_cinesofa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cinesofa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F3D1DD7800B26ED957C4F35 /* Pods-cinesofa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cinesofa.debug.xcconfig"; path = "Target Support Files/Pods-cinesofa/Pods-cinesofa.debug.xcconfig"; sourceTree = "<group>"; };
 		DF07615125A74A1500D6C14E /* cinesofa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cinesofa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF07615425A74A1500D6C14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF07615625A74A1500D6C14E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		DF07615E25A74A1700D6C14E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF07616125A74A1700D6C14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF07616325A74A1700D6C14E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3CCC09D750BCFE5544829DF /* Pods-cinesofa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cinesofa.release.xcconfig"; path = "Target Support Files/Pods-cinesofa/Pods-cinesofa.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				037D15539920A15C9D0CE14D /* Pods_cinesofa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61D152CD8B9EFE5ACADD97C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F3D1DD7800B26ED957C4F35 /* Pods-cinesofa.debug.xcconfig */,
+				F3CCC09D750BCFE5544829DF /* Pods-cinesofa.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A9A736CBD5F413480556332E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35FB7E0A5027D4C58681AD7D /* Pods_cinesofa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DF07614825A74A1500D6C14E = {
 			isa = PBXGroup;
 			children = (
 				DF07615325A74A1500D6C14E /* cinesofa */,
 				DF07615225A74A1500D6C14E /* Products */,
+				61D152CD8B9EFE5ACADD97C1 /* Pods */,
+				A9A736CBD5F413480556332E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DF07616625A74A1700D6C14E /* Build configuration list for PBXNativeTarget "cinesofa" */;
 			buildPhases = (
+				8393215B482418540774E90E /* [CP] Check Pods Manifest.lock */,
 				DF07614D25A74A1500D6C14E /* Sources */,
 				DF07614E25A74A1500D6C14E /* Frameworks */,
 				DF07614F25A74A1500D6C14E /* Resources */,
+				E12AF717E30312A10940B3CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8393215B482418540774E90E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cinesofa-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E12AF717E30312A10940B3CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cinesofa/Pods-cinesofa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cinesofa/Pods-cinesofa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cinesofa/Pods-cinesofa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DF07614D25A74A1500D6C14E /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		DF07616725A74A1700D6C14E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F3D1DD7800B26ED957C4F35 /* Pods-cinesofa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +371,7 @@
 		};
 		DF07616825A74A1700D6C14E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3CCC09D750BCFE5544829DF /* Pods-cinesofa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
