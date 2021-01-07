@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3AA4247225A740F500925A94 /* FilmesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4247125A740F500925A94 /* FilmesAPI.swift */; };
+		3AA4247725A76F9A00925A94 /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4247625A76F9A00925A94 /* Filme.swift */; };
+		3AA4247925A7BA6100925A94 /* FilmeDetalhes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4247825A7BA6100925A94 /* FilmeDetalhes.swift */; };
 		3AB0095525A73D4800B57FF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0095425A73D4800B57FF3 /* AppDelegate.swift */; };
 		3AB0095725A73D4800B57FF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0095625A73D4800B57FF3 /* ViewController.swift */; };
 		3AB0095A25A73D4800B57FF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0095825A73D4800B57FF3 /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		2F437A4843015825FB7BB869 /* Pods-Beca Filmes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beca Filmes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beca Filmes/Pods-Beca Filmes.debug.xcconfig"; sourceTree = "<group>"; };
 		31BC0A8A75BB17870192BE42 /* Pods-Beca FilmesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beca FilmesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beca FilmesTests/Pods-Beca FilmesTests.release.xcconfig"; sourceTree = "<group>"; };
 		3AA4247125A740F500925A94 /* FilmesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesAPI.swift; sourceTree = "<group>"; };
+		3AA4247625A76F9A00925A94 /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
+		3AA4247825A7BA6100925A94 /* FilmeDetalhes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeDetalhes.swift; sourceTree = "<group>"; };
 		3AB0095125A73D4800B57FF3 /* Beca Filmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beca Filmes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB0095425A73D4800B57FF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AB0095625A73D4800B57FF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3AA4247425A76DBF00925A94 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AA4247125A740F500925A94 /* FilmesAPI.swift */,
+				3AA4247625A76F9A00925A94 /* Filme.swift */,
+				3AA4247825A7BA6100925A94 /* FilmeDetalhes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AA4247525A76DCD00925A94 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3AB0095625A73D4800B57FF3 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3AB0094825A73D4800B57FF3 = {
 			isa = PBXGroup;
 			children = (
@@ -127,12 +149,12 @@
 			isa = PBXGroup;
 			children = (
 				3AB0095425A73D4800B57FF3 /* AppDelegate.swift */,
-				3AB0095625A73D4800B57FF3 /* ViewController.swift */,
+				3AA4247425A76DBF00925A94 /* Model */,
+				3AA4247525A76DCD00925A94 /* Controller */,
 				3AB0095825A73D4800B57FF3 /* Main.storyboard */,
 				3AB0095B25A73D4A00B57FF3 /* Assets.xcassets */,
 				3AB0095D25A73D4A00B57FF3 /* LaunchScreen.storyboard */,
 				3AB0096025A73D4A00B57FF3 /* Info.plist */,
-				3AA4247125A740F500925A94 /* FilmesAPI.swift */,
 			);
 			path = "Beca Filmes";
 			sourceTree = "<group>";
@@ -383,6 +405,8 @@
 				3AB0095725A73D4800B57FF3 /* ViewController.swift in Sources */,
 				3AB0095525A73D4800B57FF3 /* AppDelegate.swift in Sources */,
 				3AA4247225A740F500925A94 /* FilmesAPI.swift in Sources */,
+				3AA4247925A7BA6100925A94 /* FilmeDetalhes.swift in Sources */,
+				3AA4247725A76F9A00925A94 /* Filme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
