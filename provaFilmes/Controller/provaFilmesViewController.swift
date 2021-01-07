@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  provaFilmesViewController.swift
 //  provaFilmes
 //
 //  Created by Aloisio Formento Junior on 07/01/21.
@@ -7,16 +7,12 @@
 //
 
 import UIKit
-import Alamofire
 
-class ViewController: UIViewController {
+class provaFilmesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        FilmesAPI().getFilmes()
-        
+
+    
     }
-
-
 }
-
