@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 class FilmesAPI: NSObject {
     
@@ -15,14 +16,19 @@ class FilmesAPI: NSObject {
         
         let url = "https://api.themoviedb.org/3/trending/all/week?api_key=79b0976a6ec7bd4d968a3ef2d867985d&language=pt-BR"
         
-        Alamofire.request(url, method: .get).responseJSON { (resposta) in
-            switch resposta.result{
+        Alamofire.request(url, method: .get).responseJSON { (response) in
+            switch response.result{
             case .success:
-                print(resposta)
+                if let resposta = response.result.value as? Dictionary<String,Any>{
+                    guard let listaDeFilmes = resposta["results"] as? Array<Dictionary<String,Any>> else { return }
+                    for i in listaDeFilmes{
+                        print (i["title"] ?? i["name"]!)
+                    }
+                }
                 break
                 
             case .failure:
-                print(resposta.error!)
+                print(response.error!)
                 break
             }
         }

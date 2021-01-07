@@ -1,5 +1,5 @@
 //
-//  provaFilmesViewController.swift
+//  celulaFilmeCollectionViewCell.swift
 //  provaFilmes
 //
 //  Created by Aloisio Formento Junior on 07/01/21.
@@ -8,11 +8,7 @@
 
 import UIKit
 
-class provaFilmesViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+class celulaFilmeCollectionViewCell: UICollectionViewCell {
     
-    }
+    @IBOutlet weak var imagemFilme: UIImageView!
 }
