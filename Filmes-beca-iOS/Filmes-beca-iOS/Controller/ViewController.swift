@@ -10,24 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private var toShow:[[String:Any]] = [[:]]
-    let filme = Filme()
-
+    let filmesAPI = FilmesAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        showMoviesOnTableView()
-    }
-
-    func showMoviesOnTableView()  {
         
-        FilmesAPI().getTrendingMovies { (dicionario) in
-            
-            self.filme.trendingComImagem(dicionario)
-            self.filme.mostraFilmes()
-            
-        }
+        recuperaImages()
     }
     
+    func recuperaImages() {
+        
+        filmesAPI.getImagens { (filmes) in
+            print(filmes)
+        }
+        
+    }
 }
 
