@@ -7,7 +7,7 @@
 //
 
 struct Filmes: Decodable {
-    let count: Int
+    let count: Int?
     let all: [Filme]
     
     enum CodingKeys: String, CodingKey {

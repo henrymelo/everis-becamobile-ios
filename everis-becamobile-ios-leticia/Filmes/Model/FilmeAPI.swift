@@ -13,39 +13,32 @@ class FilmeAPI: NSObject {
     
     // MARK: - Requisição GET
     
-    func testeRecupera() {
-        let request = Alamofire.request("https://api.themoviedb.org/3/trending/movie/week?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR")
-        // 2
-        request.responseDecodable(of: Filmes.self) { (response) in
-        guard let filmes = response.value else { return }
-        print(filmes.all[0].title)
-    }
-    
-//    func recuperaTendenciasServidor() {
-//        Alamofire.request("https://api.themoviedb.org/3/trending/movie/week?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR", method: .get).responseJSON { (response) in
-//            switch response.result {
-//            case .success:
-//                print(response.result.value!)
-//                break
-//            case .failure:
-//                print(response.error!)
-//                break
+        func recuperaTendenciasServidor() {
+            let request: DataRequest = Alamofire.request("https://api.themoviedb.org/3/trending/movie/week?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR")
+            
+            request.responseData { receive in
+                guard let data: Data = receive.data, let filmes: Filmes = try? JSONDecoder().decode(Filmes.self, from: data) else {
+                    print("falha ao decodificar dados")
+                    return
+                }
+                
+                print(filmes.all[0].title)
+                
+            }
+        }
+        
+        
+//        func recuperaDetalhesServidor() {
+//            let request: DataRequest = Alamofire.request("https://api.themoviedb.org/3/movie/454626?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR")
+//
+//            request.responseData { receive in
+//                guard let data: Data = receive.data, let filmes: Filmes = try? JSONDecoder().decode(Filmes.self, from: data) else {
+//                    print("falha ao decodificar dados")
+//                    return
+//                }
+//
+//                print(filmes.all[0].overview)
 //            }
 //        }
-//    }
-//
-//
-//    func recuperaDetalhesServidor() {
-//        Alamofire.request("https://api.themoviedb.org/3/movie/454626?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR", method: .get).responseJSON { (response) in
-//            switch response.result {
-//            case .success:
-//                print(response.result.value!)
-//                break
-//            case .failure:
-//                print(response.error!)
-//                break
-//            }
-//        }
-    }
 
 }

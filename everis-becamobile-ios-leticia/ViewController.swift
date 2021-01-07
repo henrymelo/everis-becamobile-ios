@@ -14,8 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         FilmeAPI().recuperaTendenciasServidor()
-        
-//        FilmeAPI().recuperaDetalhesServidor()
+        //FilmeAPI().recuperaDetalhesServidor()
     }
     
 
