@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4BC9749B9531299F7EE83F0D /* Pods_StarMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC12E5FF0B28BDC16847373 /* Pods_StarMovies.framework */; };
+		A281BAD725A76E86007FD0F4 /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281BAD625A76E86007FD0F4 /* Filme.swift */; };
+		A28BB9CF25A7662D006B5B37 /* DetalhesFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BB9CE25A7662D006B5B37 /* DetalhesFilmeViewController.swift */; };
 		A2E4B2A525A73E4700A86821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E4B2A425A73E4700A86821 /* AppDelegate.swift */; };
 		A2E4B2A725A73E4700A86821 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E4B2A625A73E4700A86821 /* ViewController.swift */; };
 		A2E4B2AA25A73E4700A86821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2E4B2A825A73E4700A86821 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		81A418E57EE7942AF2E3DAEB /* Pods-StarMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StarMovies/Pods-StarMovies.debug.xcconfig"; sourceTree = "<group>"; };
 		8AC12E5FF0B28BDC16847373 /* Pods_StarMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A281BAD625A76E86007FD0F4 /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
+		A28BB9CE25A7662D006B5B37 /* DetalhesFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesFilmeViewController.swift; sourceTree = "<group>"; };
 		A2E4B2A125A73E4700A86821 /* StarMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E4B2A425A73E4700A86821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2E4B2A625A73E4700A86821 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A281BAD525A76E5B007FD0F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A281BAD625A76E86007FD0F4 /* Filme.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A28BB9C925A76578006B5B37 /* DetalhesFilme */ = {
+			isa = PBXGroup;
+			children = (
+				A28BB9CB25A765B8006B5B37 /* View */,
+				A28BB9CA25A7657C006B5B37 /* Controller */,
+			);
+			path = DetalhesFilme;
+			sourceTree = "<group>";
+		};
+		A28BB9CA25A7657C006B5B37 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A28BB9CE25A7662D006B5B37 /* DetalhesFilmeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A28BB9CB25A765B8006B5B37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A2E4B29825A73E4700A86821 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +122,8 @@
 		A2E4B2A325A73E4700A86821 /* StarMovies */ = {
 			isa = PBXGroup;
 			children = (
+				A281BAD525A76E5B007FD0F4 /* Model */,
+				A28BB9C925A76578006B5B37 /* DetalhesFilme */,
 				A2E4B2B925A73EB800A86821 /* Filmes */,
 				A2E4B2A425A73E4700A86821 /* AppDelegate.swift */,
 				A2E4B2A625A73E4700A86821 /* ViewController.swift */,
@@ -111,6 +149,7 @@
 		A2E4B2BA25A73EF300A86821 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A2E4B2C125A74C7400A86821 /* FilmeCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				A2E4B2BC25A73F2700A86821 /* TendenciasFilmesViewController.swift */,
-				A2E4B2C125A74C7400A86821 /* FilmeCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,8 +287,10 @@
 				A2E4B2C225A74C7400A86821 /* FilmeCollectionViewCell.swift in Sources */,
 				A2E4B2BD25A73F2700A86821 /* TendenciasFilmesViewController.swift in Sources */,
 				A2E4B2AD25A73E4700A86821 /* StarMovies.xcdatamodeld in Sources */,
+				A281BAD725A76E86007FD0F4 /* Filme.swift in Sources */,
 				A2E4B2C025A740D700A86821 /* FilmeAPI.swift in Sources */,
 				A2E4B2A725A73E4700A86821 /* ViewController.swift in Sources */,
+				A28BB9CF25A7662D006B5B37 /* DetalhesFilmeViewController.swift in Sources */,
 				A2E4B2A525A73E4700A86821 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

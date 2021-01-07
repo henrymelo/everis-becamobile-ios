@@ -32,7 +32,7 @@ class FilmeAPI: NSObject {
         }
     }
     
-    func pegarDetalhesFilme(codFilme:String, completion:@escaping(Dictionary<String,Any>) -> Void){
+    func pegarDetalhesFilme(codFilme:Int, completion:@escaping(Dictionary<String,Any>) -> Void){
         
         Alamofire.request("https://api.themoviedb.org/3/movie/\(codFilme)?api_key=bbed29429b1ca9848cd2e58686edc4cc&language=pt-BR", method: .get).responseJSON { (resposta) in
             switch resposta.result {

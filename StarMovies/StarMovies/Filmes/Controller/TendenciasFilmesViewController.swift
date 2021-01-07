@@ -9,7 +9,7 @@
 import UIKit
 import AlamofireImage
 
-class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSource {
+class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     //MARK: - Outlets
     
@@ -25,13 +25,14 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
         super.viewDidLoad()
         
         self.colecaoFilmes.dataSource = self
+        self.colecaoFilmes.delegate = self
         
         FilmeAPI().pegarListaTendenciasFilmes { (resposta) in
             self.listaTendenciaFilmes = resposta
             self.colecaoFilmes.reloadData()
         }
         
-        FilmeAPI().pegarDetalhesFilme(codFilme: "464052") { (resposta) in
+        FilmeAPI().pegarDetalhesFilme(codFilme: 464052) { (resposta) in
             //print(resposta["title"])
         }
 
@@ -55,13 +56,27 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
 
         if let filmePosterLink = filme["poster_path"] {
             if let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500\(filmePosterLink)"){
-                print("https://image.tmdb.org/t/p/w500\(filmePosterLink)")
                 celula.imageFilme.af_setImage(withURL: imageUrl)
             }
         }
         
         
         return celula
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let filmeDicionario = listaTendenciaFilmes[indexPath.item]
+        guard let codigoFilme = filmeDicionario["id"] as? Int else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "detalhesFilme") as! DetalhesFilmeViewController
+        
+        FilmeAPI().pegarDetalhesFilme(codFilme: codigoFilme, completion: { (resposta) in
+            let controller = storyboard.instantiateViewController(withIdentifier: "detalhesFilme") as! DetalhesFilmeViewController
+            let filmeDetalhado = Filme(resposta)
+            controller.filmeSelecionado = filmeDetalhado
+            self.navigationController?.pushViewController(controller, animated: true)
+        })
+        
     }
     
 
