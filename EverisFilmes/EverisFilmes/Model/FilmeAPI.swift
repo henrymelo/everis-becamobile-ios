@@ -7,11 +7,22 @@
 //
 
 import Foundation
+import Alamofire
 
-class FilmeAPI {
+class FilmeAPI: NSObject {
     
-    func getFilmes() -> [[String: Any]]? {
-        if let caminho = Bundle.main.url(forResource: "", withExtension: <#T##String?#>)
+    // MARK: - GET
+    
+    func getFilmes() {
+        Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=cf692353d76cfc50bc34648eb54b621f&language=pt-BR", method: .get).responseJSON { (response) in
+            switch response.result{
+            case .success:
+                print(response.result.value!)
+                break
+            case .failure:
+                print(response.error!)
+                break
+            }
+        }
     }
-    
 }
