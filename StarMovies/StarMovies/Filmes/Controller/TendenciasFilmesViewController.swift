@@ -46,23 +46,27 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let filme = listaTendenciaFilmes[indexPath.row]
-        
+        let filme = Filme(listaTendenciaFilmes[indexPath.row])
         
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaFilme", for: indexPath) as! FilmeCollectionViewCell
         
 
-        celula.labelTituloFilme.text = filme["title"] as? String
+        celula.labelTituloFilme.text = filme.titulo
 
-        if let filmePosterLink = filme["poster_path"] {
-            if let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500\(filmePosterLink)"){
-                celula.imageFilme.af_setImage(withURL: imageUrl)
-            }
+        if let urlImagem = FilmeAPI().gerarURLImagem(link: filme.caminhoImagemPoster) {
+            celula.imageFilme.af_setImage(withURL: urlImagem)
         }
         
+        //Aplica sombra na imagem da celula
+        celula.imageFilme.layer.shadowColor = UIColor.black.cgColor
+        celula.imageFilme.layer.shadowOpacity = 1
+        celula.imageFilme.layer.shadowOffset = .zero
+        celula.imageFilme.layer.shadowRadius = 10
         
         return celula
     }
+    
+    //MARK: - CollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let filmeDicionario = listaTendenciaFilmes[indexPath.item]
@@ -71,7 +75,6 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
         let controller = storyboard.instantiateViewController(withIdentifier: "detalhesFilme") as! DetalhesFilmeViewController
         
         FilmeAPI().pegarDetalhesFilme(codFilme: codigoFilme, completion: { (resposta) in
-            let controller = storyboard.instantiateViewController(withIdentifier: "detalhesFilme") as! DetalhesFilmeViewController
             let filmeDetalhado = Filme(resposta)
             controller.filmeSelecionado = filmeDetalhado
             self.navigationController?.pushViewController(controller, animated: true)

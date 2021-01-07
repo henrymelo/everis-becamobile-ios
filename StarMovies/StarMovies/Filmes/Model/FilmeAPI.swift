@@ -52,7 +52,12 @@ class FilmeAPI: NSObject {
         
     }
     
-    
-    
+    func gerarURLImagem(link:String) -> URL?{
+        
+        if let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500\(link)"){
+            return imageUrl
+        }
+        return nil
+    }
 
 }

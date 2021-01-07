@@ -11,6 +11,7 @@ import Alamofire
 
 class DetalhesFilmeViewController: UIViewController {
 
+    @IBOutlet weak var imageBackground: UIImageView!
     
     @IBOutlet weak var labelTitulo: UILabel!
     
@@ -36,6 +37,11 @@ class DetalhesFilmeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.current
+        
         if let filme = filmeSelecionado {
             
             labelTitulo.text = filme.titulo
@@ -43,16 +49,26 @@ class DetalhesFilmeViewController: UIViewController {
             labelTagline.text = filme.tagline
             labelData.text = filme.data
             
+            //NECESSITA DE REFATORACAO
+            
             if filme.budget == 0 {
                  labelBudget.text = "Desconhecido"
             }else{
-            labelBudget.text = "US$ \(filme.budget)"
+                let budgetFormatado = NSNumber(integerLiteral: filme.budget)
+                
+                if let budgetFormatado = currencyFormatter.string(from: budgetFormatado) {
+                    labelBudget.text = "\(budgetFormatado)"
+                }
             }
             
             if filme.revenue == 0 {
                 labelRevenue.text = "Desconhecido"
             }else{
-                labelRevenue.text = "US$ \(filme.revenue)"
+                let revenueFormatado = NSNumber(integerLiteral: filme.revenue)
+                
+                if let revenueFormatado = currencyFormatter.string(from: revenueFormatado) {
+                    labelRevenue.text = "\(revenueFormatado)"
+                }
             }
             
             labelGenero.text = filme.generos
@@ -60,8 +76,18 @@ class DetalhesFilmeViewController: UIViewController {
             labelSinopse.text = filme.sinopse
             
             
-            if let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500\(filme.caminhoImagem)"){
+            
+            if let imageUrl = FilmeAPI().gerarURLImagem(link: filme.caminhoImagemPoster){
                     imagePoster.af_setImage(withURL: imageUrl)
+                
+                imagePoster.layer.shadowColor = UIColor.black.cgColor
+                imagePoster.layer.shadowOpacity = 1
+                imagePoster.layer.shadowOffset = .zero
+                imagePoster.layer.shadowRadius = 5
+            }
+            
+            if let imageUrl = FilmeAPI().gerarURLImagem(link: filme.caminhoImagemBg) {
+                imageBackground.af_setImage(withURL: imageUrl)
             }
             
         }

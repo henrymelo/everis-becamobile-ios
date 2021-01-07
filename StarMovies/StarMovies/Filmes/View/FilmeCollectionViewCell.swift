@@ -14,4 +14,4 @@ class FilmeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var labelTituloFilme: UILabel!
     
-}
+} 

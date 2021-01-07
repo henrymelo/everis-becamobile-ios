@@ -18,7 +18,8 @@ class Filme: NSObject {
     var data:String = ""
     var generos:String = ""
     var sinopse:String = ""
-    var caminhoImagem:String = ""
+    var caminhoImagemPoster:String = ""
+    var caminhoImagemBg:String = ""
     var nota:String = ""
     
     
@@ -26,6 +27,9 @@ class Filme: NSObject {
         
         guard let titulo = dicionario["title"] as? String else { return }
         self.titulo = titulo
+        
+        guard let caminhoImagemPoster = dicionario["poster_path"] as? String else { return }
+        self.caminhoImagemPoster = caminhoImagemPoster
         
         guard let tagline = dicionario["tagline"] as? String else { return }
         self.tagline = tagline
@@ -42,8 +46,8 @@ class Filme: NSObject {
         guard let sinopse = dicionario["overview"] as? String else { return }
         self.sinopse = sinopse
         
-        guard let caminhoImagem = dicionario["poster_path"] as? String else { return }
-        self.caminhoImagem = caminhoImagem
+        guard let caminhoImagemBg = dicionario["backdrop_path"] as? String else { return }
+        self.caminhoImagemBg = caminhoImagemBg
         
         guard let DicionarioDeGeneros = dicionario["genres"] as? Array<Dictionary<String, Any>> else { return }
         
@@ -65,4 +69,8 @@ class Filme: NSObject {
         
     }
 
+
+    
 }
+
+
