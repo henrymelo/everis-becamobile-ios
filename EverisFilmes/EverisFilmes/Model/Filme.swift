@@ -8,7 +8,12 @@
 
 import Foundation
 
-class Filme{
+class Filme: NSObject, Encodable {
+    
+    enum CodingKeys: String, CodingKey{
+        case vote_average, titulo = "título", visaoGeral = "visão geral", release_date,adulto,backdrop_path,genre_ids
+        
+    }
     
     //MARK: - Atributos
     
