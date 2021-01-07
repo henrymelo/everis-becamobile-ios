@@ -14,8 +14,9 @@
 		F1AB8C8925A73BA000E52D9F /* EverisFilmes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1AB8C8725A73BA000E52D9F /* EverisFilmes.xcdatamodeld */; };
 		F1AB8C8B25A73BA300E52D9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1AB8C8A25A73BA300E52D9F /* Assets.xcassets */; };
 		F1AB8C8E25A73BA300E52D9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1AB8C8C25A73BA300E52D9F /* LaunchScreen.storyboard */; };
-		F1AB8C9925A73C7200E52D9F /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AB8C9825A73C7200E52D9F /* Filme.swift */; };
 		F1AB8C9B25A744E500E52D9F /* FilmeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AB8C9A25A744E500E52D9F /* FilmeAPI.swift */; };
+		F1C4970D25A76BE400F7DAD8 /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C4970C25A76BE400F7DAD8 /* Filme.swift */; };
+		F1C4971125A7AF7700F7DAD8 /* DetalhesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C4971025A7AF7700F7DAD8 /* DetalhesJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +31,9 @@
 		F1AB8C8A25A73BA300E52D9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1AB8C8D25A73BA300E52D9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1AB8C8F25A73BA300E52D9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1AB8C9825A73C7200E52D9F /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
 		F1AB8C9A25A744E500E52D9F /* FilmeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeAPI.swift; sourceTree = "<group>"; };
+		F1C4970C25A76BE400F7DAD8 /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
+		F1C4971025A7AF7700F7DAD8 /* DetalhesJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +88,9 @@
 			children = (
 				F1AB8C8025A73BA000E52D9F /* AppDelegate.swift */,
 				F1AB8C8425A73BA000E52D9F /* Main.storyboard */,
-				F1AB8C9725A73BCE00E52D9F /* Controller */,
-				F1AB8C9625A73BC900E52D9F /* View */,
 				F1AB8C9525A73BC400E52D9F /* Model */,
+				F1AB8C9625A73BC900E52D9F /* View */,
+				F1AB8C9725A73BCE00E52D9F /* Controller */,
 				F1AB8C8A25A73BA300E52D9F /* Assets.xcassets */,
 				F1AB8C8C25A73BA300E52D9F /* LaunchScreen.storyboard */,
 				F1AB8C8F25A73BA300E52D9F /* Info.plist */,
@@ -100,8 +102,9 @@
 		F1AB8C9525A73BC400E52D9F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F1AB8C9825A73C7200E52D9F /* Filme.swift */,
 				F1AB8C9A25A744E500E52D9F /* FilmeAPI.swift */,
+				F1C4970C25A76BE400F7DAD8 /* Filme.swift */,
+				F1C4971025A7AF7700F7DAD8 /* DetalhesJSON.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,10 +239,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1AB8C8325A73BA000E52D9F /* ViewController.swift in Sources */,
+				F1C4971125A7AF7700F7DAD8 /* DetalhesJSON.swift in Sources */,
+				F1C4970D25A76BE400F7DAD8 /* Filme.swift in Sources */,
 				F1AB8C8125A73BA000E52D9F /* AppDelegate.swift in Sources */,
 				F1AB8C9B25A744E500E52D9F /* FilmeAPI.swift in Sources */,
 				F1AB8C8925A73BA000E52D9F /* EverisFilmes.xcdatamodeld in Sources */,
-				F1AB8C9925A73C7200E52D9F /* Filme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
