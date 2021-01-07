@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4BC9749B9531299F7EE83F0D /* Pods_StarMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC12E5FF0B28BDC16847373 /* Pods_StarMovies.framework */; };
 		A281BAD725A76E86007FD0F4 /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281BAD625A76E86007FD0F4 /* Filme.swift */; };
+		A281BADA25A7806D007FD0F4 /* estrela.png in Resources */ = {isa = PBXBuildFile; fileRef = A281BAD925A7806D007FD0F4 /* estrela.png */; };
 		A28BB9CF25A7662D006B5B37 /* DetalhesFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BB9CE25A7662D006B5B37 /* DetalhesFilmeViewController.swift */; };
 		A2E4B2A525A73E4700A86821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E4B2A425A73E4700A86821 /* AppDelegate.swift */; };
 		A2E4B2A725A73E4700A86821 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E4B2A625A73E4700A86821 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		81A418E57EE7942AF2E3DAEB /* Pods-StarMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StarMovies/Pods-StarMovies.debug.xcconfig"; sourceTree = "<group>"; };
 		8AC12E5FF0B28BDC16847373 /* Pods_StarMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A281BAD625A76E86007FD0F4 /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
+		A281BAD925A7806D007FD0F4 /* estrela.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = estrela.png; sourceTree = "<group>"; };
 		A28BB9CE25A7662D006B5B37 /* DetalhesFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesFilmeViewController.swift; sourceTree = "<group>"; };
 		A2E4B2A125A73E4700A86821 /* StarMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E4B2A425A73E4700A86821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A281BAD825A78060007FD0F4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A281BAD925A7806D007FD0F4 /* estrela.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		A28BB9C925A76578006B5B37 /* DetalhesFilme */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 		A2E4B2A325A73E4700A86821 /* StarMovies */ = {
 			isa = PBXGroup;
 			children = (
+				A281BAD825A78060007FD0F4 /* Assets */,
 				A281BAD525A76E5B007FD0F4 /* Model */,
 				A28BB9C925A76578006B5B37 /* DetalhesFilme */,
 				A2E4B2B925A73EB800A86821 /* Filmes */,
@@ -232,6 +243,7 @@
 			files = (
 				A2E4B2B225A73E4B00A86821 /* LaunchScreen.storyboard in Resources */,
 				A2E4B2AF25A73E4B00A86821 /* Assets.xcassets in Resources */,
+				A281BADA25A7806D007FD0F4 /* estrela.png in Resources */,
 				A2E4B2AA25A73E4700A86821 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,7 +450,8 @@
 			baseConfigurationReference = 81A418E57EE7942AF2E3DAEB /* Pods-StarMovies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = StarMovies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,6 +459,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pedrospim.StarMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -456,7 +470,8 @@
 			baseConfigurationReference = A9CB8883844C9ACAD6C65857 /* Pods-StarMovies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = StarMovies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,6 +479,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pedrospim.StarMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

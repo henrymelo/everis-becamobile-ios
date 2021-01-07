@@ -16,9 +16,10 @@ class Filme: NSObject {
     var budget:Int = 0
     var revenue:Int = 0
     var data:String = ""
-    var generos:Array<String> = []
+    var generos:String = ""
     var sinopse:String = ""
     var caminhoImagem:String = ""
+    var nota:String = ""
     
     
     init(_ dicionario:Dictionary<String, Any>){
@@ -43,6 +44,24 @@ class Filme: NSObject {
         
         guard let caminhoImagem = dicionario["poster_path"] as? String else { return }
         self.caminhoImagem = caminhoImagem
+        
+        guard let DicionarioDeGeneros = dicionario["genres"] as? Array<Dictionary<String, Any>> else { return }
+        
+        for genero in DicionarioDeGeneros {
+            guard let nomeGenero = genero["name"] as? String else { return }
+            
+            if generos == String(""){
+                self.generos.append("\(nomeGenero) ")
+            }else {
+                self.generos.append("- \(nomeGenero) ")
+            }
+        }
+        
+        guard var nota = dicionario["vote_average"] as? Double else { return }
+        nota = nota * 10
+        nota = Double(nota).rounded()
+        nota = nota / 10
+        self.nota = String(nota)
         
     }
 

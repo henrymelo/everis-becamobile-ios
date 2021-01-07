@@ -28,6 +28,7 @@ class DetalhesFilmeViewController: UIViewController {
     
     @IBOutlet weak var imagePoster: UIImageView!
     
+    @IBOutlet weak var labelNota: UILabel!
     
     var filmeSelecionado:Filme? = nil
     
@@ -38,6 +39,7 @@ class DetalhesFilmeViewController: UIViewController {
         if let filme = filmeSelecionado {
             
             labelTitulo.text = filme.titulo
+            labelNota.text = "\(filme.nota)"
             labelTagline.text = filme.tagline
             labelData.text = filme.data
             
@@ -53,7 +55,10 @@ class DetalhesFilmeViewController: UIViewController {
                 labelRevenue.text = "US$ \(filme.revenue)"
             }
             
+            labelGenero.text = filme.generos
+            
             labelSinopse.text = filme.sinopse
+            
             
             if let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500\(filme.caminhoImagem)"){
                     imagePoster.af_setImage(withURL: imageUrl)
@@ -63,5 +68,9 @@ class DetalhesFilmeViewController: UIViewController {
 
     }
     
-
+    @IBAction func buttonFecharDetalhes(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
