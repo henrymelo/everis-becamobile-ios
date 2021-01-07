@@ -17,7 +17,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     // MARK: - Variavies
     
-    let listaDeFilmes: Array<Filme> = FilmeAPI().recuperaFilmes()
+    //let listaDeFilmes: Array<Filme> = FilmeAPI().recuperaFilmes()
     
     // MARK: - View Did Load
     

@@ -9,15 +9,19 @@
 import UIKit
 
 class Filme: NSObject {
-    
+   
     let nomeDoFilme: String
     let descricao: String
     let dataLancamento: String
+    let poster: UIImage
     
-    init(nomeDoFilme: String, descricao: String, dataLancamento: String) {
+    init(nomeDoFilme: String, descricao: String, dataLancamento: String, poster:UIImage) {
         self.nomeDoFilme = nomeDoFilme
         self.descricao = descricao
         self.dataLancamento = dataLancamento
+        self.poster = poster
+        
+        
     }
 
 }
