@@ -30,7 +30,7 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qK-5c-iS8" userLabel="Scroll View Filmes">
                                         <rect key="frame" x="0.0" y="30.5" width="375" height="616.5"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NkV-i1-WlI" userLabel="Collection Filmes">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="exibir" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NkV-i1-WlI" userLabel="Collection Filmes">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="616.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WWO-Vj-mnr">

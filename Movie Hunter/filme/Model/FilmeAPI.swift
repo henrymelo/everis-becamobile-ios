@@ -15,10 +15,11 @@ class FilmeAPI: NSObject {
     
     func recuperaFilmes() {
         
-        Alamofire.request("https://api.themoviedb.org/3/authentication/guest_session/new?api_key=aca6f73c8c15f59d9c85fcf92f0d3281", method: .get).responseJSON { (response) in
+        Alamofire.request("https://api.themoviedb.org/3/discover/movie?api_key=aca6f73c8c15f59d9c85fcf92f0d3281&language=pt-BR&region=br&sort_by=popularity.asc&include_adult=false&include_video=false&page=1&watch_region=brazil", method: .get).responseJSON { (response) in
             switch response.result {
             case .success:
              print(response.result.value!)
+             print("funcionou!!!")
                 break
             case .failure:
                 print(response.error!)

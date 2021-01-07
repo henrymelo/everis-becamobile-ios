@@ -9,11 +9,15 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate {
 
     // MARK: - IBOutlets
     
     @IBOutlet weak var collectionFilmes: UICollectionView!
+    
+    // MARK: - Variavies
+    
+    let listaDeFilmes: Array<Filme> = FilmeAPI().recuperaFilmes()
     
     // MARK: - View Did Load
     
@@ -24,7 +28,13 @@ class ViewController: UIViewController {
         }
     
     
-    // MARK: -
+    // MARK: - Métodos
+    
+
+    
+    func exibeFilme() {
+        
+    }
 
     
     }
