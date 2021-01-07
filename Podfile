@@ -7,4 +7,5 @@ target 'everis-becamobile-ios-leticia' do
   
   pod 'Alamofire', '~> 4.7.0'
   pod 'AlamofireImage', '~> 3.4.0'
+  pod 'SwiftyJSON', '~> 4.2.0'
 end

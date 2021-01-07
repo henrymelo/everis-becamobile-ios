@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -14,9 +15,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         FilmeAPI().recuperaTendenciasServidor()
         
-        FilmeAPI().recuperaDetalhesServidor()
+//        FilmeAPI().recuperaDetalhesServidor()
     }
     
 
 }
+
 

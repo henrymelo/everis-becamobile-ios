@@ -13,32 +13,39 @@ class FilmeAPI: NSObject {
     
     // MARK: - Requisição GET
     
-    func recuperaTendenciasServidor() {
-        Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR", method: .get).responseJSON { (response) in
-            switch response.result {
-            case .success:
-                print(response.result.value!)
-                break
-            case .failure:
-                print(response.error!)
-                break
-            }
-        }
+    func testeRecupera() {
+        let request = Alamofire.request("https://api.themoviedb.org/3/trending/movie/week?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR")
+        // 2
+        request.responseDecodable(of: Filmes.self) { (response) in
+        guard let filmes = response.value else { return }
+        print(filmes.all[0].title)
     }
     
-    func recuperaDetalhesServidor() {
-        Alamofire.request("https://api.themoviedb.org/3/movie/454626?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR", method: .get).responseJSON { (response) in
-            switch response.result {
-            case .success:
-                print(response.result.value!)
-                break
-            case .failure:
-                print(response.error!)
-                break
-            }
-        }
+//    func recuperaTendenciasServidor() {
+//        Alamofire.request("https://api.themoviedb.org/3/trending/movie/week?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR", method: .get).responseJSON { (response) in
+//            switch response.result {
+//            case .success:
+//                print(response.result.value!)
+//                break
+//            case .failure:
+//                print(response.error!)
+//                break
+//            }
+//        }
+//    }
+//
+//
+//    func recuperaDetalhesServidor() {
+//        Alamofire.request("https://api.themoviedb.org/3/movie/454626?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR", method: .get).responseJSON { (response) in
+//            switch response.result {
+//            case .success:
+//                print(response.result.value!)
+//                break
+//            case .failure:
+//                print(response.error!)
+//                break
+//            }
+//        }
     }
-    
-
 
 }
