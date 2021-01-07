@@ -8,6 +8,36 @@
 
 import Foundation
 
+// MARK: - CodingKeys
+
+enum CodingKeys: String, CodingKey {
+    case adult
+    case backdropPath = "backdrop_path"
+    case belongsToCollection = "belongs_to_colle"
+    case budget
+    case genres
+    case homepage
+    case id
+    case imdbID = "imdb_id"
+    case originalLanguage = "original_language"
+    case originalTitle = "original_title"
+    case overview
+    case popularity
+    case posterPath = "poster_path"
+    case productionCompanies = "production_companies"
+    case productionCountry = "production_countries"
+    case releaseDate = "release_date"
+    case revenue
+    case runtime
+    case spokenLanguage = "spoken_language"
+    case status
+    case tagline
+    case title
+    case video
+    case voteAverage = "vote_average"
+    case voteCount = "vote_count"
+}
+
 class Filme: NSObject, Encodable {
     
     // MARK: - Atributos
@@ -25,7 +55,7 @@ class Filme: NSObject, Encodable {
     let overview: String
     let popularity: Double
     let posterPath: String
-    let productionCompany: [EmpresaProdutora]
+    let productionCompanies: [EmpresaProdutora]
     let productionCountry: [PaisProdutor]
     let releaseDate: String
     let revenue: Int
@@ -40,7 +70,7 @@ class Filme: NSObject, Encodable {
     
     // MARK: - Init
     
-    init(adult: Bool, backdropPath: String, budget: Int, genres: [Genero], homepage: String, id: Int, imdbID: String, originalLanguage: String, originalTitle: String, overview: String, popularity: Double, posterPath: String, productionCompany: [EmpresaProdutora], productionCountry:[PaisProdutor], releaseDate: String, revenue: Int, runtime: Int, spokenLanguages: [LinguasFaladas], status: String, tagline: String, title: String, video: Bool, voteAverage: Double, voteCount: Int) {
+    init(adult: Bool, backdropPath: String, budget: Int, genres: [Genero], homepage: String, id: Int, imdbID: String, originalLanguage: String, originalTitle: String, overview: String, popularity: Double, posterPath: String, productionCompanies: [EmpresaProdutora], productionCountry:[PaisProdutor], releaseDate: String, revenue: Int, runtime: Int, spokenLanguages: [LinguasFaladas], status: String, tagline: String, title: String, video: Bool, voteAverage: Double, voteCount: Int) {
         self.adult = adult
         self.backdropPath = backdropPath
 //        self.belongsToCollection = belongsToCollection
@@ -54,7 +84,7 @@ class Filme: NSObject, Encodable {
         self.overview = overview
         self.popularity = popularity
         self.posterPath = posterPath
-        self.productionCompany = productionCompany
+        self.productionCompanies = productionCompanies
         self.productionCountry = productionCountry
         self.releaseDate = releaseDate
         self.revenue = revenue
