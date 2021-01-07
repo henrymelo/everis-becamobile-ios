@@ -18,12 +18,17 @@ class FilmesAPI: NSObject {
     //w500 = width:500px
     let imageUrl = "https://image.tmdb.org/t/p/w500"
 
-    let filmesTrendingHome:[String:Any] = [:]
+    var nomeDoFilme = ""
+    var imagemFilme:UIImage? = nil
+    
+    
+    var currentMovie:[String:Any] = [:]
+    var filmesTrendingHome:[[String:Any]] = [[:]]
     
     
     // MARK: - Métodos
     
-    func getTrendingMovies() {
+    func getTrendingMovies(completion:@escaping(_ filmes:[[String:Any]])->Void) {
         
         guard let url = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=\(myKey)&language=pt-BR") else { return }
         
@@ -36,19 +41,11 @@ class FilmesAPI: NSObject {
                         
                         guard let filmes = resposta["results"] as? [[String:Any]] else { return }
                         
-                        for filme in filmes {
-                            
-                            guard let movieName = filme["title"] else { return }
-                            guard let imagemPath = filme["backdrop_path"] as? String else { return }
-                            
-                            print(movieName)
-                            self.getImageOn(imagemPath, completion: { (imagem) in
-                                
-                                print(imagem)
-                                
-                            })
-                        }
-
+  
+                        self.filmesTrendingHome = filmes
+                        
+                        completion(self.filmesTrendingHome)
+                       
                     }
                     break
                 
@@ -56,22 +53,23 @@ class FilmesAPI: NSObject {
                 
                     print(response.error!)
                     break
-                
             }
         })
+        print(filmesTrendingHome)
     }
-    func getImageOn(_ pathLink: String, completion: @escaping(_ image:UIImage)->Void) {
+    func getImageOn(_ pathLink: String, completion:@escaping(UIImage)->Void) {
         
-        guard let url = URL(string: "\(imageUrl)\(pathLink)") else { return}
+        guard let url = URL(string: "\(imageUrl)\(pathLink)") else { return }
         
         Alamofire.request(url, method: .get).responseImage { (response) in
             switch response.result{
                 case .success:
                     
                     if let image = response.result.value {
+                        
                         completion(image)
+                        
                     }
-                    
                     break
                 
                 case .failure:
@@ -80,12 +78,6 @@ class FilmesAPI: NSObject {
                     break
             }
         }
-        
-        
-        
-
     }
-    
-    
 }
 

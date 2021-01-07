@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private var toShow:[[String:Any]] = [[:]]
+    let filme = Filme()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +20,14 @@ class ViewController: UIViewController {
     }
 
     func showMoviesOnTableView()  {
-        FilmesAPI().getTrendingMovies()
+        
+        FilmesAPI().getTrendingMovies { (dicionario) in
+            
+            self.filme.trendingComImagem(dicionario)
+            self.filme.mostraFilmes()
+            
+        }
     }
-
+    
 }
 
