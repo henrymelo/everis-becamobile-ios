@@ -1,0 +1,6 @@
+framework module Pods_Beca_Filmes {
+  umbrella header "Pods-Beca Filmes-umbrella.h"
+
+  export *
+  module * { export * }
+}
