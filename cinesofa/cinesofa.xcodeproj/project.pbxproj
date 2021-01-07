@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		DF07615D25A74A1600D6C14E /* cinesofa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF07615B25A74A1600D6C14E /* cinesofa.xcdatamodeld */; };
 		DF07615F25A74A1700D6C14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF07615E25A74A1700D6C14E /* Assets.xcassets */; };
 		DF07616225A74A1700D6C14E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF07616025A74A1700D6C14E /* LaunchScreen.storyboard */; };
+		DFE2B80A25A7517A0012426A /* FilmesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE2B80925A7517A0012426A /* FilmesAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		DF07615E25A74A1700D6C14E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF07616125A74A1700D6C14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF07616325A74A1700D6C14E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFE2B80925A7517A0012426A /* FilmesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesAPI.swift; sourceTree = "<group>"; };
 		F3CCC09D750BCFE5544829DF /* Pods-cinesofa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cinesofa.release.xcconfig"; path = "Target Support Files/Pods-cinesofa/Pods-cinesofa.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +50,6 @@
 				8F3D1DD7800B26ED957C4F35 /* Pods-cinesofa.debug.xcconfig */,
 				F3CCC09D750BCFE5544829DF /* Pods-cinesofa.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +89,7 @@
 				DF07616025A74A1700D6C14E /* LaunchScreen.storyboard */,
 				DF07616325A74A1700D6C14E /* Info.plist */,
 				DF07615B25A74A1600D6C14E /* cinesofa.xcdatamodeld */,
+				DFE2B80925A7517A0012426A /* FilmesAPI.swift */,
 			);
 			path = cinesofa;
 			sourceTree = "<group>";
@@ -207,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFE2B80A25A7517A0012426A /* FilmesAPI.swift in Sources */,
 				DF07615D25A74A1600D6C14E /* cinesofa.xcdatamodeld in Sources */,
 				DF07615725A74A1500D6C14E /* ViewController.swift in Sources */,
 				DF07615525A74A1500D6C14E /* AppDelegate.swift in Sources */,
