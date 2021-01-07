@@ -10,8 +10,12 @@ import UIKit
 
 class FilmeDAO: NSObject {
     
-    // MARK: -
+    // MARK: - Métodos
     
-
+    func exibeFilme(dicionarioDeFilme:Dictionary<String, Any>) {
+        
+    }
+        
+    
 
 }
