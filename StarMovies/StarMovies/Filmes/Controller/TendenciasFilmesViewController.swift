@@ -7,21 +7,61 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class TendenciasFilmesViewController: UIViewController {
+class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSource {
+    
+    //MARK: - Outlets
+    
+    @IBOutlet weak var colecaoFilmes: UICollectionView!
+    
+    //MARK: - Variaveis
+    
+    var listaTendenciaFilmes:Array<Dictionary<String, Any>> = []
+    
+    //MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.colecaoFilmes.dataSource = self
+        
         FilmeAPI().pegarListaTendenciasFilmes { (resposta) in
-            print(resposta.count)
+            self.listaTendenciaFilmes = resposta
+            self.colecaoFilmes.reloadData()
         }
         
         FilmeAPI().pegarDetalhesFilme(codFilme: "464052") { (resposta) in
-            print(resposta["title"])
+            //print(resposta["title"])
         }
 
-        // Do any additional setup after loading the view.
+    }
+    
+    //MARK: - CollectionViewDataSource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return listaTendenciaFilmes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let filme = listaTendenciaFilmes[indexPath.row]
+        
+        
+        let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaFilme", for: indexPath) as! FilmeCollectionViewCell
+        
+
+        celula.labelTituloFilme.text = filme["title"] as? String
+
+        if let filmePosterLink = filme["poster_path"] {
+            if let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500\(filmePosterLink)"){
+                print("https://image.tmdb.org/t/p/w500\(filmePosterLink)")
+                celula.imageFilme.af_setImage(withURL: imageUrl)
+            }
+        }
+        
+        
+        return celula
     }
     
 

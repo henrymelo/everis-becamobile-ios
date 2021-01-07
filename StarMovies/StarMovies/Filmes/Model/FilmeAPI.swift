@@ -15,7 +15,7 @@ class FilmeAPI: NSObject {
     
     func pegarListaTendenciasFilmes(completion:@escaping(Array<Dictionary<String, Any>>) -> Void) {
         
-        Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=bbed29429b1ca9848cd2e58686edc4cc&language=pt-BR", method: .get).responseJSON { (resposta) in
+        Alamofire.request("https://api.themoviedb.org/3/trending/movie/week?api_key=bbed29429b1ca9848cd2e58686edc4cc&language=pt-BR", method: .get).responseJSON { (resposta) in
             switch resposta.result {
             case .success:
                 

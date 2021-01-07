@@ -16,6 +16,7 @@
 		A2E4B2B225A73E4B00A86821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2E4B2B025A73E4B00A86821 /* LaunchScreen.storyboard */; };
 		A2E4B2BD25A73F2700A86821 /* TendenciasFilmesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E4B2BC25A73F2700A86821 /* TendenciasFilmesViewController.swift */; };
 		A2E4B2C025A740D700A86821 /* FilmeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E4B2BF25A740D700A86821 /* FilmeAPI.swift */; };
+		A2E4B2C225A74C7400A86821 /* FilmeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E4B2C125A74C7400A86821 /* FilmeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A2E4B2B325A73E4B00A86821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2E4B2BC25A73F2700A86821 /* TendenciasFilmesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendenciasFilmesViewController.swift; sourceTree = "<group>"; };
 		A2E4B2BF25A740D700A86821 /* FilmeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeAPI.swift; sourceTree = "<group>"; };
+		A2E4B2C125A74C7400A86821 /* FilmeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9CB8883844C9ACAD6C65857 /* Pods-StarMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarMovies.release.xcconfig"; path = "Pods/Target Support Files/Pods-StarMovies/Pods-StarMovies.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				A2E4B2BC25A73F2700A86821 /* TendenciasFilmesViewController.swift */,
+				A2E4B2C125A74C7400A86821 /* FilmeCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E4B2C225A74C7400A86821 /* FilmeCollectionViewCell.swift in Sources */,
 				A2E4B2BD25A73F2700A86821 /* TendenciasFilmesViewController.swift in Sources */,
 				A2E4B2AD25A73E4700A86821 /* StarMovies.xcdatamodeld in Sources */,
 				A2E4B2C025A740D700A86821 /* FilmeAPI.swift in Sources */,
