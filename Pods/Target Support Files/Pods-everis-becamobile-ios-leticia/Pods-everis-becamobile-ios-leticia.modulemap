@@ -1,0 +1,6 @@
+framework module Pods_everis_becamobile_ios_leticia {
+  umbrella header "Pods-everis-becamobile-ios-leticia-umbrella.h"
+
+  export *
+  module * { export * }
+}
