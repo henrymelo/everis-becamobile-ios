@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EmpresaProdutora {
+class EmpresaProdutora: NSObject, Encodable {
     
     let id: Int
     let logoPath: String?

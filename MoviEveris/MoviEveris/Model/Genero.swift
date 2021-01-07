@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Genero {
+class Genero: NSObject, Encodable {
     
     let id: Int
     let name: String

@@ -8,13 +8,13 @@
 
 import Foundation
 
-class Movie: Codable {
+class Filme: NSObject, Encodable {
     
     // MARK: - Atributos
     
     let adult: Bool
     let backdropPath: String
-    let belongsToCollection: JSONNull?
+//    let belongsToCollection: JSONNull?
     let budget: Int
     let genres: [Genero]
     let homepage: String
@@ -40,10 +40,10 @@ class Movie: Codable {
     
     // MARK: - Init
     
-    init(_ adult: Bool, _ backdropPath: String, belongsToCollection: JSONNull?, _ budget: Int, _ genres: [Genero], _ homepage: String, _ id: Int, _ imdbID: String, _ originalLanguage: String, _ originalTitle: String, _ overview: String, _ popularity: Double, _ posterPath: String, productionCompany: [EmpresaProdutora], productionCountry:[PaisProdutor], _ releaseDate: String, _ revenue: Int, _ runtime: Int, _ spokenLanguages: [LinguasFaladas], _ status: String, _ tagline: String, _ title: String, _ video: Bool, _ voteAverage: Double, _ voteCount: Int) {
+    init(adult: Bool, backdropPath: String, budget: Int, genres: [Genero], homepage: String, id: Int, imdbID: String, originalLanguage: String, originalTitle: String, overview: String, popularity: Double, posterPath: String, productionCompany: [EmpresaProdutora], productionCountry:[PaisProdutor], releaseDate: String, revenue: Int, runtime: Int, spokenLanguages: [LinguasFaladas], status: String, tagline: String, title: String, video: Bool, voteAverage: Double, voteCount: Int) {
         self.adult = adult
         self.backdropPath = backdropPath
-        self.belongsToCollection = belongsToCollection
+//        self.belongsToCollection = belongsToCollection
         self.budget = budget
         self.genres = genres
         self.homepage = homepage

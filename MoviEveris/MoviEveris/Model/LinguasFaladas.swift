@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LinguasFaladas {
+class LinguasFaladas: NSObject, Encodable {
     
     let englishName: String
     let iso639_1: String

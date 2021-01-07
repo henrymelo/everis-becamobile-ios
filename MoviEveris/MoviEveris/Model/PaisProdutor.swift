@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PaisProdutor {
+class PaisProdutor: NSObject, Encodable {
     
     let iso3166_1: String
     let name: String
