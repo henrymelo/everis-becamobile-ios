@@ -9,11 +9,26 @@
 import Foundation
 import Alamofire
 
-class FilmeAPI: NSObject {
+protocol filmesProtocolo: class {
+    func recuperaFilmes()
+}
+
+protocol RespostaAPI {
+    func success(Modelo: ModeloFilme)
+    func failure()
+}
+
+class FilmeAPI: NSObject, filmesProtocolo {
+    
+    var delegate: RespostaAPI?
     
    
     
     // MARK: - GET
+    
+    func configura(delegate: RespostaAPI){
+        self.delegate = delegate
+    }
 
     func recuperaFilmes()  {
         Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=cf692353d76cfc50bc34648eb54b621f&language=pt-BR", method: .get).responseJSON { (response) in
@@ -23,20 +38,21 @@ class FilmeAPI: NSObject {
             case .success:
                 
                 if let resposta = response.result.value as? Dictionary<String, Any> {
-                    guard let listaDeFilmes = resposta["results"] as? Array<Dictionary<String,Any>> else {return}
-                    for dicionarioDeFilme in listaDeFilmes {
-//                        FilmeDAO().salvaFilme(dicionarioDeFilme: dicionarioDeFilme)
-                        print(dicionarioDeFilme)
-                        }
+                    do {
+                        guard let data = response.data else {return}
+                        let objetoFilme = try JSONDecoder().decode(ModeloFilme.self, from: data)
+                        self.delegate?.success(Modelo: objetoFilme)
+                    } catch {
+                        print("Falhou aqui")
+                    }
+                  
                     }
                 break
             case .failure:
                 print(response.error!)
                 
                 break
-            }
-        
-
+                }
             }
         }
 
