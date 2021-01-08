@@ -8,26 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		32FA849C2ECA2ECF85594F6A /* Pods_Filmes_beca_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950E6208A1C28F2B66E79560 /* Pods_Filmes_beca_iOS.framework */; };
+		F01C5C8725A8926C00FC695F /* FilmeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C5C8625A8926C00FC695F /* FilmeCollectionViewCell.swift */; };
+		F01C5C8925A89BC500FC695F /* DetalhesFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C5C8825A89BC500FC695F /* DetalhesFilmeViewController.swift */; };
 		F080269D25A737DA00C41194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080269C25A737DA00C41194 /* AppDelegate.swift */; };
-		F080269F25A737DA00C41194 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080269E25A737DA00C41194 /* ViewController.swift */; };
 		F08026A225A737DA00C41194 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08026A025A737DA00C41194 /* Main.storyboard */; };
 		F08026A425A737DD00C41194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F08026A325A737DD00C41194 /* Assets.xcassets */; };
 		F08026A725A737DD00C41194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08026A525A737DD00C41194 /* LaunchScreen.storyboard */; };
-		F083F93325A7991E004A7B06 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F083F93225A7991E004A7B06 /* HomeTableViewController.swift */; };
+		F083F93325A7991E004A7B06 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F083F93225A7991E004A7B06 /* HomeViewController.swift */; };
 		F083F93525A7B8C4004A7B06 /* FilmesRequisition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F083F93425A7B8C4004A7B06 /* FilmesRequisition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C1027EBBC45A2B5AF2FBC21 /* Pods-Filmes-beca-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmes-beca-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Filmes-beca-iOS/Pods-Filmes-beca-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		950E6208A1C28F2B66E79560 /* Pods_Filmes_beca_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Filmes_beca_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F01C5C8625A8926C00FC695F /* FilmeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeCollectionViewCell.swift; sourceTree = "<group>"; };
+		F01C5C8825A89BC500FC695F /* DetalhesFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesFilmeViewController.swift; sourceTree = "<group>"; };
 		F080269925A737DA00C41194 /* Filmes-beca-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Filmes-beca-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F080269C25A737DA00C41194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F080269E25A737DA00C41194 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F08026A125A737DA00C41194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F08026A325A737DD00C41194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F08026A625A737DD00C41194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F08026A825A737DD00C41194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F083F93225A7991E004A7B06 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		F083F93225A7991E004A7B06 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F083F93425A7B8C4004A7B06 /* FilmesRequisition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesRequisition.swift; sourceTree = "<group>"; };
 		F499E7B8EC50D41316034391 /* Pods-Filmes-beca-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmes-beca-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Filmes-beca-iOS/Pods-Filmes-beca-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				F08026A025A737DA00C41194 /* Main.storyboard */,
+				F01C5C8625A8926C00FC695F /* FilmeCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,8 +115,8 @@
 		F08026B025A737F800C41194 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F080269E25A737DA00C41194 /* ViewController.swift */,
-				F083F93225A7991E004A7B06 /* HomeTableViewController.swift */,
+				F083F93225A7991E004A7B06 /* HomeViewController.swift */,
+				F01C5C8825A89BC500FC695F /* DetalhesFilmeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,9 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F083F93525A7B8C4004A7B06 /* FilmesRequisition.swift in Sources */,
-				F080269F25A737DA00C41194 /* ViewController.swift in Sources */,
 				F080269D25A737DA00C41194 /* AppDelegate.swift in Sources */,
-				F083F93325A7991E004A7B06 /* HomeTableViewController.swift in Sources */,
+				F083F93325A7991E004A7B06 /* HomeViewController.swift in Sources */,
+				F01C5C8925A89BC500FC695F /* DetalhesFilmeViewController.swift in Sources */,
+				F01C5C8725A8926C00FC695F /* FilmeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
