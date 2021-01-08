@@ -41,8 +41,10 @@ class FilmesViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detalhesFilme = filmes[indexPath.item]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "detalhesFilme") as! DetalhesFilmeViewController
+        controller.filmeSelecionado = detalhesFilme
         self.present(controller, animated: true, completion: nil)
     }
     
