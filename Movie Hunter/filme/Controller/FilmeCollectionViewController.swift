@@ -32,6 +32,8 @@ class FilmeCollectionViewController: UIViewController, UICollectionViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         listaFilmes = listaComTodosFilmes
+        CollectionFilme.dataSource = self
+        CollectionFilme.delegate = self
     }
 
     // MARK : - Métodos
@@ -44,8 +46,8 @@ class FilmeCollectionViewController: UIViewController, UICollectionViewDataSourc
         let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaFilmes", for: indexPath) as! UICollectionViewCell
         let filmeAtual = listaFilmes[indexPath.item]
         return celulaFilme
-        
-        
     }
+    
+
 
 }
