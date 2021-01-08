@@ -19,6 +19,7 @@
 		FCF0257F25A89AA0005FA869 /* TendenciaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0257E25A89AA0005FA869 /* TendenciaTableViewController.swift */; };
 		FCF0258325A89C8A005FA869 /* TendenciaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0258225A89C8A005FA869 /* TendenciaTableViewCell.swift */; };
 		FCF025A525A8B443005FA869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF025A425A8B443005FA869 /* Main.storyboard */; };
+		FCF025A725A8E5CF005FA869 /* TendenciaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF025A625A8E5CF005FA869 /* TendenciaCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FCF0257E25A89AA0005FA869 /* TendenciaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendenciaTableViewController.swift; sourceTree = "<group>"; };
 		FCF0258225A89C8A005FA869 /* TendenciaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendenciaTableViewCell.swift; sourceTree = "<group>"; };
 		FCF025A425A8B443005FA869 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FCF025A625A8E5CF005FA869 /* TendenciaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendenciaCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				FCF0257625A890D6005FA869 /* Filmes */,
-				FCF0258025A89C54005FA869 /* Controller */,
 				FCF0256125A89061005FA869 /* AppDelegate.swift */,
 				FCF0256325A89061005FA869 /* ViewController.swift */,
 				FCF0256B25A89063005FA869 /* Assets.xcassets */,
@@ -106,8 +107,9 @@
 		FCF0257625A890D6005FA869 /* Filmes */ = {
 			isa = PBXGroup;
 			children = (
-				FCF0258125A89C72005FA869 /* View */,
 				FCF0257725A890EF005FA869 /* Model */,
+				FCF0258125A89C72005FA869 /* View */,
+				FCF0258025A89C54005FA869 /* Controller */,
 			);
 			path = Filmes;
 			sourceTree = "<group>";
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				FCF0258225A89C8A005FA869 /* TendenciaTableViewCell.swift */,
+				FCF025A625A8E5CF005FA869 /* TendenciaCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				FCF0257D25A896E1005FA869 /* Repositorio.swift in Sources */,
 				FCF0256425A89061005FA869 /* ViewController.swift in Sources */,
 				FCF0256A25A89061005FA869 /* everis_becamobile_ios_leticia.xcdatamodeld in Sources */,
+				FCF025A725A8E5CF005FA869 /* TendenciaCollectionViewCell.swift in Sources */,
 				FCF0258325A89C8A005FA869 /* TendenciaTableViewCell.swift in Sources */,
 				FCF0257B25A894D8005FA869 /* TendenciaDAO.swift in Sources */,
 				FCF0256225A89061005FA869 /* AppDelegate.swift in Sources */,
