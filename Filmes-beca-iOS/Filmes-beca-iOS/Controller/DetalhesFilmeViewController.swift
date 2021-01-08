@@ -12,19 +12,53 @@ class DetalhesFilmeViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var tituloTextLabel: UILabel!
+    @IBOutlet weak var imagemFilme: UIImageView!
+    @IBOutlet weak var sinopseTextLabel: UILabel!
+    @IBOutlet weak var lancamentoTextLabel: UILabel!
+    
+    // MARK: - Variáveis
     let filmesAPI = FilmesRequisition()
+    
+    var filmeSelecionado:[String:Any]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        showFilme()
         recuperaDetalhes()
     }
     
     
     func recuperaDetalhes() {
-        filmesAPI.pegarDetalhesPelo(id: 508442) { (filme) in
-            //
+
+    }
+    func showFilme() {
+        guard let filme = filmeSelecionado as? [String:Any] else { return }
+        guard let idFilmeSelecionado = filme["id"] as? Int else { return }
+        guard let imagemFilmeSelecionado = filme["imagem"] as? UIImage else { return }
+        
+        filmesAPI.pegarDetalhesPelo(id: idFilmeSelecionado) { (filme) in
+            var filmeAtual = filme[0]
+            guard let nome = filmeAtual["nome"]  as? String else { return }
+            guard let sinopse = filmeAtual["sinopse"]  as? String else { return }
+            guard let lancamento = filmeAtual["lancamento"]  as? String else { return }
+            
+            var lancamentoArr:[String] = lancamento.components(separatedBy: "-")
+            
+            var lancamentoLapidado = "\(lancamentoArr[2])/\(lancamentoArr[1])/\(lancamentoArr[0])"
+            
+            self.tituloTextLabel.text = nome
+            self.imagemFilme.image = imagemFilmeSelecionado
+            self.sinopseTextLabel.text = sinopse
+            self.lancamentoTextLabel.text = lancamentoLapidado
+            
         }
     }
-
+    
+    @IBAction func botaoVoltar(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
 }

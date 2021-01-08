@@ -47,6 +47,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         return celulaFilme
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let filme = filmesToShow[indexPath.item]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalhesFilmeViewController
+        
+        controller.filmeSelecionado = filme
+        self.present(controller, animated: true, completion: nil)
+        
+    }
 
     func recuperaImages() {
         
