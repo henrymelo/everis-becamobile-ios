@@ -73,7 +73,7 @@ class FilmesViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let larguraCelula = collectionView.bounds.width / 2
-        return CGSize(width: larguraCelula - 20, height: 160)
+        return CGSize(width: larguraCelula - 10, height: 160)
     }
 
 }
