@@ -14,6 +14,12 @@ class FilmesViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     @IBOutlet weak var colecaoFilmes: UICollectionView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barStyle = .black
+    }
 
 
     
