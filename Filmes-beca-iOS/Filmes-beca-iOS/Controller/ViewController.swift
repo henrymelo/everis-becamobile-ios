@@ -10,20 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let filmesAPI = FilmesAPI()
+    let filmesAPI = FilmesRequisition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         recuperaImages()
+        recuperaDetalhes()
     }
     
     func recuperaImages() {
         
         filmesAPI.getImagens { (filmes) in
-            print(filmes)
+           // print(filmes)
         }
-        
+    }
+    func recuperaDetalhes() {
+        filmesAPI.pegarDetalhesPelo(id: 508442) { (filme) in
+            print(filme)
+        }
     }
 }
 

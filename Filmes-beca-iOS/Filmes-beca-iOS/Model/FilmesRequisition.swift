@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class FilmesAPI: NSObject {
+class FilmesRequisition: NSObject {
     
     var filmes:[String:Any] = [:]
 
@@ -27,6 +27,7 @@ class FilmesAPI: NSObject {
                         
                         var filmeAtual:[String:Any] = [:]
                         var tituloOuNome = ""
+                        var lancaOuEstreia = ""
                         var filmesBruto:[[String:Any]] = [[:]]
                         
                         guard let filmes = resposta["results"] as? [[String:Any]] else { return }
@@ -39,14 +40,31 @@ class FilmesAPI: NSObject {
                                 tituloOuNome = "name"
                                 
                             }
+                            if(filme["release_date"] != nil) {
+                                
+                                lancaOuEstreia = "release_date"
+                                
+                            } else {
+                                lancaOuEstreia = "first_air_date"
+                            }
+                            
+                            
+                            guard let id = filme["id"] else { return }
                             guard let nomeAtual = filme[tituloOuNome] else { return }
-                            guard let caminhoAtual = filme["poster_path"] else { return  }
-                            filmeAtual = ["nome":nomeAtual, "caminho":caminhoAtual]
+                            guard let caminhoAtual = filme["poster_path"] else { return }
+                            guard let sinopseAtual = filme["overview"] else { return }
+                            guard let dataDeLancamento = filme[lancaOuEstreia] else { return }
+                            filmeAtual = [
+                                "id":id,
+                                "nome":nomeAtual,
+                                "caminho":caminhoAtual,
+                                "sinopse":sinopseAtual,
+                                "lancamento":dataDeLancamento
+                                
+                            ]
                             
                             filmesBruto.append(filmeAtual)
-                            
-                            
-                            
+     
                         }
                         completion(filmesBruto)
                     }
@@ -58,7 +76,7 @@ class FilmesAPI: NSObject {
         }
         
     }
-    func getImagens(completion: @escaping(_ filmes: [[String:Any]]) -> Void) {
+    func getImagens(completion: @escaping(_ filmes: [[String:Any]]) ->Void) {
         
         getFilmes { (filmes) in
             
@@ -80,7 +98,10 @@ class FilmesAPI: NSObject {
                                 
                                 if let image = response.result.value {
                                     
-                                    filmeAtual = ["nome":nome, "imagem":image]
+                                    filmeAtual = [
+                                        "nome":nome,
+                                        "imagem":image
+                                    ]
                                     
                                     filmesProntos.append(filmeAtual)
                                     completion(filmesProntos)
@@ -95,8 +116,21 @@ class FilmesAPI: NSObject {
                     })
                 }
             }
+        }
+    }
+    func pegarDetalhesPelo(id:Int, completion: @escaping(_ filme:[[String:Any]]) -> Void)  {
+        getFilmes { (filmes) in
             
             
+            let filmeSelecionado = filmes.filter({ filmeAtual in
+                
+                guard let filme = filmeAtual["id"] as? Int else { return false }
+                
+                return filme == id
+                
+            })
+            
+            completion(filmeSelecionado)
         }
     }
 }
