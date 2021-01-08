@@ -10,7 +10,7 @@ import UIKit
 
 class Configuracao: NSObject {
     
-    // MARK: -
+    // MARK: - Métodos
     
     func getKeyPadrao() -> String? {
         

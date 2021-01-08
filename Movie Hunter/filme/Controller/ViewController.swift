@@ -9,26 +9,26 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController, UICollectionViewDelegate {
+class ViewController: UIViewController {
 
-    // MARK: - IBOutlets
-    
-    @IBOutlet weak var collectionFilmes: UICollectionView!
-    
-    // MARK: - Variavies
-    let listaComTodosFilmes:Array<ListaFilmes> = FilmeDAO().recuperaTodosFilmes()
-    var listaFilmes:Array<ListaFilmes> = []
+
+
+    // MARK: - Variáveis
+
 
     
     // MARK: - View Did Load
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listaFilmes = listaComTodosFilmes
+
     }
     
     
     // MARK: - Métodos
+    
+    
+    
     
 
     

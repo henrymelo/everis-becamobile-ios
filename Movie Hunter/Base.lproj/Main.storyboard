@@ -13,7 +13,7 @@
         <!--tela principal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="selecaoFilme" id="BYZ-38-t0r" userLabel="tela principal" customClass="ViewController" customModule="Movie_Hunter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selecaoFilme" id="BYZ-38-t0r" userLabel="tela principal" customClass="FilmeCollectionViewController" customModule="Movie_Hunter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,25 +34,43 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="616.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WWO-Vj-mnr">
-                                                    <size key="itemSize" width="118" height="159"/>
+                                                    <size key="itemSize" width="220" height="450"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KFF-lx-GzL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="159"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="celulaFilmes" id="KFF-lx-GzL">
+                                                        <rect key="frame" x="77.5" y="0.0" width="220" height="450"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="118" height="159"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="220" height="450"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="imagemFilme" translatesAutoresizingMaskIntoConstraints="NO" id="2uI-pe-bPx">
-                                                                    <rect key="frame" x="20" y="7" width="88" height="132"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imagemFilme" translatesAutoresizingMaskIntoConstraints="NO" id="tlK-47-Fl9">
+                                                                    <rect key="frame" x="0.0" y="20" width="220" height="330"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="220" id="9DY-GR-815"/>
+                                                                        <constraint firstAttribute="height" constant="330" id="mEj-Cf-ead"/>
+                                                                    </constraints>
                                                                 </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="nomeFilme" text="Nome do Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph0-8N-94B">
+                                                                    <rect key="frame" x="52" y="370" width="116" height="22"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                         </view>
+                                                        <constraints>
+                                                            <constraint firstItem="ph0-8N-94B" firstAttribute="leading" secondItem="KFF-lx-GzL" secondAttribute="leadingMargin" constant="44" id="3nX-5r-ro8"/>
+                                                            <constraint firstAttribute="trailing" secondItem="tlK-47-Fl9" secondAttribute="trailing" id="ETd-VT-2IA"/>
+                                                            <constraint firstItem="tlK-47-Fl9" firstAttribute="leading" secondItem="KFF-lx-GzL" secondAttribute="leading" id="cr7-da-6ws"/>
+                                                            <constraint firstItem="ph0-8N-94B" firstAttribute="top" secondItem="tlK-47-Fl9" secondAttribute="bottom" constant="20" id="p9O-B7-a3P"/>
+                                                            <constraint firstItem="tlK-47-Fl9" firstAttribute="top" secondItem="KFF-lx-GzL" secondAttribute="top" constant="20" id="pGc-wc-62w"/>
+                                                            <constraint firstAttribute="bottomMargin" secondItem="ph0-8N-94B" secondAttribute="bottom" constant="50" id="ymO-OR-7MY"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="ph0-8N-94B" secondAttribute="trailing" constant="44" id="ywn-wi-5C5"/>
+                                                        </constraints>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -89,7 +107,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="0te-k8-kA1"/>
                     <connections>
-                        <outlet property="collectionFilmes" destination="NkV-i1-WlI" id="6U9-9C-nrs"/>
+                        <outlet property="CelulaFilme" destination="KFF-lx-GzL" id="LJI-Tg-gka"/>
+                        <outlet property="CollectionFilme" destination="NkV-i1-WlI" id="4CL-j0-gBz"/>
+                        <outlet property="LabelFilme" destination="ph0-8N-94B" id="Hex-16-f29"/>
+                        <outlet property="PosterFilme" destination="tlK-47-Fl9" id="uXP-7t-jrK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
