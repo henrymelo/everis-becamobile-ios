@@ -34,31 +34,31 @@
                                         <rect key="frame" x="0.0" y="50" width="345" height="640"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6yf-hy-UaV">
-                                            <size key="itemSize" width="135" height="185"/>
+                                            <size key="itemSize" width="135" height="160"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="celulaFilme" id="Phw-rU-ymg" customClass="celulaFilmeCollectionViewCell" customModule="provaFilmes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="135" height="185"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" reuseIdentifier="celulaFilme" id="Phw-rU-ymg" customClass="celulaFilmeCollectionViewCell" customModule="provaFilmes" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="160"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="185"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="160"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nfh-kJ-MTj">
-                                                            <rect key="frame" x="0.0" y="0.0" width="135" height="185"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="135" height="160"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="185" id="cAW-PP-5rk"/>
+                                                                <constraint firstAttribute="height" constant="160" id="jeb-IO-vjW"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="nfh-kJ-MTj" secondAttribute="trailing" id="DNX-Vw-cyk"/>
-                                                    <constraint firstItem="nfh-kJ-MTj" firstAttribute="top" secondItem="Phw-rU-ymg" secondAttribute="top" id="Ekc-TB-fy7"/>
-                                                    <constraint firstItem="nfh-kJ-MTj" firstAttribute="leading" secondItem="Phw-rU-ymg" secondAttribute="leading" id="Ui3-JC-TED"/>
+                                                    <constraint firstItem="nfh-kJ-MTj" firstAttribute="top" secondItem="Phw-rU-ymg" secondAttribute="top" id="5Hg-Zm-Po9"/>
+                                                    <constraint firstItem="nfh-kJ-MTj" firstAttribute="leading" secondItem="Phw-rU-ymg" secondAttribute="leading" id="V66-KV-YOk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nfh-kJ-MTj" secondAttribute="trailing" id="jAR-4U-G3f"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="imagemFilme" destination="nfh-kJ-MTj" id="5BT-Mp-Rhr"/>
