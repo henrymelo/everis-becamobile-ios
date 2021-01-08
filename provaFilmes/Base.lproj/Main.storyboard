@@ -86,34 +86,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITULO DO FILME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQp-hk-Wru">
+                                <rect key="frame" x="0.0" y="18" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MTP-37-nWp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fRf-vL-uTP">
+                                <rect key="frame" x="0.0" y="68" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="TdK-ZY-cRy"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hBb-eu-8jD">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="15" y="270" width="345" height="397"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITULO DO FILME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQp-hk-Wru">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="MTP-37-nWp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fRf-vL-uTP">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="TdK-ZY-cRy"/>
-                                        </constraints>
-                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7zV-WN-NA7">
-                                        <rect key="frame" x="0.0" y="250" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SINOPSE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP5-t9-JYv">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="172.5" height="60"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RAITING" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtQ-iV-aHz">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="60"/>
+                                                <rect key="frame" x="172.5" y="0.0" width="172.5" height="60"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
                                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -124,8 +124,11 @@
                                         </constraints>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="yR9-JA-CRJ">
-                                        <rect key="frame" x="0.0" y="310" width="375" height="337"/>
+                                        <rect key="frame" x="0.0" y="60" width="345" height="337"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="337" id="ydX-ql-mHy"/>
+                                        </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -143,10 +146,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hBb-eu-8jD" firstAttribute="top" secondItem="gJM-45-e0f" secondAttribute="top" id="4ax-zQ-BKU"/>
-                            <constraint firstItem="hBb-eu-8jD" firstAttribute="leading" secondItem="gJM-45-e0f" secondAttribute="leading" id="V42-0r-ORk"/>
-                            <constraint firstItem="hBb-eu-8jD" firstAttribute="trailing" secondItem="gJM-45-e0f" secondAttribute="trailing" id="dW6-Gb-Ofi"/>
+                            <constraint firstItem="vQp-hk-Wru" firstAttribute="top" secondItem="GU4-wt-eWj" secondAttribute="top" constant="18" id="32f-d1-3Lx"/>
+                            <constraint firstItem="vQp-hk-Wru" firstAttribute="trailing" secondItem="gJM-45-e0f" secondAttribute="trailing" id="SY6-3C-UnJ"/>
+                            <constraint firstItem="fRf-vL-uTP" firstAttribute="trailing" secondItem="gJM-45-e0f" secondAttribute="trailing" id="Uxb-vn-1DM"/>
+                            <constraint firstItem="hBb-eu-8jD" firstAttribute="leading" secondItem="gJM-45-e0f" secondAttribute="leading" constant="15" id="V42-0r-ORk"/>
+                            <constraint firstItem="vQp-hk-Wru" firstAttribute="leading" secondItem="gJM-45-e0f" secondAttribute="leading" id="alF-as-p9O"/>
+                            <constraint firstItem="hBb-eu-8jD" firstAttribute="trailing" secondItem="gJM-45-e0f" secondAttribute="trailing" constant="-15" id="dW6-Gb-Ofi"/>
+                            <constraint firstItem="fRf-vL-uTP" firstAttribute="top" secondItem="vQp-hk-Wru" secondAttribute="bottom" id="qr5-b4-Ahh"/>
                             <constraint firstItem="gJM-45-e0f" firstAttribute="bottom" secondItem="hBb-eu-8jD" secondAttribute="bottom" id="uBC-iT-Myp"/>
+                            <constraint firstItem="fRf-vL-uTP" firstAttribute="leading" secondItem="gJM-45-e0f" secondAttribute="leading" id="xS3-ws-XHH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gJM-45-e0f"/>
                     </view>
