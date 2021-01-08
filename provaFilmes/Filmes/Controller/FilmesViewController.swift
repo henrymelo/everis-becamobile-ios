@@ -63,7 +63,7 @@ class FilmesViewController: UIViewController, UICollectionViewDataSource, UIColl
             if let error = erro {
                 print(error)
             }else if let filmes = filmesArray{
-                self.filmes=filmes
+                self.filmes = filmes
                 self.colecaoFilmes.reloadData()
                 
 
