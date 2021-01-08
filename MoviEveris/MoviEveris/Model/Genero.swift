@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Genero: NSObject, Encodable {
+class Genero: NSObject, Decodable {
     
-    let id: Int
-    let name: String
+    var id: Int?
+    var name: String?
     
-    init(_ id: Int, _ name: String) {
+    init(_ id: Int?, _ name: String?) {
         self.id = id
         self.name = name
     }

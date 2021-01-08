@@ -8,13 +8,13 @@
 
 import Foundation
 
-class LinguasFaladas: NSObject, Encodable {
+class LinguasFaladas: NSObject, Decodable {
     
-    let englishName: String
-    let iso639_1: String
-    let name: String
+    var englishName: String?
+    var iso639_1: String?
+    var name: String?
     
-    init(_ englishName: String, _ iso639_1: String, _ name: String) {
+    init(_ englishName: String?, _ iso639_1: String?, _ name: String?) {
         self.englishName = englishName
         self.iso639_1 = iso639_1
         self.name = name

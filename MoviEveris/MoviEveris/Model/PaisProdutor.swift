@@ -8,12 +8,12 @@
 
 import Foundation
 
-class PaisProdutor: NSObject, Encodable {
+class PaisProdutor: NSObject, Decodable {
     
-    let iso3166_1: String
-    let name: String
+    var iso3166_1: String?
+    var name: String?
     
-    init(_ iso3166_1: String, _ name: String) {
+    init(_ iso3166_1: String?, _ name: String?) {
         self.iso3166_1 = iso3166_1
         self.name = name
     }

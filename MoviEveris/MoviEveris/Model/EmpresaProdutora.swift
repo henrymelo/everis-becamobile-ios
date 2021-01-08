@@ -8,14 +8,14 @@
 
 import Foundation
 
-class EmpresaProdutora: NSObject, Encodable {
+class EmpresaProdutora: NSObject, Decodable {
     
-    let id: Int
-    let logoPath: String?
-    let name: String
-    let originCountry: String
+    var id: Int?
+    var logoPath: String?
+    var name: String?
+    var originCountry: String?
     
-    init(_ id: Int, _ logoPath: String?, _ name: String, _ originCountry: String) {
+    init(_ id: Int?, _ logoPath: String?, _ name: String?, _ originCountry: String?) {
         self.id = id
         self.logoPath = logoPath
         self.name = name
