@@ -16,14 +16,15 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var collectionFilmes: UICollectionView!
     
     // MARK: - Variavies
-    
-    //let listaDeFilmes: Array<Filme> = FilmeAPI().recuperaFilmes()
+    let listaComTodosFilmes:Array<ListaFilmes> = FilmeDAO().recuperaTodosFilmes()
+    var listaFilmes:Array<ListaFilmes> = []
+
     
     // MARK: - View Did Load
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FilmeAPI().detalheFilme()
+        listaFilmes = listaComTodosFilmes
     }
     
     

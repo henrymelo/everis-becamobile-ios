@@ -10,11 +10,8 @@ import UIKit
 import CoreData
 
 class FilmeDAO: NSObject {
+
     
-    @objc(Aluno)
-    public class Filme: NSManagedObject {
-        
-    }
     
     // MARK: Variavies
     
@@ -23,6 +20,10 @@ class FilmeDAO: NSObject {
     
     // MARK: - Métodos
     
+    func recuperaTodosFilmes() -> Array<ListaFilmes> {
+        let listaDeFilme: Array<ListaFilmes> = Array<ListaFilmes>()
+        return listaDeFilme
+    }
         
     
 

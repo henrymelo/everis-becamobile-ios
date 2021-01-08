@@ -39,16 +39,5 @@ class Configuracao: NSObject {
         return posterMenor
     }
     
-    
-    // MARK: - Validador
-    
-    func validaFilme() {
-        
-        
-    }
-    
-    func validaDetalhes() {
-        
-    }
 
 }
