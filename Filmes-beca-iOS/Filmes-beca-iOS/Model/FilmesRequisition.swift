@@ -15,11 +15,11 @@ class FilmesRequisition: NSObject {
     
     var filmes:[String:Any] = [:]
 
-    func getFilmes(completion:@escaping(_ filmes:[[String:Any]]) -> Void ) {
+    func getFilmes(_ pagina:Int=1, completion:@escaping(_ filmes:[[String:Any]]) -> Void ) {
         
         let myKey = "122c287761eefdfe3d8bcc0154354e73"
         
-        guard let url = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=\(myKey)&language=pt-BR") else { return }
+        guard let url = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=\(myKey)&language=pt-BR&page=\(pagina)") else { return }
         
         Alamofire.request(url, method: .get).responseJSON { (response) in
             switch response.result {
@@ -76,20 +76,18 @@ class FilmesRequisition: NSObject {
             }
         }
     }
-    func getImagens(completion: @escaping(_ filmes: [[String:Any]]) ->Void) {
+    func getImagens(_ pagina:Int=1, completion: @escaping(_ filmes: [[String:Any]]) ->Void) {
         
-        getFilmes { (filmes) in
+        getFilmes(pagina) { (filmes) in
             
             var filmesProntos:[[String:Any]] = [[:]]
             
             for filme in filmes {
                 
-                
                 if let filmeCaminho = filme["caminho"] as? String {
                 
                     guard let nome = filme["nome"] else { return }
                     guard let id = filme["id"] else { return }
-
                     
                     guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(filmeCaminho)") else { return }
                     
@@ -122,8 +120,8 @@ class FilmesRequisition: NSObject {
             }
         }
     }
-    func pegarDetalhesPelo(id:Int, completion: @escaping(_ filme:[[String:Any]]) -> Void)  {
-        getFilmes { (filmes) in
+    func pegarDetalhesPelo(id:Int, pagina:Int,completion: @escaping(_ filme:[[String:Any]]) -> Void)  {
+        getFilmes(pagina) { (filmes) in
             
             let filmeSelecionado = filmes.filter({ filmeAtual in
                 

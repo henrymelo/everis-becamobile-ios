@@ -12,13 +12,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var filmesCollectionView: UICollectionView!
     
-    
-    
-    
     let filmesAPI = FilmesRequisition()
-    
     var filmesToShow:[[String:Any]] = [[:]]
-    
+    var paginaAtual:Int = 1
     
     
     override func viewDidLoad() {
@@ -55,6 +51,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalhesFilmeViewController
         
         controller.filmeSelecionado = filme
+        controller.paginaAtual = paginaAtual
+        
         self.present(controller, animated: true, completion: nil)
         
     }
@@ -69,5 +67,21 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         }
     }
+    func carregaProximaPagina() {
     
+        paginaAtual = paginaAtual + 1
+        filmesAPI.getImagens(paginaAtual) { (filmes) in
+            guard let filmesAtuais = filmes as? [[String:Any]] else { return }
+            
+            self.filmesToShow = filmesAtuais
+            self.filmesCollectionView.reloadData()
+            
+        }
+        
+    }
+    
+    @IBAction func botaoProximaPagina(_ sender: UIButton) {
+        carregaProximaPagina()
+        
+    }
 }

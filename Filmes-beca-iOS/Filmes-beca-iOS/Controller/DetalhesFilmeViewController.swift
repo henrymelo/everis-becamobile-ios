@@ -24,24 +24,23 @@ class DetalhesFilmeViewController: UIViewController {
     
     var filmeSelecionado:[String:Any]? = nil
     
+    var paginaAtual:Int = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         showFilme()
-        recuperaDetalhes()
     }
     
-    
-    func recuperaDetalhes() {
-
-    }
     func showFilme() {
+        
         guard let filme = filmeSelecionado as? [String:Any] else { return }
         guard let idFilmeSelecionado = filme["id"] as? Int else { return }
         guard let imagemFilmeSelecionado = filme["imagem"] as? UIImage else { return }
         
-        filmesAPI.pegarDetalhesPelo(id: idFilmeSelecionado) { (filme) in
+        filmesAPI.pegarDetalhesPelo(id: idFilmeSelecionado, pagina: paginaAtual) { (filme) in
+            
             var filmeAtual = filme[0]
             guard let nome = filmeAtual["nome"]  as? String else { return }
             guard let sinopse = filmeAtual["sinopse"]  as? String else { return }
