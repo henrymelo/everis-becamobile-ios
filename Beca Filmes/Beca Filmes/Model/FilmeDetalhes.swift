@@ -5,11 +5,9 @@
 //  Created by Lucas Abdel Leitao on 07/01/21.
 //  Copyright © 2021 Lucas Abdel Leitao. All rights reserved.
 //
-
 import Foundation
 
-
-// MARK: - Welcome
+// MARK: - FilmeDetalhes
 struct FilmeDetalhes: Codable {
     let adult: Bool
     let backdropPath: String
@@ -55,8 +53,7 @@ struct FilmeDetalhes: Codable {
 // MARK: - BelongsToCollection
 struct BelongsToCollection: Codable {
     let id: Int
-    let name, posterPath: String
-    let backdropPath: JSONNull?
+    let name, posterPath, backdropPath: String
     
     enum CodingKeys: String, CodingKey {
         case id, name
@@ -103,32 +100,5 @@ struct SpokenLanguage: Codable {
         case englishName = "english_name"
         case iso639_1 = "iso_639_1"
         case name
-    }
-}
-
-// MARK: - Encode/decode helpers
-
-class JSONNull: Codable, Hashable {
-    
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
-        return true
-    }
-    
-    public var hashValue: Int {
-        return 0
-    }
-    
-    public init() {}
-    
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
-        }
-    }
-    
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
     }
 }

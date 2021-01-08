@@ -12,7 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        FilmesAPI().recebeTendenciasFilmes()
+//        FilmesAPI().recebeTendenciasFilmes { (resultado) in
+//            print(resultado)
+//        }
         FilmesAPI().recebeDetalhesFilme()
     }
 
