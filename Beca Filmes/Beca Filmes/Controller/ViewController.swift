@@ -15,9 +15,34 @@ class ViewController: UIViewController {
 //        FilmesAPI().recebeTendenciasFilmes { (resultado) in
 //            print(resultado)
 //        }
+//        listarFilmes { (filme) in
+//            print(filme)
+//        }
         FilmesAPI().recebeDetalhesFilme()
     }
-
-
+    
+    func listarFilmes(completion: @escaping ([String]) -> Void){
+        var lista: [String] = []
+        FilmesAPI().recebeTendenciasFilmes { (resultado) in
+            for filme in resultado{
+                if filme.title == nil{
+                    guard let titulo = filme.name else{return}
+                    lista.append(titulo)
+                }else{
+                    guard let tituloFilme = filme.title else{return}
+                    lista.append(tituloFilme)
+                }
+                
+            }
+            completion(lista)
+        }
+    }
+    
+    func filmeImagens(){
+        FilmesAPI().recebeTendenciasFilmes { (resultado) in
+            print(resultado)
+        }
+    }
+    
 }
 
