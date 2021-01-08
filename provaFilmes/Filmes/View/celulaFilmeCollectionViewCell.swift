@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class celulaFilmeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imagemFilme: UIImageView!
+    
+    func setup(_ movie:Filmes) {
+        guard let imageUrl = URL(string: "http://image.tmdb.org/t/p/w300\(movie.posterPath)") else { return }
+        imagemFilme.af_setImage(withURL: imageUrl)
+    }
 }

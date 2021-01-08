@@ -16,6 +16,7 @@
 		D3141B3425A7450C0047B34D /* FilmesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3141B3325A7450C0047B34D /* FilmesAPI.swift */; };
 		D3141B3C25A775200047B34D /* FilmesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3141B3B25A775200047B34D /* FilmesViewController.swift */; };
 		D3141B3E25A776410047B34D /* celulaFilmeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3141B3D25A776410047B34D /* celulaFilmeCollectionViewCell.swift */; };
+		D3141B4225A7B3350047B34D /* filmeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3141B4125A7B3350047B34D /* filmeJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D3141B3325A7450C0047B34D /* FilmesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesAPI.swift; sourceTree = "<group>"; };
 		D3141B3B25A775200047B34D /* FilmesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesViewController.swift; sourceTree = "<group>"; };
 		D3141B3D25A776410047B34D /* celulaFilmeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = celulaFilmeCollectionViewCell.swift; sourceTree = "<group>"; };
+		D3141B4125A7B3350047B34D /* filmeJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filmeJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				D3141B3325A7450C0047B34D /* FilmesAPI.swift */,
+				D3141B4125A7B3350047B34D /* filmeJSON.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3141B4225A7B3350047B34D /* filmeJSON.swift in Sources */,
 				D3141B3C25A775200047B34D /* FilmesViewController.swift in Sources */,
 				D3141B2325A742900047B34D /* ViewController.swift in Sources */,
 				D3141B3E25A776410047B34D /* celulaFilmeCollectionViewCell.swift in Sources */,
