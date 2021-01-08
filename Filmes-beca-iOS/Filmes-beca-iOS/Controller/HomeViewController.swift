@@ -43,6 +43,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         guard let titulo = filmeAtual["nome"] as? String else { return celulaFilme }
         
         celulaFilme.imagemFilme.image = imagem
+        
+        
         celulaFilme.tituloFilme.text = titulo
         
         return celulaFilme

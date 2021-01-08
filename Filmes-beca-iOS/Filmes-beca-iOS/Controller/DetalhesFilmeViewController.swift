@@ -17,6 +17,8 @@ class DetalhesFilmeViewController: UIViewController {
     @IBOutlet weak var sinopseTextLabel: UILabel!
     @IBOutlet weak var lancamentoTextLabel: UILabel!
     
+
+    
     // MARK: - Variáveis
     let filmesAPI = FilmesRequisition()
     
@@ -24,6 +26,8 @@ class DetalhesFilmeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         showFilme()
         recuperaDetalhes()
     }
@@ -55,10 +59,8 @@ class DetalhesFilmeViewController: UIViewController {
         }
     }
     
-    @IBAction func botaoVoltar(_ sender: UIButton) {
-        
+    @IBAction func botaoVoltar(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        
     }
     
 }
