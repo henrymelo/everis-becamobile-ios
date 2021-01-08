@@ -14,6 +14,7 @@ class FilmesViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     @IBOutlet weak var colecaoFilmes: UICollectionView!
     
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
