@@ -13,6 +13,8 @@ import AlamofireImage
 class FilmesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var colecaoFilmes: UICollectionView!
+    
+
 
     
     var filmes: [Filmes] = []
@@ -45,7 +47,8 @@ class FilmesViewController: UIViewController, UICollectionViewDataSource, UIColl
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "detalhesFilme") as! DetalhesFilmeViewController
         controller.filmeSelecionado = detalhesFilme
-        self.present(controller, animated: true, completion: nil)
+        navigationController?.pushViewController(controller, animated: true)
+//        self.present(controller, animated: true, completion: nil)
     }
     
     func getFilme() {
