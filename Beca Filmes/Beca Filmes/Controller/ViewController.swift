@@ -8,16 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITableViewDataSource {
+    
+    @IBOutlet weak var tabelaFilmes: UITableView!
+    
+    var listaFilmes: Array<String>?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabelaFilmes.dataSource = self
 //        FilmesAPI().recebeTendenciasFilmes { (resultado) in
 //            print(resultado)
 //        }
-//        listarFilmes { (filme) in
-//            print(filme)
-//        }
+        listarFilmes  { (filme) in
+            self.listaFilmes = filme
+            print(self.listaFilmes)
+        }
         FilmesAPI().recebeDetalhesFilme()
     }
     
@@ -42,6 +48,18 @@ class ViewController: UIViewController {
         FilmesAPI().recebeTendenciasFilmes { (resultado) in
             print(resultado)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
+        
+        celula.textLabel?.text = self.listaFilmes?[indexPath.row]
+        
+        return celula
     }
     
 }
