@@ -18,7 +18,7 @@ class ReceberAPI: NSObject {
         //Criando a variável da URL da API
         guard let urlApi = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=4c952a66aec922c199eb9a89786edb85&language=pt-BR") else {return}
         
-        Alamofire.request(urlApi, method: .get).responseJSON {response in
+        Alamofire.request(urlApi, method: .get).responseJSON {(response: DataResponse<Any>) in
             
             guard let teste = response.data else {return}
             

@@ -16,6 +16,8 @@
 		8B00978525A73EEE0013E024 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B00978325A73EEE0013E024 /* LaunchScreen.storyboard */; };
 		8B0097B225A77A560013E024 /* ReceberAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0097B125A77A560013E024 /* ReceberAPI.swift */; };
 		8B0097C225A798A10013E024 /* VariaveisJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0097C125A798A10013E024 /* VariaveisJSON.swift */; };
+		8B3D7BFC25A86EF0004B9E0E /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D7BFB25A86EF0004B9E0E /* SeriesViewController.swift */; };
+		8B3D7BFF25A86FCD004B9E0E /* ListaFilmesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D7BFE25A86FCD004B9E0E /* ListaFilmesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		8B00978625A73EEE0013E024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B0097B125A77A560013E024 /* ReceberAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceberAPI.swift; sourceTree = "<group>"; };
 		8B0097C125A798A10013E024 /* VariaveisJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariaveisJSON.swift; sourceTree = "<group>"; };
+		8B3D7BFB25A86EF0004B9E0E /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
+		8B3D7BFE25A86FCD004B9E0E /* ListaFilmesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListaFilmesCollectionViewCell.swift; path = PolibioFilms/Controller/ListaFilmesCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		8B00979025A7405F0013E024 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8B3D7BFE25A86FCD004B9E0E /* ListaFilmesCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				8B00977C25A73EED0013E024 /* ViewController.swift */,
+				8B3D7BFB25A86EF0004B9E0E /* SeriesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,7 +243,9 @@
 			files = (
 				8B00977D25A73EED0013E024 /* ViewController.swift in Sources */,
 				8B0097B225A77A560013E024 /* ReceberAPI.swift in Sources */,
+				8B3D7BFF25A86FCD004B9E0E /* ListaFilmesCollectionViewCell.swift in Sources */,
 				8B00977925A73EED0013E024 /* AppDelegate.swift in Sources */,
+				8B3D7BFC25A86EF0004B9E0E /* SeriesViewController.swift in Sources */,
 				8B0097C225A798A10013E024 /* VariaveisJSON.swift in Sources */,
 				8B00977B25A73EED0013E024 /* SceneDelegate.swift in Sources */,
 			);
