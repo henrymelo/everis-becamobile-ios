@@ -9,7 +9,7 @@
 import UIKit
 import AlamofireImage
 
-class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  , UICollectionViewDelegateFlowLayout{
     
     //MARK: - Outlets
     
@@ -48,6 +48,20 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
         celula.aplicarSombrar()
     
         return celula
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let height = view.frame.size.height
+        let width = view.frame.size.width
+        
+        let dimensaoDaTela = Int(height/width)
+
+        if dimensaoDaTela < 2 {
+        return CGSize(width: width * 0.43, height: height * 0.43)
+        }else{
+        return CGSize(width: width * 0.43, height: height * 0.37)
+        }
     }
     
     //MARK: - CollectionViewDelegate

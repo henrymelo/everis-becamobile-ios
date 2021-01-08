@@ -32,7 +32,7 @@ class FilmeCollectionViewCell: UICollectionViewCell {
         self.imageFilme.layer.shadowColor = UIColor.black.cgColor
         self.imageFilme.layer.shadowOpacity = 1
         self.imageFilme.layer.shadowOffset = .zero
-        self.imageFilme.layer.shadowRadius = 10
+        self.imageFilme.layer.shadowRadius = 5
     }
     
 } 
