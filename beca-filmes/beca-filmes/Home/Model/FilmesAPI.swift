@@ -18,25 +18,12 @@ class FilmesAPI: NSObject {
             switch response.result {
             case .success:
                 if let resposta = response.result.value as? Dictionary<String, Any> {
-                    guard let listaDeTendencias = resposta["results"] as? Array<Dictionary<String, Any>> else { return }
+                    guard let listaDeTendencias = resposta["results"] as? Array<Dictionary<String, Any>> else {
+                        print("Deu ruim no início")
+                        return
+                    }
                     for dicionarioDeFilmes in listaDeTendencias {
-                        guard let tipo = dicionarioDeFilmes["media_type"] as? String else {
-                            print("Deu errado :(")
-                            return
-                        }
-                        if tipo == "movie" {
-                            guard let titulo = dicionarioDeFilmes["title"] as? String else {
-                                print("Deu errado no titulo :(")
-                                return
-                            }
-                            print(titulo)
-                        } else {
-                            guard let nome = dicionarioDeFilmes["name"] as? String else {
-                                print("Deu errado no título :(")
-                                return
-                            }
-                            print(nome)
-                        }
+                        FilmesDAO().salvaFilmes(dicionarioDeFilmes: dicionarioDeFilmes)
                     }
                 }
                 break

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B4185C725A8FE4E000E1E5D /* FilmesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4185C625A8FE4E000E1E5D /* FilmesDAO.swift */; };
 		1B55913625A7742E00A98A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55913525A7742E00A98A55 /* AppDelegate.swift */; };
 		1B55913825A7742E00A98A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55913725A7742E00A98A55 /* ViewController.swift */; };
 		1B55913B25A7742E00A98A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B55913925A7742E00A98A55 /* Main.storyboard */; };
@@ -14,11 +15,13 @@
 		1B55914025A7742F00A98A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B55913F25A7742F00A98A55 /* Assets.xcassets */; };
 		1B55914325A7742F00A98A55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B55914125A7742F00A98A55 /* LaunchScreen.storyboard */; };
 		1B57D85425A7788300FF5D5A /* FilmesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B57D85325A7788300FF5D5A /* FilmesAPI.swift */; };
+		1BAB9D6425A8E3AC00A14BFB /* Filmes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB9D6325A8E3AC00A14BFB /* Filmes.swift */; };
 		D3591233DCC5F8F0F3BD91DD /* Pods_beca_filmes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129B7020B1E25353B02CFE3D /* Pods_beca_filmes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		129B7020B1E25353B02CFE3D /* Pods_beca_filmes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beca_filmes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4185C625A8FE4E000E1E5D /* FilmesDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesDAO.swift; sourceTree = "<group>"; };
 		1B55913225A7742E00A98A55 /* beca-filmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "beca-filmes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B55913525A7742E00A98A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B55913725A7742E00A98A55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		1B55914225A7742F00A98A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B55914425A7742F00A98A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B57D85325A7788300FF5D5A /* FilmesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesAPI.swift; sourceTree = "<group>"; };
+		1BAB9D6325A8E3AC00A14BFB /* Filmes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filmes.swift; sourceTree = "<group>"; };
 		BE8A90F4B42731BBC9CD2EAD /* Pods-beca-filmes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beca-filmes.release.xcconfig"; path = "Pods/Target Support Files/Pods-beca-filmes/Pods-beca-filmes.release.xcconfig"; sourceTree = "<group>"; };
 		DAC282D32091E93FFDE5ABA6 /* Pods-beca-filmes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beca-filmes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beca-filmes/Pods-beca-filmes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +108,8 @@
 		1B57D85225A7786C00FF5D5A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BAB9D6325A8E3AC00A14BFB /* Filmes.swift */,
+				1B4185C625A8FE4E000E1E5D /* FilmesDAO.swift */,
 				1B57D85325A7788300FF5D5A /* FilmesAPI.swift */,
 			);
 			path = Model;
@@ -234,8 +240,10 @@
 			files = (
 				1B57D85425A7788300FF5D5A /* FilmesAPI.swift in Sources */,
 				1B55913E25A7742E00A98A55 /* beca_filmes.xcdatamodeld in Sources */,
+				1B4185C725A8FE4E000E1E5D /* FilmesDAO.swift in Sources */,
 				1B55913825A7742E00A98A55 /* ViewController.swift in Sources */,
 				1B55913625A7742E00A98A55 /* AppDelegate.swift in Sources */,
+				1BAB9D6425A8E3AC00A14BFB /* Filmes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
