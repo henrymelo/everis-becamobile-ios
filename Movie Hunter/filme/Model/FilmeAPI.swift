@@ -14,7 +14,7 @@ class FilmeAPI: NSObject {
     
     // MARK - GET Filmes
 
-    func recuperaFilmes(completion: @escaping ([Result]) -> Void) {
+    func recuperaFilmes(completion: @escaping ([Filmes]) -> Void) {
         
             guard let key = Configuracao().getKeyPadrao() else { return }
 

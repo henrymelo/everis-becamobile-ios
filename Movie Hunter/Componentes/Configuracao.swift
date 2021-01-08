@@ -39,5 +39,9 @@ class Configuracao: NSObject {
         return posterMenor
     }
     
+    //Validador Filmes
+    
+    
+    
 
 }

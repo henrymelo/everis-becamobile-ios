@@ -9,13 +9,19 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController/*, UICollectionViewDataSource*/ {
+
+    
 
 
+    
+    //MARk: - IBOutlets
 
+    @IBOutlet weak var CollectionFilmes: UICollectionView!
+    
     // MARK: - Variáveis
 
-
+    var listaFilme: Array<String>?
     
     // MARK: - View Did Load
     
@@ -27,10 +33,14 @@ class ViewController: UIViewController {
     
     // MARK: - Métodos
     
-    
-    
-    
-
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        <#code#>
+//    }
+//
     
 }
 

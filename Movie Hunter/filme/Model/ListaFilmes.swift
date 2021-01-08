@@ -9,10 +9,11 @@
 import Foundation
 
 
+
 // MARK: - ListaFilmes
 struct ListaFilmes: Codable {
     let page: Int
-    let results: [Result]
+    let results: [Filmes]
     let totalPages, totalResults: Int
     
     enum CodingKeys: String, CodingKey {
@@ -22,8 +23,8 @@ struct ListaFilmes: Codable {
     }
 }
 
-// MARK: - Result
-struct Result: Codable {
+// MARK: - Filmes
+struct Filmes: Codable {
     let voteAverage: Double
     let title: String?
     let overview: String
@@ -72,4 +73,5 @@ enum OriginalLanguage: String, Codable {
     case en = "en"
     case ja = "ja"
 }
+
 
