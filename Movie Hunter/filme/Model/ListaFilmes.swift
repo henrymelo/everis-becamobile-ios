@@ -8,17 +8,8 @@
 
 import Foundation
 
-enum MediaType: String, Codable {
-    case movie = "movie"
-    case tv = "tv"
-}
 
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case ja = "ja"
-}
-
-// MARK: - Movie
+// MARK: - ListaFilmes
 struct ListaFilmes: Codable {
     let page: Int
     let results: [Result]
@@ -70,5 +61,15 @@ struct Result: Codable {
         case originCountry = "origin_country"
         case originalName = "original_name"
     }
+}
+
+enum MediaType: String, Codable {
+    case movie = "movie"
+    case tv = "tv"
+}
+
+enum OriginalLanguage: String, Codable {
+    case en = "en"
+    case ja = "ja"
 }
 

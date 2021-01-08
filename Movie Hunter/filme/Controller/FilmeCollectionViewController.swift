@@ -34,6 +34,7 @@ class FilmeCollectionViewController: UIViewController, UICollectionViewDataSourc
         listaFilmes = listaComTodosFilmes
         CollectionFilme.dataSource = self
         CollectionFilme.delegate = self
+        FilmeAPI().detalheFilme()
     }
 
     // MARK : - Métodos
@@ -51,6 +52,7 @@ class FilmeCollectionViewController: UIViewController, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let filme = listaFilmes[indexPath.item]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
     
     }
     
