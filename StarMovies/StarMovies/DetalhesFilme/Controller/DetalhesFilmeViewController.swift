@@ -27,7 +27,7 @@ class DetalhesFilmeViewController: UIViewController {
     
     @IBOutlet weak var labelGenero: UILabel!
     
-    @IBOutlet weak var labelSinopse: UILabel!
+    @IBOutlet weak var labelSinopse: UITextView!
     
     @IBOutlet weak var imagePoster: UIImageView!
     
@@ -68,8 +68,8 @@ class DetalhesFilmeViewController: UIViewController {
             }
             
         }
-
-        labelSinopse.adjustsFontSizeToFitWidth = true
+        
+        labelGenero.adjustsFontSizeToFitWidth = true
         labelBudget.adjustsFontSizeToFitWidth = true
         labelRevenue.adjustsFontSizeToFitWidth = true
         
