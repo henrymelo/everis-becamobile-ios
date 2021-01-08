@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UrlPosterMenor</key>
+	<string>https://www.themoviedb.org/t/p/w220_and_h330_face</string>
+	<key>UrlPoster</key>
+	<string>https://www.themoviedb.org/t/p/w440_and_h660_face</string>
 	<key>KeyPadrao</key>
 	<string>aca6f73c8c15f59d9c85fcf92f0d3281</string>
 	<key>CFBundleDevelopmentRegion</key>
