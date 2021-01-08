@@ -8,26 +8,55 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 class FilmeAPI: NSObject {
     
     // MARK - GET Filmes
-    
-    func recuperaFilmes() {
+
+    func recuperaFilmes(completion: @escaping ([Result]) -> Void) {
         
-        Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=aca6f73c8c15f59d9c85fcf92f0d3281&language=pt-BR", method: .get).responseJSON { (response) in
+            guard let key = Configuracao().getKeyPadrao() else { return }
+
+        Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=\(key)&language=pt-BR", method: .get).responseJSON { ( response ) in
             switch response.result {
             case .success:
-                if let resposta = response.result.value as? Dictionary<String, Any> {
-                    guard let listaDeFilmes = resposta["filmes"] as? Array<Dictionary<String, Any>> else { return }
-                    for dicionarioDeFilme in listaDeFilmes {
-                        FilmeDAO().exibeFilme(dicionarioDeFilme: dicionarioDeFilme)
-                    }
-                }
+                guard let filmeRecuperado = response.data else { return }
+                guard let inicio = try? JSONDecoder().decode(ListaFilmes.self, from: filmeRecuperado) else { return }
+                    let filme = inicio.results
+                completion(filme)
                 break
             case .failure:
                 print(response.error!)
                 break
+            }
+        }
+    }
+    
+    // MARK: Get Detalhes
+
+    func detalheFilme() {
+        
+            guard let key = Configuracao().getKeyPadrao() else { return }
+        
+        self.recuperaFilmes { (filme) in
+            for detalheFilme in filme {
+                let id = detalheFilme.id
+                Alamofire.request("https://api.themoviedb.org/3/movie/\(id)?api_key=\(key)&language=pt-BR", method: .get).responseJSON { ( response ) in
+                    switch response.result {
+                    case .success:
+                        guard let detalheRecuperado = response.data else { return }
+                        guard let detalhe = try? JSONDecoder().decode(Filme.self, from: detalheRecuperado) else { return }
+                        let nomeFilme = detalhe.originalTitle
+                        let imagemFilme = detalhe.posterPath
+                        print(nomeFilme + imagemFilme)
+                        break
+                    case .failure:
+                        print(response.error!)
+                        break
+                    }
+                }
+                
             }
         }
     }

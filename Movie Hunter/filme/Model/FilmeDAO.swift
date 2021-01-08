@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 class FilmeDAO: NSObject {
     
-    // MARK: - Métodos
-    
-    func exibeFilme(dicionarioDeFilme:Dictionary<String, Any>) {
+    @objc(Aluno)
+    public class Filme: NSManagedObject {
         
     }
+    
+    // MARK: Variavies
+    
+    
+
+    
+    // MARK: - Métodos
+    
         
     
 

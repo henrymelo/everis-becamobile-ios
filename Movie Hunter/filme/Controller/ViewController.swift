@@ -23,12 +23,13 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        }
+        FilmeAPI().detalheFilme()
+    }
     
     
     // MARK: - Métodos
     
-    
+
     
 }
 
