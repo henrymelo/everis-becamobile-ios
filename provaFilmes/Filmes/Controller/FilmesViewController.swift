@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class FilmesViewController: UIViewController, UICollectionViewDataSource {
+class FilmesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var colecaoFilmes: UICollectionView!
 
@@ -19,6 +19,7 @@ class FilmesViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         colecaoFilmes.dataSource = self
+        colecaoFilmes.delegate = self
         getFilme()
         
         
@@ -36,8 +37,13 @@ class FilmesViewController: UIViewController, UICollectionViewDataSource {
         let imageUrl = URL(string: "http://image.tmdb.org/t/p/w300\(filmes[indexPath.row].posterPath)")
         celulaFilmes.imagemFilme.af_setImage(withURL: imageUrl!)
         celulaFilmes.layer.cornerRadius = 10
-        print(filmes[indexPath.row].mediaType)
         return celulaFilmes
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "detalhesFilme") as! DetalhesFilmeViewController
+        self.present(controller, animated: true, completion: nil)
     }
     
     func getFilme() {
