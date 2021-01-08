@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class FilmesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class FilmesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var colecaoFilmes: UICollectionView!
 
@@ -60,6 +60,10 @@ class FilmesViewController: UIViewController, UICollectionViewDataSource, UIColl
             }
         }
         
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let larguraCelula = collectionView.bounds.width / 2
+        return CGSize(width: larguraCelula - 20, height: 160)
     }
 
 }
