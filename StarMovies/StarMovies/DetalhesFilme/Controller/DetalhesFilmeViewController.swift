@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 
 class DetalhesFilmeViewController: UIViewController {
+    
+    //MARK: - Outlets
 
     @IBOutlet weak var imageBackground: UIImageView!
     
@@ -31,16 +33,15 @@ class DetalhesFilmeViewController: UIViewController {
     
     @IBOutlet weak var labelNota: UILabel!
     
+    //MARK: - Variaveis
+    
     var filmeSelecionado:Filme? = nil
+    
+    //MARK: - Funcoes
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.usesGroupingSeparator = true
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale.current
         
         if let filme = filmeSelecionado {
             
@@ -48,34 +49,10 @@ class DetalhesFilmeViewController: UIViewController {
             labelNota.text = "\(filme.nota)"
             labelTagline.text = filme.tagline
             labelData.text = filme.data
-            
-            //NECESSITA DE REFATORACAO
-            
-            if filme.budget == 0 {
-                 labelBudget.text = "Desconhecido"
-            }else{
-                let budgetFormatado = NSNumber(integerLiteral: filme.budget)
-                
-                if let budgetFormatado = currencyFormatter.string(from: budgetFormatado) {
-                    labelBudget.text = "\(budgetFormatado)"
-                }
-            }
-            
-            if filme.revenue == 0 {
-                labelRevenue.text = "Desconhecido"
-            }else{
-                let revenueFormatado = NSNumber(integerLiteral: filme.revenue)
-                
-                if let revenueFormatado = currencyFormatter.string(from: revenueFormatado) {
-                    labelRevenue.text = "\(revenueFormatado)"
-                }
-            }
-            
+            labelBudget.text = filme.getBudgetFormatado()
+            labelRevenue.text = filme.getRevenueFormatado()
             labelGenero.text = filme.generos
-            
             labelSinopse.text = filme.sinopse
-            
-            
             
             if let imageUrl = FilmeAPI().gerarURLImagem(link: filme.caminhoImagemPoster){
                     imagePoster.af_setImage(withURL: imageUrl)
@@ -92,6 +69,10 @@ class DetalhesFilmeViewController: UIViewController {
             
         }
 
+        labelSinopse.adjustsFontSizeToFitWidth = true
+        labelBudget.adjustsFontSizeToFitWidth = true
+        labelRevenue.adjustsFontSizeToFitWidth = true
+        
     }
     
     @IBAction func buttonFecharDetalhes(_ sender: UIButton) {

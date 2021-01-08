@@ -31,10 +31,6 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
             self.listaTendenciaFilmes = resposta
             self.colecaoFilmes.reloadData()
         }
-        
-        FilmeAPI().pegarDetalhesFilme(codFilme: 464052) { (resposta) in
-            //print(resposta["title"])
-        }
 
     }
     
@@ -46,23 +42,11 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let filme = Filme(listaTendenciaFilmes[indexPath.row])
-        
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaFilme", for: indexPath) as! FilmeCollectionViewCell
         
-
-        celula.labelTituloFilme.text = filme.titulo
-
-        if let urlImagem = FilmeAPI().gerarURLImagem(link: filme.caminhoImagemPoster) {
-            celula.imageFilme.af_setImage(withURL: urlImagem)
-        }
-        
-        //Aplica sombra na imagem da celula
-        celula.imageFilme.layer.shadowColor = UIColor.black.cgColor
-        celula.imageFilme.layer.shadowOpacity = 1
-        celula.imageFilme.layer.shadowOffset = .zero
-        celula.imageFilme.layer.shadowRadius = 10
-        
+        celula.configurarCelula(Filme(listaTendenciaFilmes[indexPath.row]))
+        celula.aplicarSombrar()
+    
         return celula
     }
     
@@ -82,15 +66,5 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

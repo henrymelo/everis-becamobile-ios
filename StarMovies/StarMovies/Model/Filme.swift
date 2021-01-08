@@ -11,6 +11,8 @@ import AlamofireImage
 
 class Filme: NSObject {
     
+    //MARK - Variaveis
+    
     var titulo:String = ""
     var tagline:String = ""
     var budget:Int = 0
@@ -22,6 +24,8 @@ class Filme: NSObject {
     var caminhoImagemBg:String = ""
     var nota:String = ""
     
+    
+    //MARK: - Funcoes
     
     init(_ dicionario:Dictionary<String, Any>){
         
@@ -67,6 +71,48 @@ class Filme: NSObject {
         nota = nota / 10
         self.nota = String(nota)
         
+        
+    }
+    
+    
+    func getBudgetFormatado() -> String{
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.current
+        
+        if self.budget == 0 {
+            return "Desconhecido"
+        }else{
+            let budgetFormatado = NSNumber(integerLiteral: self.budget)
+            
+            if let budgetFormatado = currencyFormatter.string(from: budgetFormatado) {
+                return "\(budgetFormatado)"
+            }
+        }
+        
+        return "Desconhecido"
+    }
+    
+    func getRevenueFormatado() -> String{
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.current
+        
+        if self.revenue == 0 {
+            return "Desconhecido"
+        }else{
+            let revenueFormatado = NSNumber(integerLiteral: self.revenue)
+            
+            if let revenueFormatado = currencyFormatter.string(from: revenueFormatado) {
+                return "\(revenueFormatado)"
+            }
+        }
+        
+        return "Desconhecido"
     }
 
 
