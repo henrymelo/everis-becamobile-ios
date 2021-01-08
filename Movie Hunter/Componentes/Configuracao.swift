@@ -18,5 +18,16 @@ class Configuracao: NSObject {
         
         return keyPadrao
     }
+    
+    
+    // MARK: - Validador
+    
+    func validaFilme() {
+        
+    }
+    
+    func validaDetalhes() {
+        
+    }
 
 }
