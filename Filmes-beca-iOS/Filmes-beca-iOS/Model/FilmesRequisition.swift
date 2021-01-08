@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import CoreData
 
 class FilmesRequisition: NSObject {
     
@@ -74,7 +75,6 @@ class FilmesRequisition: NSObject {
                     break
             }
         }
-        
     }
     func getImagens(completion: @escaping(_ filmes: [[String:Any]]) ->Void) {
         
@@ -88,6 +88,9 @@ class FilmesRequisition: NSObject {
                 if let filmeCaminho = filme["caminho"] as? String {
                 
                     guard let nome = filme["nome"] else { return }
+                    guard let id = filme["id"] else { return }
+
+                    
                     guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(filmeCaminho)") else { return }
                     
                     var filmeAtual:[String:Any] = [:]
@@ -100,7 +103,8 @@ class FilmesRequisition: NSObject {
                                     
                                     filmeAtual = [
                                         "nome":nome,
-                                        "imagem":image
+                                        "imagem":image,
+                                        "id":id
                                     ]
                                     
                                     filmesProntos.append(filmeAtual)
@@ -120,7 +124,6 @@ class FilmesRequisition: NSObject {
     }
     func pegarDetalhesPelo(id:Int, completion: @escaping(_ filme:[[String:Any]]) -> Void)  {
         getFilmes { (filmes) in
-            
             
             let filmeSelecionado = filmes.filter({ filmeAtual in
                 

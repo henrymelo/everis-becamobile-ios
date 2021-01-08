@@ -11,24 +11,23 @@ import UIKit
 class ViewController: UIViewController {
     
     let filmesAPI = FilmesRequisition()
+    var filmeToShow:[[String:Any]] = [[:]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        recuperaImages()
         recuperaDetalhes()
     }
     
-    func recuperaImages() {
-        
-        filmesAPI.getImagens { (filmes) in
-           // print(filmes)
-        }
-    }
+
     func recuperaDetalhes() {
         filmesAPI.pegarDetalhesPelo(id: 508442) { (filme) in
-            print(filme)
+            self.filmeToShow = filme
+            self.mostra()
         }
+    }
+    func mostra() {
+        print(filmeToShow)
     }
 }
 
