@@ -107,10 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0te-k8-kA1"/>
                     <connections>
-                        <outlet property="CelulaFilme" destination="KFF-lx-GzL" id="LJI-Tg-gka"/>
                         <outlet property="CollectionFilme" destination="NkV-i1-WlI" id="4CL-j0-gBz"/>
-                        <outlet property="LabelFilme" destination="ph0-8N-94B" id="Hex-16-f29"/>
-                        <outlet property="PosterFilme" destination="tlK-47-Fl9" id="uXP-7t-jrK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

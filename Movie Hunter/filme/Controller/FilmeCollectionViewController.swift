@@ -48,6 +48,12 @@ class FilmeCollectionViewController: UIViewController, UICollectionViewDataSourc
         return celulaFilme
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let filme = listaFilmes[indexPath.item]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    }
+    
 
 
 }
