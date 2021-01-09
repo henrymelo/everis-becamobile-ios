@@ -8,10 +8,13 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
 
+class TableViewCell: UITableViewCell{
     
+
     @IBOutlet weak var labelTitulo: UILabel!
     
-    @IBOutlet weak var imagemFilme: UIImageView!
+    @IBOutlet weak var imagemFilme: UIImageView?
+    
+    
 }

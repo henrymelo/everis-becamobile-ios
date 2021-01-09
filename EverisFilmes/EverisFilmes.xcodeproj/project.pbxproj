@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F9213168CCF6A73F21D9ACA /* Pods_EverisFilmes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683AFA2758CA795C144D2362 /* Pods_EverisFilmes.framework */; };
-		F11905BB25A8AA670089C7A3 /* Repositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11905BA25A8AA670089C7A3 /* Repositorio.swift */; };
 		F11905C025A8DDBA0089C7A3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11905BF25A8DDBA0089C7A3 /* TableViewCell.swift */; };
+		F11905C625A911520089C7A3 /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11905C525A911520089C7A3 /* DetalhesViewController.swift */; };
 		F1AB8C8125A73BA000E52D9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AB8C8025A73BA000E52D9F /* AppDelegate.swift */; };
 		F1AB8C8325A73BA000E52D9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AB8C8225A73BA000E52D9F /* ViewController.swift */; };
 		F1AB8C8625A73BA000E52D9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1AB8C8425A73BA000E52D9F /* Main.storyboard */; };
@@ -24,8 +24,8 @@
 		683AFA2758CA795C144D2362 /* Pods_EverisFilmes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverisFilmes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE1F809CD40251AE0510305 /* Pods-EverisFilmes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverisFilmes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EverisFilmes/Pods-EverisFilmes.debug.xcconfig"; sourceTree = "<group>"; };
 		8730AECA6DFA8C2250584FD4 /* Pods-EverisFilmes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverisFilmes.release.xcconfig"; path = "Pods/Target Support Files/Pods-EverisFilmes/Pods-EverisFilmes.release.xcconfig"; sourceTree = "<group>"; };
-		F11905BA25A8AA670089C7A3 /* Repositorio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositorio.swift; sourceTree = "<group>"; };
 		F11905BF25A8DDBA0089C7A3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		F11905C525A911520089C7A3 /* DetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
 		F1AB8C7D25A73BA000E52D9F /* EverisFilmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverisFilmes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1AB8C8025A73BA000E52D9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1AB8C8225A73BA000E52D9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +106,6 @@
 			children = (
 				F1AB8C9A25A744E500E52D9F /* FilmeAPI.swift */,
 				F1C4970C25A76BE400F7DAD8 /* Filme.swift */,
-				F11905BA25A8AA670089C7A3 /* Repositorio.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				F1AB8C8225A73BA000E52D9F /* ViewController.swift */,
+				F11905C525A911520089C7A3 /* DetalhesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,8 +241,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F11905C625A911520089C7A3 /* DetalhesViewController.swift in Sources */,
 				F1AB8C8325A73BA000E52D9F /* ViewController.swift in Sources */,
-				F11905BB25A8AA670089C7A3 /* Repositorio.swift in Sources */,
 				F1C4970D25A76BE400F7DAD8 /* Filme.swift in Sources */,
 				F1AB8C8125A73BA000E52D9F /* AppDelegate.swift in Sources */,
 				F1AB8C9B25A744E500E52D9F /* FilmeAPI.swift in Sources */,

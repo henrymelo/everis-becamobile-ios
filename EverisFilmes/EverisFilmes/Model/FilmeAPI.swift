@@ -21,17 +21,15 @@ protocol RespostaAPI {
 class FilmeAPI: NSObject, filmesProtocolo {
     
     var delegate: RespostaAPI?
-    
-   
-    
-    // MARK: - GET
-    
+
     func configura(delegate: RespostaAPI){
         self.delegate = delegate
     }
+    
+    // MARK: - GET
 
     func recuperaFilmes()  {
-        Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=cf692353d76cfc50bc34648eb54b621f&language=pt-BR", method: .get).responseJSON { (response) in
+        Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=5287ae8d76c11e98a09d2b4dfe0f443e&language=pt-BR", method: .get).responseJSON { (response) in
 //                print(response.result.value!)
             switch response.result{
                 
