@@ -13,6 +13,7 @@ class TendenciaTableViewController: UITableViewController {
     // MARK: - Atributos
     
     var tendencias:Array<Tendencia> = []
+    var detalhesViewController:DetalhesViewController?
     
     // MARK: - View Lifecycle
     
@@ -26,6 +27,13 @@ class TendenciaTableViewController: UITableViewController {
     
     
     // MARK: - Métodos
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detalhes" {
+            detalhesViewController = segue.destination as? DetalhesViewController
+        }
+    }
+    
     func recuperaTendencias() {
         Repositorio().recuperaTendencias { (listaDeTendencias) in
             self.tendencias = listaDeTendencias
@@ -53,7 +61,12 @@ class TendenciaTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 224
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let tendenciaSelecionada = tendencias[indexPath.row]
+        detalhesViewController?.setup(tendenciaSelecionada)
+    }
+    
     
 
     /*

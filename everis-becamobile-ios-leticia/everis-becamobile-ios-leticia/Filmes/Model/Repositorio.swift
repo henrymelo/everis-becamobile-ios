@@ -9,6 +9,8 @@
 import UIKit
 
 class Repositorio: NSObject {
+    
+    // Tendencia
 
     func recuperaTendencias(completion:@escaping(_ listaDeTendencias:Array<Tendencia>) -> Void) {
         var tendencias = TendenciaDAO().recuperaTendencia()
@@ -21,5 +23,13 @@ class Repositorio: NSObject {
             completion(tendencias)
         }
     }
+    
+    func salvaTendencia(tendencia:Dictionary<String, Any>) {
+        TendenciaDAO().salvaTendencia(dicionarioDeTendencia: tendencia)
+    }
+    
+    // Detalhes
+    
+    
     
 }

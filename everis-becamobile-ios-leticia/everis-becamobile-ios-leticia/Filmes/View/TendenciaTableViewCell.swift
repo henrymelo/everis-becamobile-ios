@@ -14,8 +14,8 @@ class TendenciaTableViewCell: UITableViewCell {
 
     @IBOutlet weak var capaFilme: UIImageView!
     
+    
     func configuraCelula(_ tendencia:Tendencia) {
-        //labelTitulo.text = tendencia.overview
         
         let url = tendencia.poster_path!
         guard let imageUrl = URL(string: "http://image.tmdb.org/t/p/w185\(url)") else { return }
