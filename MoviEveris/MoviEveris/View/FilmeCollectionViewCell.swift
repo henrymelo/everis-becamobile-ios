@@ -15,4 +15,9 @@ class FilmeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var posterFilme: UIImageView!
     @IBOutlet weak var labelTitulo: UILabel!
     
+    func configuraCelula () {
+        layer.borderWidth = 0.5
+        layer.cornerRadius = 8
+    }
+    
 }

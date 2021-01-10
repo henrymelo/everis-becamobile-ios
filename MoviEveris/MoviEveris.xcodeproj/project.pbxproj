@@ -8,14 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DE12ABD825A73C7A00F2E0C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12ABD725A73C7A00F2E0C5 /* AppDelegate.swift */; };
-		DE12ABDA25A73C7A00F2E0C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12ABD925A73C7A00F2E0C5 /* ViewController.swift */; };
 		DE12ABDD25A73C7A00F2E0C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE12ABDB25A73C7A00F2E0C5 /* Main.storyboard */; };
 		DE12ABDF25A73C7C00F2E0C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE12ABDE25A73C7C00F2E0C5 /* Assets.xcassets */; };
 		DE12ABE225A73C7C00F2E0C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE12ABE025A73C7C00F2E0C5 /* LaunchScreen.storyboard */; };
-		DE12ABED25A741FB00F2E0C5 /* FilmeDetalhes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12ABEC25A741FB00F2E0C5 /* FilmeDetalhes.swift */; };
 		DE28C8A525A896440059625C /* FilmeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8A425A896440059625C /* FilmeCollectionViewCell.swift */; };
-		DE28C8A925A8A5E00059625C /* FilmeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8A825A8A5E00059625C /* FilmeDAO.swift */; };
-		DE28C8AE25AA626D0059625C /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8AD25AA626D0059625C /* Filme.swift */; };
+		DE28C8BE25AB3C130059625C /* DetalheFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8BD25AB3C120059625C /* DetalheFilmeViewController.swift */; };
+		DE28C8C025AB41770059625C /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8BF25AB41770059625C /* PrincipalViewController.swift */; };
 		DE530B2225A76D5100BB782A /* FilmeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE530B2125A76D5100BB782A /* FilmeAPI.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,15 +22,13 @@
 		50D868C4CC57A9647337C312 /* Pods-MoviEveris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviEveris.debug.xcconfig"; path = "Target Support Files/Pods-MoviEveris/Pods-MoviEveris.debug.xcconfig"; sourceTree = "<group>"; };
 		DE12ABD425A73C7A00F2E0C5 /* MoviEveris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviEveris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE12ABD725A73C7A00F2E0C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE12ABD925A73C7A00F2E0C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE12ABDC25A73C7A00F2E0C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE12ABDE25A73C7C00F2E0C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE12ABE125A73C7C00F2E0C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE12ABE325A73C7C00F2E0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE12ABEC25A741FB00F2E0C5 /* FilmeDetalhes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeDetalhes.swift; sourceTree = "<group>"; };
 		DE28C8A425A896440059625C /* FilmeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeCollectionViewCell.swift; sourceTree = "<group>"; };
-		DE28C8A825A8A5E00059625C /* FilmeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeDAO.swift; sourceTree = "<group>"; };
-		DE28C8AD25AA626D0059625C /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
+		DE28C8BD25AB3C120059625C /* DetalheFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheFilmeViewController.swift; sourceTree = "<group>"; };
+		DE28C8BF25AB41770059625C /* PrincipalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalViewController.swift; sourceTree = "<group>"; };
 		DE530B2125A76D5100BB782A /* FilmeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +87,8 @@
 		DE12ABE925A73E1700F2E0C5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DE12ABD925A73C7A00F2E0C5 /* ViewController.swift */,
+				DE28C8BD25AB3C120059625C /* DetalheFilmeViewController.swift */,
+				DE28C8BF25AB41770059625C /* PrincipalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -107,10 +104,7 @@
 		DE12ABEB25A73E2B00F2E0C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DE12ABEC25A741FB00F2E0C5 /* FilmeDetalhes.swift */,
 				DE530B2125A76D5100BB782A /* FilmeAPI.swift */,
-				DE28C8A825A8A5E00059625C /* FilmeDAO.swift */,
-				DE28C8AD25AA626D0059625C /* Filme.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,13 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE28C8C025AB41770059625C /* PrincipalViewController.swift in Sources */,
 				DE530B2225A76D5100BB782A /* FilmeAPI.swift in Sources */,
-				DE12ABDA25A73C7A00F2E0C5 /* ViewController.swift in Sources */,
-				DE12ABED25A741FB00F2E0C5 /* FilmeDetalhes.swift in Sources */,
-				DE28C8AE25AA626D0059625C /* Filme.swift in Sources */,
 				DE12ABD825A73C7A00F2E0C5 /* AppDelegate.swift in Sources */,
 				DE28C8A525A896440059625C /* FilmeCollectionViewCell.swift in Sources */,
-				DE28C8A925A8A5E00059625C /* FilmeDAO.swift in Sources */,
+				DE28C8BE25AB3C130059625C /* DetalheFilmeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
