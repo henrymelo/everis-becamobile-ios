@@ -15,9 +15,15 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
     
     @IBOutlet weak var colecaoFilmes: UICollectionView!
     
+    
+    
     //MARK: - Variaveis
     
     var listaTendenciaFilmes:Array<Dictionary<String, Any>> = []
+    
+    var paginaAtual = 1
+    
+    var buttonAnterior:UIButton?
     
     //MARK: - LifeCycle
 
@@ -27,11 +33,16 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
         self.colecaoFilmes.dataSource = self
         self.colecaoFilmes.delegate = self
         
-        FilmeAPI().pegarListaTendenciasFilmes { (resposta) in
+        pegarTendencias()
+
+    }
+    
+    
+    func pegarTendencias(){
+        FilmeAPI().pegarListaTendenciasFilmes(pagina: paginaAtual) { (resposta) in
             self.listaTendenciaFilmes = resposta
             self.colecaoFilmes.reloadData()
         }
-
     }
     
     //MARK: - CollectionViewDataSource
@@ -64,6 +75,22 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter {
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CollectionReusableView", for: indexPath) as! FilmesFooterCollectionReusableView
+            
+            self.buttonAnterior = view.buttonAnterior
+            
+            if paginaAtual == 1 {
+            self.buttonAnterior?.isHidden = true
+            }
+            
+            // do any programmatic customization, if any, here
+            return view
+        }
+        fatalError("Unexpected kind")
+    }
+    
     //MARK: - CollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -77,6 +104,28 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
             controller.filmeSelecionado = filmeDetalhado
             self.navigationController?.pushViewController(controller, animated: true)
         })
+        
+    }
+    
+    @IBAction func buttonIrParaAnterior(_ sender: UIButton) {
+        paginaAtual = paginaAtual - 1
+        pegarTendencias()
+        colecaoFilmes.setContentOffset(CGPoint(x:0,y:0), animated: true)
+        
+        if paginaAtual == 1 {
+            buttonAnterior?.isHidden = true
+        }
+        
+    }
+    
+    
+    @IBAction func buttonProximo(_ sender: UIButton) {
+        
+        paginaAtual = paginaAtual + 1
+        pegarTendencias()
+        colecaoFilmes.setContentOffset(CGPoint(x:0,y:0), animated: true)
+        
+        buttonAnterior?.isHidden = false
         
     }
     

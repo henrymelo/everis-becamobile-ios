@@ -40,7 +40,7 @@
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BNT-uc-hzd">
                                     <size key="itemSize" width="140" height="250"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="50"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
@@ -80,6 +80,36 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CollectionReusableView" id="xs1-iQ-qP8" customClass="FilmesFooterCollectionReusableView" customModule="StarMovies" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="250" width="290" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5b-zH-Jxx">
+                                            <rect key="frame" x="8" y="10" width="55" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Anterior">
+                                                <color key="titleColor" red="0.078431372550000003" green="0.36470588240000001" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="buttonIrParaAnterior:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TNs-T9-KKR"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7x-SP-ppb">
+                                            <rect key="frame" x="226" y="10" width="56" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Próximo">
+                                                <color key="titleColor" red="0.078431372550000003" green="0.36470588240000001" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="buttonProximo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xkC-37-bTE"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <connections>
+                                        <outlet property="buttonAnterior" destination="t5b-zH-Jxx" id="vfv-Rg-kKS"/>
+                                        <outlet property="buttonProximo" destination="N7x-SP-ppb" id="eHT-18-GMg"/>
+                                    </connections>
+                                </collectionReusableView>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="starmovies" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTG-cq-DV3">
                                 <rect key="frame" x="15" y="35" width="135" height="30"/>
@@ -131,7 +161,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mulher-Maravilha" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt6-BO-o9z">
-                                <rect key="frame" x="52" y="29" width="217" height="68"/>
+                                <rect key="frame" x="51.5" y="29" width="217" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="MQU-cO-p1m"/>
                                     <constraint firstAttribute="width" constant="217" id="yrB-Kf-25p"/>
