@@ -11,12 +11,8 @@ import UIKit
 class PrincipalViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var colecaoFilmes: UICollectionView!
-    
 
-    let filmesAPI = FilmeAPI()
-    var filmesToShow:[[String:Any]] = [[:]]
-    var paginaAtual:Int = 1
-    
+    var mostraFilmes:[[String:Any]] = [[:]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +24,14 @@ class PrincipalViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: - Collection data source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(filmesToShow.count)
-        return filmesToShow.count
+        print(mostraFilmes.count)
+        return mostraFilmes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaFilme", for: indexPath) as! FilmeCollectionViewCell
         
-        let filmeAtual = filmesToShow[indexPath.item]
+        let filmeAtual = mostraFilmes[indexPath.item]
         
         guard let imagem = filmeAtual["poster"] as? UIImage else { return celulaFilme }
         guard let titulo = filmeAtual["titulo"] as? String else { return celulaFilme }
@@ -47,7 +43,7 @@ class PrincipalViewController: UIViewController, UICollectionViewDataSource, UIC
         return celulaFilme
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let filme = filmesToShow[indexPath.item]
+        let filme = mostraFilmes[indexPath.item]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalheFilmeViewController
         
@@ -61,20 +57,20 @@ class PrincipalViewController: UIViewController, UICollectionViewDataSource, UIC
 //    }
     func recuperaImages() {
         
-        filmesAPI.getImagens { (filmes) in
-            self.filmesToShow = filmes
-            if(self.filmesToShow.count>9) {
-                self.filmesToShow.remove(at: 0)
+        FilmeAPI().getPosterFilme { (filmes) in
+            self.mostraFilmes = filmes
+            if(self.mostraFilmes.count>9) {
+                self.mostraFilmes.remove(at: 0)
                 self.colecaoFilmes.reloadData()
             }
         }
     }
     func carregaProximaPagina() {
         
-        filmesAPI.getImagens() { (filmes) in
+        FilmeAPI().getPosterFilme() { (filmes) in
             let filmesAtuais = filmes
             
-            self.filmesToShow = filmesAtuais
+            self.mostraFilmes = filmesAtuais
             self.colecaoFilmes.reloadData()
             
         }

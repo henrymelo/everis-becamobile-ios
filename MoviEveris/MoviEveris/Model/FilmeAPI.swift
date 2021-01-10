@@ -12,12 +12,9 @@ import CoreData
 
 class FilmeAPI: NSObject {
     
-    
-    
     var filmes:[String:Any] = [:]
     var filmeAtual:[String:Any] = [:]
     let apiKey = "96dd278d45abf85bc179831d48f22e83"
-    
     let movieUrl = "https://api.themoviedb.org/"
     let imageUrl = "https://image.tmdb.org"
     
@@ -57,7 +54,7 @@ class FilmeAPI: NSObject {
         }
     }
     
-    func getImagens(completion: @escaping(_ filmes: [[String:Any]]) ->Void) {
+    func getPosterFilme(completion: @escaping(_ filmes: [[String:Any]]) ->Void) {
         getFilmesPopulares() { (filmes) in
             var filmesLista:[[String:Any]] = [[:]]
             

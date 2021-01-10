@@ -37,7 +37,6 @@ class DetalheFilmeViewController: UIViewController {
         guard let imagemFilmeAtual = filme["poster"] as? UIImage else { return }
         
         FilmeAPI().filmeDetalhes(idFilmeAtual) { (filme) in
-            
             var filmeAtual = filme[0]
             guard let tituloOriginal = filmeAtual["tituloOriginal"] as? String else { return }
             guard let titulo = filmeAtual["titulo"]  as? String else { return }
