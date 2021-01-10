@@ -24,41 +24,76 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="filmeCell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TNC-mP-nsA">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWS-iC-SZe">
                                 <rect key="frame" x="0.0" y="65" width="375" height="602"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cxe-4x-tcP">
-                                    <size key="itemSize" width="183" height="271"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8gS-2W-yWQ">
-                                        <rect key="frame" x="96" y="0.0" width="183" height="271"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="183" height="271"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TNC-mP-nsA">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="602"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cxe-4x-tcP">
+                                            <size key="itemSize" width="183" height="271"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="filmeCell" id="gnG-Ld-cye">
+                                                <rect key="frame" x="96" y="0.0" width="183" height="271"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="183" height="271"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="nomeFilme" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q0-rA-4W3">
+                                                            <rect key="frame" x="70" y="194" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imagemFilme" translatesAutoresizingMaskIntoConstraints="NO" id="UpE-J6-bHm">
+                                                            <rect key="frame" x="34" y="52" width="114" height="108"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="UpE-J6-bHm" firstAttribute="top" secondItem="gnG-Ld-cye" secondAttribute="topMargin" constant="24" id="2ti-RO-rfa"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="8q0-rA-4W3" secondAttribute="bottom" constant="48" id="Kqc-re-KHF"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="UpE-J6-bHm" secondAttribute="trailing" constant="27" id="PWg-Vr-CJa"/>
+                                                    <constraint firstItem="8q0-rA-4W3" firstAttribute="top" secondItem="UpE-J6-bHm" secondAttribute="bottom" constant="34" id="WfC-4n-bhA"/>
+                                                    <constraint firstItem="UpE-J6-bHm" firstAttribute="leading" secondItem="gnG-Ld-cye" secondAttribute="leadingMargin" constant="26" id="Z8I-2e-V32"/>
+                                                    <constraint firstItem="8q0-rA-4W3" firstAttribute="leading" secondItem="gnG-Ld-cye" secondAttribute="leadingMargin" constant="62" id="dYm-Jx-84C"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="8q0-rA-4W3" secondAttribute="trailing" constant="63" id="g4T-kf-gzH"/>
+                                                </constraints>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="TNC-mP-nsA" secondAttribute="trailing" id="2kP-5K-x8y"/>
+                                    <constraint firstItem="TNC-mP-nsA" firstAttribute="centerY" secondItem="aWS-iC-SZe" secondAttribute="centerY" id="G9I-mh-Zbs"/>
+                                    <constraint firstItem="TNC-mP-nsA" firstAttribute="top" secondItem="aWS-iC-SZe" secondAttribute="top" id="UIa-jK-wR4"/>
+                                    <constraint firstItem="TNC-mP-nsA" firstAttribute="centerX" secondItem="aWS-iC-SZe" secondAttribute="centerX" id="Wuc-Li-5qO"/>
+                                    <constraint firstAttribute="bottom" secondItem="TNC-mP-nsA" secondAttribute="bottom" id="duK-MR-ahn"/>
+                                    <constraint firstItem="TNC-mP-nsA" firstAttribute="leading" secondItem="aWS-iC-SZe" secondAttribute="leading" id="lGH-dU-BHg"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TNC-mP-nsA" firstAttribute="leading" secondItem="Ayx-ti-Nga" secondAttribute="leading" id="863-Iu-gEU"/>
-                            <constraint firstItem="TNC-mP-nsA" firstAttribute="trailing" secondItem="Ayx-ti-Nga" secondAttribute="trailing" id="Eh2-S6-OlY"/>
                             <constraint firstItem="Ayx-ti-Nga" firstAttribute="trailing" secondItem="xGa-re-LB3" secondAttribute="trailing" constant="208" id="Idq-E8-Lpy"/>
+                            <constraint firstItem="aWS-iC-SZe" firstAttribute="trailing" secondItem="Ayx-ti-Nga" secondAttribute="trailing" id="TaW-I5-vbr"/>
                             <constraint firstItem="xGa-re-LB3" firstAttribute="leading" secondItem="Ayx-ti-Nga" secondAttribute="leading" constant="6" id="YUf-4a-zeF"/>
-                            <constraint firstItem="TNC-mP-nsA" firstAttribute="top" secondItem="xGa-re-LB3" secondAttribute="bottom" constant="8.5" id="i8u-sY-XPZ"/>
-                            <constraint firstAttribute="bottom" secondItem="TNC-mP-nsA" secondAttribute="bottom" id="uEB-V2-j20"/>
+                            <constraint firstItem="aWS-iC-SZe" firstAttribute="top" secondItem="xGa-re-LB3" secondAttribute="bottom" constant="8.5" id="btI-y7-tNa"/>
+                            <constraint firstItem="aWS-iC-SZe" firstAttribute="top" secondItem="JfF-5R-tcv" secondAttribute="top" constant="65" id="hKV-3M-5tA"/>
+                            <constraint firstItem="aWS-iC-SZe" firstAttribute="leading" secondItem="Ayx-ti-Nga" secondAttribute="leading" id="i2z-Ol-70p"/>
+                            <constraint firstAttribute="bottom" secondItem="aWS-iC-SZe" secondAttribute="bottom" id="tZT-Y5-rFo"/>
                             <constraint firstItem="xGa-re-LB3" firstAttribute="top" secondItem="Ayx-ti-Nga" secondAttribute="top" id="ziP-FG-ZcC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ayx-ti-Nga"/>
                     </view>
                     <connections>
                         <outlet property="collectionFilmes" destination="TNC-mP-nsA" id="QkE-ew-7xG"/>
+                        <outlet property="imagemFilme" destination="UpE-J6-bHm" id="y8e-pJ-6Ln"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czA-2c-55G" userLabel="First Responder" sceneMemberID="firstResponder"/>

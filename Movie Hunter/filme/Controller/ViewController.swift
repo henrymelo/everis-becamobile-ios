@@ -11,10 +11,12 @@ import CoreData
 import Alamofire
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
+    @IBOutlet weak var labelFilme: UILabel!
+    
     //MARk: - IBOutlets
     @IBOutlet weak var collectionFilmes: UICollectionView!
-    @IBOutlet weak var labelFilme: UILabel!
+
+    @IBOutlet weak var imagemFilme: UIImageView!
     
     
     // MARK: - Variáveis
@@ -33,12 +35,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     // MARK: - Métodos
     
-    func mostraTitulo(filme: Filme) {
-       labelFilme.text = filme.title
-        
+    func configuraLabel(filme: Filme) {
+        labelFilme.text = filme.title
     }
-
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listaFilme.count
@@ -48,7 +47,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "filmeCell", for: indexPath) as! CollectionViewCell
         
         let filmeAtual = listaFilme[indexPath.row]
-        celulaFilme.configuraCelula(filme: filmeAtual)
+        celulaFilme.configuraCelula()
         
         return celulaFilme
     }

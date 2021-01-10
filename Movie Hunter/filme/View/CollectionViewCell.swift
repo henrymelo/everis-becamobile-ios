@@ -11,10 +11,7 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var filmeNome: UILabel!
-    
-    func configuraCelula(filme: Filme) {
-        filmeNome.text = filme.title
+    func configuraCelula() {
         
     }
     
