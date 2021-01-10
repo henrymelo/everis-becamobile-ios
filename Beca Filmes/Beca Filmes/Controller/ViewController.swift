@@ -8,23 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var tabelaFilmes: UITableView!
     
+    
     var listaFilmes: Array<String>?
+    var listaDetalhes: Array<String>?
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabelaFilmes.dataSource = self
         self.tabelaFilmes.dataSource = self
 //        FilmesAPI().recebeTendenciasFilmes { (resultado) in
 //            print(resultado)
 //        }
         listarFilmes  { (filme) in
             self.listaFilmes = filme
-            print(self.listaFilmes)
+            guard let listaDeFilmes = self.listaFilmes else{return}
         }
-        FilmesAPI().recebeDetalhesFilme()
+        FilmesAPI().recebeDetalhesFilme { (filme) in
+            self.listaDetalhes
+        }
+        self.tabelaFilmes.reloadData()
     }
     
     func listarFilmes(completion: @escaping ([String]) -> Void){
@@ -57,10 +63,16 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
         
-        celula.textLabel?.text = self.listaFilmes?[indexPath.row]
+        celula.textLabel?.text = listaFilmes?[indexPath.row]
         
         return celula
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
+        self.navigationController?.pushViewController(DetalhesViewController(), animated: true)
+        print("apertou")
+    }
+    
     
 }
 

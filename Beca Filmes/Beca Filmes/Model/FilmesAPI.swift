@@ -31,15 +31,25 @@ class FilmesAPI: NSObject {
                 }
             }
     }
-    func recebeDetalhesFilme(){
+    func recebeDetalhesFilme(completion: @escaping (Any)->Void){
+        var listaTodosDetalhes:[[String: Any]] = [[:]]
         self.recebeTendenciasFilmes { (filmes) in
             for filme in filmes{
                 let id = filme.id
-                Alamofire.request("https://api.themoviedb.org/3/movie/\(id)?api_key=2536c8a939fafc0cfd57dcda9d9ce039&language=pt-BR", method: .get).responseJSON { (resposta) in
+                let media = filme.mediaType
+                Alamofire.request("https://api.themoviedb.org/3/\(media)/\(id)?api_key=2536c8a939fafc0cfd57dcda9d9ce039&language=pt-BR", method: .get).responseJSON { (resposta) in
                     switch resposta.result{
                     case .success:
                         guard let jsonData = resposta.data else{return}
                         guard let detalhes = try? JSONDecoder().decode(FilmeDetalhes.self, from: jsonData) else {return}
+                        
+//                        let poster = detalhes.posterPath
+//                        let titulo = detalhes.title
+//                        let nome = detalhes.name
+//                        let descricao = detalhes.overview
+//                        if detalhes.title == nil{
+//                            print(detalhes.name)
+//                        }else{print(detalhes.title)}
                         
                         
                         
@@ -51,6 +61,9 @@ class FilmesAPI: NSObject {
                 }
 
             }
+//            print(listaTodosDetalhes)
+//            completion (listaTodosDetalhes)
         }
     }
+    
 }
