@@ -28,10 +28,12 @@ class ViewController: UITableViewController, RespostaAPI {
     var api =  FilmeAPI()
     
     
+    
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         api.configura(delegate: self)
+        
    
     }
     
@@ -49,26 +51,26 @@ class ViewController: UITableViewController, RespostaAPI {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        let filme = listaDeFilmes?.results[indexPath.row]
         
         let titulo: String
-        if self.listaDeFilmes?.results[indexPath.row].mediaType == "movie" {
-            titulo = self.listaDeFilmes?.results[indexPath.row].originalTitle ?? ""
+        if filme?.mediaType == "movie" {
+            titulo = filme?.originalTitle ?? ""
         }else{
             titulo = self.listaDeFilmes?.results[indexPath.row].originalName ?? ""
         }
 
         let caminhoDaImagem: String
-        caminhoDaImagem = self.listaDeFilmes?.results[indexPath.row].posterPath ?? ""
+        caminhoDaImagem = filme?.posterPath ?? ""
 
          let imageUrl = URL(string: "https://image.tmdb.org/t/p/original\(caminhoDaImagem)")
 
         if let url = imageUrl {
             celula.imagemFilme?.af_setImage(withURL: url)
         }
-        
+    
         celula.labelTitulo.text = titulo
         
-      
         return celula
     }
     
@@ -76,6 +78,16 @@ class ViewController: UITableViewController, RespostaAPI {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 500
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let filmes = listaDeFilmes?.results[indexPath.row]
+        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "DetalhesFilmes") as! DetalhesFilmesViewController
+        
+        controller.listaDeFilmes = filmes
+        self.navigationController?.pushViewController(controller,animated: true)
     }
     
     
@@ -95,7 +107,7 @@ class ViewController: UITableViewController, RespostaAPI {
 ////
 ////           if let indexPath = tableView.indexPathForSelectedRow {
 ////
-////                var filmeSelecionado = self.listaDeFilmes?.results[indexPath.row]
+////                var filmeSelecionado = filmeSelecionado
 ////            let viewControllerDestino = segue.destination as! DetalhesViewController
 ////            viewControllerDestino.listaDeFilmes?.results = filmeSelecionado
 ////

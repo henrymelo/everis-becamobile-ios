@@ -17,12 +17,12 @@ class DetalhesViewController: UIViewController {
     @IBOutlet weak var tituloLabel: UILabel!
     @IBOutlet weak var descricaoLabel: UILabel!
     
-
-    
+    var filme: ModeloFilme!
 
 
     override func viewDidLoad() {
         
+       
         
         super.viewDidLoad()
     }

@@ -13,6 +13,7 @@ struct ModeloFilme: Codable {
     }
 }
 
+
 // MARK: - Result
 struct Result: Codable {
     let adult: Bool?
@@ -21,7 +22,7 @@ struct Result: Codable {
     let id: Int
     let originalLanguage: OriginalLanguage
     let originalTitle: String?
-    let overview, posterPath: String
+    let overview, posterPath: String?
     let releaseDate, title: String?
     let video: Bool?
     let voteAverage: Double
