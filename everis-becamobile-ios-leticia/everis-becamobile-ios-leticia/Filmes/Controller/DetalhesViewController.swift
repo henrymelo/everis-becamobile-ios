@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetalhesViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class DetalhesViewController: UIViewController {
     @IBOutlet weak var descricaoLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
+    var detalhesSelecionado:Detalhes?
     
     // MARK: - View Lifecycle
     
@@ -26,9 +28,12 @@ class DetalhesViewController: UIViewController {
     
     // MARK: - Métodos
     
-    func setup(_ tendencia:Tendencia) {
-        descricaoLabel.text = tendencia.overview
-        
+    func setup() {
+        print("TEEESTE")
+        descricaoLabel.text = detalhesSelecionado?.overview
+        tituloLabel.text = detalhesSelecionado?.title
+        print(detalhesSelecionado?.overview)
+        print(detalhesSelecionado?.title)
     }
     
 //    func montaDicionarioDeParametros() -> Dictionary<String, String> {
@@ -53,5 +58,5 @@ class DetalhesViewController: UIViewController {
 //        return dicionario
 //    }
 
-    
+
 }

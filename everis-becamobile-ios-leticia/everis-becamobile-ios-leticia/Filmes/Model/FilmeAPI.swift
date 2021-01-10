@@ -39,10 +39,7 @@ class FilmeAPI: NSObject {
             switch response.result {
             case .success:
                 if let resposta = response.result.value as? Dictionary<String, Any> {
-                    guard let listaDeDetalhes = resposta["results"] as? Array<Dictionary<String, Any>> else { return }
-                    for dicionarioDetalhes in listaDeDetalhes {
-                        DetalhesDAO().salvaDetalhes(dicionarioDeDetalhes: dicionarioDetalhes)
-                    }
+                    DetalhesDAO().salvaDetalhes(dicionarioDeDetalhes: resposta)
                     completion()
                 }
                 

@@ -30,6 +30,16 @@ class Repositorio: NSObject {
     
     // Detalhes
     
+    func recuperaDetalhes(_ tendencia:Tendencia, completion:@escaping(_ listaDeDetalhes:Array<Detalhes>) -> Void) {
+        var detalhes = DetalhesDAO().recuperaDetalhes()
+        
+            FilmeAPI().recuperaDetalhesServidor(tendencia) {
+                detalhes = DetalhesDAO().recuperaDetalhes()
+                completion(detalhes)
+            }
+    }
     
-    
+//    func salvaDetalhes(detalhe:Dictionary<String, Any>) {
+//        DetalhesDAO().salvaDetalhes(dicionarioDeDetalhes: detalhe)
+//    }
 }

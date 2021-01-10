@@ -17,10 +17,12 @@ class DetalhesDAO: NSObject {
         return appDelegate.persistentContainer.viewContext
     }
     
+    var detalhesViewController:DetalhesViewController?
+    
     func recuperaDetalhes() -> Array<Detalhes> {
         let pesquisaDetalhes:NSFetchRequest<Detalhes> = Detalhes.fetchRequest()
-//        let ordenaPorTitulo = NSSortDescriptor(key: "title", ascending: true)
-//        pesquisaDetalhes.sortDescriptors = [ordenaPorTitulo]
+        let ordenaPorTitulo = NSSortDescriptor(key: "title", ascending: true)
+        pesquisaDetalhes.sortDescriptors = [ordenaPorTitulo]
         
         gerenciadorDeResultados = NSFetchedResultsController(fetchRequest: pesquisaDetalhes, managedObjectContext: contexto, sectionNameKeyPath: nil, cacheName: nil)
         
@@ -37,6 +39,7 @@ class DetalhesDAO: NSObject {
     
     func salvaDetalhes(dicionarioDeDetalhes:Dictionary<String, Any>) {
         let detalhes = Detalhes(context: contexto)
+        
         detalhes.title = dicionarioDeDetalhes["title"] as? String
         detalhes.overview = dicionarioDeDetalhes["overview"] as? String
         
@@ -58,7 +61,13 @@ class DetalhesDAO: NSObject {
             detalhes.vote_average = (conversaoDeVoteAverage as NSString).doubleValue
         }
         
+        print("DESC \(detalhes.overview)")
+        print("TITULO \(detalhes.title)")
+        detalhesViewController?.detalhesSelecionado = detalhes
+        detalhesViewController?.setup()
+        
         atualizaContexto()
+        
     }
     
     func atualizaContexto() {
