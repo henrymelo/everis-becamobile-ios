@@ -7,68 +7,27 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class ViewController: UIViewController, UITableViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource {
     
-    private var count: Int = 0
-    
-    
-    
-
-    @IBOutlet weak var labelTituloFilme: UILabel!
-    @IBOutlet weak var posterFilme: UIImageView!
+    @IBOutlet weak var colecaoFilmes: UICollectionView!
+    @IBOutlet weak var labelTituloView: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        apresentaFilmeDetalhado()
-        apresentaJSONFilmes()
-//        FilmeCollectionViewCell().imagemFilme()
+        colecaoFilmes.dataSource = self
+        
+    }
+    func fazAlgo(){
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        FilmeAPI().getFilmes { (listaDeFilmes) in
-            if let listaDeFilmes = listaDeFilmes {
-                self.count = listaDeFilmes.count
-                print(self.count)
-            }
-        }
-        return self.count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     }
     
-    private func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellFilmes")
-        cell?.textLabel?.text = "20"
-        return cell!
-    }
-    
-    func apresentaFilmeDetalhado() {
-        FilmeAPI().getDetalhes { (listaDeFilme) in
-            if let listaDeFilme = listaDeFilme{
-                guard let titulo = listaDeFilme.title else { return }
-                guard let id = listaDeFilme.id else { return }
-                print(titulo, ":", id, "")
-                self.labelTituloFilme.text = titulo
-                
-                
-            }
-        }
-    }
-    
-    func apresentaJSONFilmes() {
-        FilmeAPI().getFilmes { (jsonFilmes) in
-            if jsonFilmes != nil {
-                for jsonFilme in jsonFilmes!{
-                    guard let id = jsonFilme["id"] as? Int else { return }
-                    guard let titulo = jsonFilme["title"] as? String else { return }
-                    guard let sinopse = jsonFilme["overview"] as? String else { return }
-                    guard let rating = jsonFilme["vote_average"] as? Double else { return }
-                    
-                    let filme = Filme(id, titulo, sinopse, rating)
-                    print("\(filme.id) : \(filme.titulo)")
-                    
-                }
-            }
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaFilme", for: indexPath) as! FilmeCollectionViewCell
+        return celulaFilme
     }
 }
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B62623CAF97978E154DA4730 /* Pods_MoviEveris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E37BC7DF9476286F6926C /* Pods_MoviEveris.framework */; };
 		DE12ABD825A73C7A00F2E0C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12ABD725A73C7A00F2E0C5 /* AppDelegate.swift */; };
 		DE12ABDA25A73C7A00F2E0C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12ABD925A73C7A00F2E0C5 /* ViewController.swift */; };
 		DE12ABDD25A73C7A00F2E0C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE12ABDB25A73C7A00F2E0C5 /* Main.storyboard */; };
@@ -15,13 +14,12 @@
 		DE12ABE225A73C7C00F2E0C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE12ABE025A73C7C00F2E0C5 /* LaunchScreen.storyboard */; };
 		DE12ABED25A741FB00F2E0C5 /* FilmeDetalhes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12ABEC25A741FB00F2E0C5 /* FilmeDetalhes.swift */; };
 		DE28C8A525A896440059625C /* FilmeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8A425A896440059625C /* FilmeCollectionViewCell.swift */; };
-		DE28C8A725A89D290059625C /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8A625A89D290059625C /* Filme.swift */; };
 		DE28C8A925A8A5E00059625C /* FilmeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8A825A8A5E00059625C /* FilmeDAO.swift */; };
+		DE28C8AE25AA626D0059625C /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8AD25AA626D0059625C /* Filme.swift */; };
 		DE530B2225A76D5100BB782A /* FilmeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE530B2125A76D5100BB782A /* FilmeAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		189E37BC7DF9476286F6926C /* Pods_MoviEveris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviEveris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DB082DD17BBA55AF005290 /* Pods-MoviEveris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviEveris.release.xcconfig"; path = "Target Support Files/Pods-MoviEveris/Pods-MoviEveris.release.xcconfig"; sourceTree = "<group>"; };
 		50D868C4CC57A9647337C312 /* Pods-MoviEveris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviEveris.debug.xcconfig"; path = "Target Support Files/Pods-MoviEveris/Pods-MoviEveris.debug.xcconfig"; sourceTree = "<group>"; };
 		DE12ABD425A73C7A00F2E0C5 /* MoviEveris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviEveris.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,8 +31,8 @@
 		DE12ABE325A73C7C00F2E0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE12ABEC25A741FB00F2E0C5 /* FilmeDetalhes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeDetalhes.swift; sourceTree = "<group>"; };
 		DE28C8A425A896440059625C /* FilmeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeCollectionViewCell.swift; sourceTree = "<group>"; };
-		DE28C8A625A89D290059625C /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
 		DE28C8A825A8A5E00059625C /* FilmeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeDAO.swift; sourceTree = "<group>"; };
+		DE28C8AD25AA626D0059625C /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
 		DE530B2125A76D5100BB782A /* FilmeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B62623CAF97978E154DA4730 /* Pods_MoviEveris.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,21 +56,12 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		C63CEAAACBC0F44663E5DDB4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				189E37BC7DF9476286F6926C /* Pods_MoviEveris.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		DE12ABCB25A73C7A00F2E0C5 = {
 			isa = PBXGroup;
 			children = (
 				DE12ABD625A73C7A00F2E0C5 /* MoviEveris */,
 				DE12ABD525A73C7A00F2E0C5 /* Products */,
 				242DE31E612BD9BB8C4C4987 /* Pods */,
-				C63CEAAACBC0F44663E5DDB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,8 +109,8 @@
 			children = (
 				DE12ABEC25A741FB00F2E0C5 /* FilmeDetalhes.swift */,
 				DE530B2125A76D5100BB782A /* FilmeAPI.swift */,
-				DE28C8A625A89D290059625C /* Filme.swift */,
 				DE28C8A825A8A5E00059625C /* FilmeDAO.swift */,
+				DE28C8AD25AA626D0059625C /* Filme.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,8 +232,8 @@
 			files = (
 				DE530B2225A76D5100BB782A /* FilmeAPI.swift in Sources */,
 				DE12ABDA25A73C7A00F2E0C5 /* ViewController.swift in Sources */,
-				DE28C8A725A89D290059625C /* Filme.swift in Sources */,
 				DE12ABED25A741FB00F2E0C5 /* FilmeDetalhes.swift in Sources */,
+				DE28C8AE25AA626D0059625C /* Filme.swift in Sources */,
 				DE12ABD825A73C7A00F2E0C5 /* AppDelegate.swift in Sources */,
 				DE28C8A525A896440059625C /* FilmeCollectionViewCell.swift in Sources */,
 				DE28C8A925A8A5E00059625C /* FilmeDAO.swift in Sources */,
