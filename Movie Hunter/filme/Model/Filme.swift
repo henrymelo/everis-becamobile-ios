@@ -8,27 +8,28 @@
 
 import Foundation
 
-// MARK: - Details
+// MARK: - Filme
 struct Filme: Codable {
-    let adult: Bool
-    let backdropPath: String
-    let belongsToCollection: BelongsToCollection
-    let budget: Int
-    let genres: [Genre]
-    let homepage: String
-    let id: Int
-    let imdbID, originalLanguage, originalTitle, overview: String
-    let popularity: Double
-    let posterPath: String
-    let productionCompanies: [ProductionCompany]
-    let productionCountries: [ProductionCountry]
-    let releaseDate: String
-    let revenue, runtime: Int
-    let spokenLanguages: [SpokenLanguage]
-    let status, tagline, title: String
-    let video: Bool
-    let voteAverage: Double
-    let voteCount: Int
+    let adult: Bool?
+    let backdropPath: String?
+    let belongsToCollection: BelongsToCollection?
+    let budget: Int?
+    let genres: [Genre]?
+    let homepage: String?
+    let id: Int?
+    let imdbID, originalLanguage, originalTitle, overview: String?
+    let popularity: Double?
+    let posterPath: String?
+    let productionCompanies: [ProductionCompany]?
+    let productionCountries: [ProductionCountry]?
+    let releaseDate: String?
+    let revenue, runtime: Int?
+    let spokenLanguages: [SpokenLanguage]?
+    let status, tagline: String?
+    let title: String
+    let video: Bool?
+    let voteAverage: Double?
+    let voteCount: Int?
     
     enum CodingKeys: String, CodingKey {
         case adult
@@ -51,10 +52,19 @@ struct Filme: Codable {
     }
 }
 
+//
+// To parse values from Alamofire responses:
+//
+//   Alamofire.request(url).responseBelongsToCollection { response in
+//     if let belongsToCollection = response.result.value {
+//       ...
+//     }
+//   }
+
 // MARK: - BelongsToCollection
 struct BelongsToCollection: Codable {
-    let id: Int
-    let name, posterPath, backdropPath: String
+    let id: Int?
+    let name, posterPath, backdropPath: String?
     
     enum CodingKeys: String, CodingKey {
         case id, name
@@ -63,17 +73,35 @@ struct BelongsToCollection: Codable {
     }
 }
 
+//
+// To parse values from Alamofire responses:
+//
+//   Alamofire.request(url).responseGenre { response in
+//     if let genre = response.result.value {
+//       ...
+//     }
+//   }
+
 // MARK: - Genre
 struct Genre: Codable {
-    let id: Int
-    let name: String
+    let id: Int?
+    let name: String?
 }
+
+//
+// To parse values from Alamofire responses:
+//
+//   Alamofire.request(url).responseProductionCompany { response in
+//     if let productionCompany = response.result.value {
+//       ...
+//     }
+//   }
 
 // MARK: - ProductionCompany
 struct ProductionCompany: Codable {
-    let id: Int
+    let id: Int?
     let logoPath: String?
-    let name, originCountry: String
+    let name, originCountry: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -83,9 +111,18 @@ struct ProductionCompany: Codable {
     }
 }
 
+//
+// To parse values from Alamofire responses:
+//
+//   Alamofire.request(url).responseProductionCountry { response in
+//     if let productionCountry = response.result.value {
+//       ...
+//     }
+//   }
+
 // MARK: - ProductionCountry
 struct ProductionCountry: Codable {
-    let iso3166_1, name: String
+    let iso3166_1, name: String?
     
     enum CodingKeys: String, CodingKey {
         case iso3166_1 = "iso_3166_1"
@@ -93,9 +130,18 @@ struct ProductionCountry: Codable {
     }
 }
 
+//
+// To parse values from Alamofire responses:
+//
+//   Alamofire.request(url).responseSpokenLanguage { response in
+//     if let spokenLanguage = response.result.value {
+//       ...
+//     }
+//   }
+
 // MARK: - SpokenLanguage
 struct SpokenLanguage: Codable {
-    let englishName, iso639_1, name: String
+    let englishName, iso639_1, name: String?
     
     enum CodingKeys: String, CodingKey {
         case englishName = "english_name"

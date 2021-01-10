@@ -14,11 +14,11 @@ class FilmeAPI: NSObject {
     
     // MARK - GET Filmes
 
-    func recuperaFilmes(completion: @escaping ([Filmes]) -> Void) {
+    func recuperaFilmes(completion: @escaping ([Result]) -> Void) {
         
             guard let key = Configuracao().getKeyPadrao() else { return }
 
-        Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=\(key)&language=pt-BR", method: .get).responseJSON { ( response ) in
+        Alamofire.request("https://api.themoviedb.org/3/trending/movie/week?api_key=\(key)&language=pt-BR", method: .get).responseJSON { ( response ) in
             switch response.result {
             case .success:
                 guard let filmeRecuperado = response.data else { return }
@@ -47,8 +47,8 @@ class FilmeAPI: NSObject {
                     case .success:
                         guard let detalheRecuperado = response.data else { return }
                         guard let detalhe = try? JSONDecoder().decode(Filme.self, from: detalheRecuperado) else { return }
-                        let nomeFilme = detalhe.originalTitle
-                        let imagemFilme = detalhe.posterPath
+                        guard let nomeFilme = detalhe.originalTitle else { return }
+                        guard let imagemFilme = detalhe.posterPath else { return }
                         print(nomeFilme + imagemFilme)
                         break
                     case .failure:

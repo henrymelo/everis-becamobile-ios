@@ -7,13 +7,12 @@
 //
 
 import Foundation
-
-
+import Alamofire
 
 // MARK: - ListaFilmes
 struct ListaFilmes: Codable {
     let page: Int
-    let results: [Filmes]
+    let results: [Result]
     let totalPages, totalResults: Int
     
     enum CodingKeys: String, CodingKey {
@@ -23,55 +22,97 @@ struct ListaFilmes: Codable {
     }
 }
 
-// MARK: - Filmes
-struct Filmes: Codable {
-    let voteAverage: Double
-    let title: String?
-    let overview: String
-    let releaseDate: String?
-    let adult: Bool?
+//
+// To parse values from Alamofire responses:
+//
+//   Alamofire.request(url).responseResult { response in
+//     if let result = response.result.value {
+//       ...
+//     }
+//   }
+
+// MARK: - Result
+struct Result: Codable {
+    let adult: Bool
     let backdropPath: String
     let genreIDS: [Int]
-    let voteCount: Int
-    let originalLanguage: OriginalLanguage
-    let originalTitle: String?
-    let posterPath: String
     let id: Int
-    let video: Bool?
+    let originalLanguage: OriginalLanguage
+    let originalTitle, overview, posterPath, releaseDate: String
+    let title: String
+    let video: Bool
+    let voteAverage: Double
+    let voteCount: Int
     let popularity: Double
     let mediaType: MediaType
-    let firstAirDate, name: String?
-    let originCountry: [String]?
-    let originalName: String?
     
     enum CodingKeys: String, CodingKey {
-        case voteAverage = "vote_average"
-        case title, overview
-        case releaseDate = "release_date"
         case adult
         case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"
-        case voteCount = "vote_count"
+        case id
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
+        case overview
         case posterPath = "poster_path"
-        case id, video, popularity
+        case releaseDate = "release_date"
+        case title, video
+        case voteAverage = "vote_average"
+        case voteCount = "vote_count"
+        case popularity
         case mediaType = "media_type"
-        case firstAirDate = "first_air_date"
-        case name
-        case originCountry = "origin_country"
-        case originalName = "original_name"
     }
 }
 
 enum MediaType: String, Codable {
     case movie = "movie"
-    case tv = "tv"
 }
 
 enum OriginalLanguage: String, Codable {
     case en = "en"
-    case ja = "ja"
+    case no = "no"
 }
 
+// MARK: - Helper functions for creating encoders and decoders
 
+func newJSONDecoder() -> JSONDecoder {
+    let decoder = JSONDecoder()
+    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
+        decoder.dateDecodingStrategy = .iso8601
+    }
+    return decoder
+}
+
+func newJSONEncoder() -> JSONEncoder {
+    let encoder = JSONEncoder()
+    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
+        encoder.dateEncodingStrategy = .iso8601
+    }
+    return encoder
+}
+
+// MARK: - Alamofire response handlers
+
+//extension DataRequest {
+//    fileprivate func decodableResponseSerializer<T: Decodable>() -> DataResponseSerializer<T> {
+//        return DataResponseSerializer { _, response, data, error in
+//            guard error == nil else { return .failure(error!) }
+//
+//            guard let data = data else {
+//                return .failure(AFError.responseSerializationFailed(reason: .inputDataNil))
+//            }
+//
+//            return Result { try newJSONDecoder().decode(T.self, from: data) }
+//        }
+//    }
+//
+//    @discardableResult
+//    fileprivate func responseDecodable<T: Decodable>(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<T>) -> Void) -> Self {
+//        return response(queue: queue, responseSerializer: decodableResponseSerializer(), completionHandler: completionHandler)
+//    }
+//
+//    @discardableResult
+//    func responseListaFilmes(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<ListaFilmes>) -> Void) -> Self {
+//        return responseDecodable(queue: queue, completionHandler: completionHandler)
+//    }
+//}
