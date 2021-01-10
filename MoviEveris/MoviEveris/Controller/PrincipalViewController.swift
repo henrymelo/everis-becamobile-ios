@@ -56,9 +56,9 @@ class PrincipalViewController: UIViewController, UICollectionViewDataSource, UIC
         self.present(controller, animated: true, completion: nil)
         
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return UIDevice.current.userInterfaceIdiom == .phone ? CGSize(width: collectionView.bounds.width/2-20, height: 160) : CGSize(width: collectionView.bounds.width/3-20, height: 250)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return UIDevice.current.userInterfaceIdiom == .phone ? CGSize(width: collectionView.bounds.width/2, height: 185) : CGSize(width: collectionView.bounds.width/3-20, height: 250)
+//    }
     func recuperaImages() {
         
         filmesAPI.getImagens { (filmes) in

@@ -15,36 +15,37 @@ class FilmeAPI: NSObject {
     
     
     var filmes:[String:Any] = [:]
+    var filmeAtual:[String:Any] = [:]
     let apiKey = "96dd278d45abf85bc179831d48f22e83"
+    
     let movieUrl = "https://api.themoviedb.org/"
     let imageUrl = "https://image.tmdb.org"
     
     func getFilmesPopulares(completion:@escaping(_ filmes:[[String:Any]]) -> Void ) {
         Alamofire.request("\(movieUrl)3/trending/movie/week?api_key=\(apiKey)&language=pt-BR&page=1", method: .get).responseJSON { (response) in
+
+            var filmesLista:[[String:Any]] = [[:]]
             switch response.result {
             case .success:
                 if let resposta = response.result.value as? [String:Any] {
-                    
-                    var filmeAtual:[String:Any] = [:]
-                    var filmesLista:[[String:Any]] = [[:]]
-                    
-                    
-                    guard let filmes = resposta["results"] as? [[String:Any]] else { return }
-//                    print(filmes)
-                    for filme in filmes {
+                    guard let filmeData = resposta["results"] as? [[String:Any]] else { return }
+                    print(filmeData)
+                    for filme in filmeData {
                         guard let id = filme["id"] else { return }
+                        guard let tituloOriginal = filme["original_title"] else { return }
                         guard let titulo = filme["title"] else { return }
                         guard let posterPath = filme["poster_path"] else { return }
                         guard let sinopse = filme["overview"] else { return }
                         guard let rating = filme["vote_average"] else { return }
-                        filmeAtual = [
+                        self.filmeAtual = [
                             "id":id,
+                            "tituloOriginal": tituloOriginal,
                             "titulo":titulo,
                             "poster":posterPath,
                             "sinopse":sinopse,
                             "rating": rating
                         ]
-                        filmesLista.append(filmeAtual)
+                        filmesLista.append(self.filmeAtual)
                     }
                     completion(filmesLista)
                 }
@@ -56,8 +57,6 @@ class FilmeAPI: NSObject {
         }
     }
     
-
-    
     func getImagens(completion: @escaping(_ filmes: [[String:Any]]) ->Void) {
         getFilmesPopulares() { (filmes) in
             var filmesLista:[[String:Any]] = [[:]]
@@ -67,19 +66,16 @@ class FilmeAPI: NSObject {
                 if let posterPath = filme["poster"] as? String {
                     guard let titulo = filme["titulo"] else { return }
                     guard let id = filme["id"] else { return }
-                    
-                    var filmeAtual:[String:Any] = [:]
-                    
                     Alamofire.request("\(self.imageUrl)/t/p/w500\(posterPath)", method: .get).responseImage(completionHandler: { (response) in
                         switch response.result {
                         case .success:
                             if let poster = response.result.value {
-                                filmeAtual = [
+                                self.filmeAtual = [
                                     "titulo":titulo,
                                     "poster":poster,
                                     "id":id
                                 ]
-                                filmesLista.append(filmeAtual)
+                                filmesLista.append(self.filmeAtual)
                                 completion(filmesLista)
                             }
                             
