@@ -14,7 +14,11 @@ class TableViewCell: UITableViewCell{
 
     @IBOutlet weak var labelTitulo: UILabel!
     
-    @IBOutlet weak var imagemFilme: UIImageView?
+    @IBOutlet weak var imagemFilme: UIImageView!
     
     
+    func viewDidload(){
+        imagemFilme.layer.cornerRadius = 5;
+        imagemFilme.layer.masksToBounds = true;
+    }
 }

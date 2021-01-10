@@ -10,6 +10,7 @@ import UIKit
 
 class DetalhesFilmesViewController: UIViewController {
     
+    //MARK: - IBOutlet
     @IBOutlet weak var imagemDetalhes: UIImageView!
     @IBOutlet weak var labelTitulo: UILabel!
     @IBOutlet weak var labelDescricao: UILabel!
@@ -18,18 +19,29 @@ class DetalhesFilmesViewController: UIViewController {
     @IBOutlet weak var labelEstrela: UILabel!
     @IBOutlet weak var scrollPrincipal: UIScrollView!
     
-    
+    //MARK: - Variaveis
+
     var listaDeFilmes: Result?
-    let porcentagem = "%"
    
+    //MARK: - life Cycle
+
     override func viewDidLoad() {
         
         avaliacaoView.layer.borderWidth=1.0
         avaliacaoView.layer.masksToBounds = false
         avaliacaoView.layer.cornerRadius = avaliacaoView.frame.size.height/2
         avaliacaoView.clipsToBounds = true
-
         
+        imagemDetalhes.layer.cornerRadius = 5;
+        imagemDetalhes.layer.masksToBounds = true;
+      
+        configuraFilme()
+
+    }
+    
+    //MARK: - Métodos
+
+    func configuraFilme(){
         if let filme = listaDeFilmes {
             if filme.mediaType == "movie" {
                 if let tituloFilme = filme.originalTitle{
@@ -54,7 +66,7 @@ class DetalhesFilmesViewController: UIViewController {
                 imagemDetalhes.af_setImage(withURL: url)
             }
             
-           var ratingFilme = filme.voteAverage
+            var ratingFilme = filme.voteAverage
             ratingFilme = ratingFilme * 10
             let avaliacao = String(format: "%.0f%%" ,ratingFilme)
             self.labelRating.text = avaliacao
@@ -75,11 +87,8 @@ class DetalhesFilmesViewController: UIViewController {
             else {
                 self.labelEstrela.text = "⭐"
             }
-            
-            
         }
-        
+
     }
-    
 
 }

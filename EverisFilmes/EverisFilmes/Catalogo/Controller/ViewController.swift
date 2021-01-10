@@ -40,6 +40,7 @@ class ViewController: UITableViewController, RespostaAPI {
     override func viewWillAppear(_ animated: Bool) {
         api.recuperaFilmes()
         
+        
     }
     
     
@@ -67,6 +68,8 @@ class ViewController: UITableViewController, RespostaAPI {
 
         if let url = imageUrl {
             celula.imagemFilme?.af_setImage(withURL: url)
+            celula.imagemFilme?.layer.cornerRadius = 40;
+            celula.imagemFilme?.layer.masksToBounds = true;
         }
     
         celula.labelTitulo.text = titulo
@@ -92,26 +95,3 @@ class ViewController: UITableViewController, RespostaAPI {
     
     
 }
-
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        let myVC = storyboard?.instantiateViewController(withIdentifier: "DetalhesViewController") as! DetalhesViewController
-//        myVC.stringPassed = caminhoDaImagem
-//        navigationController?.pushViewController(myVC, animated: true)
-//
-//
-//
-//
-////        if segue.identifier == "detalheFilme"{
-////
-////           if let indexPath = tableView.indexPathForSelectedRow {
-////
-////                var filmeSelecionado = filmeSelecionado
-////            let viewControllerDestino = segue.destination as! DetalhesViewController
-////            viewControllerDestino.listaDeFilmes?.results = filmeSelecionado
-////
-////            }
-////        }
-//
-//    }
