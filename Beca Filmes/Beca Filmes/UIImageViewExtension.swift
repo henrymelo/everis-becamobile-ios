@@ -14,7 +14,6 @@ extension UIImageView{
     
     func loadImage(imgpath: String) {
         
-
         let url = "https://image.tmdb.org/t/p/w500/\(imgpath)"
         Alamofire.request(url).responseImage { (response) in
             if let image = response.result.value{

@@ -57,24 +57,23 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         return celula
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "detalhes") as! DetalhesViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
+        let filmes = listaDeFilmes[indexPath.row]
+        
+        if filmes.title == nil {
+            vc.titulo = filmes.name
+        }else{
+            vc.titulo = filmes.title
+        }
+        vc.descricao = filmes.overview
+        
+//        vc.imagemPassada =
 
-//        let tituloFilme = listaFilmes?[indexPath.row].title
-//        vc.titulo = tituloFilme
-//
-//        let imagens = listaImagens?[indexPath.row]
-//        vc.imagemPassada = imagens
-//
-//        let detalhes = listaDetalhes?[indexPath.row]
-//        vc.descricao = detalhes
-//
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
-    
-    
 }
-
