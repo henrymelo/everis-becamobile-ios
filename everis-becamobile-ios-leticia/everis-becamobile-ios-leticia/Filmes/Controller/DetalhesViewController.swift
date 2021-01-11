@@ -19,6 +19,7 @@ class DetalhesViewController: UIViewController {
     @IBOutlet weak var ratingLabel: UILabel!
     
     
+    
     // MARK: Atributos
     
     var detalhesSelecionado:Array<Detalhes> = []
@@ -37,7 +38,7 @@ class DetalhesViewController: UIViewController {
         
             let title = self.detalhes[0].title
             let descricao = self.detalhes[0].overview
-            let rating = self.detalhes[0].vote_average
+            let rating = "Avaliação: \(self.detalhes[0].vote_average)"
             let name = self.detalhes[0].original_name
             
             if title != nil {
