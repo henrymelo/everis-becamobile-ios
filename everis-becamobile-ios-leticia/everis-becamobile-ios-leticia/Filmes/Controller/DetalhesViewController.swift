@@ -32,13 +32,20 @@ class DetalhesViewController: UIViewController {
         Repositorio().recuperaDetalhes(tendenciaSelecionada) { (listaDeDetalhes) in
             self.detalhes = listaDeDetalhes
             
-            print(self.detalhes[0].title)
             let title = self.detalhes[0].title
             let descricao = self.detalhes[0].overview
             let rating = self.detalhes[0].vote_average
             self.tituloLabel.text = title
             self.descricaoLabel.text = descricao
             self.ratingLabel.text = String(rating)
+            
+            let url = tendenciaSelecionada.poster_path!
+            guard let imageUrl = URL(string: "http://image.tmdb.org/t/p/w185\(url)") else { return }
+            self.capaImagem.af_setImage(withURL: imageUrl)
+            
+            //Arredondar as bordas da imagem
+            self.capaImagem.layer.cornerRadius = 10
+            self.capaImagem.layer.masksToBounds = true
         }
     }
     
