@@ -14,7 +14,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK: variáveis
     let filme:FilmesAPI = FilmesAPI("fda3fa048b5dd1721be8d5512626b16a")
     var meusFilmes:[[String:Any]] = [[:]]
-    var primeiraPagina: Int = 1
    
     override func viewDidLoad() {
         super.viewDidLoad()

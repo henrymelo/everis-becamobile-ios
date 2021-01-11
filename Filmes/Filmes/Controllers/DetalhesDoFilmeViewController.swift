@@ -27,7 +27,7 @@ class DetalhesDoFilmeViewController: UIViewController {
     //MARK: Variveis
     let detalheDoMeuFilme:FilmesAPI = FilmesAPI("fda3fa048b5dd1721be8d5512626b16a")
     var meuFilme:[String:Any]? = nil
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         mostrarFilme()
@@ -74,6 +74,7 @@ class DetalhesDoFilmeViewController: UIViewController {
             self.textoSinopse.text = sinopse
             self.tituloFilme.text = titulo
             self.imagemDoFilme.image = imagem
+            
         }
         
     }
