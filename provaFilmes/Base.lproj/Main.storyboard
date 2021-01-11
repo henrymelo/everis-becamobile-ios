@@ -87,7 +87,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VHI-yn-4vV"/>
+                    <navigationItem key="navigationItem" id="VHI-yn-4vV">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="IU2-dW-qIQ"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="colecaoFilmes" destination="TMt-HX-GJV" id="FE3-Wv-x27"/>
                     </connections>
