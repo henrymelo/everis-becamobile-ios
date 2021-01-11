@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aZI-h8-Uh0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2yq-hQ-Wpl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="00v-AH-vm3">
+            <objects>
+                <navigationController id="2yq-hQ-Wpl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jtb-q9-IPf">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aZI-h8-Uh0" kind="relationship" relationship="rootViewController" id="Ghe-HL-cfb"/>
+                        <segue destination="XbY-q7-14b" kind="push" id="eCt-5n-ptO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FAt-WP-l4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1297" y="134"/>
+        </scene>
         <!--Item-->
         <scene sceneID="LkN-gj-3OH">
             <objects>
@@ -93,18 +110,18 @@
                             <constraint firstItem="aWS-iC-SZe" firstAttribute="top" secondItem="JfF-5R-tcv" secondAttribute="top" constant="65" id="hKV-3M-5tA"/>
                             <constraint firstItem="aWS-iC-SZe" firstAttribute="leading" secondItem="Ayx-ti-Nga" secondAttribute="leading" id="i2z-Ol-70p"/>
                             <constraint firstAttribute="bottom" secondItem="aWS-iC-SZe" secondAttribute="bottom" id="tZT-Y5-rFo"/>
-                            <constraint firstItem="xGa-re-LB3" firstAttribute="top" secondItem="Ayx-ti-Nga" secondAttribute="top" id="ziP-FG-ZcC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ayx-ti-Nga"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="D9X-c7-zEG"/>
+                    <navigationItem key="navigationItem" id="zva-qm-or8"/>
                     <connections>
                         <outlet property="collectionFilmes" destination="TNC-mP-nsA" id="QkE-ew-7xG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czA-2c-55G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-589.60000000000002" y="134.48275862068968"/>
+            <point key="canvasLocation" x="-617" y="134"/>
         </scene>
         <!--Detalhes View Controller-->
         <scene sceneID="1GO-bc-0oI">
@@ -114,43 +131,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Do Filme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzu-8t-adc">
-                                <rect key="frame" x="46.5" y="177" width="261.5" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWB-y1-BWg">
-                                <rect key="frame" x="-4.5" y="274" width="363.5" height="348"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWB-y1-BWg">
+                                <rect key="frame" x="5" y="242" width="365" height="348"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-Bl-c7M">
-                                <rect key="frame" x="316" y="30" width="41" height="30"/>
-                                <state key="normal" title="Voltar"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Do Filme" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzu-8t-adc">
+                                <rect key="frame" x="57" y="141" width="261.5" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uzu-8t-adc" firstAttribute="top" secondItem="G3A-Xf-fYR" secondAttribute="top" constant="157" id="1Ul-hq-DAc"/>
-                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="leading" secondItem="G3A-Xf-fYR" secondAttribute="leading" constant="316" id="B29-pt-z95"/>
-                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="top" secondItem="G3A-Xf-fYR" secondAttribute="top" constant="10" id="B5C-aj-cbk"/>
-                            <constraint firstItem="uzu-8t-adc" firstAttribute="centerX" secondItem="NWB-y1-BWg" secondAttribute="centerX" id="O0s-TL-dPz"/>
-                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="trailing" secondItem="rfW-Bl-c7M" secondAttribute="trailing" constant="18" id="SJM-gP-jq9"/>
-                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="trailing" secondItem="rfW-Bl-c7M" secondAttribute="trailing" constant="18" id="TIr-hA-ffD"/>
-                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="top" secondItem="G3A-Xf-fYR" secondAttribute="top" constant="10" id="eCb-xn-aGI"/>
-                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="top" secondItem="G3A-Xf-fYR" secondAttribute="top" constant="10" id="fE0-Wx-gN9"/>
-                            <constraint firstItem="NWB-y1-BWg" firstAttribute="top" secondItem="uzu-8t-adc" secondAttribute="bottom" constant="49" id="iRq-iC-fvW"/>
-                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="leading" secondItem="uzu-8t-adc" secondAttribute="trailing" constant="8" symbolic="YES" id="iq8-7b-uBd"/>
-                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="trailing" secondItem="NWB-y1-BWg" secondAttribute="trailing" constant="16" id="lEV-d3-EAk"/>
-                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="trailing" secondItem="rfW-Bl-c7M" secondAttribute="trailing" constant="18" id="lUf-zC-uZd"/>
-                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="bottom" secondItem="NWB-y1-BWg" secondAttribute="bottom" constant="45" id="scf-Zx-DCl"/>
-                            <constraint firstItem="NWB-y1-BWg" firstAttribute="top" secondItem="rfW-Bl-c7M" secondAttribute="bottom" constant="214" id="sh9-iy-ceY"/>
-                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="leading" secondItem="G3A-Xf-fYR" secondAttribute="leading" constant="316" id="xrL-ge-WQp"/>
+                            <constraint firstItem="NWB-y1-BWg" firstAttribute="trailing" secondItem="G3A-Xf-fYR" secondAttribute="trailing" constant="-5" id="CI8-cb-yTs"/>
+                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="bottom" secondItem="NWB-y1-BWg" secondAttribute="bottom" constant="77" id="CIB-Ze-pzO"/>
+                            <constraint firstItem="uzu-8t-adc" firstAttribute="leading" secondItem="G3A-Xf-fYR" secondAttribute="leading" constant="57" id="WuT-QF-COB"/>
+                            <constraint firstItem="NWB-y1-BWg" firstAttribute="leading" secondItem="G3A-Xf-fYR" secondAttribute="leading" constant="5" id="XuY-fJ-f5l"/>
+                            <constraint firstItem="uzu-8t-adc" firstAttribute="top" secondItem="G3A-Xf-fYR" secondAttribute="top" constant="121" id="aFG-Qr-kur"/>
+                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="trailing" secondItem="uzu-8t-adc" secondAttribute="trailing" constant="56.5" id="jwG-av-VUi"/>
+                            <constraint firstItem="NWB-y1-BWg" firstAttribute="top" secondItem="uzu-8t-adc" secondAttribute="bottom" constant="53" id="yzV-Rs-IzD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G3A-Xf-fYR"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ar4-Ta-vlO"/>
                     <connections>
                         <outlet property="descricaoFilme" destination="NWB-y1-BWg" id="f5o-1S-dL3"/>
                         <outlet property="nomeDoFilme" destination="uzu-8t-adc" id="XJE-Mk-t75"/>

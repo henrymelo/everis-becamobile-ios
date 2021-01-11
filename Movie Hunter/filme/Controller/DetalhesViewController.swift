@@ -17,13 +17,13 @@ class DetalhesViewController: UIViewController {
     
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        if let filme = filmeSelecionado {
+            self.nomeDoFilme.text = filme.title
+            self.descricaoFilme.text = filme.overview
+        }
     }
-    
-
-
-
 }
