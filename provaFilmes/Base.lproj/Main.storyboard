@@ -119,28 +119,34 @@
                                     <constraint firstAttribute="width" secondItem="fRf-vL-uTP" secondAttribute="height" multiplier="16:9" id="rLA-AW-TfR"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="estrela.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZPq-kg-0pS">
+                                <rect key="frame" x="267" y="311" width="25" height="25"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hBb-eu-8jD">
                                 <rect key="frame" x="15" y="315" width="345" height="463"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7zV-WN-NA7">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SINOPSE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP5-t9-JYv">
-                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="25"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RATING" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtQ-iV-aHz">
-                                                <rect key="frame" x="172.66666666666663" y="0.0" width="172.33333333333337" height="29"/>
+                                                <rect key="frame" x="172.66666666666663" y="0.0" width="172.33333333333337" height="25"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
                                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="X4t-VN-plA"/>
+                                        </constraints>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="yR9-JA-CRJ">
-                                        <rect key="frame" x="0.0" y="29" width="345" height="434"/>
+                                        <rect key="frame" x="0.0" y="25" width="345" height="438"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,6 +159,8 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gJM-45-e0f" firstAttribute="trailing" secondItem="hBb-eu-8jD" secondAttribute="trailing" constant="15" id="5rW-lG-Qlf"/>
+                            <constraint firstItem="ZPq-kg-0pS" firstAttribute="height" secondItem="TtQ-iV-aHz" secondAttribute="height" id="Aqa-zT-tbM"/>
+                            <constraint firstItem="ZPq-kg-0pS" firstAttribute="leading" secondItem="TtQ-iV-aHz" secondAttribute="trailing" constant="-93" id="FCA-aG-ERX"/>
                             <constraint firstItem="hBb-eu-8jD" firstAttribute="top" secondItem="fRf-vL-uTP" secondAttribute="bottom" constant="10" id="FuE-vG-hT2"/>
                             <constraint firstItem="vQp-hk-Wru" firstAttribute="trailing" secondItem="yR9-JA-CRJ" secondAttribute="trailing" id="GIG-FL-Kzb"/>
                             <constraint firstItem="fRf-vL-uTP" firstAttribute="trailing" secondItem="gJM-45-e0f" secondAttribute="trailing" id="IzS-TV-Has"/>
@@ -162,10 +170,12 @@
                             <constraint firstItem="hBb-eu-8jD" firstAttribute="leading" secondItem="gJM-45-e0f" secondAttribute="leading" constant="15" id="efl-A0-eey"/>
                             <constraint firstItem="gJM-45-e0f" firstAttribute="bottom" secondItem="hBb-eu-8jD" secondAttribute="bottom" id="ht0-vZ-2Gz"/>
                             <constraint firstItem="fRf-vL-uTP" firstAttribute="top" secondItem="vQp-hk-Wru" secondAttribute="bottom" id="uF8-im-9dg"/>
+                            <constraint firstItem="TtQ-iV-aHz" firstAttribute="top" secondItem="ZPq-kg-0pS" secondAttribute="bottom" constant="-21" id="wDo-XH-XGv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gJM-45-e0f"/>
                     </view>
                     <connections>
+                        <outlet property="estrelaRatingFilmeDetalhes" destination="ZPq-kg-0pS" id="MhB-K2-lZ3"/>
                         <outlet property="imagemFilmeDetalhes" destination="fRf-vL-uTP" id="zHK-Mi-qYZ"/>
                         <outlet property="raitingFilmeDetalhes" destination="TtQ-iV-aHz" id="NHd-YS-4yf"/>
                         <outlet property="sinopseFilmeDetalhes" destination="pP5-t9-JYv" id="Peb-xo-JRL"/>
@@ -175,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ib-jb-6Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1896.8" y="98.50074962518741"/>
+            <point key="canvasLocation" x="1896.8" y="98.275862068965523"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jmc-22-eNb">
@@ -196,4 +206,7 @@
             <point key="canvasLocation" x="140" y="98.50074962518741"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="estrela.png" width="25" height="25"/>
+    </resources>
 </document>

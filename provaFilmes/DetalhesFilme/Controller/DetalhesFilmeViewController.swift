@@ -16,6 +16,7 @@ class DetalhesFilmeViewController: UIViewController {
     @IBOutlet weak var sinopseFilmeDetalhes: UILabel!
     @IBOutlet weak var raitingFilmeDetalhes: UILabel!
     @IBOutlet weak var textoFilmeDetalhes: UITextView!
+    @IBOutlet weak var estrelaRatingFilmeDetalhes: UIImageView!
     
     var filmeSelecionado: Filmes? = nil
     
