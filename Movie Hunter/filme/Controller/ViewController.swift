@@ -19,9 +19,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK: - Variáveis
     var listaDeFilme: [Filme] = []
     
-    
-   
-    
     // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
