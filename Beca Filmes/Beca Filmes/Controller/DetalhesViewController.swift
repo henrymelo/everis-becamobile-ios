@@ -10,28 +10,30 @@ import UIKit
 
 class DetalhesViewController: UIViewController {
     
-    let listaDetalhes: Array<String>? = []
     
     @IBOutlet weak var imagemDetalhes: UIImageView!
     @IBOutlet weak var tituloDetalhes: UILabel!
     @IBOutlet weak var descricaoDetalhes: UILabel!
     
     
-    var titulo: String?
-    var descricao: String?
-    var imagemPassada: UIImage?
+
+    var filme: Result?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tituloDetalhes.text = titulo
-        descricaoDetalhes.text = descricao
-        imagemDetalhes.image = imagemPassada
-    }
-    
-    @IBAction func buttonVoltar(_ sender: UIButton) {
-        if let voltar = navigationController{
-            voltar.popViewController(animated: true)
+        if let path = filme?.posterPath{
+            imagemDetalhes.loadImage(imgpath: path)
         }
+        
+        if filme?.title == nil{
+            guard let titulo = filme?.name else{return}
+            tituloDetalhes.text = titulo
+        }else{
+            guard let titulo = filme?.title else{return}
+            tituloDetalhes.text = titulo
+        }
+        
+        descricaoDetalhes.text = filme?.overview
+        
     }
 }

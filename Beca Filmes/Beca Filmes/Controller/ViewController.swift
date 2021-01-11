@@ -56,24 +56,15 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "detalhes") as! DetalhesViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-        let filmes = listaDeFilmes[indexPath.row]
-        if filmes.title == nil {
-            vc.titulo = filmes.name
-        }else{
-            vc.titulo = filmes.title
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "detalhes") as? DetalhesViewController{
+            vc.filme = listaDeFilmes[indexPath.row]
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        vc.descricao = filmes.overview
         
-       
-//        vc.imagemPassada = celula.imageView?.loadImage(imgpath: filmes.posterPath)
+        
         
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
