@@ -32,7 +32,6 @@ class FilmesAPI: NSObject {
             }
     }
     func recebeDetalhesFilme(completion: @escaping (Any)->Void){
-        var listaTodosDetalhes:[[String: Any]] = [[:]]
         self.recebeTendenciasFilmes { (filmes) in
             for filme in filmes{
                 let id = filme.id
@@ -42,11 +41,7 @@ class FilmesAPI: NSObject {
                     case .success:
                         guard let jsonData = resposta.data else{return}
                         guard let detalhes = try? JSONDecoder().decode(FilmeDetalhes.self, from: jsonData) else {return}
-                        
-                        let poster = detalhes.posterPath
-                        let titulo = detalhes.title
-                        let nome = detalhes.name
-                        let descricao = detalhes.overview
+                        completion(detalhes)
 //                        if detalhes.title == nil{
 //                            print(detalhes.name)
 //                        }else{print(detalhes.title)}
