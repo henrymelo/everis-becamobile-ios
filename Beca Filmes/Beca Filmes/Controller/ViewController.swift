@@ -51,18 +51,17 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         }else{
             celula.textLabel?.text = filme.title
         }
-        
-        
-    
         return celula
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "detalhes") as! DetalhesViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
         let filmes = listaDeFilmes[indexPath.row]
-        
         if filmes.title == nil {
             vc.titulo = filmes.name
         }else{
@@ -70,10 +69,13 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         }
         vc.descricao = filmes.overview
         
-//        vc.imagemPassada =
-
+       
+//        vc.imagemPassada = celula.imageView?.loadImage(imgpath: filmes.posterPath)
+        
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+    
 }

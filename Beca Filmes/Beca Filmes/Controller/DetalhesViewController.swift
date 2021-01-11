@@ -28,5 +28,10 @@ class DetalhesViewController: UIViewController {
         descricaoDetalhes.text = descricao
         imagemDetalhes.image = imagemPassada
     }
-
+    
+    @IBAction func buttonVoltar(_ sender: UIButton) {
+        if let voltar = navigationController{
+            voltar.popViewController(animated: true)
+        }
+    }
 }
