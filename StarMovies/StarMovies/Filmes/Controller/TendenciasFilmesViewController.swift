@@ -85,7 +85,6 @@ class TendenciasFilmesViewController: UIViewController, UICollectionViewDataSour
             self.buttonAnterior?.isHidden = true
             }
             
-            // do any programmatic customization, if any, here
             return view
         }
         fatalError("Unexpected kind")

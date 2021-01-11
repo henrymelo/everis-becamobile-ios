@@ -84,9 +84,8 @@
                                     <rect key="frame" x="0.0" y="250" width="290" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5b-zH-Jxx">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5b-zH-Jxx">
                                             <rect key="frame" x="8" y="10" width="55" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Anterior">
                                                 <color key="titleColor" red="0.078431372550000003" green="0.36470588240000001" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
@@ -94,9 +93,8 @@
                                                 <action selector="buttonIrParaAnterior:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TNs-T9-KKR"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7x-SP-ppb">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7x-SP-ppb">
                                             <rect key="frame" x="226" y="10" width="56" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Próximo">
                                                 <color key="titleColor" red="0.078431372550000003" green="0.36470588240000001" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
@@ -105,6 +103,12 @@
                                             </connections>
                                         </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="N7x-SP-ppb" secondAttribute="bottom" constant="2" id="BOz-Hn-hdh"/>
+                                        <constraint firstItem="N7x-SP-ppb" firstAttribute="trailing" secondItem="xs1-iQ-qP8" secondAttribute="trailingMargin" id="ImC-62-Jro"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="t5b-zH-Jxx" secondAttribute="bottom" constant="2" id="NAa-mY-FTG"/>
+                                        <constraint firstItem="t5b-zH-Jxx" firstAttribute="leading" secondItem="xs1-iQ-qP8" secondAttribute="leadingMargin" id="dVt-RG-89S"/>
+                                    </constraints>
                                     <connections>
                                         <outlet property="buttonAnterior" destination="t5b-zH-Jxx" id="vfv-Rg-kKS"/>
                                         <outlet property="buttonProximo" destination="N7x-SP-ppb" id="eHT-18-GMg"/>
