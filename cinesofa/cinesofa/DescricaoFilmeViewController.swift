@@ -13,18 +13,18 @@ class DescricaoFilmeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        guard let filme = filmeSelecionado else {return print("Erro ao buscar informações sobre o pacoteViagens(classe: DetalhesViagensViewController)")}
+        print(filme.overview)
     }
     
+    var filmeSelecionado:Result?
 
-    /*
-    // MARK: - Navigation
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
+    @IBAction func botaoVoltar(_ sender: UIButton) {
+        if let voltar = self.navigationController{
+            voltar.popToRootViewController(animated: true)}
     }
-    */
-
+    
 }

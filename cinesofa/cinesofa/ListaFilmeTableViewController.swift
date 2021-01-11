@@ -12,15 +12,18 @@ class ListaFilmeTableViewController: UITableViewController {
     
     private let urlResult = "https://api.themoviedb.org/3/trending/all/week?api_key=214c206d6a89ab0b5b38efbcc5a71587&language=pt-BR"
     private var results = [Result]()
-    
   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         listaFilmesDaSemana()
-
-    
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "editar" {
+//            alunoViewController = segue.destination as? AlunoViewController
+//        }
+//    }
 
     // MARK: - Table view data source
 
@@ -44,11 +47,12 @@ class ListaFilmeTableViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-               let storyboard = UIStoryboard(name: "Main", bundle: nil)
-               let controller = storyboard.instantiateViewController(withIdentifier: "descricaoFilme") as! DescricaoFilmeViewController
-               
-               self.navigationController?.pushViewController(controller, animated: true)
+
+        let filme = results[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "descricaoFilme") as! DescricaoFilmeViewController
+        controller.filmeSelecionado = filme
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK - Cell
