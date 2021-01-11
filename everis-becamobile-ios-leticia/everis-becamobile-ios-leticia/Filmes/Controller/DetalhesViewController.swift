@@ -18,6 +18,9 @@ class DetalhesViewController: UIViewController {
     @IBOutlet weak var descricaoLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
+    
+    // MARK: Atributos
+    
     var detalhesSelecionado:Array<Detalhes> = []
     var tendencia:Tendencia?
     var detalhes:Array<Detalhes> = []
@@ -31,14 +34,23 @@ class DetalhesViewController: UIViewController {
         guard let tendenciaSelecionada = tendencia else { return }
         Repositorio().recuperaDetalhes(tendenciaSelecionada) { (listaDeDetalhes) in
             self.detalhes = listaDeDetalhes
-            
+        
             let title = self.detalhes[0].title
             let descricao = self.detalhes[0].overview
             let rating = self.detalhes[0].vote_average
-            self.tituloLabel.text = title
+            let name = self.detalhes[0].original_name
+            
+            if title != nil {
+                self.tituloLabel.text = title
+            } else {
+                self.tituloLabel.text = name
+            }
+            
             self.descricaoLabel.text = descricao
             self.ratingLabel.text = String(rating)
             
+            
+            //Imagem
             let url = tendenciaSelecionada.poster_path!
             guard let imageUrl = URL(string: "http://image.tmdb.org/t/p/w185\(url)") else { return }
             self.capaImagem.af_setImage(withURL: imageUrl)
