@@ -20,15 +20,12 @@ class ShowDetailsViewController: UIViewController {
     var tituloFilme: String?
     var resumoFilme: String?
     var avaliacao:String?
-    var genero:String?
-    var ano:Int?
     var banner:UIImage?
     var puxarBanner:UIImage?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         labelTItuloShowDetails.text = tituloFilme
         labelDescricaoShowDetais.text = resumoFilme
