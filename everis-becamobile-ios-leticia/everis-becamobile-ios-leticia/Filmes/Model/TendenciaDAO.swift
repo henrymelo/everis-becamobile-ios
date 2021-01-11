@@ -11,11 +11,15 @@ import CoreData
 
 class TendenciaDAO: NSObject {
     
+    // MARK: - Atributos
+    
     var gerenciadorDeResultados:NSFetchedResultsController<Tendencia>?
     var contexto:NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }
+    
+    // MARK: - Métodos
     
     func recuperaTendencia() -> Array<Tendencia> {
         let pesquisaTendencia:NSFetchRequest<Tendencia> = Tendencia.fetchRequest()

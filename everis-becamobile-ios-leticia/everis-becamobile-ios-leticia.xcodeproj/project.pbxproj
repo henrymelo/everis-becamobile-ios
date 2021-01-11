@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AFE04A6195B0AC3D3942B701 /* Pods_everis_becamobile_ios_leticia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F52CE5A26A1ACD8EBBFD54E /* Pods_everis_becamobile_ios_leticia.framework */; };
 		FCD16F9025AC882F00315F42 /* voltar.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD16F8F25AC882F00315F42 /* voltar.png */; };
+		FCD16F9225ACA50100315F42 /* FilmesTendenciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16F9125ACA50100315F42 /* FilmesTendenciaViewController.swift */; };
 		FCF0256225A89061005FA869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0256125A89061005FA869 /* AppDelegate.swift */; };
 		FCF0256425A89061005FA869 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0256325A89061005FA869 /* ViewController.swift */; };
 		FCF0256A25A89061005FA869 /* everis_becamobile_ios_leticia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF0256825A89061005FA869 /* everis_becamobile_ios_leticia.xcdatamodeld */; };
@@ -17,8 +18,6 @@
 		FCF0257925A890FE005FA869 /* FilmeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0257825A890FE005FA869 /* FilmeAPI.swift */; };
 		FCF0257B25A894D8005FA869 /* TendenciaDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0257A25A894D8005FA869 /* TendenciaDAO.swift */; };
 		FCF0257D25A896E1005FA869 /* Repositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0257C25A896E1005FA869 /* Repositorio.swift */; };
-		FCF0257F25A89AA0005FA869 /* TendenciaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0257E25A89AA0005FA869 /* TendenciaTableViewController.swift */; };
-		FCF0258325A89C8A005FA869 /* TendenciaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0258225A89C8A005FA869 /* TendenciaTableViewCell.swift */; };
 		FCF025A525A8B443005FA869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF025A425A8B443005FA869 /* Main.storyboard */; };
 		FCF025A725A8E5CF005FA869 /* TendenciaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF025A625A8E5CF005FA869 /* TendenciaCollectionViewCell.swift */; };
 		FCF025A925A8EB92005FA869 /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF025A825A8EB92005FA869 /* DetalhesViewController.swift */; };
@@ -30,6 +29,7 @@
 		777CC696A544CFF88E7CA3F3 /* Pods-everis-becamobile-ios-leticia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everis-becamobile-ios-leticia.debug.xcconfig"; path = "Target Support Files/Pods-everis-becamobile-ios-leticia/Pods-everis-becamobile-ios-leticia.debug.xcconfig"; sourceTree = "<group>"; };
 		8FD3C7AADF8D9D13128253F8 /* Pods-everis-becamobile-ios-leticia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everis-becamobile-ios-leticia.release.xcconfig"; path = "Target Support Files/Pods-everis-becamobile-ios-leticia/Pods-everis-becamobile-ios-leticia.release.xcconfig"; sourceTree = "<group>"; };
 		FCD16F8F25AC882F00315F42 /* voltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voltar.png; sourceTree = "<group>"; };
+		FCD16F9125ACA50100315F42 /* FilmesTendenciaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesTendenciaViewController.swift; sourceTree = "<group>"; };
 		FCF0255E25A89061005FA869 /* everis-becamobile-ios-leticia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "everis-becamobile-ios-leticia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF0256125A89061005FA869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF0256325A89061005FA869 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,8 +40,6 @@
 		FCF0257825A890FE005FA869 /* FilmeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeAPI.swift; sourceTree = "<group>"; };
 		FCF0257A25A894D8005FA869 /* TendenciaDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendenciaDAO.swift; sourceTree = "<group>"; };
 		FCF0257C25A896E1005FA869 /* Repositorio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositorio.swift; sourceTree = "<group>"; };
-		FCF0257E25A89AA0005FA869 /* TendenciaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendenciaTableViewController.swift; sourceTree = "<group>"; };
-		FCF0258225A89C8A005FA869 /* TendenciaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendenciaTableViewCell.swift; sourceTree = "<group>"; };
 		FCF025A425A8B443005FA869 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FCF025A625A8E5CF005FA869 /* TendenciaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendenciaCollectionViewCell.swift; sourceTree = "<group>"; };
 		FCF025A825A8EB92005FA869 /* DetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
@@ -143,8 +141,8 @@
 		FCF0258025A89C54005FA869 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FCF0257E25A89AA0005FA869 /* TendenciaTableViewController.swift */,
 				FCF025A825A8EB92005FA869 /* DetalhesViewController.swift */,
+				FCD16F9125ACA50100315F42 /* FilmesTendenciaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -152,7 +150,6 @@
 		FCF0258125A89C72005FA869 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FCF0258225A89C8A005FA869 /* TendenciaTableViewCell.swift */,
 				FCF025A625A8E5CF005FA869 /* TendenciaCollectionViewCell.swift */,
 			);
 			path = View;
@@ -274,14 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCF0257F25A89AA0005FA869 /* TendenciaTableViewController.swift in Sources */,
 				FCF0257925A890FE005FA869 /* FilmeAPI.swift in Sources */,
 				FCF0257D25A896E1005FA869 /* Repositorio.swift in Sources */,
 				FCF0256425A89061005FA869 /* ViewController.swift in Sources */,
 				FCF0256A25A89061005FA869 /* everis_becamobile_ios_leticia.xcdatamodeld in Sources */,
 				FCF025A725A8E5CF005FA869 /* TendenciaCollectionViewCell.swift in Sources */,
 				FCF025AB25AA287D005FA869 /* DetalhesDAO.swift in Sources */,
-				FCF0258325A89C8A005FA869 /* TendenciaTableViewCell.swift in Sources */,
+				FCD16F9225ACA50100315F42 /* FilmesTendenciaViewController.swift in Sources */,
 				FCF0257B25A894D8005FA869 /* TendenciaDAO.swift in Sources */,
 				FCF025A925A8EB92005FA869 /* DetalhesViewController.swift in Sources */,
 				FCF0256225A89061005FA869 /* AppDelegate.swift in Sources */,
