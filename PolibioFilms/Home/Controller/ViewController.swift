@@ -13,6 +13,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
 
     @IBOutlet weak var filmesCollectionView: UICollectionView!
+    @IBOutlet weak var capaFilme: UIImageView!
     
     var listaDeFilmes: [[String:Any]] = [[:]]
     var imagemDoBanner:UIImage?
@@ -22,6 +23,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         chamarAPI()
         filmesCollectionView.dataSource = self
         filmesCollectionView.delegate = self
+        
         
         
         
@@ -44,6 +46,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! FilmesCollectionViewCell
         
+        celulaFilme.layer.cornerRadius = 10
+        celulaFilme.layer.masksToBounds = true
+        
         let filmeAtual = listaDeFilmes[indexPath.row]
         
         
@@ -51,8 +56,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         celulaFilme.capaFilme.af_setImage(withURL: URL(string: "https://image.tmdb.org/t/p/w185\(imagem)")!)
 
-    
-     
         return celulaFilme
     }
     
@@ -95,9 +98,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             self.navigationController?.pushViewController(controller, animated: true)
 
         }
-        
     
         
     }
+    
 }
     

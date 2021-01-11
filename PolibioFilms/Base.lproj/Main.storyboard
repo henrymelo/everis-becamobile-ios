@@ -3,6 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -48,24 +49,24 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celulaPacote" id="qXo-ER-OTx" customClass="FilmesCollectionViewCell" customModule="PolibioFilms" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-Lp-6N3">
-                                                    <rect key="frame" x="5" y="10" width="85" height="140"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="140"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Gbn-Lp-6N3" secondAttribute="trailing" id="Epd-F8-4F2"/>
                                             <constraint firstAttribute="bottom" secondItem="Gbn-Lp-6N3" secondAttribute="bottom" id="NB0-wV-ynE"/>
-                                            <constraint firstItem="Gbn-Lp-6N3" firstAttribute="top" secondItem="qXo-ER-OTx" secondAttribute="top" constant="10" id="n55-ZZ-JMr"/>
-                                            <constraint firstItem="Gbn-Lp-6N3" firstAttribute="leading" secondItem="qXo-ER-OTx" secondAttribute="leading" constant="5" id="xx8-7V-3m6"/>
+                                            <constraint firstItem="Gbn-Lp-6N3" firstAttribute="top" secondItem="qXo-ER-OTx" secondAttribute="top" id="n55-ZZ-JMr"/>
+                                            <constraint firstItem="Gbn-Lp-6N3" firstAttribute="leading" secondItem="qXo-ER-OTx" secondAttribute="leading" id="xx8-7V-3m6"/>
                                         </constraints>
-                                        <size key="customSize" width="90" height="150"/>
+                                        <size key="customSize" width="80" height="140"/>
                                         <connections>
                                             <outlet property="capaFilme" destination="Gbn-Lp-6N3" id="ufe-d9-hQf"/>
                                         </connections>
@@ -109,11 +110,13 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGa-JD-zcr">
-                                <rect key="frame" x="17" y="40" width="35" height="35"/>
+                                <rect key="frame" x="17" y="40" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.backward" catalog="system"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="chevron.backward.circle.fill" catalog="system" symbolScale="medium"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonvoltar:" destination="1ez-oJ-YXx" eventType="touchUpInside" id="nEI-G9-XXF"/>
                                 </connections>
@@ -197,7 +200,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="chevron.backward.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

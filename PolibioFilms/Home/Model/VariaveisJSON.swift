@@ -12,7 +12,7 @@ struct Filmes: Codable {
     let totalPages, totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
-        case page
+        case page = "page"
         case results = "results"
         case totalPages = "total_pages"
         case totalResults = "total_results"

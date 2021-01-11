@@ -13,6 +13,5 @@ class FilmesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var capaFilme: UIImageView!
     
     
-    
 
 }

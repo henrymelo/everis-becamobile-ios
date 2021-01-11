@@ -34,7 +34,7 @@ class ShowDetailsViewController: UIViewController {
         labelDescricaoShowDetais.text = resumoFilme
         bannerFilme.image = banner
         avaliacaoFilme.text = avaliacao
-        
+        self.bannerFilme.layer.cornerRadius = 10
 
     }
     

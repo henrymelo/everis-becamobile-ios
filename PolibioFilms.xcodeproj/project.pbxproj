@@ -108,13 +108,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		8B8C78E125AB33AE00E14CB4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		8BFBD7AC25AA10A500E36B63 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,8 +129,6 @@
 		8BFBD7E525AA340800E36B63 /* ShowDetails */ = {
 			isa = PBXGroup;
 			children = (
-				8B8C78E125AB33AE00E14CB4 /* Model */,
-				8BFBD7EB25AA343000E36B63 /* View */,
 				8BFBD7E625AA341600E36B63 /* Controller */,
 			);
 			path = ShowDetails;
@@ -149,13 +140,6 @@
 				8BFBD7E725AA342C00E36B63 /* ShowDetailsViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		8BFBD7EB25AA343000E36B63 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		BCE7CC689524843F928E9147 /* Pods */ = {
