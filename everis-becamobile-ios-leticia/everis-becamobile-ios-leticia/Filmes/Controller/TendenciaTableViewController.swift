@@ -28,7 +28,7 @@ class TendenciaTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//      limpaCoreData()
+        limpaCoreDataTendencia()
         recuperaTendencias()
     }
     
@@ -75,16 +75,16 @@ class TendenciaTableViewController: UITableViewController {
     }
     
     
-//    func limpaCoreData() {
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let managedContext = appDelegate.persistentContainer.viewContext
-//        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: NSFetchRequest<NSFetchRequestResult>(entityName: "Detalhes"))
-//        do {
-//            try managedContext.execute(DelAllReqVar)
-//        }
-//        catch {
-//            print(error)
-//        }
-//    }
+    func limpaCoreDataTendencia() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: NSFetchRequest<NSFetchRequestResult>(entityName: "Tendencia"))
+        do {
+            try managedContext.execute(DelAllReqVar)
+        }
+        catch {
+            print(error)
+        }
+    }
 
 }

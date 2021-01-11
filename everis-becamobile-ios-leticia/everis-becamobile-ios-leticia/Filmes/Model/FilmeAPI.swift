@@ -42,7 +42,6 @@ class FilmeAPI: NSObject {
                     DetalhesDAO().salvaDetalhes(dicionarioDeDetalhes: resposta)
                     completion()
                 }
-                
                 break
             case .failure:
                 print(response.error!)
