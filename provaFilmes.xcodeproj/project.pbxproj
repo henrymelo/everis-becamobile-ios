@@ -19,6 +19,7 @@
 		D3141B4225A7B3350047B34D /* filmeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3141B4125A7B3350047B34D /* filmeJSON.swift */; };
 		D3141B4725A888F70047B34D /* DetalhesFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3141B4625A888F70047B34D /* DetalhesFilmeViewController.swift */; };
 		D353A3A125AC114200B52320 /* estrela.png in Resources */ = {isa = PBXBuildFile; fileRef = D353A3A025AC114200B52320 /* estrela.png */; };
+		D353A3A925AC865C00B52320 /* AlertaSemInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D353A3A825AC865C00B52320 /* AlertaSemInternet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D3141B4125A7B3350047B34D /* filmeJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filmeJSON.swift; sourceTree = "<group>"; };
 		D3141B4625A888F70047B34D /* DetalhesFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesFilmeViewController.swift; sourceTree = "<group>"; };
 		D353A3A025AC114200B52320 /* estrela.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = estrela.png; sourceTree = "<group>"; };
+		D353A3A825AC865C00B52320 /* AlertaSemInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertaSemInternet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		D3141B1F25A742900047B34D /* provaFilmes */ = {
 			isa = PBXGroup;
 			children = (
+				D353A3A625AC862500B52320 /* AlertaSemInternet */,
 				D3141B4325A888B80047B34D /* DetalhesFilme */,
 				D3141B3825A774E90047B34D /* Filmes */,
 				D3141B3225A744CD0047B34D /* Model */,
@@ -168,6 +171,22 @@
 				D353A3A025AC114200B52320 /* estrela.png */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		D353A3A625AC862500B52320 /* AlertaSemInternet */ = {
+			isa = PBXGroup;
+			children = (
+				D353A3A725AC863E00B52320 /* Controller */,
+			);
+			path = AlertaSemInternet;
+			sourceTree = "<group>";
+		};
+		D353A3A725AC863E00B52320 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D353A3A825AC865C00B52320 /* AlertaSemInternet.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3141B4225A7B3350047B34D /* filmeJSON.swift in Sources */,
+				D353A3A925AC865C00B52320 /* AlertaSemInternet.swift in Sources */,
 				D3141B3C25A775200047B34D /* FilmesViewController.swift in Sources */,
 				D3141B2325A742900047B34D /* ViewController.swift in Sources */,
 				D3141B3E25A776410047B34D /* celulaFilmeCollectionViewCell.swift in Sources */,

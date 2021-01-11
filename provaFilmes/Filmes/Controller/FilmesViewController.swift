@@ -61,7 +61,7 @@ class FilmesViewController: UIViewController, UICollectionViewDataSource, UIColl
     func getFilme() {
         FilmesAPI().getFilmes { (filmesArray, erro) in
             if let error = erro {
-                print(error)
+                AlertaSemInternet().alertaSemInternet(self, "Atenção", error)
             }else if let filmes = filmesArray{
                 self.filmes = filmes
                 self.colecaoFilmes.reloadData()
