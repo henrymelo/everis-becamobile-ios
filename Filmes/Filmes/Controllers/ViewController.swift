@@ -9,38 +9,70 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var listaFilmes:Array<String> = ["Mulher Maravilha"]
-    let minhaChave:String = "fda3fa048b5dd1721be8d5512626b16a"
-    let urlFilmes:String = "https://api.themoviedb.org/3/trending/all/week?api_key=fda3fa048b5dd1721be8d5512626b16a&language=pt-BR"
-    
+    // variáveis
+    let filme:FilmesAPI = FilmesAPI("fda3fa048b5dd1721be8d5512626b16a")
+    var meusFilmes:[[String:Any]] = [[:]]
+    var primeiraPagina: Int = 1
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        importarFilmes()
+        filmesDisponiveis.dataSource = self
+        filmesDisponiveis.delegate = self
+        mostraImagem()
     }
     
-    func importarFilmes() {
-        Alamofire.request(urlFilmes, method: .get)
-            .responseJSON { (response) in
-                switch response.result {
-                case .success:
-                    if let resultado = response.result.value as? Dictionary<String, Any> {
-                        guard let lista = resultado["results"] as? Array<Dictionary<String,Any>>
-                        else {return}
-                        print(lista)
-                    }
-                    break
-                    
-                case .failure:
-                    print(response.error!)
-                break
-                    
-                }
-            }
+    //MARK:IBAction
+    
+  
+    
+    //MARK:IBOutlet
+    
+    @IBOutlet weak var filmesDisponiveis: UICollectionView!
+    
+    
+    
+    //MARK: Metodos
+    
+    func mostraImagem() {
+        filme.baixarImagens { (retornoDosFilmes) in
+            self.meusFilmes = retornoDosFilmes
+            
+            self.filmesDisponiveis.reloadData()
+        }
     }
     
+    // MARK:Collection Data Source
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.meusFilmes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let celulaFilmes = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaFilmes", for: indexPath) as! ListaDeFilmesCollectionViewCell
+        let recenteFilme = self.meusFilmes[indexPath.item]
+        guard let capa = recenteFilme["imagem"] as? UIImage else {
+            return celulaFilmes
+        }
+        guard let titulo = recenteFilme["titulo"] as? String else { return celulaFilmes }
+        
+        celulaFilmes.imagemFilme.image = capa
+        celulaFilmes.tituloFilme.text  = titulo
+        
+        return celulaFilmes
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let filmeDetalhe = self.meusFilmes[indexPath.item]
+        let mainStory = UIStoryboard(name: "Main", bundle: nil)
+        let controller = mainStory.instantiateViewController(withIdentifier: "detalhe_filme") as! DetalhesDoFilmeViewController
+        
+        controller.meusFilmes = filmeDetalhe
+        
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+  }
 
-}
 
