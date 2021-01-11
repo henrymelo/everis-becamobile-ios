@@ -12,6 +12,8 @@ class Filmes: NSObject {
     
     var titulo: String = ""
     var caminhoDaCapa: String = ""
+    var sinopse: String = ""
+    var nota: String = ""
     
     init(dicionarioDeFilme: Dictionary<String, Any>) {
         guard let tipo = dicionarioDeFilme["media_type"] as? String else { return }
@@ -25,6 +27,12 @@ class Filmes: NSObject {
         
         guard let caminhoDaCapa = dicionarioDeFilme["poster_path"] as? String else { return }
         self.caminhoDaCapa = caminhoDaCapa
+        
+        guard let sinopse = dicionarioDeFilme["overview"] as? String else { return }
+        self.sinopse = sinopse
+        
+        guard let nota = dicionarioDeFilme["vote_average"] as? String else { return }
+        self.nota = nota
     }
 
 }

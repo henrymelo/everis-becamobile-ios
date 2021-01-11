@@ -24,6 +24,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         self.carregaHome()
         collectionFilmes.dataSource = self
+        collectionFilmes.delegate = self
     }
     
     func carregaHome() {
@@ -45,6 +46,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         celula.configuraCelula(Filmes(dicionarioDeFilme: listaDeTendecias[indexPath.row]))
         
         return celula
+    }
+    
+    // MARK: - CollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let filmeSelecionado = listaDeTendecias[indexPath.item]
+        guard let idFilmeSelecionado = filmeSelecionado["id"] as? Int else { return }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalhesViewController
+        
+        FilmesAPI().buscaDetalhes(idFilme: idFilmeSelecionado) { (response) in
+            let detalhesFilmeSelecionado = Filmes(dicionarioDeFilme: response)
+            controller.filmeSelecionado = detalhesFilmeSelecionado
+            self.present(controller, animated: true, completion: nil)
+        }
     }
 
 }
