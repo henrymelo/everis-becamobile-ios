@@ -8,24 +8,31 @@
 import UIKit
 
 class DetalhesDoFilmeViewController: UIViewController {
-
+    
+    // MARK: IBOutlets - detalhes filmes
+    
+    @IBOutlet weak var tituloFilme: UILabel!
+        
+    @IBOutlet weak var imagemDoFilme: UIImageView!
+    
+    @IBOutlet weak var textoSinopse: UILabel!
+    
+    @IBOutlet weak var textoLancamento: UILabel!
+    
+    
+    // MARK: IBAction
+    
+    
+    @IBAction func voltar(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+       
     var meusFilmes:[String:Any]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
