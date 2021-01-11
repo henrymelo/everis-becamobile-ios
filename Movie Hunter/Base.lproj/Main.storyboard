@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="LkN-gj-3OH">
             <objects>
-                <viewController storyboardIdentifier="listaFilme" id="aZI-h8-Uh0" customClass="ViewController" customModule="Movie_Hunter" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="listaFilme" id="aZI-h8-Uh0" customClass="ViewController" customModule="Movie_Hunter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JfF-5R-tcv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gnG-Ld-cye" customClass="CollectionViewCell" customModule="Movie_Hunter" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="celulaFilme" id="gnG-Ld-cye" customClass="CollectionViewCell" customModule="Movie_Hunter" customModuleProvider="target">
                                                 <rect key="frame" x="96" y="0.0" width="183" height="271"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">

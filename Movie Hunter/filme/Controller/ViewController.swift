@@ -17,37 +17,35 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var collectionFilmes: UICollectionView!
 
     // MARK: - Variáveis
-    var listaFilme: [Filme] = []
+    let listaDeFilme: [Filme] = []
+   
     
-    // MARK: - View Did Load
+    // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionFilmes.dataSource = self
         collectionFilmes.delegate = self
-        FilmeAPI().recuperaFilmes {(listaFilmes) in
-            
+        FilmeAPI().recuperaFilmes {(listaDeFilme) in
+           
+        
         }
-            
     }
-    
+
     // MARK: - Métodos
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        collectionView.reloadData()
-        
-        return listaFilme.count
+        return listaDeFilme.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "filmeCell", for: indexPath) as! CollectionViewCell
+        let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "Main", for: indexPath) as! CollectionViewCell
         
-        let filmeAtual = listaFilme[indexPath.item]
+        let filmeAtual = listaDeFilme[indexPath.item]
         celulaFilme.configuraCelula(filme: filmeAtual)
         
         collectionView.reloadData()
-        
+                print("teste")
         return celulaFilme
     }
     

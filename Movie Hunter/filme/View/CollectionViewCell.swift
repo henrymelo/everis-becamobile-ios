@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 
 class CollectionViewCell: UICollectionViewCell {
@@ -17,7 +19,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nomeFilme: UILabel!
     
     func configuraCelula(filme: Filme) {
-        
          //guard let posterMenor = Configuracao().getPosterMenor() else { return }
         
         nomeFilme.text = filme.title
