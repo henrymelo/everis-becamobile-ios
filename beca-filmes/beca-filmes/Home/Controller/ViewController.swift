@@ -41,7 +41,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaFilme", for: indexPath) as! TendenciasCollectionViewCell
-        celula.backgroundColor = UIColor.blue
+        
+        celula.configuraCelula(Filmes(dicionarioDeFilme: listaDeTendecias[indexPath.row]))
         
         return celula
     }

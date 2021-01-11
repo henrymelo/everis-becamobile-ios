@@ -10,12 +10,21 @@ import UIKit
 
 class Filmes: NSObject {
     
-    let sinopse: String
-    //let caminhoDaCapa: String
+    var titulo: String = ""
+    var caminhoDaCapa: String = ""
     
-    init(sinopse: String) {
-        self.sinopse = sinopse
-        //self.caminhoDaCapa = caminhoDaCapa
+    init(dicionarioDeFilme: Dictionary<String, Any>) {
+        guard let tipo = dicionarioDeFilme["media_type"] as? String else { return }
+        if tipo == "movie" {
+            guard let titulo = dicionarioDeFilme["title"] as? String else { return }
+            self.titulo = titulo
+        } else {
+            guard let titulo = dicionarioDeFilme["name"] as? String else { return }
+            self.titulo = titulo
+        }
+        
+        guard let caminhoDaCapa = dicionarioDeFilme["poster_path"] as? String else { return }
+        self.caminhoDaCapa = caminhoDaCapa
     }
 
 }

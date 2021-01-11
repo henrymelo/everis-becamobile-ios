@@ -28,5 +28,11 @@ class FilmesAPI: NSObject {
             }
         }
     }
+    
+    func buscaURLImagem(link:String) -> URL?{
+        
+        guard let imagem = URL(string: "https://image.tmdb.org/t/p/w500\(link)") else { return nil }
+        return imagem
+    }
 
 }

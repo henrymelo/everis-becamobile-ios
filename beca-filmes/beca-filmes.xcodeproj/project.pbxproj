@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B4185C725A8FE4E000E1E5D /* FilmesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4185C625A8FE4E000E1E5D /* FilmesDAO.swift */; };
 		1B55913625A7742E00A98A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55913525A7742E00A98A55 /* AppDelegate.swift */; };
 		1B55913825A7742E00A98A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55913725A7742E00A98A55 /* ViewController.swift */; };
 		1B55913B25A7742E00A98A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B55913925A7742E00A98A55 /* Main.storyboard */; };
@@ -22,7 +21,6 @@
 
 /* Begin PBXFileReference section */
 		129B7020B1E25353B02CFE3D /* Pods_beca_filmes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beca_filmes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B4185C625A8FE4E000E1E5D /* FilmesDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesDAO.swift; sourceTree = "<group>"; };
 		1B55913225A7742E00A98A55 /* beca-filmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "beca-filmes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B55913525A7742E00A98A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B55913725A7742E00A98A55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				1BAB9D6325A8E3AC00A14BFB /* Filmes.swift */,
-				1B4185C625A8FE4E000E1E5D /* FilmesDAO.swift */,
 				1B57D85325A7788300FF5D5A /* FilmesAPI.swift */,
 			);
 			path = Model;
@@ -251,7 +248,6 @@
 			files = (
 				1B57D85425A7788300FF5D5A /* FilmesAPI.swift in Sources */,
 				1B55913E25A7742E00A98A55 /* beca_filmes.xcdatamodeld in Sources */,
-				1B4185C725A8FE4E000E1E5D /* FilmesDAO.swift in Sources */,
 				1B55913825A7742E00A98A55 /* ViewController.swift in Sources */,
 				1B55913625A7742E00A98A55 /* AppDelegate.swift in Sources */,
 				1BD8098A25ACBD6B003AB95D /* TendenciasCollectionViewCell.swift in Sources */,
