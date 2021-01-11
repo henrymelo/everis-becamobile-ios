@@ -19,11 +19,6 @@ class ListaFilmeTableViewController: UITableViewController {
         listaFilmesDaSemana()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "editar" {
-//            alunoViewController = segue.destination as? AlunoViewController
-//        }
-//    }
 
     // MARK: - Table view data source
 
@@ -45,13 +40,6 @@ class ListaFilmeTableViewController: UITableViewController {
                 cell.imagePoster.image = UIImage(data: imageData as Data)
             }
         }
-        
-        
-//        cell.titulo.text = results[indexPath.row].title
-//        cell.imagemFundo.text = results[indexPath.row].backdropPath
-//        cell.imagemPoster.text = results[indexPath.row].posterPath
-//        cell.descricao.text = results[indexPath.row].overview
-
         return cell
     }
     
