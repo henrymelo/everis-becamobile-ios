@@ -98,7 +98,16 @@ class ViewController: UITableViewController, RespostaAPI {
         tableView.reloadData()
     }
     
-
+    @IBAction func paginaAnterior(_ sender: Any) {
+        
+        if paginaAtual >= 2 {
+        paginaAtual = paginaAtual - 1
+        viewDidLoad()
+        tableView.reloadData()
+        }
+    }
+        
+    
     
     
    

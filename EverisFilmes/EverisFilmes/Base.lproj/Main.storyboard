@@ -32,65 +32,6 @@
             </objects>
             <point key="canvasLocation" x="-166" y="-52"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="COM-ZZ-uQA">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7qS-Eu-Jc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Ldv-Kx-jQF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uIk-xe-ckV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BeB-kq-OGv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="526" id="NMO-fp-lju" customClass="TableViewCell" customModule="EverisFilmes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="526"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NMO-fp-lju" id="skz-qB-wJN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="525.66666666666663"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKK-eJ-ylK">
-                                                    <rect key="frame" x="182.66666666666666" y="11" width="48.666666666666657" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                                    <color key="textColor" red="0.97959071399999997" green="0.97972756620000001" blue="0.9795475602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="031-lA-icE">
-                                                    <rect key="frame" x="20" y="44" width="374" height="421"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="421" id="52w-y1-cQt"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="031-lA-icE" firstAttribute="top" secondItem="tKK-eJ-ylK" secondAttribute="bottom" constant="8" id="HHx-3o-vVZ"/>
-                                                <constraint firstItem="031-lA-icE" firstAttribute="leading" secondItem="skz-qB-wJN" secondAttribute="leadingMargin" id="Myo-I1-a8j"/>
-                                                <constraint firstItem="tKK-eJ-ylK" firstAttribute="top" secondItem="skz-qB-wJN" secondAttribute="topMargin" id="Uep-2S-ibQ"/>
-                                                <constraint firstItem="tKK-eJ-ylK" firstAttribute="centerX" secondItem="skz-qB-wJN" secondAttribute="centerX" id="e5b-XV-Xg7"/>
-                                                <constraint firstItem="031-lA-icE" firstAttribute="trailing" secondItem="skz-qB-wJN" secondAttribute="trailingMargin" id="lfr-fd-yWf"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="imagemFilme" destination="031-lA-icE" id="lg9-GK-Mln"/>
-                                            <outlet property="labelTitulo" destination="tKK-eJ-ylK" id="Gu8-fC-B19"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Fsc-TZ-Yfp"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="554" y="-726"/>
-        </scene>
         <!--EverisFlix-->
         <scene sceneID="OEQ-Ao-5XX">
             <objects>
@@ -100,16 +41,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Heb-pW-n1Y">
+                        <view key="tableFooterView" contentMode="scaleToFill" id="xDw-ca-TSA">
                             <rect key="frame" x="0.0" y="528" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Ver Mais">
-                                <color key="titleColor" red="0.97706550359725952" green="0.93010240793228149" blue="0.93023687601089478" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="buttonVerMais:" destination="55t-9p-G9a" eventType="touchUpInside" id="bym-A0-3ub"/>
-                            </connections>
-                        </button>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="y03-pO-Ach">
+                                    <rect key="frame" x="8" y="8" width="398" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jb-G5-gHo">
+                                            <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
+                                            <state key="normal" title="Página anterior">
+                                                <color key="titleColor" red="0.97706550359725952" green="0.93010240793228149" blue="0.93023687601089478" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="paginaAnterior:" destination="55t-9p-G9a" eventType="touchUpInside" id="Bd0-oD-96I"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRZ-Qs-vpO">
+                                            <rect key="frame" x="199" y="0.0" width="199" height="30"/>
+                                            <state key="normal" title="Próxima página">
+                                                <color key="titleColor" red="0.97706550359725952" green="0.93010240793228149" blue="0.93023687601089478" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="buttonVerMais:" destination="55t-9p-G9a" eventType="touchUpInside" id="riB-Ic-fgr"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3jb-G5-gHo" firstAttribute="top" secondItem="y03-pO-Ach" secondAttribute="top" id="QM7-TQ-YZR"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="y03-pO-Ach" secondAttribute="trailing" constant="8" id="4Ti-Er-lMb"/>
+                                <constraint firstItem="y03-pO-Ach" firstAttribute="top" secondItem="xDw-ca-TSA" secondAttribute="top" constant="8" id="B9U-RO-a5L"/>
+                                <constraint firstItem="y03-pO-Ach" firstAttribute="leading" secondItem="xDw-ca-TSA" secondAttribute="leading" constant="8" id="tCe-cp-6co"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="500" id="0sJ-Yr-R4C" customClass="TableViewCell" customModule="EverisFilmes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="500"/>
@@ -156,7 +125,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L04-k0-5Sr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="555" y="-52"/>
+            <point key="canvasLocation" x="553.62318840579712" y="-52.173913043478265"/>
         </scene>
         <!--Detalhes Filmes View Controller-->
         <scene sceneID="oE9-6L-JgF">
