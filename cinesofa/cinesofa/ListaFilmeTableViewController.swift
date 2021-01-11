@@ -37,10 +37,20 @@ class ListaFilmeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListaFilmeTableViewCell
         
-        cell.titulo.text = results[indexPath.row].title
-        cell.imagemFundo.text = results[indexPath.row].backdropPath
-        cell.imagemPoster.text = results[indexPath.row].posterPath
-        cell.descricao.text = results[indexPath.row].overview
+        
+        let capa = String("https://www.themoviedb.org/t/p/w220_and_h330_face\(results[indexPath.row].posterPath)")
+        
+        if let urlPoster = URL(string: capa){
+            if let imageData = NSData(contentsOf: urlPoster ){
+                cell.imagePoster.image = UIImage(data: imageData as Data)
+            }
+        }
+        
+        
+//        cell.titulo.text = results[indexPath.row].title
+//        cell.imagemFundo.text = results[indexPath.row].backdropPath
+//        cell.imagemPoster.text = results[indexPath.row].posterPath
+//        cell.descricao.text = results[indexPath.row].overview
 
         return cell
     }

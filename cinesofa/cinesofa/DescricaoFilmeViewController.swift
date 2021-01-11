@@ -14,14 +14,15 @@ class DescricaoFilmeViewController: UIViewController {
     @IBOutlet weak var labelTitulo: UILabel!
     @IBOutlet weak var labelSinopse: UILabel!
     
+    @IBOutlet weak var scrollFilme: UIScrollView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         guard let filme = filmeSelecionado else {return print("Erro ao buscar informações sobre o pacoteViagens(classe: DetalhesViagensViewController)")}
         
-        let poster = String("https://www.themoviedb.org/t/p/w440_and_h660_face\(filme.posterPath)")
+        let poster = String("https://www.themoviedb.org/t/p/w220_and_h330_face\(filme.posterPath)")
         
         print(poster)
         guard let urlPoster = URL(string: poster) else{return}
@@ -40,11 +41,10 @@ class DescricaoFilmeViewController: UIViewController {
     var filmeSelecionado:Result?
 
     
-
-
     @IBAction func botaoVoltar(_ sender: UIButton) {
         if let voltar = self.navigationController{
             voltar.popToRootViewController(animated: true)}
     }
+    
     
 }

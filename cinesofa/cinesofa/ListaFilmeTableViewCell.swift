@@ -10,6 +10,7 @@ import UIKit
 
 class ListaFilmeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imagePoster: UIImageView!
     @IBOutlet weak var descricao: UILabel!
     @IBOutlet weak var imagemFundo: UILabel!
     @IBOutlet weak var imagemPoster: UILabel!
