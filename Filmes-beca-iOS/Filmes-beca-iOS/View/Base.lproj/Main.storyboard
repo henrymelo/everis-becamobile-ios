@@ -24,7 +24,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" contentInsetAdjustmentBehavior="scrollableAxes" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aJ1-Uk-igl">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="scrollableAxes" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aJ1-Uk-igl">
                                 <rect key="frame" x="16" y="103" width="343" height="501"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="Kzq-95-Igm">
@@ -66,9 +66,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wb7-MO-WcX" userLabel="ViewBotaoVerMais">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wb7-MO-WcX" userLabel="ViewBotaoVerMais">
                                 <rect key="frame" x="191" y="612" width="64" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zv0-uj-Y4Y">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
@@ -88,15 +87,18 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pfI-Xb-emB"/>
+                                    <constraint firstAttribute="width" constant="64" id="rU5-36-L3U"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="9"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eg9-Ru-Mdr" userLabel="ViewBotaoPaginaAnterior">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eg9-Ru-Mdr" userLabel="ViewBotaoPaginaAnterior">
                                 <rect key="frame" x="119" y="612" width="64" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrv-dt-vVz">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
@@ -111,29 +113,37 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="botaoProximaPagina:" destination="5ly-tR-iaH" eventType="touchUpInside" id="0mf-sD-otU"/>
+                                            <action selector="carregaPaginaAnterior:" destination="5ly-tR-iaH" eventType="touchUpInside" id="TIL-e6-py8"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NeL-7i-2Uj"/>
+                                    <constraint firstAttribute="width" constant="64" id="efJ-2f-auR"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="9"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Awf-HY-zkm">
-                                <rect key="frame" x="159" y="551" width="200" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Eg9-Ru-Mdr" firstAttribute="top" secondItem="aJ1-Uk-igl" secondAttribute="bottom" constant="8" id="1FS-Ab-Deu"/>
+                            <constraint firstItem="Wb7-MO-WcX" firstAttribute="leading" secondItem="Eg9-Ru-Mdr" secondAttribute="trailing" constant="8" id="5Wy-Wp-gRB"/>
                             <constraint firstItem="vKg-TM-6js" firstAttribute="top" secondItem="vw7-DH-ueA" secondAttribute="top" constant="20" id="AZj-39-PtH"/>
+                            <constraint firstItem="vw7-DH-ueA" firstAttribute="bottom" secondItem="Eg9-Ru-Mdr" secondAttribute="bottom" constant="25" id="CGb-lA-CUC"/>
+                            <constraint firstItem="Eg9-Ru-Mdr" firstAttribute="leading" secondItem="vw7-DH-ueA" secondAttribute="leading" constant="119" id="Onh-ML-zT6"/>
+                            <constraint firstItem="vw7-DH-ueA" firstAttribute="bottom" secondItem="Wb7-MO-WcX" secondAttribute="bottom" constant="25" id="QHs-dW-jdc"/>
                             <constraint firstItem="vKg-TM-6js" firstAttribute="leading" secondItem="vw7-DH-ueA" secondAttribute="leading" constant="16" id="SS9-Y4-gmc"/>
+                            <constraint firstItem="vw7-DH-ueA" firstAttribute="trailing" secondItem="Wb7-MO-WcX" secondAttribute="trailing" constant="120" id="Xc6-x2-MES"/>
                             <constraint firstItem="aJ1-Uk-igl" firstAttribute="top" secondItem="vKg-TM-6js" secondAttribute="bottom" constant="22" id="aHD-fJ-FB6"/>
                             <constraint firstItem="vw7-DH-ueA" firstAttribute="trailing" secondItem="aJ1-Uk-igl" secondAttribute="trailing" constant="16" id="baJ-V6-JVs"/>
                             <constraint firstItem="vw7-DH-ueA" firstAttribute="trailing" secondItem="vKg-TM-6js" secondAttribute="trailing" constant="16" id="ekT-d0-cxO"/>
+                            <constraint firstItem="Wb7-MO-WcX" firstAttribute="top" secondItem="aJ1-Uk-igl" secondAttribute="bottom" constant="8" id="j7k-aw-L4t"/>
+                            <constraint firstItem="Wb7-MO-WcX" firstAttribute="leading" secondItem="Eg9-Ru-Mdr" secondAttribute="trailing" constant="8" id="lcs-cq-W5W"/>
                             <constraint firstItem="aJ1-Uk-igl" firstAttribute="leading" secondItem="vw7-DH-ueA" secondAttribute="leading" constant="16" id="usU-bo-m6K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vw7-DH-ueA"/>

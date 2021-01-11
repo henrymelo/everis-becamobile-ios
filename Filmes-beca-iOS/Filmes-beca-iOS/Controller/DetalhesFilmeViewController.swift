@@ -17,8 +17,6 @@ class DetalhesFilmeViewController: UIViewController {
     @IBOutlet weak var sinopseTextLabel: UILabel!
     @IBOutlet weak var lancamentoTextLabel: UILabel!
     
-
-    
     // MARK: - Variáveis
     let filmesAPI = FilmesRequisition()
     
@@ -28,7 +26,6 @@ class DetalhesFilmeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         showFilme()
     }

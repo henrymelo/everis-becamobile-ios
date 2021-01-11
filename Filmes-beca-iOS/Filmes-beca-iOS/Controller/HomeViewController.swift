@@ -15,7 +15,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     let filmesAPI = FilmesRequisition()
     var filmesToShow:[[String:Any]] = [[:]]
     var paginaAtual:Int = 1
-    
+    var carregamento = SpinerViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     func recuperaImages() {
         
+        //carregamento.showSpinner(onView: self.view)
+        
         filmesAPI.getImagens { (filmes) in
             self.filmesToShow = filmes
             if(self.filmesToShow.count>9) {
@@ -66,22 +68,31 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self.filmesCollectionView.reloadData()
             }
         }
+        
     }
-    func carregaProximaPagina() {
-    
-        paginaAtual = paginaAtual + 1
-        filmesAPI.getImagens(paginaAtual) { (filmes) in
-            guard let filmesAtuais = filmes as? [[String:Any]] else { return }
-            
-            self.filmesToShow = filmesAtuais
-            self.filmesCollectionView.reloadData()
-            
+    @IBAction func carregaPaginaAnterior(_ sender: UIButton) {
+        if(paginaAtual != 1) {
+            paginaAtual = paginaAtual - 1
+            recuperaImages()
+        } else {
+            print("Voce esta na primeira página")
         }
         
     }
-    
+   
     @IBAction func botaoProximaPagina(_ sender: UIButton) {
-        carregaProximaPagina()
+        paginaAtual = paginaAtual + 1
+        print(paginaAtual)
+        
+        filmesAPI.getImagens(paginaAtual) { (filmes) in
+            
+            self.filmesToShow = filmes
+            if(self.filmesToShow.count > 20) {
+                self.filmesCollectionView.reloadData()
+            }
+            
+            
+        }
         
     }
 }
