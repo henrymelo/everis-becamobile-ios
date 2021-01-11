@@ -20,7 +20,6 @@
 		06F3523025A7453700A84229 /* FilmeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3522F25A7453700A84229 /* FilmeAPI.swift */; };
 		06F3523225A747D700A84229 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 06F3523125A747D700A84229 /* Podfile */; };
 		06F9D43825AB5C0000292A4F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9D43725AB5C0000292A4F /* CollectionViewCell.swift */; };
-		06FD1FE025AC9BE40079FF32 /* FilmeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD1FDF25AC9BE40079FF32 /* FilmeDAO.swift */; };
 		6D7AE6921ACAF3864D9237CB /* Pods_Movie_Hunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D877F28A18F48F54A51F4513 /* Pods_Movie_Hunter.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +39,6 @@
 		06F3522F25A7453700A84229 /* FilmeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeAPI.swift; sourceTree = "<group>"; };
 		06F3523125A747D700A84229 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		06F9D43725AB5C0000292A4F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		06FD1FDF25AC9BE40079FF32 /* FilmeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeDAO.swift; sourceTree = "<group>"; };
 		2324CF40A27D5B6D7C12A393 /* Pods-Movie Hunter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Hunter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Movie Hunter/Pods-Movie Hunter.release.xcconfig"; sourceTree = "<group>"; };
 		434401A4A77369E2E83C15B5 /* Pods-Movie Hunter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Hunter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Movie Hunter/Pods-Movie Hunter.debug.xcconfig"; sourceTree = "<group>"; };
 		D877F28A18F48F54A51F4513 /* Pods_Movie_Hunter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie_Hunter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				062F416225A8C2CC00028F05 /* Configuracao.swift */,
-				06FD1FDF25AC9BE40079FF32 /* FilmeDAO.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -272,7 +269,6 @@
 			files = (
 				06F9D43825AB5C0000292A4F /* CollectionViewCell.swift in Sources */,
 				06F3521625A73AE700A84229 /* ViewController.swift in Sources */,
-				06FD1FE025AC9BE40079FF32 /* FilmeDAO.swift in Sources */,
 				06F3521C25A73AE700A84229 /* Movie_Hunter.xcdatamodeld in Sources */,
 				062F416125A8C07F00028F05 /* Filme.swift in Sources */,
 				062F415F25A888A600028F05 /* ListaFilmes.swift in Sources */,

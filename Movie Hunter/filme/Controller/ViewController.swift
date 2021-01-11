@@ -27,7 +27,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionFilmes.dataSource = self
         collectionFilmes.delegate = self
         FilmeAPI().recuperaFilmes {(listaDeFilme) in
-           
+        print(listaDeFilme)
         
         }
     }
@@ -35,17 +35,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK: - Métodos
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listaDeFilme.count
+        return 5
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "Main", for: indexPath) as! CollectionViewCell
+        let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "filmeCell", for: indexPath) as! CollectionViewCell
         
-        let filmeAtual = listaDeFilme[indexPath.item]
-        celulaFilme.configuraCelula(filme: filmeAtual)
-        
-        collectionView.reloadData()
-                print("teste")
         return celulaFilme
     }
     

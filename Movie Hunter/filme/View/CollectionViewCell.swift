@@ -18,10 +18,8 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imagemFilme: UIImageView!
     @IBOutlet weak var nomeFilme: UILabel!
     
-    func configuraCelula(filme: Filme) {
-         //guard let posterMenor = Configuracao().getPosterMenor() else { return }
-        
-        nomeFilme.text = filme.title
+    func configuraCelula() {
+        nomeFilme.text = "mudou"
         
     }
     
