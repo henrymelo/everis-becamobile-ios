@@ -91,8 +91,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             self.filmesToShow = filme
             if(self.filmesToShow.count == filmesArray?.count ) {
-                self.carregamento.removeSpinner()
+                self.filmesToShow.remove(at: 0)
                 self.filmesCollectionView.reloadData()
+                self.carregamento.removeSpinner()
             }
             
             
