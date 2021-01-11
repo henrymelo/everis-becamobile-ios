@@ -31,13 +31,11 @@ class DetalhesFilmesViewController: UIViewController {
         avaliacaoView.layer.masksToBounds = false
         avaliacaoView.layer.cornerRadius = avaliacaoView.frame.size.height/2
         avaliacaoView.clipsToBounds = true
-        
-        imagemDetalhes.layer.cornerRadius = 5;
-        imagemDetalhes.layer.masksToBounds = true;
       
         configuraFilme()
 
     }
+    
     
     //MARK: - Métodos
 
@@ -58,7 +56,7 @@ class DetalhesFilmesViewController: UIViewController {
             }
             
             let caminhoDaImagem: String
-            caminhoDaImagem = filme.backdropPath ?? ""
+            caminhoDaImagem = filme.backdropPath 
             
             let imageUrl = URL(string: "https://image.tmdb.org/t/p/original\(caminhoDaImagem)")
             
@@ -72,10 +70,10 @@ class DetalhesFilmesViewController: UIViewController {
             self.labelRating.text = avaliacao
             
             
-            if ratingFilme >= 85 {
+            if ratingFilme >= 80 {
                 self.labelEstrela.text = "⭐⭐⭐⭐⭐"
             }
-            else if ratingFilme >= 65 && ratingFilme < 85{
+            else if ratingFilme >= 65 && ratingFilme < 80{
                 self.labelEstrela.text = "⭐⭐⭐⭐"
             }
             else if ratingFilme >= 50 && ratingFilme < 65{

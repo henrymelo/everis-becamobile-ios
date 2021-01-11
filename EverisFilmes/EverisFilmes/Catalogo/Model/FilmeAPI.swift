@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 protocol filmesProtocolo: class {
-    func recuperaFilmes()
+    func recuperaFilmes(pagina:Int)
 }
 
 protocol RespostaAPI {
@@ -26,20 +26,27 @@ class FilmeAPI: NSObject, filmesProtocolo {
         self.delegate = delegate
     }
     
+
+    
     // MARK: - GET
 
-    func recuperaFilmes()  {
-        Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=5287ae8d76c11e98a09d2b4dfe0f443e&language=pt-BR", method: .get).responseJSON { (response) in
-//                print(response.result.value!)
+    func recuperaFilmes(pagina:Int)  {
+        
+        
+        guard let url = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=5287ae8d76c11e98a09d2b4dfe0f443e&language=pt-BR&page=\(pagina)") else {return}
+        Alamofire.request(url , method: .get).responseJSON { (response) in
+
             switch response.result{
                 
             case .success:
                 
-                if let resposta = response.result.value as? Dictionary<String, Any> {
+                if (response.result.value as? Dictionary<String, Any>) != nil {
                     do {
                         guard let data = response.data else {return}
                         let objetoFilme = try JSONDecoder().decode(ModeloFilme.self, from: data)
                         self.delegate?.success(Modelo: objetoFilme)
+                        
+                
                     } catch {
                         print("Falhou aqui")
                     }
@@ -53,5 +60,14 @@ class FilmeAPI: NSObject, filmesProtocolo {
                 }
             }
         }
+    
+
+    
+    
 
 }
+
+
+
+
+

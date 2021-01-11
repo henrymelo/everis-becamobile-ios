@@ -19,13 +19,14 @@ class ViewController: UITableViewController, RespostaAPI {
         print("deu ruim")
     }
     
-    //MARK: Variavies
-    
-   
+    //MARK: Variaveis
     
     var listaDeFilmes: ModeloFilme?
     
     var api =  FilmeAPI()
+    
+    var valor: Int!
+    var  paginaAtual = 1
     
     
     
@@ -33,15 +34,12 @@ class ViewController: UITableViewController, RespostaAPI {
     override func viewDidLoad() {
         super.viewDidLoad()
         api.configura(delegate: self)
-        
-   
+        api.recuperaFilmes(pagina: paginaAtual)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        api.recuperaFilmes()
-        
-        
-    }
+    
+    
+    
     
     
     //MARK: - Métodos
@@ -68,11 +66,11 @@ class ViewController: UITableViewController, RespostaAPI {
 
         if let url = imageUrl {
             celula.imagemFilme?.af_setImage(withURL: url)
-            celula.imagemFilme?.layer.cornerRadius = 40;
-            celula.imagemFilme?.layer.masksToBounds = true;
         }
     
         celula.labelTitulo.text = titulo
+        
+        
         
         return celula
     }
@@ -92,6 +90,18 @@ class ViewController: UITableViewController, RespostaAPI {
         controller.listaDeFilmes = filmes
         self.navigationController?.pushViewController(controller,animated: true)
     }
+    
+   
+    @IBAction func buttonVerMais(_ sender: UIButton) {
+        paginaAtual = paginaAtual + 1
+        viewDidLoad()
+        tableView.reloadData()
+    }
+    
+
+    
+    
+   
     
     
 }

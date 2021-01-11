@@ -5,7 +5,7 @@ struct ModeloFilme: Codable {
     let page: Int
     let results: [Result]
     let totalPages, totalResults: Int
-    
+
     enum CodingKeys: String, CodingKey {
         case page, results
         case totalPages = "total_pages"
@@ -20,7 +20,7 @@ struct Result: Codable {
     let backdropPath: String
     let genreIDS: [Int]
     let id: Int
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String?
     let originalTitle: String?
     let overview, posterPath: String?
     let releaseDate, title: String?
@@ -31,7 +31,7 @@ struct Result: Codable {
     let mediaType: String
     let firstAirDate, name, originalName: String?
     let originCountry: [String]?
-    
+
     enum CodingKeys: String, CodingKey {
         case adult
         case backdropPath = "backdrop_path"
@@ -59,9 +59,10 @@ struct Result: Codable {
 //    case tv = "tv"
 //}
 
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case fr = "fr"
-    case ja = "ja"
-}
+//enum OriginalLanguage: String, Codable {
+//    case en = "en"
+//    case fr = "fr"
+//    case ja = "ja"
+//}
+
 
