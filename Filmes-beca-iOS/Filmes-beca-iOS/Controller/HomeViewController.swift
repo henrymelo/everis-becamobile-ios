@@ -62,7 +62,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         //animação de carregamento enquanto espera a requisição
         carregamento.showSpinner(onView: self.view)
         
-        filmesAPI.getImagens { (filme, filmesArray) in
+        filmesAPI.getImagens(paginaAtual) { (filme, filmesArray) in
             self.filmesToShow = filme
             if(self.filmesToShow.count == filmesArray?.count) {
                 self.filmesToShow.remove(at: 0)
@@ -75,6 +75,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBAction func carregaPaginaAnterior(_ sender: UIButton) {
         if(paginaAtual != 1) {
             paginaAtual = paginaAtual - 1
+            
             recuperaImages()
         } else {
             print("Voce esta na primeira página")
