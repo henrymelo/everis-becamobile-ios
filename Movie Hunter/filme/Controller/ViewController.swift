@@ -17,7 +17,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var collectionFilmes: UICollectionView!
 
     // MARK: - Variáveis
-    let listaDeFilme: [Filme] = []
+    var listaDeFilme: [Filme] = []
+    
+    
    
     
     // MARK: - ViewDidLoad
@@ -27,7 +29,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionFilmes.dataSource = self
         collectionFilmes.delegate = self
         FilmeAPI().recuperaFilmes { (listaDeFilme) in
-            
+            self.listaDeFilme = listaDeFilme
+            self.collectionFilmes.reloadData()
+
         }
     }
 
@@ -39,9 +43,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "filmeCell", for: indexPath) as! CollectionViewCell
-        
-        let filmeAtual = listaDeFilme[indexPath.item]
-        
+    
         return celulaFilme
     }
     
