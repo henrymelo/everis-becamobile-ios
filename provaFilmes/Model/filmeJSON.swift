@@ -103,6 +103,7 @@ enum MediaType: String, Codable {
 
 enum OriginalLanguage: String, Codable {
     case en = "en"
+    case fr = "fr"
     case ja = "ja"
 }
 
