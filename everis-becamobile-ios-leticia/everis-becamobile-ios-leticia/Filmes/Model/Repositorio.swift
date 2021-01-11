@@ -9,6 +9,10 @@
 import UIKit
 
 class Repositorio: NSObject {
+    
+    var detalhesViewController:DetalhesViewController?
+    
+    // Tendencia
 
     func recuperaTendencias(completion:@escaping(_ listaDeTendencias:Array<Tendencia>) -> Void) {
         var tendencias = TendenciaDAO().recuperaTendencia()
@@ -22,4 +26,22 @@ class Repositorio: NSObject {
         }
     }
     
+    func salvaTendencia(tendencia:Dictionary<String, Any>) {
+        TendenciaDAO().salvaTendencia(dicionarioDeTendencia: tendencia)
+    }
+    
+    // Detalhes
+    
+    func recuperaDetalhes(_ tendencia:Tendencia, completion:@escaping(_ listaDeDetalhes:Array<Detalhes>) -> Void) {
+        var detalhes = DetalhesDAO().recuperaDetalhes()
+        
+            FilmeAPI().recuperaDetalhesServidor(tendencia) {
+                detalhes = DetalhesDAO().recuperaDetalhes()
+                completion(detalhes)
+            }
+    }
+    
+    func salvaDetalhes(detalhe:Dictionary<String, Any>) {
+        DetalhesDAO().salvaDetalhes(dicionarioDeDetalhes: detalhe)
+    }
 }
