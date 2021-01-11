@@ -52,16 +52,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let filmeSelecionado = listaDeTendecias[indexPath.item]
-        guard let idFilmeSelecionado = filmeSelecionado["id"] as? Int else { return }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalhesViewController
         
-        FilmesAPI().buscaDetalhes(idFilme: idFilmeSelecionado) { (response) in
-            let detalhesFilmeSelecionado = Filmes(dicionarioDeFilme: response)
-            controller.filmeSelecionado = detalhesFilmeSelecionado
-            self.present(controller, animated: true, completion: nil)
-        }
+        controller.filmeSelecionado = Filmes(dicionarioDeFilme: filmeSelecionado)
+        self.present(controller, animated: true, completion: nil)
     }
 
 }

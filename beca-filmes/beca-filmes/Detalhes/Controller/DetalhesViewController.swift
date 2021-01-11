@@ -21,12 +21,13 @@ class DetalhesViewController: UIViewController {
         super.viewDidLoad()
 
         if let filme = filmeSelecionado {
+            
             labelTitulo.text = filme.titulo
             labelSinopse.text = filme.sinopse
             labelNota.text = filme.nota
             
-//            guard let urlCapa = FilmesAPI().buscaURLImagem(link: filme.caminhoDaCapa) else { return }
-//            self.imageFilme.af_setImage(withURL: urlCapa)
+            guard let urlCapa = FilmesAPI().buscaURLImagem(link: filme.caminhoDaCapa) else { return }
+            self.imageFilme.af_setImage(withURL: urlCapa)
         }
     }
     

@@ -34,22 +34,5 @@ class FilmesAPI: NSObject {
         guard let imagem = URL(string: "https://image.tmdb.org/t/p/w500\(link)") else { return nil }
         return imagem
     }
-    
-    func buscaDetalhes(idFilme: Int, completion:@escaping(Dictionary<String,Any>) -> Void){
-        
-        Alamofire.request("https://api.themoviedb.org/3/movie/\(idFilme)?api_key=e8606b85a11ce3fb1de18d901be3f16c&language=pt-BR", method: .get).responseJSON { (response) in
-            switch response.result {
-            case .success:
-                
-                if let resposta = response.result.value as? Dictionary<String, Any> {
-                    completion(resposta)
-                }
-                break
-            case .failure:
-                print(response.error!)
-                break
-            }
-        }
-    }
 
 }
