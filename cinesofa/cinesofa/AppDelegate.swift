@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  cinesofa
 //
-//  Created by Fabricio Rodrigo Baixo on 1/7/21.
+//  Created by Fabricio Rodrigo Baixo on 1/11/21.
 //  Copyright © 2021 Fabricio Rodrigo Baixo. All rights reserved.
 //
 
