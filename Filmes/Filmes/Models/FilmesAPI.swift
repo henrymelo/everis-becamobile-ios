@@ -96,10 +96,26 @@ class FilmesAPI: NSObject {
                 }
             }
             
-            //print(filmes)
-            //terminou(filmes)
-            
         }
     }
+    
+    
+    //MARK: detalhe do filme por id
+    func detalheFilme(_ id:Int, terminou: @escaping(_ detalhe:[String:Any]) -> Void) {
+        Alamofire.request("https://api.themoviedb.org/3/movie/\(id)?api_key=\(minhaChave)&language=pt-BR", method: .get).responseJSON { (response) in
+                switch response.result {
+                case .success:
+                    if let resultado = response.result.value as? [String:Any] {
+                        print("Resultado: \(resultado)")
+                        terminou(resultado)
+                    }
+                    break
+                case .failure:
+              print(response.error!)
+                break
+                }
+            }
+    }
+    
     
 }

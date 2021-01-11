@@ -11,7 +11,7 @@ import AlamofireImage
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    // variáveis
+    // MARK: variáveis
     let filme:FilmesAPI = FilmesAPI("fda3fa048b5dd1721be8d5512626b16a")
     var meusFilmes:[[String:Any]] = [[:]]
     var primeiraPagina: Int = 1
@@ -23,9 +23,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         mostraImagem()
     }
     
-    //MARK:IBAction
-    
-  
     
     //MARK:IBOutlet
     
@@ -68,7 +65,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let mainStory = UIStoryboard(name: "Main", bundle: nil)
         let controller = mainStory.instantiateViewController(withIdentifier: "detalhe_filme") as! DetalhesDoFilmeViewController
         
-        controller.meusFilmes = filmeDetalhe
+        controller.meuFilme = filmeDetalhe
         
         self.present(controller, animated: true, completion: nil)
     }
