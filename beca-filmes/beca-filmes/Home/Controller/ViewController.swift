@@ -9,6 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: - Variáveis
+    
+    var listaDeTendecias: Array<Dictionary<String, Any>> = []
+    
+    // MARK: - LyfeCicle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +22,9 @@ class ViewController: UIViewController {
     }
     
     func carregaHome() {
-        FilmesAPI().listaTendencias()
+        FilmesAPI().listaTendencias { (response) in
+            self.listaDeTendecias = response
+        }
     }
 
 }

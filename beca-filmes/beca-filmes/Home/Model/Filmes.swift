@@ -10,11 +10,11 @@ import UIKit
 
 class Filmes: NSObject {
     
-    let titulo: String
+    let sinopse: String
     //let caminhoDaCapa: String
     
-    init(titulo: String) {
-        self.titulo = titulo
+    init(sinopse: String) {
+        self.sinopse = sinopse
         //self.caminhoDaCapa = caminhoDaCapa
     }
 
