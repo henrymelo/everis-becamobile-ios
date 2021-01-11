@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class DetalhesDAO: NSObject {
+    
+    // MARK: - Atributos
 
     var gerenciadorDeResultados:NSFetchedResultsController<Detalhes>?
     var contexto:NSManagedObjectContext {
@@ -18,6 +20,8 @@ class DetalhesDAO: NSObject {
     }
     
     var detalhesViewController:DetalhesViewController?
+    
+    // MARK: - Métodos
     
     func recuperaDetalhes() -> Array<Detalhes> {
         let pesquisaDetalhes:NSFetchRequest<Detalhes> = Detalhes.fetchRequest()

@@ -18,9 +18,8 @@ class DetalhesViewController: UIViewController {
     @IBOutlet weak var descricaoLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
-    
-    
-    // MARK: Atributos
+
+    // MARK: - Atributos
     
     var detalhesSelecionado:Array<Detalhes> = []
     var tendencia:Tendencia?
@@ -76,6 +75,6 @@ class DetalhesViewController: UIViewController {
             print(error)
         }
     }
-
+    
 
 }
