@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVF-XK-2fK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FILMES - everflix" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zad-9T-1kL">
-                                        <rect key="frame" x="71.666666666666657" y="45" width="270.66666666666674" height="45"/>
+                                        <rect key="frame" x="71.666666666666657" y="45" width="270.66666666666674" height="51"/>
                                         <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -93,6 +93,7 @@
                             <constraint firstItem="MnU-iR-cke" firstAttribute="trailing" secondItem="Gpl-l8-WML" secondAttribute="trailing" id="6Oj-X8-slU"/>
                             <constraint firstItem="vVF-XK-2fK" firstAttribute="trailing" secondItem="Gpl-l8-WML" secondAttribute="trailing" id="7W0-rY-WuF"/>
                             <constraint firstItem="vVF-XK-2fK" firstAttribute="top" secondItem="Gpl-l8-WML" secondAttribute="top" id="TKH-lt-v9I"/>
+                            <constraint firstItem="vVF-XK-2fK" firstAttribute="baseline" secondItem="MnU-iR-cke" secondAttribute="firstBaseline" constant="8" symbolType="layoutAnchor" id="U2T-1A-MPv"/>
                             <constraint firstItem="MnU-iR-cke" firstAttribute="leading" secondItem="Gpl-l8-WML" secondAttribute="leading" id="lqX-gT-atw"/>
                             <constraint firstItem="MnU-iR-cke" firstAttribute="bottom" secondItem="Gpl-l8-WML" secondAttribute="bottom" id="zta-Xt-M4A"/>
                         </constraints>
@@ -103,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mi9-oD-Cwv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146.40000000000001" y="-174.06296851574214"/>
+            <point key="canvasLocation" x="-146.37681159420291" y="-173.64130434782609"/>
         </scene>
         <!--Detalhes Do Filme View Controller-->
         <scene sceneID="dWw-DM-YhO">
