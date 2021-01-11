@@ -90,19 +90,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-4Z-9te">
-                                <rect key="frame" x="16" y="47" width="288" height="285"/>
+                                <rect key="frame" x="16" y="47" width="288" height="521"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLw-HN-FIS">
-                                        <rect key="frame" x="0.0" y="8" width="288" height="128"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QLw-HN-FIS">
+                                        <rect key="frame" x="68.5" y="10" width="151" height="232"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="232" id="Owc-y1-h5n"/>
+                                            <constraint firstAttribute="width" constant="151" id="khy-Vx-i1Q"/>
+                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Título Filme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRr-me-J6L">
-                                        <rect key="frame" x="0.0" y="160" width="288" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título Filme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRr-me-J6L">
+                                        <rect key="frame" x="0.0" y="261" width="288" height="21"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Descriçao" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="23" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRr-Er-Jeq">
-                                        <rect key="frame" x="0.0" y="199" width="288" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descriçao" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="23" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRr-Er-Jeq">
+                                        <rect key="frame" x="0.0" y="300" width="288" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -113,12 +117,11 @@
                                     <constraint firstAttribute="trailing" secondItem="TRr-me-J6L" secondAttribute="trailing" id="043-CO-gMJ"/>
                                     <constraint firstItem="TRr-me-J6L" firstAttribute="leading" secondItem="FUM-4Z-9te" secondAttribute="leading" id="12g-fZ-9xs"/>
                                     <constraint firstItem="LRr-Er-Jeq" firstAttribute="leading" secondItem="FUM-4Z-9te" secondAttribute="leading" id="D1X-9g-qBK"/>
-                                    <constraint firstItem="TRr-me-J6L" firstAttribute="top" secondItem="QLw-HN-FIS" secondAttribute="bottom" constant="24" id="D56-94-FsC"/>
                                     <constraint firstItem="LRr-Er-Jeq" firstAttribute="top" secondItem="TRr-me-J6L" secondAttribute="bottom" constant="18" id="Dxl-SU-krj"/>
-                                    <constraint firstItem="QLw-HN-FIS" firstAttribute="leading" secondItem="FUM-4Z-9te" secondAttribute="leading" id="ICs-u7-sc0"/>
-                                    <constraint firstAttribute="trailing" secondItem="QLw-HN-FIS" secondAttribute="trailing" id="R0U-WB-ycE"/>
+                                    <constraint firstItem="TRr-me-J6L" firstAttribute="top" secondItem="QLw-HN-FIS" secondAttribute="bottom" constant="19" id="UXT-25-BNJ"/>
+                                    <constraint firstItem="QLw-HN-FIS" firstAttribute="top" secondItem="FUM-4Z-9te" secondAttribute="top" constant="10" id="X7Z-m9-krc"/>
                                     <constraint firstAttribute="trailing" secondItem="LRr-Er-Jeq" secondAttribute="trailing" id="Zz3-aP-HcN"/>
-                                    <constraint firstItem="QLw-HN-FIS" firstAttribute="top" secondItem="FUM-4Z-9te" secondAttribute="top" id="wii-mi-nPv"/>
+                                    <constraint firstItem="QLw-HN-FIS" firstAttribute="centerX" secondItem="FUM-4Z-9te" secondAttribute="centerX" id="yic-L9-Oh4"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fag-Y0-Eye">
@@ -142,7 +145,7 @@
                     <navigationItem key="navigationItem" id="Apo-Of-rZY"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="imagemCapaFilme" destination="QLw-HN-FIS" id="0Lo-Pb-VAA"/>
+                        <outlet property="imagemCapaFilme" destination="QLw-HN-FIS" id="3Ay-Se-9Qd"/>
                         <outlet property="labelSinopse" destination="LRr-Er-Jeq" id="l7I-h1-Mc7"/>
                         <outlet property="labelTitulo" destination="TRr-me-J6L" id="4E9-y3-QLn"/>
                     </connections>

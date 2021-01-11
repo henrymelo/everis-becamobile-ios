@@ -13,11 +13,26 @@ class DescricaoFilmeViewController: UIViewController {
     @IBOutlet weak var imagemCapaFilme: UIImageView!
     @IBOutlet weak var labelTitulo: UILabel!
     @IBOutlet weak var labelSinopse: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         guard let filme = filmeSelecionado else {return print("Erro ao buscar informações sobre o pacoteViagens(classe: DetalhesViagensViewController)")}
-        //self.imagemCapaFilme
+        
+        let poster = String("https://www.themoviedb.org/t/p/w440_and_h660_face\(filme.posterPath)")
+        
+        print(poster)
+        guard let urlPoster = URL(string: poster) else{return}
+
+        guard let imageData = NSData(contentsOf: urlPoster ) else{return}
+
+        print(poster)
+        self.imagemCapaFilme.image = UIImage(data: imageData as Data)
+//
+//      self.imagemCapaFilme
+
         self.labelTitulo.text = filme.title
         self.labelSinopse.text = filme.overview
     }
