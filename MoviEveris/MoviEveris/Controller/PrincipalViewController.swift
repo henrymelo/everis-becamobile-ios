@@ -9,26 +9,28 @@
 import UIKit
 
 class PrincipalViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
 
     @IBOutlet weak var colecaoFilmes: UICollectionView!
 
     var mostraFilmes:[[String:Any]] = [[:]]
+    var paginaAtual = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colecaoFilmes.dataSource = self
         colecaoFilmes.delegate = self
-        
-        recuperaImages()
+        recuperaPosteres()
     }
     // MARK: - Collection data source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(mostraFilmes.count)
+//        print(mostraFilmes.count)
         return mostraFilmes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // método que coloca dados de poster e titulo nas células de filmes na primeira página
         let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaFilme", for: indexPath) as! FilmeCollectionViewCell
         
         let filmeAtual = mostraFilmes[indexPath.item]
@@ -42,38 +44,50 @@ class PrincipalViewController: UIViewController, UICollectionViewDataSource, UIC
         
         return celulaFilme
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let filme = mostraFilmes[indexPath.item]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalheFilmeViewController
         
         controller.filmeSelecionado = filme
+        controller.paginaAtual = self.paginaAtual
         
         self.present(controller, animated: true, completion: nil)
         
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return UIDevice.current.userInterfaceIdiom == .phone ? CGSize(width: collectionView.bounds.width/2, height: 185) : CGSize(width: collectionView.bounds.width/3-20, height: 250)
-//    }
-    func recuperaImages() {
-        
-        FilmeAPI().getPosterFilme { (filmes) in
+    
+    // MARK: - Métodos
+    
+    func recuperaPosteres() {
+        //  Mostra os posteres dos filmes
+        FilmeAPI().getPosterFilme(self.paginaAtual) { (filmes) in
             self.mostraFilmes = filmes
-            if(self.mostraFilmes.count>9) {
+            if(self.mostraFilmes.count>9) && (self.paginaAtual == 1){
                 self.mostraFilmes.remove(at: 0)
                 self.colecaoFilmes.reloadData()
             }
         }
     }
-    func carregaProximaPagina() {
-        
-        FilmeAPI().getPosterFilme() { (filmes) in
-            let filmesAtuais = filmes
-            
-            self.mostraFilmes = filmesAtuais
+    
+    @IBAction func paginaAnterior(_ sender: UIButton) {
+        if self.paginaAtual > 1 {
+            self.paginaAtual = self.paginaAtual - 1
+            FilmeAPI().getPosterFilme(self.paginaAtual) { (filmes) in
+            let listaFilmesAtual = filmes
+            self.mostraFilmes = listaFilmesAtual
             self.colecaoFilmes.reloadData()
-            
+            }
         }
-        
     }
+    @IBAction func proximaPagina(_ sender: UIButton) {
+        self.paginaAtual = self.paginaAtual + 1
+        FilmeAPI().getPosterFilme(paginaAtual) { (filmes) in
+            let listaFilmesAtual = filmes
+            self.mostraFilmes = listaFilmesAtual
+            self.colecaoFilmes.reloadData()
+        }
+    }
+    
+    
 }

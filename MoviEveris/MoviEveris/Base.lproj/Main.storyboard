@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JwS-IC-N2A">
-                                <rect key="frame" x="10" y="30" width="355" height="637"/>
+                                <rect key="frame" x="8" y="30" width="359" height="637"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmes Populares da Semana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="das-RX-6Rz">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="hPM-DZ-dIx"/>
                                         </constraints>
@@ -31,44 +31,44 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qB-u3-6CV">
-                                        <rect key="frame" x="0.0" y="30" width="355" height="1"/>
+                                        <rect key="frame" x="0.0" y="30" width="359" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="HRT-GR-gbM"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PN8-AJ-nV4">
-                                        <rect key="frame" x="0.0" y="31" width="355" height="10"/>
+                                        <rect key="frame" x="0.0" y="31" width="359" height="10"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="fec-ew-1CG"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aUD-kM-eeO">
-                                        <rect key="frame" x="0.0" y="41" width="355" height="596"/>
+                                        <rect key="frame" x="0.0" y="41" width="359" height="566"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YVd-7g-IE0">
-                                            <size key="itemSize" width="152" height="229"/>
+                                            <size key="itemSize" width="144" height="208"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="celulaFilme" id="de4-SH-l9G" customClass="FilmeCollectionViewCell" customModule="MoviEveris" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="152" height="229"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="144" height="208"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="229"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="208"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aFj-a1-WPA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="152" height="230"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="144" height="208"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="230" id="LTt-xv-22Z"/>
+                                                                <constraint firstAttribute="height" constant="208" id="LTt-xv-22Z"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbZ-wu-Gh6">
-                                                            <rect key="frame" x="0.0" y="193" width="152" height="45"/>
+                                                            <rect key="frame" x="0.0" y="183.5" width="144" height="45"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.56967037671232879" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="xeV-w2-OwA"/>
@@ -81,7 +81,7 @@
                                                 </view>
                                                 <constraints>
                                                     <constraint firstItem="aFj-a1-WPA" firstAttribute="leading" secondItem="de4-SH-l9G" secondAttribute="leading" id="B8P-wr-15K"/>
-                                                    <constraint firstAttribute="bottom" secondItem="LbZ-wu-Gh6" secondAttribute="bottom" constant="0.5" id="Fvh-2b-9iu"/>
+                                                    <constraint firstAttribute="bottom" secondItem="LbZ-wu-Gh6" secondAttribute="bottom" id="Fvh-2b-9iu"/>
                                                     <constraint firstItem="LbZ-wu-Gh6" firstAttribute="leading" secondItem="de4-SH-l9G" secondAttribute="leading" id="Met-ey-oGN"/>
                                                     <constraint firstItem="aFj-a1-WPA" firstAttribute="top" secondItem="de4-SH-l9G" secondAttribute="top" id="To4-9m-2HT"/>
                                                     <constraint firstAttribute="trailing" secondItem="LbZ-wu-Gh6" secondAttribute="trailing" id="gsH-L6-WtR"/>
@@ -94,14 +94,51 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wob-3z-z5J">
+                                        <rect key="frame" x="0.0" y="607" width="359" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78a-Rz-Rck">
+                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="179.5" id="7bk-rn-9ji"/>
+                                                </constraints>
+                                                <state key="normal" title="Voltar"/>
+                                                <connections>
+                                                    <action selector="paginaAnterior:" destination="FmT-Es-TtB" eventType="touchUpInside" id="bt1-2w-7Al"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VR-r5-lys">
+                                                <rect key="frame" x="179.5" y="0.0" width="179.5" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="179.5" id="RpJ-Vt-p0x"/>
+                                                </constraints>
+                                                <state key="normal" title="Próximo"/>
+                                                <connections>
+                                                    <action selector="proximaPagina:" destination="FmT-Es-TtB" eventType="touchUpInside" id="61K-9G-Z8D"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="eGX-TL-DSX"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="aUD-kM-eeO" firstAttribute="leading" secondItem="JwS-IC-N2A" secondAttribute="leading" id="7yc-wy-lIg"/>
+                                    <constraint firstAttribute="trailing" secondItem="aUD-kM-eeO" secondAttribute="trailing" id="80A-9v-TpZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wob-3z-z5J" secondAttribute="bottom" id="G8A-SD-Zrg"/>
+                                    <constraint firstItem="Wob-3z-z5J" firstAttribute="leading" secondItem="JwS-IC-N2A" secondAttribute="leading" id="YtV-mi-531"/>
+                                    <constraint firstItem="aUD-kM-eeO" firstAttribute="top" secondItem="PN8-AJ-nV4" secondAttribute="bottom" id="Zxq-nv-DgH"/>
+                                    <constraint firstItem="Wob-3z-z5J" firstAttribute="top" secondItem="aUD-kM-eeO" secondAttribute="bottom" id="eaY-GZ-vg1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wob-3z-z5J" secondAttribute="trailing" id="vWL-hq-fsj"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JwS-IC-N2A" firstAttribute="bottom" secondItem="Ad3-7E-XFG" secondAttribute="bottom" id="JyO-2p-dDc"/>
-                            <constraint firstItem="JwS-IC-N2A" firstAttribute="leading" secondItem="Ad3-7E-XFG" secondAttribute="leading" constant="10" id="RSA-gd-35C"/>
-                            <constraint firstItem="JwS-IC-N2A" firstAttribute="trailing" secondItem="Ad3-7E-XFG" secondAttribute="trailing" constant="-10" id="cIY-Jl-6mr"/>
+                            <constraint firstItem="JwS-IC-N2A" firstAttribute="leading" secondItem="Ad3-7E-XFG" secondAttribute="leading" constant="8" id="RSA-gd-35C"/>
+                            <constraint firstItem="JwS-IC-N2A" firstAttribute="trailing" secondItem="Ad3-7E-XFG" secondAttribute="trailing" constant="-8" id="cIY-Jl-6mr"/>
                             <constraint firstItem="JwS-IC-N2A" firstAttribute="top" secondItem="GVL-7l-jNz" secondAttribute="top" constant="30" id="r4c-wC-Ebc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ad3-7E-XFG"/>

@@ -12,6 +12,8 @@ import AlamofireImage
 
 class FilmeCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - 
+    
     @IBOutlet weak var posterFilme: UIImageView!
     @IBOutlet weak var labelTitulo: UILabel!
     

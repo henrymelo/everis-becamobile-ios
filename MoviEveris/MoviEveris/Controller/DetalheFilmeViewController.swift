@@ -22,22 +22,25 @@ class DetalheFilmeViewController: UIViewController {
     
     // MARK: - Variáveis
     var filmeSelecionado:[String:Any]? = nil
+    var paginaAtual = 1
     
+    // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         mostraFilme()
     }
     
+    // MARK: - Métodos
+    
     func mostraFilme() {
         
+        // método para apresentar detalhes do filme
         guard let filme = self.filmeSelecionado else { return }
         guard let idFilmeAtual = filme["id"] as? Int else { return }
         guard let imagemFilmeAtual = filme["poster"] as? UIImage else { return }
-        
-        FilmeDAO().filmeDetalhes(idFilmeAtual) { (filme) in
-            var filmeAtual = filme[0]
+        print("Este é o filme atual: ", idFilmeAtual)
+        FilmeDAO().filmeDetalhes(self.paginaAtual, idFilmeAtual) { (filme) in
+            guard var filmeAtual = filme.first else { return }
             guard let tituloOriginal = filmeAtual["tituloOriginal"] as? String else { return }
             guard let titulo = filmeAtual["titulo"]  as? String else { return }
             guard let sinopse = filmeAtual["sinopse"]  as? String else { return }
@@ -48,10 +51,14 @@ class DetalheFilmeViewController: UIViewController {
             self.posterFilme.image = imagemFilmeAtual
             self.labelSinopse.text = sinopse
             self.labelRating.text = "Nota: \(rating)"
+            print(titulo)
         }
+        // altera a imagem para ter bordas
         self.posterFilme.layer.cornerRadius = 10
         self.posterFilme.layer.masksToBounds = true
     }
+    
+    // MARK: - Action
     
     @IBAction func buttonSair(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)

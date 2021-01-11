@@ -13,10 +13,17 @@ import CoreData
 
 class FilmeDAO: NSObject {
     
+    // MARK: - Atributos
+    
     var filmeAtual:[String:Any] = [:]
     
-    func filmeDetalhes(_ id:Int, completion: @escaping(_ filme:[[String:Any]]) -> Void)  {
-        FilmeAPI().getFilmesPopulares() { (filmes) in
+    
+    // MARK: - Métodos
+    
+    func filmeDetalhes(_ paginaToBe: Int, _ id:Int, completion: @escaping(_ filme:[[String:Any]]) -> Void)  {
+        // Pega os detalhes de cada filme pelo Id
+        FilmeAPI().getFilmesPopulares(paginaToBe) { (filmes) in
+//            print("Pagina Atual detalhes: ", paginaToBe)
             
             let filmeAtual = filmes.filter({ filmeAtual in
                 guard let filme = filmeAtual["id"] as? Int else { return false }
@@ -27,7 +34,6 @@ class FilmeDAO: NSObject {
     }
     
     func montaListaFilmes (_ filmeData:[[String:Any]]) -> [[String:Any]] {
-//        var filmeAtual: [String:Any]
         var filmesLista:[[String:Any]] = [[:]]
         for filme in filmeData {
             guard let id = filme["id"] else { return [[:]] }
