@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		DF19E03025AC071900B937A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19E02F25AC071900B937A1 /* AppDelegate.swift */; };
 		DF19E03525AC071900B937A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF19E03325AC071900B937A1 /* Main.storyboard */; };
 		DF19E03825AC071900B937A1 /* cinesofa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF19E03625AC071900B937A1 /* cinesofa.xcdatamodeld */; };
@@ -30,6 +31,35 @@
 		DF19E04625AC076B00B937A1 /* ListaFilmeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaFilmeTableViewController.swift; sourceTree = "<group>"; };
 		DF21FB6D25AC1C55006FFD84 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		DF21FB6F25AC27C3006FFD84 /* DescricaoFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescricaoFilmeViewController.swift; sourceTree = "<group>"; };
+=======
+		037D15539920A15C9D0CE14D /* Pods_cinesofa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FB7E0A5027D4C58681AD7D /* Pods_cinesofa.framework */; };
+		DF07615525A74A1500D6C14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF07615425A74A1500D6C14E /* AppDelegate.swift */; };
+		DF07615725A74A1500D6C14E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF07615625A74A1500D6C14E /* ViewController.swift */; };
+		DF07615A25A74A1500D6C14E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF07615825A74A1500D6C14E /* Main.storyboard */; };
+		DF07615D25A74A1600D6C14E /* cinesofa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF07615B25A74A1600D6C14E /* cinesofa.xcdatamodeld */; };
+		DF07615F25A74A1700D6C14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF07615E25A74A1700D6C14E /* Assets.xcassets */; };
+		DF07616225A74A1700D6C14E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF07616025A74A1700D6C14E /* LaunchScreen.storyboard */; };
+		DF12ED6525ABFDD000E0E2F1 /* ListaFilmesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF12ED6425ABFDD000E0E2F1 /* ListaFilmesTableViewCell.swift */; };
+		DF12ED6725ABFDFA00E0E2F1 /* ListaFilmesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF12ED6625ABFDFA00E0E2F1 /* ListaFilmesTableViewController.swift */; };
+		DFE2B81825A7D49F0012426A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE2B81725A7D49F0012426A /* Result.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		35FB7E0A5027D4C58681AD7D /* Pods_cinesofa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cinesofa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F3D1DD7800B26ED957C4F35 /* Pods-cinesofa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cinesofa.debug.xcconfig"; path = "Target Support Files/Pods-cinesofa/Pods-cinesofa.debug.xcconfig"; sourceTree = "<group>"; };
+		DF07615125A74A1500D6C14E /* cinesofa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cinesofa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF07615425A74A1500D6C14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DF07615625A74A1500D6C14E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF07615925A74A1500D6C14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DF07615C25A74A1600D6C14E /* cinesofa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cinesofa.xcdatamodel; sourceTree = "<group>"; };
+		DF07615E25A74A1700D6C14E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF07616125A74A1700D6C14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DF07616325A74A1700D6C14E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF12ED6425ABFDD000E0E2F1 /* ListaFilmesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaFilmesTableViewCell.swift; sourceTree = "<group>"; };
+		DF12ED6625ABFDFA00E0E2F1 /* ListaFilmesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaFilmesTableViewController.swift; sourceTree = "<group>"; };
+		DFE2B81725A7D49F0012426A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		F3CCC09D750BCFE5544829DF /* Pods-cinesofa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cinesofa.release.xcconfig"; path = "Target Support Files/Pods-cinesofa/Pods-cinesofa.release.xcconfig"; sourceTree = "<group>"; };
+>>>>>>> f5c2464e899659ef32937b86ed3c276d9fc0819f
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +92,7 @@
 		DF19E02E25AC071900B937A1 /* cinesofa */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				DF19E02F25AC071900B937A1 /* AppDelegate.swift */,
 				DF19E03325AC071900B937A1 /* Main.storyboard */,
 				DF19E03925AC071A00B937A1 /* Assets.xcassets */,
@@ -72,6 +103,18 @@
 				DF19E04625AC076B00B937A1 /* ListaFilmeTableViewController.swift */,
 				DF21FB6D25AC1C55006FFD84 /* Result.swift */,
 				DF21FB6F25AC27C3006FFD84 /* DescricaoFilmeViewController.swift */,
+=======
+				DF07615425A74A1500D6C14E /* AppDelegate.swift */,
+				DF07615625A74A1500D6C14E /* ViewController.swift */,
+				DF07615825A74A1500D6C14E /* Main.storyboard */,
+				DF07615E25A74A1700D6C14E /* Assets.xcassets */,
+				DF07616025A74A1700D6C14E /* LaunchScreen.storyboard */,
+				DF07616325A74A1700D6C14E /* Info.plist */,
+				DF07615B25A74A1600D6C14E /* cinesofa.xcdatamodeld */,
+				DFE2B81725A7D49F0012426A /* Result.swift */,
+				DF12ED6425ABFDD000E0E2F1 /* ListaFilmesTableViewCell.swift */,
+				DF12ED6625ABFDFA00E0E2F1 /* ListaFilmesTableViewController.swift */,
+>>>>>>> f5c2464e899659ef32937b86ed3c276d9fc0819f
 			);
 			path = cinesofa;
 			sourceTree = "<group>";
@@ -147,12 +190,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				DF19E03825AC071900B937A1 /* cinesofa.xcdatamodeld in Sources */,
 				DF21FB6E25AC1C55006FFD84 /* Result.swift in Sources */,
 				DF21FB7025AC27C3006FFD84 /* DescricaoFilmeViewController.swift in Sources */,
 				DF19E04525AC074A00B937A1 /* ListaFilmeTableViewCell.swift in Sources */,
 				DF19E03025AC071900B937A1 /* AppDelegate.swift in Sources */,
 				DF19E04725AC076B00B937A1 /* ListaFilmeTableViewController.swift in Sources */,
+=======
+				DF07615D25A74A1600D6C14E /* cinesofa.xcdatamodeld in Sources */,
+				DF12ED6525ABFDD000E0E2F1 /* ListaFilmesTableViewCell.swift in Sources */,
+				DF07615725A74A1500D6C14E /* ViewController.swift in Sources */,
+				DFE2B81825A7D49F0012426A /* Result.swift in Sources */,
+				DF07615525A74A1500D6C14E /* AppDelegate.swift in Sources */,
+				DF12ED6725ABFDFA00E0E2F1 /* ListaFilmesTableViewController.swift in Sources */,
+>>>>>>> f5c2464e899659ef32937b86ed3c276d9fc0819f
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
