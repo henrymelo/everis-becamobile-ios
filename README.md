@@ -39,3 +39,11 @@ Criar um aplicativo que realize a listagem de filmes e exibição dos detalhes:
    - Quando finalizar a implementação faça um pull request; na descrição informe qual a abordagem que você utilizou para chegar na solução, descreva também quais foram os maiores desafios para concluir a avaliação.
 
 * :clap: Parabéns por ter chegado até aqui! :smile: _Um grande abraço e bem vindo ao time Mobile iOS_ :iphone: :punch:
+
+
+Considerações_letycia: 
+- Achei bacana todo o projeto em si e a oportunidade de aprendizado nesta nova tecnologia.
+- Encontrei algumas dificuldades em aplicar as constraints em nova versão do xcode 12.3 (o meu projeto roda com layout responsivo na primeira tela, a partir do iphone 8 plus);
+
+
+
