@@ -1,18 +1,19 @@
 //
-//  FilmeResultTableViewCell.swift
+//  ListaFilmesTableViewCell.swift
 //  cinesofa
 //
-//  Created by Fabricio Rodrigo Baixo on 1/10/21.
+//  Created by Fabricio Rodrigo Baixo on 1/11/21.
 //  Copyright © 2021 Fabricio Rodrigo Baixo. All rights reserved.
 //
 
 import UIKit
 
-class FilmeResultTableViewCell: UITableViewCell {
+class ListaFilmesTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imageUrl: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet weak var tituloLabel: UILabel!
+    @IBOutlet weak var urlPosterLabel: UILabel!
+    @IBOutlet weak var urlBackdrophLabel: UILabel!
+    @IBOutlet weak var descricaoLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
