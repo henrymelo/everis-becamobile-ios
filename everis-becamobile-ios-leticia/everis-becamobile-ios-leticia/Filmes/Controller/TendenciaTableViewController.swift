@@ -16,8 +16,10 @@ class TendenciaTableViewController: UITableViewController {
     var tendencias:Array<Tendencia> = []
     var detalhes:Array<Detalhes> = []
     var detalhesViewController:DetalhesViewController?
+    var tendenciaSelecionada:Tendencia?
     
     var detalhesDAO:DetalhesDAO?
+    
     
     // MARK: - View Lifecycle
     
@@ -57,23 +59,21 @@ class TendenciaTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 224
+        return 230
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let tendenciaSelecionada = tendencias[indexPath.row]
+        let selecionada = tendencias[indexPath.row]
         //detalhesViewController?.setup(tendenciaSelecionada)
-        
-        Repositorio().recuperaDetalhes(tendenciaSelecionada) { (listaDeDetalhes) in
-            self.detalhes = listaDeDetalhes
-        }
+        tendenciaSelecionada = selecionada
+        performSegue(withIdentifier: "detalhes", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detalhes" {
-            detalhesViewController = segue.destination as? DetalhesViewController
-        }
+        guard segue.identifier == "detalhes", let detalhesViewController = segue.destination as? DetalhesViewController else { return }
+        detalhesViewController.tendencia = tendenciaSelecionada
     }
+    
     
 //    func limpaCoreData() {
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate

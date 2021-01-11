@@ -18,22 +18,33 @@ class DetalhesViewController: UIViewController {
     @IBOutlet weak var descricaoLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
-    var detalhesSelecionado:Detalhes?
+    var detalhesSelecionado:Array<Detalhes> = []
+    var tendencia:Tendencia?
+    var detalhes:Array<Detalhes> = []
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let tendenciaSelecionada = tendencia else { return }
+        Repositorio().recuperaDetalhes(tendenciaSelecionada) { (listaDeDetalhes) in
+            self.detalhes = listaDeDetalhes
+            self.setup(listaDeDetalhes)
+        }
     }
     
+
     // MARK: - Métodos
     
-    func setup() {
+    func setup(_ dicionarioDeDetalhes:Array<Detalhes>) {
         print("TEEESTE")
-        descricaoLabel.text = detalhesSelecionado?.overview
-        tituloLabel.text = detalhesSelecionado?.title
-        print(detalhesSelecionado?.overview)
-        print(detalhesSelecionado?.title)
+//
+//
+//        descricaoLabel.text = detalhesSelecionado?.overview
+//        tituloLabel.text = detalhesSelecionado?.title
+//        print(detalhesSelecionado?.overview)
+//        print(detalhesSelecionado?.title)
     }
     
 //    func montaDicionarioDeParametros() -> Dictionary<String, String> {

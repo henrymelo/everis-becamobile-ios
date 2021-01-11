@@ -33,31 +33,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="99X-ZP-w86">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tendências" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10T-uq-5Gh">
+                                    <rect key="frame" x="8" y="17" width="359" height="34.5"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="25"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="10T-uq-5Gh" firstAttribute="leading" secondItem="99X-ZP-w86" secondAttribute="leading" constant="8" id="7hg-LU-BLB"/>
+                                <constraint firstAttribute="trailing" secondItem="10T-uq-5Gh" secondAttribute="trailing" constant="8" id="QGn-Wk-hyD"/>
+                                <constraint firstItem="10T-uq-5Gh" firstAttribute="top" secondItem="99X-ZP-w86" secondAttribute="top" constant="17" id="yAe-KR-tan"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tendencia-celula" rowHeight="224" id="M84-Cl-SR2" customClass="TendenciaTableViewCell" customModule="everis_becamobile_ios_leticia" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="224"/>
+                                <rect key="frame" x="0.0" y="95" width="375" height="224"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M84-Cl-SR2" id="VTo-Tj-fCG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="223.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tcv-a4-68C">
-                                            <rect key="frame" x="104" y="5.5" width="167" height="213"/>
+                                            <rect key="frame" x="91.5" y="5.5" width="192" height="213"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="213" id="82U-1O-4lc"/>
-                                                <constraint firstAttribute="width" constant="167" id="z3G-qy-fME"/>
+                                                <constraint firstAttribute="height" constant="213" id="ftR-Ap-mVu"/>
+                                                <constraint firstAttribute="width" constant="192" id="nIK-GD-gIe"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Tcv-a4-68C" firstAttribute="centerX" secondItem="VTo-Tj-fCG" secondAttribute="centerX" id="4aq-lz-KHc"/>
-                                        <constraint firstItem="Tcv-a4-68C" firstAttribute="centerY" secondItem="VTo-Tj-fCG" secondAttribute="centerY" id="r0R-Yu-2Ls"/>
+                                        <constraint firstItem="Tcv-a4-68C" firstAttribute="centerX" secondItem="VTo-Tj-fCG" secondAttribute="centerX" id="ERG-u6-Dj3"/>
+                                        <constraint firstItem="Tcv-a4-68C" firstAttribute="centerY" secondItem="VTo-Tj-fCG" secondAttribute="centerY" id="nRb-qY-2Zj"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.11823782655412221" green="0.011445926043435884" blue="0.36242861675126903" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.45033578549999997" green="0.45033578549999997" blue="0.45033578549999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <outlet property="capaFilme" destination="Tcv-a4-68C" id="9uT-SD-jPs"/>
-                                    <segue destination="R1H-MN-eXl" kind="show" identifier="detalhes" id="4qQ-cF-AV0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -66,6 +83,9 @@
                             <outlet property="delegate" destination="L5Q-aI-isn" id="QKX-9T-8no"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="R1H-MN-eXl" kind="show" identifier="detalhes" id="vgG-Bw-SvP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMO-gj-2ev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

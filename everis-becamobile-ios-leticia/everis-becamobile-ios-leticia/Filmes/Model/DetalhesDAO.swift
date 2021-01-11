@@ -61,11 +61,6 @@ class DetalhesDAO: NSObject {
             detalhes.vote_average = (conversaoDeVoteAverage as NSString).doubleValue
         }
         
-        print("DESC \(detalhes.overview)")
-        print("TITULO \(detalhes.title)")
-        detalhesViewController?.detalhesSelecionado = detalhes
-        detalhesViewController?.setup()
-        
         atualizaContexto()
         
     }

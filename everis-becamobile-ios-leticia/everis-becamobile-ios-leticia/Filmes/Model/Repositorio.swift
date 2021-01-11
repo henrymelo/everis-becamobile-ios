@@ -10,6 +10,8 @@ import UIKit
 
 class Repositorio: NSObject {
     
+    var detalhesViewController:DetalhesViewController?
+    
     // Tendencia
 
     func recuperaTendencias(completion:@escaping(_ listaDeTendencias:Array<Tendencia>) -> Void) {
@@ -39,7 +41,7 @@ class Repositorio: NSObject {
             }
     }
     
-//    func salvaDetalhes(detalhe:Dictionary<String, Any>) {
-//        DetalhesDAO().salvaDetalhes(dicionarioDeDetalhes: detalhe)
-//    }
+    func salvaDetalhes(detalhe:Dictionary<String, Any>) {
+        DetalhesDAO().salvaDetalhes(dicionarioDeDetalhes: detalhe)
+    }
 }
