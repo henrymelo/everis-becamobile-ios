@@ -25,25 +25,10 @@ class FilmeAPI: NSObject {
             switch response.result {
             case .success:
                 if let resposta = response.result.value as? [String:Any] {
+                    
                     guard let filmeData = resposta["results"] as? [[String:Any]] else { return }
                     print(filmeData)
-                    for filme in filmeData {
-                        guard let id = filme["id"] else { return }
-                        guard let tituloOriginal = filme["original_title"] else { return }
-                        guard let titulo = filme["title"] else { return }
-                        guard let posterPath = filme["poster_path"] else { return }
-                        guard let sinopse = filme["overview"] else { return }
-                        guard let rating = filme["vote_average"] else { return }
-                        self.filmeAtual = [
-                            "id":id,
-                            "tituloOriginal": tituloOriginal,
-                            "titulo":titulo,
-                            "poster":posterPath,
-                            "sinopse":sinopse,
-                            "rating": rating
-                        ]
-                        filmesLista.append(self.filmeAtual)
-                    }
+                    filmesLista = FilmeDAO().montaListaFilmes(filmeData)
                     completion(filmesLista)
                 }
                 break
@@ -57,9 +42,7 @@ class FilmeAPI: NSObject {
     func getPosterFilme(completion: @escaping(_ filmes: [[String:Any]]) ->Void) {
         getFilmesPopulares() { (filmes) in
             var filmesLista:[[String:Any]] = [[:]]
-            
             for filme in filmes {
-                
                 if let posterPath = filme["poster"] as? String {
                     guard let titulo = filme["titulo"] else { return }
                     guard let id = filme["id"] else { return }
@@ -73,11 +56,10 @@ class FilmeAPI: NSObject {
                                     "id":id
                                 ]
                                 filmesLista.append(self.filmeAtual)
+                                print(filmesLista.count)
                                 completion(filmesLista)
                             }
-                            
                             break
-                            
                         case .failure:
                             print(response.error!, "Erro ao buscar imagem")
                             break
@@ -85,20 +67,6 @@ class FilmeAPI: NSObject {
                     })
                 }
             }
-        }
-    }
-    func filmeDetalhes(_ id:Int, completion: @escaping(_ filme:[[String:Any]]) -> Void)  {
-        getFilmesPopulares() { (filmes) in
-            
-            let filmeAtual = filmes.filter({ filmeAtual in
-                
-                guard let filme = filmeAtual["id"] as? Int else { return false }
-                
-                return filme == id
-                
-            })
-            
-            completion(filmeAtual)
         }
     }
     

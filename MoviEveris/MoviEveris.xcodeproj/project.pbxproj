@@ -14,6 +14,7 @@
 		DE28C8A525A896440059625C /* FilmeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8A425A896440059625C /* FilmeCollectionViewCell.swift */; };
 		DE28C8BE25AB3C130059625C /* DetalheFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8BD25AB3C120059625C /* DetalheFilmeViewController.swift */; };
 		DE28C8C025AB41770059625C /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8BF25AB41770059625C /* PrincipalViewController.swift */; };
+		DE28C8C425AC73B30059625C /* FilmeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8C325AC73B30059625C /* FilmeDAO.swift */; };
 		DE530B2225A76D5100BB782A /* FilmeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE530B2125A76D5100BB782A /* FilmeAPI.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		DE28C8A425A896440059625C /* FilmeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE28C8BD25AB3C120059625C /* DetalheFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheFilmeViewController.swift; sourceTree = "<group>"; };
 		DE28C8BF25AB41770059625C /* PrincipalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalViewController.swift; sourceTree = "<group>"; };
+		DE28C8C325AC73B30059625C /* FilmeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeDAO.swift; sourceTree = "<group>"; };
 		DE530B2125A76D5100BB782A /* FilmeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				DE530B2125A76D5100BB782A /* FilmeAPI.swift */,
+				DE28C8C325AC73B30059625C /* FilmeDAO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				DE530B2225A76D5100BB782A /* FilmeAPI.swift in Sources */,
 				DE12ABD825A73C7A00F2E0C5 /* AppDelegate.swift in Sources */,
 				DE28C8A525A896440059625C /* FilmeCollectionViewCell.swift in Sources */,
+				DE28C8C425AC73B30059625C /* FilmeDAO.swift in Sources */,
 				DE28C8BE25AB3C130059625C /* DetalheFilmeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
