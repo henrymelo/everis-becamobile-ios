@@ -37,33 +37,34 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="filmeCell" id="gnG-Ld-cye">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="filmeCell" id="gnG-Ld-cye" customClass="CollectionViewCell" customModule="Movie_Hunter" customModuleProvider="target">
                                                 <rect key="frame" x="96" y="0.0" width="183" height="271"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="183" height="271"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="nomeFilme" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q0-rA-4W3">
-                                                            <rect key="frame" x="70" y="194" width="42" height="21"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="imagemFilme" translatesAutoresizingMaskIntoConstraints="NO" id="UpE-J6-bHm">
+                                                            <rect key="frame" x="34" y="52" width="114" height="108"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="filmeNome" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G4-Wt-pcI">
+                                                            <rect key="frame" x="70" y="205" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imagemFilme" translatesAutoresizingMaskIntoConstraints="NO" id="UpE-J6-bHm">
-                                                            <rect key="frame" x="34" y="52" width="114" height="108"/>
-                                                        </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
                                                     <constraint firstItem="UpE-J6-bHm" firstAttribute="top" secondItem="gnG-Ld-cye" secondAttribute="topMargin" constant="24" id="2ti-RO-rfa"/>
-                                                    <constraint firstAttribute="bottomMargin" secondItem="8q0-rA-4W3" secondAttribute="bottom" constant="48" id="Kqc-re-KHF"/>
                                                     <constraint firstAttribute="trailingMargin" secondItem="UpE-J6-bHm" secondAttribute="trailing" constant="27" id="PWg-Vr-CJa"/>
-                                                    <constraint firstItem="8q0-rA-4W3" firstAttribute="top" secondItem="UpE-J6-bHm" secondAttribute="bottom" constant="34" id="WfC-4n-bhA"/>
                                                     <constraint firstItem="UpE-J6-bHm" firstAttribute="leading" secondItem="gnG-Ld-cye" secondAttribute="leadingMargin" constant="26" id="Z8I-2e-V32"/>
-                                                    <constraint firstItem="8q0-rA-4W3" firstAttribute="leading" secondItem="gnG-Ld-cye" secondAttribute="leadingMargin" constant="62" id="dYm-Jx-84C"/>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="8q0-rA-4W3" secondAttribute="trailing" constant="63" id="g4T-kf-gzH"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="imagemFilme" destination="UpE-J6-bHm" id="2gb-hz-bfA"/>
+                                                    <outlet property="nomeFilme" destination="1G4-Wt-pcI" id="Rc0-kW-Nph"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -93,7 +94,6 @@
                     </view>
                     <connections>
                         <outlet property="collectionFilmes" destination="TNC-mP-nsA" id="QkE-ew-7xG"/>
-                        <outlet property="imagemFilme" destination="UpE-J6-bHm" id="y8e-pJ-6Ln"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czA-2c-55G" userLabel="First Responder" sceneMemberID="firstResponder"/>
