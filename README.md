@@ -39,3 +39,19 @@ Criar um aplicativo que realize a listagem de filmes e exibição dos detalhes:
    - Quando finalizar a implementação faça um pull request; na descrição informe qual a abordagem que você utilizou para chegar na solução, descreva também quais foram os maiores desafios para concluir a avaliação.
 
 * :clap: Parabéns por ter chegado até aqui! :smile: _Um grande abraço e bem vindo ao time Mobile iOS_ :iphone: :punch:
+
+
+
+
+
+
+Comentários:
+
+No começo fiquei apavorado que não iria dar conta de entregar o app com os requisitos minímos,
+A maior dificuldade foi entender como pegar os resultados da API, só dava nil, mas pesquisei bastante e entendi um pouco, depois que entendi, parece que clareou tudo, ficou mais fácil, porém ainda tenho dúvidas, tanto é que não consegui puxar os dados da paginação, por outro lado, eu consegui completar todos os requisitos;
+
+Um ponto importante que eu percebi no decorrer da prova, era qual caminho eu deveria seguir, por exemplo, no tratamento da api, eu fiz funções diversas, com retorno, sem retorno, com paramentro, sem parametro, com completion, sem completion, com isso as vezes eu pensava, perdi 6 horas e não adiantou nada, mas olhando agora no final do projeto, foi um aprendizado sem tamanho, a tentiva e erro, foi meu auto feedback de reforço positivo.
+
+Agradecer aos colegas e a equipe da Everis Beca iOS, que estavam sempre dispostos a ajudar.
+
+Minhas maiores dificuldades foram essas.
