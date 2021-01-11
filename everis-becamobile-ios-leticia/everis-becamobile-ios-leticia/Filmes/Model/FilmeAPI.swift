@@ -35,13 +35,14 @@ class FilmeAPI: NSObject {
     }
     
     func recuperaDetalhesServidor(_ tendencia:Tendencia, completion:@escaping() -> Void) {
-        Alamofire.request("https://api.themoviedb.org/3/movie/\(tendencia.id)?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR", method: .get).responseJSON { (response) in
+        guard let mediaType = tendencia.media_type else { return }
+        
+        Alamofire.request("https://api.themoviedb.org/3/\(mediaType)/\(tendencia.id)?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR", method: .get).responseJSON { (response) in
             switch response.result {
             case .success:
                 if let resposta = response.result.value as? Dictionary<String, Any> {
                     DetalhesDAO().salvaDetalhes(dicionarioDeDetalhes: resposta)
-                    completion()
-                }
+                    completion()                }
                 break
             case .failure:
                 print(response.error!)
