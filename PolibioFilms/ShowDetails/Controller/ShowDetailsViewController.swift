@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ShowDetailsViewController: UIViewController {
 
@@ -13,13 +14,16 @@ class ShowDetailsViewController: UIViewController {
     @IBOutlet weak var ImagemFilme: UIImageView!
     @IBOutlet weak var labelDescricaoShowDetais: UILabel!
     @IBOutlet weak var avaliacaoFilme: UILabel!
-
+    @IBOutlet weak var bannerFilme: UIImageView!
+    
     
     var tituloFilme: String?
     var resumoFilme: String?
-    var avaliacao:Double?
+    var avaliacao:String?
     var genero:String?
     var ano:Int?
+    var banner:UIImage?
+    var puxarBanner:UIImage?
     
     
     override func viewDidLoad() {
@@ -28,10 +32,14 @@ class ShowDetailsViewController: UIViewController {
         
         labelTItuloShowDetails.text = tituloFilme
         labelDescricaoShowDetais.text = resumoFilme
-       
+        bannerFilme.image = banner
+        avaliacaoFilme.text = avaliacao
         
-        
+
     }
+    
+    //apresenta o viewcontroller na tela
+        
     @IBAction func buttonvoltar(_ sender: UIButton) {
         if let navigation = navigationController{
             navigation.popViewController(animated: true)

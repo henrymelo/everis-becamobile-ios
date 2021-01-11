@@ -15,12 +15,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var filmesCollectionView: UICollectionView!
     
     var listaDeFilmes: [[String:Any]] = [[:]]
+    var imagemDoBanner:UIImage?
    
     override func viewDidLoad() {
         super.viewDidLoad()
         chamarAPI()
         filmesCollectionView.dataSource = self
         filmesCollectionView.delegate = self
+        
+        
         
     }
     
@@ -43,16 +46,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let filmeAtual = listaDeFilmes[indexPath.row]
         
+        
         guard let imagem = filmeAtual["poster_path"] as? String else {return celulaFilme}
         
-        
         celulaFilme.capaFilme.af_setImage(withURL: URL(string: "https://image.tmdb.org/t/p/w185\(imagem)")!)
+
+    
      
         return celulaFilme
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return UIDevice.current.userInterfaceIdiom == .phone ? CGSize(width: collectionView.bounds.width/2-20, height: 160) : CGSize(width: collectionView.bounds.width/3-20, height: 250)
+        return UIDevice.current.userInterfaceIdiom == .phone ? CGSize(width: collectionView.bounds.width/3-10, height: 150) : CGSize(width: collectionView.bounds.width/5-10, height: 250)
     }
     
 
@@ -72,14 +77,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let resumoDoFilmeSelecionado = filmeSelecionado["overview"] as? String
         controller.resumoFilme = resumoDoFilmeSelecionado
         
-        let avaliacaoFilme = filmeSelecionado["vote_avorage"]  as? Double
-        controller.avaliacao = avaliacaoFilme
+        let avaliacaoFilme = filmeSelecionado["vote_average"]  as? Double
+        let stringFormatada = String(format: "%.2f", avaliacaoFilme!)
+        controller.avaliacao = String(stringFormatada)
         
         
-    //apresenta o viewcontroller na tela
-        self.navigationController?.pushViewController(controller, animated: true)
+        guard let imagemString = filmeSelecionado["backdrop_path"] as? String else {return}
+        
+        
+        ReceberAPI().consumindoImageAPI(backdrop: imagemString) { (imagemBanner) in
+            self.imagemDoBanner = imagemBanner
+            let bannerDoFilme = self.imagemDoBanner
+            controller.banner = bannerDoFilme
+
+
+        //apresenta o viewcontroller na tela
+            self.navigationController?.pushViewController(controller, animated: true)
+
+        }
+        
     
         
     }
-    
 }
+    

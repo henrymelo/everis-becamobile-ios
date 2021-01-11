@@ -40,4 +40,24 @@ class ReceberAPI: NSObject {
         }
     }
     
+    func consumindoImageAPI(backdrop:String, completion: @escaping(UIImage) -> Void) {
+        
+        guard let urlBanner = URL(string: "https://image.tmdb.org/t/p/w185\(backdrop)") else {return}
+        
+        Alamofire.request(urlBanner, method: .get).responseImage { (response) in
+            switch response.result{
+            case .success:
+                
+                guard let imagemBanner = response.result.value else {return}
+                    completion(imagemBanner)
+
+                break
+            case .failure:
+                print(response.error!)
+                break
+            }
+        }
+        
+    }
+    
 }
