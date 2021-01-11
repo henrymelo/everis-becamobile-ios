@@ -59,12 +59,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     func recuperaImages() {
         
-        //carregamento.showSpinner(onView: self.view)
+        //animação de carregamento enquanto espera a requisição
+        carregamento.showSpinner(onView: self.view)
         
-        filmesAPI.getImagens { (filmes) in
-            self.filmesToShow = filmes
-            if(self.filmesToShow.count>9) {
+        filmesAPI.getImagens { (filme, filmesArray) in
+            self.filmesToShow = filme
+            if(self.filmesToShow.count == filmesArray?.count) {
                 self.filmesToShow.remove(at: 0)
+                self.carregamento.removeSpinner()
                 self.filmesCollectionView.reloadData()
             }
         }
@@ -81,13 +83,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
    
     @IBAction func botaoProximaPagina(_ sender: UIButton) {
+        carregamento.showSpinner(onView: self.view)
         paginaAtual = paginaAtual + 1
         print(paginaAtual)
         
-        filmesAPI.getImagens(paginaAtual) { (filmes) in
+        filmesAPI.getImagens(paginaAtual) { (filme, filmesArray ) in
             
-            self.filmesToShow = filmes
-            if(self.filmesToShow.count > 20) {
+            self.filmesToShow = filme
+            if(self.filmesToShow.count == filmesArray?.count ) {
+                self.carregamento.removeSpinner()
                 self.filmesCollectionView.reloadData()
             }
             

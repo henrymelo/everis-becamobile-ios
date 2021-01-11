@@ -11,20 +11,14 @@ import UIKit
 var vSpinner : UIView?
 
 class SpinerViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
    
 }
 
 extension UIViewController {
     func showSpinner(onView : UIView) {
         let spinnerView = UIView.init(frame: onView.bounds)
-        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
-        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
+        spinnerView.backgroundColor = UIColor.black
+        let ai = UIActivityIndicatorView.init(style: .white)
         ai.startAnimating()
         ai.center = spinnerView.center
         

@@ -76,7 +76,7 @@ class FilmesRequisition: NSObject {
             }
         }
     }
-    func getImagens(_ pagina:Int=1, completion: @escaping(_ filmes: [[String:Any]]) ->Void) {
+    func getImagens(_ pagina:Int=1, completion: @escaping(_ filme: [[String:Any]], _ filmes: [[String:Any]]?) ->Void) {
         
         getFilmes(pagina) { (filmes) in
             
@@ -106,7 +106,7 @@ class FilmesRequisition: NSObject {
                                     ]
                                     
                                     filmesProntos.append(filmeAtual)
-                                    completion(filmesProntos)
+                                    completion(filmesProntos, filmes)
                                 }
                                 
                                 break
