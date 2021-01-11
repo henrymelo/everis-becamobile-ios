@@ -20,8 +20,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     
     // MARK: - Variáveis
+    var listaFilme: [Filme] = []
 
-    var listaFilme: Array<Filme> = []
     
     // MARK: - View Did Load
     
@@ -29,7 +29,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         collectionFilmes.dataSource = self
         collectionFilmes.delegate = self
-        FilmeAPI().detalheFilme()
+        FilmeAPI().recuperaFilmes { (listaFilmes) in
+            print("sucesso")
+        }
+
+        
     }
     
     
@@ -38,16 +42,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        collectionView.reloadData()
         return listaFilme.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "filmeCell", for: indexPath) as! CollectionViewCell
         
-        let filmeAtual = listaFilme[indexPath.row]
+        let filmeAtual = listaFilme[indexPath.item]
         celulaFilme.configuraCelula(filme: filmeAtual)
         
-        collectionFilmes.reloadData()
+        collectionView.reloadData()
         
         return celulaFilme
     }

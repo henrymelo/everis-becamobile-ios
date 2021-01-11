@@ -18,7 +18,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     func configuraCelula(filme: Filme) {
         
-         guard let posterMenor = Configuracao().getPosterMenor() else { return }
+         //guard let posterMenor = Configuracao().getPosterMenor() else { return }
         
         nomeFilme.text = filme.title
         

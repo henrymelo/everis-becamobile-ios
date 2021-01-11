@@ -26,7 +26,7 @@ struct Filme: Codable {
     let revenue, runtime: Int?
     let spokenLanguages: [SpokenLanguage]?
     let status, tagline: String?
-    let title: String
+    let title: String?
     let video: Bool?
     let voteAverage: Double?
     let voteCount: Int?
