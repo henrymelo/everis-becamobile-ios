@@ -16,17 +16,17 @@ class DetalhesViewController: UIViewController {
     @IBOutlet weak var tituloDetalhes: UILabel!
     @IBOutlet weak var descricaoDetalhes: UILabel!
     
+    
+    var titulo: String?
+    var descricao: String?
+    var imagemPassada: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        FilmesAPI().recebeDetalhesFilme { (filme) in
-            self.listaDetalhes
-            print(self.listaDetalhes)
-        }
-    }
-    
-    func separaImagem(){
-        let imagepath = listaDetalhes
         
-        
+        tituloDetalhes.text = titulo
+        descricaoDetalhes.text = descricao
+        imagemDetalhes.image = imagemPassada
     }
+
 }

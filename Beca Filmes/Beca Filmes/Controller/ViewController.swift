@@ -23,20 +23,21 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         self.tabelaFilmes.dataSource = self
         self.tabelaFilmes.delegate = self
+        
         filmeImagens { (response) in
             self.listaImagens = response
         }
-//        FilmesAPI().recebeTendenciasFilmes { (resultado) in
-//            print(resultado)
-//        }
+        
+        listarDescricao { (response) in
+            self.listaDetalhes = response
+        }
+        
         listarFilmes  { (filme) in
             self.listaFilmes = filme
             guard self.listaFilmes != nil else{return}
         }
-        FilmesAPI().recebeDetalhesFilme { (filme) in
-            self.listaDetalhes
-        }
         self.tabelaFilmes.reloadData()
+        
     }
     
     func listarFilmes(completion: @escaping ([String]) -> Void){
@@ -55,6 +56,18 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             completion(lista)
         }
     }
+    func listarDescricao(completion: @escaping ([String]) -> Void){
+        var lista: [String] = []
+        FilmesAPI().recebeTendenciasFilmes { (resultado) in
+            for filme in resultado{
+                let descricao = filme.overview
+                lista.append(descricao)
+            }
+            completion(lista)
+        }
+    }
+    
+    
     
     func filmeImagens(completion: @escaping ([Image]) -> Void){
         FilmesAPI().recebeTendenciasFilmes { (resultado) in
@@ -63,9 +76,10 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                 let imgpath = filme.posterPath
                 let url = "https://image.tmdb.org/t/p/w500/\(imgpath)"
                 Alamofire.request(url).responseImage(completionHandler: { (response) in
-                    if let image = response.result.value {
-                        listaImagens.append(image)
-                        print("image downloaded: \(image)")
+                        if let image = response.result.value {
+                            listaImagens.append(image)
+                            print("image downloaded: \(image)")
+                    
                     }
                     completion(listaImagens)
                 })
@@ -93,8 +107,23 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "detalhes") as! DetalhesViewController
         self.navigationController?.pushViewController(vc, animated: true)
+        
+        let filme = listaFilmes?[indexPath.row]
+        let tituloFilme = filme as? String
+        vc.titulo = tituloFilme
+        
+        let imagem = listaImagens?[indexPath.row]
+        let imagens = imagem as? UIImage
+        vc.imagemPassada = imagens
+        
+        let resumo = listaDetalhes?[indexPath.row]
+        let detalhes = resumo as? String
+        vc.descricao = detalhes
+        
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
     
     
 }
