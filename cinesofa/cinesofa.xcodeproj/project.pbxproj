@@ -14,8 +14,9 @@
 		DF07615D25A74A1600D6C14E /* cinesofa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF07615B25A74A1600D6C14E /* cinesofa.xcdatamodeld */; };
 		DF07615F25A74A1700D6C14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF07615E25A74A1700D6C14E /* Assets.xcassets */; };
 		DF07616225A74A1700D6C14E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF07616025A74A1700D6C14E /* LaunchScreen.storyboard */; };
+		DF12ED5725AB94C700E0E2F1 /* FilmeResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF12ED5625AB94C700E0E2F1 /* FilmeResultTableViewController.swift */; };
+		DF12ED5B25ABAA1C00E0E2F1 /* FilmeResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF12ED5A25ABAA1C00E0E2F1 /* FilmeResultTableViewCell.swift */; };
 		DFE2B81825A7D49F0012426A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE2B81725A7D49F0012426A /* Result.swift */; };
-		DFE2B81A25A7D52A0012426A /* FilmeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE2B81925A7D52A0012426A /* FilmeAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +30,9 @@
 		DF07615E25A74A1700D6C14E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF07616125A74A1700D6C14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF07616325A74A1700D6C14E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF12ED5625AB94C700E0E2F1 /* FilmeResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeResultTableViewController.swift; sourceTree = "<group>"; };
+		DF12ED5A25ABAA1C00E0E2F1 /* FilmeResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeResultTableViewCell.swift; sourceTree = "<group>"; };
 		DFE2B81725A7D49F0012426A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		DFE2B81925A7D52A0012426A /* FilmeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeAPI.swift; sourceTree = "<group>"; };
 		F3CCC09D750BCFE5544829DF /* Pods-cinesofa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cinesofa.release.xcconfig"; path = "Target Support Files/Pods-cinesofa/Pods-cinesofa.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +94,8 @@
 				DF07616325A74A1700D6C14E /* Info.plist */,
 				DF07615B25A74A1600D6C14E /* cinesofa.xcdatamodeld */,
 				DFE2B81725A7D49F0012426A /* Result.swift */,
-				DFE2B81925A7D52A0012426A /* FilmeAPI.swift */,
+				DF12ED5625AB94C700E0E2F1 /* FilmeResultTableViewController.swift */,
+				DF12ED5A25ABAA1C00E0E2F1 /* FilmeResultTableViewCell.swift */,
 			);
 			path = cinesofa;
 			sourceTree = "<group>";
@@ -212,9 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF12ED5725AB94C700E0E2F1 /* FilmeResultTableViewController.swift in Sources */,
 				DF07615D25A74A1600D6C14E /* cinesofa.xcdatamodeld in Sources */,
+				DF12ED5B25ABAA1C00E0E2F1 /* FilmeResultTableViewCell.swift in Sources */,
 				DF07615725A74A1500D6C14E /* ViewController.swift in Sources */,
-				DFE2B81A25A7D52A0012426A /* FilmeAPI.swift in Sources */,
 				DFE2B81825A7D49F0012426A /* Result.swift in Sources */,
 				DF07615525A74A1500D6C14E /* AppDelegate.swift in Sources */,
 			);
