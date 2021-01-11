@@ -26,6 +26,8 @@ class DetalhesViewController: UIViewController {
             labelSinopse.text = filme.sinopse
             labelNota.text = filme.nota
             
+            print(filme.nota)
+            
             guard let urlCapa = FilmesAPI().buscaURLImagem(link: filme.caminhoDaCapa) else { return }
             self.imageFilme.af_setImage(withURL: urlCapa)
         }

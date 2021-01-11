@@ -150,35 +150,38 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sq-Dn-Vy6">
-                                        <rect key="frame" x="0.0" y="230" width="320" height="300"/>
+                                        <rect key="frame" x="0.0" y="230" width="320" height="280"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="zBn-Bc-hcW"/>
+                                            <constraint firstAttribute="height" constant="280" id="nnZ-c1-4zX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aF-JW-WNu">
-                                        <rect key="frame" x="0.0" y="530" width="320" height="8"/>
+                                        <rect key="frame" x="0.0" y="510" width="320" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="3aF-JW-WNu" firstAttribute="top" secondItem="0Sq-Dn-Vy6" secondAttribute="bottom" id="1Xk-Ga-pz1"/>
                                     <constraint firstAttribute="trailing" secondItem="RR1-M9-eD9" secondAttribute="trailing" id="2Va-C8-K42"/>
                                     <constraint firstAttribute="trailing" secondItem="QYG-FB-b4A" secondAttribute="trailing" id="5Zc-ik-Fmm"/>
                                     <constraint firstItem="QYG-FB-b4A" firstAttribute="top" secondItem="RR1-M9-eD9" secondAttribute="bottom" id="917-XP-UCx"/>
                                     <constraint firstAttribute="bottom" secondItem="3aF-JW-WNu" secondAttribute="bottom" id="9b0-DO-0m2"/>
-                                    <constraint firstItem="0Sq-Dn-Vy6" firstAttribute="top" secondItem="QYG-FB-b4A" secondAttribute="bottom" id="D3v-GR-hTT"/>
                                     <constraint firstItem="0Sq-Dn-Vy6" firstAttribute="top" secondItem="QYG-FB-b4A" secondAttribute="bottom" id="Ew9-JH-Hoi"/>
+                                    <constraint firstItem="0Sq-Dn-Vy6" firstAttribute="top" secondItem="QYG-FB-b4A" secondAttribute="bottom" id="FcK-MV-FEP"/>
                                     <constraint firstItem="RR1-M9-eD9" firstAttribute="top" secondItem="CFY-Qr-IlY" secondAttribute="top" id="Hz3-bu-z0i"/>
-                                    <constraint firstItem="3aF-JW-WNu" firstAttribute="top" secondItem="0Sq-Dn-Vy6" secondAttribute="bottom" id="OHf-Hg-Oa9"/>
+                                    <constraint firstItem="3aF-JW-WNu" firstAttribute="top" secondItem="0Sq-Dn-Vy6" secondAttribute="bottom" id="KUm-wH-dBj"/>
                                     <constraint firstItem="RR1-M9-eD9" firstAttribute="leading" secondItem="CFY-Qr-IlY" secondAttribute="leading" id="QJ3-oF-Zni"/>
+                                    <constraint firstItem="0Sq-Dn-Vy6" firstAttribute="leading" secondItem="CFY-Qr-IlY" secondAttribute="leading" id="V5Y-bN-U7d"/>
                                     <constraint firstItem="3aF-JW-WNu" firstAttribute="leading" secondItem="CFY-Qr-IlY" secondAttribute="leading" id="VNE-rx-U1M"/>
                                     <constraint firstItem="0Sq-Dn-Vy6" firstAttribute="leading" secondItem="CFY-Qr-IlY" secondAttribute="leading" id="ad6-eR-89M"/>
                                     <constraint firstAttribute="trailing" secondItem="0Sq-Dn-Vy6" secondAttribute="trailing" id="m0i-le-fFp"/>
                                     <constraint firstItem="QYG-FB-b4A" firstAttribute="leading" secondItem="CFY-Qr-IlY" secondAttribute="leading" id="s6b-cZ-tnh"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Sq-Dn-Vy6" secondAttribute="trailing" id="woh-dD-f3N"/>
                                     <constraint firstAttribute="trailing" secondItem="3aF-JW-WNu" secondAttribute="trailing" id="z7U-HT-mRz"/>
                                 </constraints>
                             </stackView>

@@ -31,8 +31,8 @@ class Filmes: NSObject {
         guard let sinopse = dicionarioDeFilme["overview"] as? String else { return }
         self.sinopse = sinopse
         
-        guard let nota = dicionarioDeFilme["vote_average"] as? String else { return }
-        self.nota = nota
+        guard let nota = dicionarioDeFilme["vote_average"] as? Double else { return }
+        self.nota = String(nota)
     }
 
 }
