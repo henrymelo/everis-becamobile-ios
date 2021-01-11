@@ -40,6 +40,7 @@ class TendenciaDAO: NSObject {
         tendencia.poster_path = dicionarioDeTendencia["poster_path"] as? String
         tendencia.title = dicionarioDeTendencia["title"] as? String
         tendencia.overview = dicionarioDeTendencia["overview"] as? String
+        tendencia.media_type = dicionarioDeTendencia["media_type"] as? String
         
         guard let id = dicionarioDeTendencia["id"] else { return }
         if (id is String) {

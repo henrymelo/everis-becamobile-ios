@@ -42,6 +42,7 @@ class DetalhesDAO: NSObject {
         
         detalhes.title = dicionarioDeDetalhes["title"] as? String
         detalhes.overview = dicionarioDeDetalhes["overview"] as? String
+        detalhes.original_name = dicionarioDeDetalhes["original_name"] as? String
         
         guard let id = dicionarioDeDetalhes["id"] else { return }
         if (id is String) {

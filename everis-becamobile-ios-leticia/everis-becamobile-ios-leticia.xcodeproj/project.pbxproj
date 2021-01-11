@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AFE04A6195B0AC3D3942B701 /* Pods_everis_becamobile_ios_leticia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F52CE5A26A1ACD8EBBFD54E /* Pods_everis_becamobile_ios_leticia.framework */; };
+		FCD16F9025AC882F00315F42 /* voltar.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD16F8F25AC882F00315F42 /* voltar.png */; };
 		FCF0256225A89061005FA869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0256125A89061005FA869 /* AppDelegate.swift */; };
 		FCF0256425A89061005FA869 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0256325A89061005FA869 /* ViewController.swift */; };
 		FCF0256A25A89061005FA869 /* everis_becamobile_ios_leticia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF0256825A89061005FA869 /* everis_becamobile_ios_leticia.xcdatamodeld */; };
@@ -28,6 +29,7 @@
 		4F52CE5A26A1ACD8EBBFD54E /* Pods_everis_becamobile_ios_leticia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_everis_becamobile_ios_leticia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		777CC696A544CFF88E7CA3F3 /* Pods-everis-becamobile-ios-leticia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everis-becamobile-ios-leticia.debug.xcconfig"; path = "Target Support Files/Pods-everis-becamobile-ios-leticia/Pods-everis-becamobile-ios-leticia.debug.xcconfig"; sourceTree = "<group>"; };
 		8FD3C7AADF8D9D13128253F8 /* Pods-everis-becamobile-ios-leticia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everis-becamobile-ios-leticia.release.xcconfig"; path = "Target Support Files/Pods-everis-becamobile-ios-leticia/Pods-everis-becamobile-ios-leticia.release.xcconfig"; sourceTree = "<group>"; };
+		FCD16F8F25AC882F00315F42 /* voltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voltar.png; sourceTree = "<group>"; };
 		FCF0255E25A89061005FA869 /* everis-becamobile-ios-leticia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "everis-becamobile-ios-leticia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF0256125A89061005FA869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF0256325A89061005FA869 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FCD16F8A25AC845B00315F42 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FCD16F8F25AC882F00315F42 /* voltar.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		FCF0255525A89061005FA869 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				FCF0257625A890D6005FA869 /* Filmes */,
-				FCF0256125A89061005FA869 /* AppDelegate.swift */,
-				FCF0256325A89061005FA869 /* ViewController.swift */,
 				FCF0256B25A89063005FA869 /* Assets.xcassets */,
 				FCF0256D25A89063005FA869 /* LaunchScreen.storyboard */,
 				FCF025A425A8B443005FA869 /* Main.storyboard */,
@@ -111,9 +119,12 @@
 		FCF0257625A890D6005FA869 /* Filmes */ = {
 			isa = PBXGroup;
 			children = (
+				FCF0256125A89061005FA869 /* AppDelegate.swift */,
+				FCF0256325A89061005FA869 /* ViewController.swift */,
 				FCF0257725A890EF005FA869 /* Model */,
 				FCF0258125A89C72005FA869 /* View */,
 				FCF0258025A89C54005FA869 /* Controller */,
+				FCD16F8A25AC845B00315F42 /* Assets */,
 			);
 			path = Filmes;
 			sourceTree = "<group>";
@@ -210,6 +221,7 @@
 				FCF025A525A8B443005FA869 /* Main.storyboard in Resources */,
 				FCF0256F25A89063005FA869 /* LaunchScreen.storyboard in Resources */,
 				FCF0256C25A89063005FA869 /* Assets.xcassets in Resources */,
+				FCD16F9025AC882F00315F42 /* voltar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
