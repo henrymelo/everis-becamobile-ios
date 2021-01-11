@@ -45,10 +45,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imagemFilme" translatesAutoresizingMaskIntoConstraints="NO" id="UpE-J6-bHm">
-                                                            <rect key="frame" x="34" y="52" width="114" height="108"/>
+                                                            <rect key="frame" x="34" y="52" width="114" height="108.5"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="filmeNome" text="Nome Do Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G4-Wt-pcI">
-                                                            <rect key="frame" x="33" y="198" width="117" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="filmeNome" text="Nome Do Filme" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G4-Wt-pcI">
+                                                            <rect key="frame" x="33" y="198.5" width="117" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -105,6 +105,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czA-2c-55G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-589.60000000000002" y="134.48275862068968"/>
+        </scene>
+        <!--Detalhes View Controller-->
+        <scene sceneID="1GO-bc-0oI">
+            <objects>
+                <viewController storyboardIdentifier="detalheFilme" id="XbY-q7-14b" customClass="DetalhesViewController" customModule="Movie_Hunter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eLF-Hl-n2p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Do Filme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzu-8t-adc">
+                                <rect key="frame" x="46.5" y="177" width="261.5" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWB-y1-BWg">
+                                <rect key="frame" x="-4.5" y="274" width="363.5" height="348"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-Bl-c7M">
+                                <rect key="frame" x="316" y="30" width="41" height="30"/>
+                                <state key="normal" title="Voltar"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uzu-8t-adc" firstAttribute="top" secondItem="G3A-Xf-fYR" secondAttribute="top" constant="157" id="1Ul-hq-DAc"/>
+                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="leading" secondItem="G3A-Xf-fYR" secondAttribute="leading" constant="316" id="B29-pt-z95"/>
+                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="top" secondItem="G3A-Xf-fYR" secondAttribute="top" constant="10" id="B5C-aj-cbk"/>
+                            <constraint firstItem="uzu-8t-adc" firstAttribute="centerX" secondItem="NWB-y1-BWg" secondAttribute="centerX" id="O0s-TL-dPz"/>
+                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="trailing" secondItem="rfW-Bl-c7M" secondAttribute="trailing" constant="18" id="SJM-gP-jq9"/>
+                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="trailing" secondItem="rfW-Bl-c7M" secondAttribute="trailing" constant="18" id="TIr-hA-ffD"/>
+                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="top" secondItem="G3A-Xf-fYR" secondAttribute="top" constant="10" id="eCb-xn-aGI"/>
+                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="top" secondItem="G3A-Xf-fYR" secondAttribute="top" constant="10" id="fE0-Wx-gN9"/>
+                            <constraint firstItem="NWB-y1-BWg" firstAttribute="top" secondItem="uzu-8t-adc" secondAttribute="bottom" constant="49" id="iRq-iC-fvW"/>
+                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="leading" secondItem="uzu-8t-adc" secondAttribute="trailing" constant="8" symbolic="YES" id="iq8-7b-uBd"/>
+                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="trailing" secondItem="NWB-y1-BWg" secondAttribute="trailing" constant="16" id="lEV-d3-EAk"/>
+                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="trailing" secondItem="rfW-Bl-c7M" secondAttribute="trailing" constant="18" id="lUf-zC-uZd"/>
+                            <constraint firstItem="G3A-Xf-fYR" firstAttribute="bottom" secondItem="NWB-y1-BWg" secondAttribute="bottom" constant="45" id="scf-Zx-DCl"/>
+                            <constraint firstItem="NWB-y1-BWg" firstAttribute="top" secondItem="rfW-Bl-c7M" secondAttribute="bottom" constant="214" id="sh9-iy-ceY"/>
+                            <constraint firstItem="rfW-Bl-c7M" firstAttribute="leading" secondItem="G3A-Xf-fYR" secondAttribute="leading" constant="316" id="xrL-ge-WQp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G3A-Xf-fYR"/>
+                    </view>
+                    <connections>
+                        <outlet property="descricaoFilme" destination="NWB-y1-BWg" id="f5o-1S-dL3"/>
+                        <outlet property="nomeDoFilme" destination="uzu-8t-adc" id="XJE-Mk-t75"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLd-NY-L0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61.600000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

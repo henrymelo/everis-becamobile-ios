@@ -48,6 +48,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
 
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let filme = listaDeFilme[indexPath.item]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "detalheFilme") as! DetalhesViewController
+        controller.filmeSelecionado = filme
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 
 }
 

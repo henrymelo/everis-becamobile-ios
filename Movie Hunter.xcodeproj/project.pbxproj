@@ -16,7 +16,6 @@
 		06F3521925A73AE700A84229 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F3521725A73AE700A84229 /* Main.storyboard */; };
 		06F3521C25A73AE700A84229 /* Movie_Hunter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06F3521A25A73AE700A84229 /* Movie_Hunter.xcdatamodeld */; };
 		06F3521E25A73AE800A84229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F3521D25A73AE800A84229 /* Assets.xcassets */; };
-		06F3522125A73AE800A84229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F3521F25A73AE800A84229 /* LaunchScreen.storyboard */; };
 		06F3523025A7453700A84229 /* FilmeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3522F25A7453700A84229 /* FilmeAPI.swift */; };
 		06F3523225A747D700A84229 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 06F3523125A747D700A84229 /* Podfile */; };
 		06F9D43825AB5C0000292A4F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9D43725AB5C0000292A4F /* CollectionViewCell.swift */; };
@@ -34,7 +33,6 @@
 		06F3521825A73AE700A84229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06F3521B25A73AE700A84229 /* Movie_Hunter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movie_Hunter.xcdatamodel; sourceTree = "<group>"; };
 		06F3521D25A73AE800A84229 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		06F3522025A73AE800A84229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06F3522225A73AE800A84229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06F3522F25A7453700A84229 /* FilmeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeAPI.swift; sourceTree = "<group>"; };
 		06F3523125A747D700A84229 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -83,7 +81,6 @@
 				06F3521325A73AE700A84229 /* AppDelegate.swift */,
 				06F3521725A73AE700A84229 /* Main.storyboard */,
 				06F3521D25A73AE800A84229 /* Assets.xcassets */,
-				06F3521F25A73AE800A84229 /* LaunchScreen.storyboard */,
 				06F3522225A73AE800A84229 /* Info.plist */,
 				06F3521A25A73AE700A84229 /* Movie_Hunter.xcdatamodeld */,
 			);
@@ -212,7 +209,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06F3522125A73AE800A84229 /* LaunchScreen.storyboard in Resources */,
 				06F3521E25A73AE800A84229 /* Assets.xcassets in Resources */,
 				06F3523225A747D700A84229 /* Podfile in Resources */,
 				06F3521925A73AE700A84229 /* Main.storyboard in Resources */,
@@ -288,14 +284,6 @@
 				06F3521825A73AE700A84229 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		06F3521F25A73AE800A84229 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				06F3522025A73AE800A84229 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

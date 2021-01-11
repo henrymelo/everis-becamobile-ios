@@ -18,8 +18,12 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imagemFilme: UIImageView!
     @IBOutlet weak var nomeFilme: UILabel!
     
+    
+    
     func configuraCelula(_ filme: Filme) {
+        
         nomeFilme.text = filme.title
+        
         
         layer.borderWidth = 0.5
         layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
