@@ -62,8 +62,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        
-        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
