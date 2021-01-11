@@ -141,8 +141,8 @@
 		D3141B4325A888B80047B34D /* DetalhesFilme */ = {
 			isa = PBXGroup;
 			children = (
-				D3141B4525A888D90047B34D /* Controller */,
 				D3141B4425A888D20047B34D /* View */,
+				D3141B4525A888D90047B34D /* Controller */,
 			);
 			path = DetalhesFilme;
 			sourceTree = "<group>";
