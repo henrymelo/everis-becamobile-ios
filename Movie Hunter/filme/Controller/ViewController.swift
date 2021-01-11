@@ -16,12 +16,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     //MARk: - IBOutlets
     @IBOutlet weak var collectionFilmes: UICollectionView!
 
-    
-
-    
     // MARK: - Variáveis
     var listaFilme: [Filme] = []
-
     
     // MARK: - View Did Load
     
@@ -29,20 +25,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         collectionFilmes.dataSource = self
         collectionFilmes.delegate = self
-        FilmeAPI().recuperaFilmes { (listaFilmes) in
-            print("sucesso")
+        FilmeAPI().recuperaFilmes {(listaFilmes) in
+            
         }
-
-        
+            
     }
-    
     
     // MARK: - Métodos
     
-
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
         collectionView.reloadData()
+        
         return listaFilme.count
     }
 

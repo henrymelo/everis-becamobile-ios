@@ -32,30 +32,4 @@ class FilmeAPI: NSObject {
             }
         }
     }
-    
-    // MARK: Get Detalhes
-
-//    func detalheFilme() {
-//
-//            guard let key = Configuracao().getKeyPadrao() else { return }
-//
-//        self.recuperaFilmes { (filme) in
-//            for detalheFilme in filme {
-//                let id = detalheFilme.id
-//                Alamofire.request("https://api.themoviedb.org/3/movie/\(id)?api_key=\(key)&language=pt-BR", method: .get).responseJSON { ( response ) in
-//                    switch response.result {
-//                    case .success:
-//                        guard let detalheRecuperado = response.data else { return }
-//                        guard let detalhe = try? JSONDecoder().decode(Filme.self, from: detalheRecuperado) else { return }
-//                        guard let nomeFilme = detalhe.originalTitle else { return }
-//                        _ = nomeFilme
-//                        break
-//                    case .failure:
-//                        print(response.error!)
-//                        break
-//                    }
-//                }
-//            }
-//        }
-//    }
 }
