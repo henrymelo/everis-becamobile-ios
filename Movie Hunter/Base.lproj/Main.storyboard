@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aZI-h8-Uh0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="LkN-gj-3OH">
             <objects>
                 <viewController storyboardIdentifier="listaFilme" id="aZI-h8-Uh0" customClass="ViewController" customModule="Movie_Hunter" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,6 +97,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ayx-ti-Nga"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="D9X-c7-zEG"/>
                     <connections>
                         <outlet property="collectionFilmes" destination="TNC-mP-nsA" id="QkE-ew-7xG"/>
                     </connections>
