@@ -29,32 +29,8 @@ class FilmesAPI: NSObject {
             }else{
                 completion(nil, "Data null")
             }
-           
-            
-//            switch response.result{
-//            case .success(let value):
-//                if let resposta = response.result.value as? Dictionary<String,Any>{
-//                    guard let listaDeFilmes = resposta["results"] as? Array<Dictionary<String,Any>> else { return }
-//                    for i in listaDeFilmes{
-//                        print (i["title"] ?? i["name"]!)
-//                    }
-//                }
-//                break
-//
-//            case .failure:
-//                print(response.error!)
-//                break
-//            }
         }
-
     }
-    
-    
-    
-    
-    
-    
-    
 }
 
 
