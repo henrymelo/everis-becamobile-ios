@@ -12,10 +12,13 @@
 		DE12ABDF25A73C7C00F2E0C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE12ABDE25A73C7C00F2E0C5 /* Assets.xcassets */; };
 		DE12ABE225A73C7C00F2E0C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE12ABE025A73C7C00F2E0C5 /* LaunchScreen.storyboard */; };
 		DE28C8A525A896440059625C /* FilmeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8A425A896440059625C /* FilmeCollectionViewCell.swift */; };
-		DE28C8BE25AB3C130059625C /* DetalheFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8BD25AB3C120059625C /* DetalheFilmeViewController.swift */; };
-		DE28C8C025AB41770059625C /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8BF25AB41770059625C /* PrincipalViewController.swift */; };
-		DE28C8C425AC73B30059625C /* FilmeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28C8C325AC73B30059625C /* FilmeDAO.swift */; };
-		DE530B2225A76D5100BB782A /* FilmeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE530B2125A76D5100BB782A /* FilmeAPI.swift */; };
+		DE530B2225A76D5100BB782A /* FilmeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE530B2125A76D5100BB782A /* FilmeService.swift */; };
+		DEAE9F0725AE13AA00B734AE /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAE9F0625AE13AA00B734AE /* Bindable.swift */; };
+		DEAE9F0C25AE151F00B734AE /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAE9F0B25AE151F00B734AE /* Filme.swift */; };
+		DEAE9F0F25AE158600B734AE /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAE9F0E25AE158600B734AE /* MovieService.swift */; };
+		DEAE9F3A25AE331500B734AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAE9F3925AE331500B734AE /* HomeViewController.swift */; };
+		DEAE9F3D25AE359000B734AE /* DetailMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAE9F3C25AE359000B734AE /* DetailMovieViewController.swift */; };
+		DEAE9F4025AE3C9500B734AE /* FilmeLista.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAE9F3F25AE3C9500B734AE /* FilmeLista.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +31,13 @@
 		DE12ABE125A73C7C00F2E0C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE12ABE325A73C7C00F2E0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE28C8A425A896440059625C /* FilmeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeCollectionViewCell.swift; sourceTree = "<group>"; };
-		DE28C8BD25AB3C120059625C /* DetalheFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheFilmeViewController.swift; sourceTree = "<group>"; };
-		DE28C8BF25AB41770059625C /* PrincipalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalViewController.swift; sourceTree = "<group>"; };
-		DE28C8C325AC73B30059625C /* FilmeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeDAO.swift; sourceTree = "<group>"; };
-		DE530B2125A76D5100BB782A /* FilmeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeAPI.swift; sourceTree = "<group>"; };
+		DE530B2125A76D5100BB782A /* FilmeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeService.swift; sourceTree = "<group>"; };
+		DEAE9F0625AE13AA00B734AE /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		DEAE9F0B25AE151F00B734AE /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
+		DEAE9F0E25AE158600B734AE /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		DEAE9F3925AE331500B734AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DEAE9F3C25AE359000B734AE /* DetailMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieViewController.swift; sourceTree = "<group>"; };
+		DEAE9F3F25AE3C9500B734AE /* FilmeLista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeLista.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,25 +80,26 @@
 		DE12ABD625A73C7A00F2E0C5 /* MoviEveris */ = {
 			isa = PBXGroup;
 			children = (
-				DE12ABD725A73C7A00F2E0C5 /* AppDelegate.swift */,
-				DE12ABEB25A73E2B00F2E0C5 /* Model */,
+				DEAE9F0525AE134700B734AE /* Application */,
 				DE12ABEA25A73E2100F2E0C5 /* View */,
-				DE12ABE925A73E1700F2E0C5 /* Controller */,
+				DE12ABE925A73E1700F2E0C5 /* Views */,
+				DE12ABEB25A73E2B00F2E0C5 /* Models */,
+				DEAE9F0125AE12F600B734AE /* ViewModels */,
+				DEAE9F0025AE12E800B734AE /* Core */,
+				DEAE9EFD25AE128C00B734AE /* Services */,
+				DEAE9EFF25AE12D900B734AE /* Helpers */,
 				DE12ABDE25A73C7C00F2E0C5 /* Assets.xcassets */,
-				DE12ABDB25A73C7A00F2E0C5 /* Main.storyboard */,
-				DE12ABE025A73C7C00F2E0C5 /* LaunchScreen.storyboard */,
-				DE12ABE325A73C7C00F2E0C5 /* Info.plist */,
 			);
 			path = MoviEveris;
 			sourceTree = "<group>";
 		};
-		DE12ABE925A73E1700F2E0C5 /* Controller */ = {
+		DE12ABE925A73E1700F2E0C5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DE28C8BD25AB3C120059625C /* DetalheFilmeViewController.swift */,
-				DE28C8BF25AB41770059625C /* PrincipalViewController.swift */,
+				DEAE9F3925AE331500B734AE /* HomeViewController.swift */,
+				DEAE9F3C25AE359000B734AE /* DetailMovieViewController.swift */,
 			);
-			path = Controller;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DE12ABEA25A73E2100F2E0C5 /* View */ = {
@@ -103,13 +110,55 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DE12ABEB25A73E2B00F2E0C5 /* Model */ = {
+		DE12ABEB25A73E2B00F2E0C5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DE530B2125A76D5100BB782A /* FilmeAPI.swift */,
-				DE28C8C325AC73B30059625C /* FilmeDAO.swift */,
+				DEAE9F0B25AE151F00B734AE /* Filme.swift */,
+				DEAE9F3F25AE3C9500B734AE /* FilmeLista.swift */,
 			);
-			path = Model;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DEAE9EFD25AE128C00B734AE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DE530B2125A76D5100BB782A /* FilmeService.swift */,
+				DEAE9F0E25AE158600B734AE /* MovieService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DEAE9EFF25AE12D900B734AE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DEAE9F0025AE12E800B734AE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DEAE9F0625AE13AA00B734AE /* Bindable.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DEAE9F0125AE12F600B734AE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DEAE9F0525AE134700B734AE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DE12ABD725A73C7A00F2E0C5 /* AppDelegate.swift */,
+				DE12ABDB25A73C7A00F2E0C5 /* Main.storyboard */,
+				DE12ABE025A73C7C00F2E0C5 /* LaunchScreen.storyboard */,
+				DE12ABE325A73C7C00F2E0C5 /* Info.plist */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,12 +276,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE28C8C025AB41770059625C /* PrincipalViewController.swift in Sources */,
-				DE530B2225A76D5100BB782A /* FilmeAPI.swift in Sources */,
+				DEAE9F0725AE13AA00B734AE /* Bindable.swift in Sources */,
+				DE530B2225A76D5100BB782A /* FilmeService.swift in Sources */,
 				DE12ABD825A73C7A00F2E0C5 /* AppDelegate.swift in Sources */,
 				DE28C8A525A896440059625C /* FilmeCollectionViewCell.swift in Sources */,
-				DE28C8C425AC73B30059625C /* FilmeDAO.swift in Sources */,
-				DE28C8BE25AB3C130059625C /* DetalheFilmeViewController.swift in Sources */,
+				DEAE9F3A25AE331500B734AE /* HomeViewController.swift in Sources */,
+				DEAE9F0F25AE158600B734AE /* MovieService.swift in Sources */,
+				DEAE9F0C25AE151F00B734AE /* Filme.swift in Sources */,
+				DEAE9F4025AE3C9500B734AE /* FilmeLista.swift in Sources */,
+				DEAE9F3D25AE359000B734AE /* DetailMovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MoviEveris/Info.plist;
+				INFOPLIST_FILE = MoviEveris/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,7 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MoviEveris/Info.plist;
+				INFOPLIST_FILE = MoviEveris/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

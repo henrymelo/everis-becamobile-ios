@@ -17,7 +17,15 @@ class FilmeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var posterFilme: UIImageView!
     @IBOutlet weak var labelTitulo: UILabel!
     
-    func configuraCelula () {
+    func configuraCelula (_ filme: Filme) {
+        
+        labelTitulo.text = filme.title
+        guard let path = filme.backdropPath else { return }
+        
+        MovieService().getPosterFilme(path) { (poster) in
+            self.posterFilme.image = poster
+        }
+        
         layer.borderWidth = 0.5
         layer.cornerRadius = 8
     }
