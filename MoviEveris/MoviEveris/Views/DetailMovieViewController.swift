@@ -18,7 +18,7 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var labelRating: UILabel!
     @IBOutlet weak var labelTituloOriginal: UILabel!
     
-    var filmeSelecionado:Filme? = nil
+    var filmeSelecionado:FilmeSimples? = nil
     var paginaAtual = 1
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class DetailMovieViewController: UIViewController {
 
     func mostraFilme() {
         
-        guard let posterPath = filmeSelecionado?.backdropPath else { return }
+        guard let posterPath = filmeSelecionado?.posterPath else { return }
         guard let titulo = filmeSelecionado?.title else { return }
         guard let sinopse = filmeSelecionado?.overview else { return }
         guard let rating = filmeSelecionado?.voteAverage else { return }

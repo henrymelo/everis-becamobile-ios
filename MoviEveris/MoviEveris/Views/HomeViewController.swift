@@ -12,7 +12,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @IBOutlet weak var colecaoFilmes: UICollectionView!
     
-    var listaFilmes:[Filme] = []
+//    // MARK: - Properts
+//    let viewModel: MainViewModel
+//    
+//    // MARK: - Constructors
+//    init(viewModel: MainViewModel = MainViewModel()) {
+//        self.viewModel = viewModel
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    
+    var listaFilmes:[FilmeSimples] = []
     var posterPath: String = ""
     var paginaAtual = 1
     
@@ -23,6 +32,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         MovieService().getFilmesPopulares(self.paginaAtual) { (listaFilmes) in
             self.listaFilmes = listaFilmes
             self.colecaoFilmes.reloadData()
+        } failure: { (error) in
+            print(error)
         }
         // Do any additional setup after loading the view.
     }
@@ -80,6 +91,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 let listaFilmesAtual = filmes
                 self.listaFilmes = listaFilmesAtual
                 self.colecaoFilmes.reloadData()
+            } failure: { (error) in
+                print(error)
             }
         }
     }
@@ -89,7 +102,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let listaFilmesAtual = filmes
             self.listaFilmes = listaFilmesAtual
             self.colecaoFilmes.reloadData()
+        } failure: { (error) in
+            print(error)
         }
     }
 
+}
+extension HomeViewController: MainViewModelDelegate {
+    
+    func reloadData(movie: MovieViewData) {
+        movie.filmes.count
+    }
 }

@@ -17,7 +17,7 @@ class FilmeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var posterFilme: UIImageView!
     @IBOutlet weak var labelTitulo: UILabel!
     
-    func configuraCelula (_ filme: Filme) {
+    func configuraCelula (_ filme: FilmeSimples) {
         
         labelTitulo.text = filme.title
         guard let path = filme.backdropPath else { return }
