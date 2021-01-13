@@ -1,47 +1,56 @@
 //
-//  Repositorio.swift
+//  FilmeViewModel.swift
 //  everis-becamobile-ios-leticia
 //
-//  Created by Leticia Sousa Siqueira on 08/01/21.
+//  Created by Leticia Sousa Siqueira on 13/01/21.
 //  Copyright © 2021 Leticia Sousa Siqueira. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class Repositorio: NSObject {
-    
-    var detalhesViewController:DetalhesViewController?
-    
-    // Tendencia
+protocol FilmeViewModelDelegate {
+    //func reloadData(movie: MovieViewData)
+}
 
+class FilmeViewModel {
+    
+    // MARK: - Properts
+    private let client: FilmeServiceProtocol
+    //var viewData: Bindable<MovieViewData?> = Bindable(nil)
+    //var delegate: FilmeViewModelDelegate?
+    
+    // MARK: - Constructors
+    init(client: FilmeServiceProtocol = FilmeService()) {
+        self.client = client
+    }
+    
+    // MARK: - Methods
+    
     func recuperaTendencias(completion:@escaping(_ listaDeTendencias:Array<Tendencia>) -> Void) {
         var tendencias = TendenciaDAO().recuperaTendencia()
-        if tendencias.count == 0 {
-            FilmeAPI().recuperaTendenciasServidor {
+        
+            client.recuperaTendenciasServidor {
                 tendencias = TendenciaDAO().recuperaTendencia()
                 completion(tendencias)
             }
-        } else {
-            completion(tendencias)
-        }
     }
     
     func salvaTendencia(tendencia:Dictionary<String, Any>) {
         TendenciaDAO().salvaTendencia(dicionarioDeTendencia: tendencia)
     }
     
-    // Detalhes
-    
     func recuperaDetalhes(_ tendencia:Tendencia, completion:@escaping(_ listaDeDetalhes:Array<Detalhes>) -> Void) {
         var detalhes = DetalhesDAO().recuperaDetalhes()
         
-            FilmeAPI().recuperaDetalhesServidor(tendencia) {
-                detalhes = DetalhesDAO().recuperaDetalhes()
-                completion(detalhes)
-            }
+        client.recuperaDetalhesServidor(tendencia) {
+            detalhes = DetalhesDAO().recuperaDetalhes()
+            completion(detalhes)
+        }
     }
     
     func salvaDetalhes(detalhe:Dictionary<String, Any>) {
         DetalhesDAO().salvaDetalhes(dicionarioDeDetalhes: detalhe)
     }
+    
+    
 }

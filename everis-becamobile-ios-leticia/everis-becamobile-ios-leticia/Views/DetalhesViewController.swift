@@ -32,7 +32,7 @@ class DetalhesViewController: UIViewController {
         limpaCoreDataDetalhes()
         
         guard let tendenciaSelecionada = tendencia else { return }
-        Repositorio().recuperaDetalhes(tendenciaSelecionada) { (listaDeDetalhes) in
+        FilmeViewModel().recuperaDetalhes(tendenciaSelecionada) { (listaDeDetalhes) in
             self.detalhes = listaDeDetalhes
         
             let title = self.detalhes[0].title

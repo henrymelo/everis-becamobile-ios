@@ -38,7 +38,7 @@ class FilmesTendenciaViewController: UIViewController, UICollectionViewDataSourc
     // MARK: - Métodos
     
     func recuperaTendencias() {
-        Repositorio().recuperaTendencias { (listaDeTendencias) in
+        FilmeViewModel().recuperaTendencias { (listaDeTendencias) in
             self.tendencias = listaDeTendencias
             self.colecaoFilmesTendencia.reloadData()
         }
