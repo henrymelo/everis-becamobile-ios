@@ -10,16 +10,12 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol FilmeViewModelDelegate {
-    func reloadData(filme: FilmeViewData)
-}
-
 class FilmeViewModel {
     
     // MARK: - Properts
     private let client: FilmeServiceProtocol
-    var viewData: Bindable<FilmeViewData?> = Bindable(nil)
-    var delegate: FilmeViewModelDelegate?
+    //var viewData: Bindable<FilmeViewData?> = Bindable(nil)
+    
     
     //var lista:[Result]
     
