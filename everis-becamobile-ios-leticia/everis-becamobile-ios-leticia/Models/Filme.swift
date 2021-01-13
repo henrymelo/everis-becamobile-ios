@@ -6,7 +6,7 @@
 //  Copyright © 2021 Leticia Sousa Siqueira. All rights reserved.
 //
 
-struct TendenciaFilme {
+struct Filme {
     let id: Int
     let mediaType: String
     let overview: String
