@@ -15,6 +15,8 @@ protocol MovieServiceProtocol {
     func getFilmesPopulares (_ paginaToBe: Int, completionHandler: @escaping (_ filme: [FilmeSimples]) -> Void, failure: @escaping (_ error: Error) -> Void)
     
     func getPosterFilme(_ posterPath: String, completion: @escaping(_ posterFilme: Image) ->Void)
+    
+    func getFilmeDetalhe(_ id: Int, completionHandler: @escaping (FilmeSimples) -> Void, failure: @escaping  (Error) -> Void)
 }
 
 
@@ -28,7 +30,8 @@ class MovieService: MovieServiceProtocol {
     var filmeSelecionado:FilmeSimples? = nil
     private var poster = [Poster]()
     private var filmes = [FilmeSimples]()
-    // MARK: - Contructor
+    private var filmeDetalhe = [FilmeSimples]()
+
     
     // MARK: - Métodos
     
@@ -42,6 +45,25 @@ class MovieService: MovieServiceProtocol {
                     let filmes = try JSONDecoder().decode(ListaFilmes.self, from: dataFilme)
                     let listaFilmes = filmes.results
                     completionHandler(listaFilmes)
+                } catch {
+                    print(error.localizedDescription)
+                }
+                break
+            case .failure:
+                failure(response.error!)
+                break
+            }
+        }
+    }
+    func getFilmeDetalhe(_ id: Int, completionHandler: @escaping (FilmeSimples) -> Void, failure: @escaping  (Error) -> Void) {
+        // Método para pegar os filmes popularesda semana
+        Alamofire.request("\(movieUrl)3/movie/\(id)?api_key=\(apiKey)&language=pt-BR", method: .get).responseJSON { ( response ) in
+            switch response.result {
+            case .success:
+                guard let dataFilme = response.data else { return }
+                do{
+                    let filme = try JSONDecoder().decode(FilmeSimples.self, from: dataFilme)
+                    completionHandler(filme)
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -68,6 +90,8 @@ class MovieService: MovieServiceProtocol {
         })
     }
     
+    // MARK: - Contructor
+    
     init() {
         
         guard let id = filmeSelecionado?.id else { return }
@@ -83,8 +107,8 @@ class MovieService: MovieServiceProtocol {
         getPosterFilme(posterPath) { (poster) in
             self.poster.append(Poster(poster: poster))
         }
-        
     }
+    
     
 }
 

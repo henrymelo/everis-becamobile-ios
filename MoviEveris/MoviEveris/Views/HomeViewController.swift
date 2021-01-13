@@ -11,16 +11,8 @@ import UIKit
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var colecaoFilmes: UICollectionView!
+
     
-//    // MARK: - Properts
-//    let viewModel: MainViewModel
-//    
-//    // MARK: - Constructors
-//    init(viewModel: MainViewModel = MainViewModel()) {
-//        self.viewModel = viewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
     var listaFilmes:[FilmeSimples] = []
     var posterPath: String = ""
     var paginaAtual = 1
@@ -39,7 +31,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(listaFilmes.count)
         return listaFilmes.count
     }
     
@@ -108,9 +99,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
 }
-extension HomeViewController: MainViewModelDelegate {
-    
-    func reloadData(movie: MovieViewData) {
-        movie.filmes.count
-    }
-}
+//extension HomeViewController: MainViewModelDelegate {
+//    
+//    func reloadData(movie: MovieViewData) {
+//        movie.filmes.count
+//    }
+//}

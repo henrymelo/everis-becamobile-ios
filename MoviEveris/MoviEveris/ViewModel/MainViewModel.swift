@@ -18,6 +18,8 @@ class MainViewModel {
     private let client: MovieServiceProtocol
     var viewData: Bindable<MovieViewData?> = Bindable(nil)
     var delegate: MainViewModelDelegate?
+    var paginaAtual = 1
+    private var filmeSelecionado: [FilmeSimples]? = nil
     
     // MARK: - Constructors
     init(client: MovieServiceProtocol = MovieService()) {
@@ -26,9 +28,9 @@ class MainViewModel {
     
     // MARK: - Methods
     func loadMovie() {
-        client.getFilmesPopulares(1) { (movie) in
+        client.getFilmesPopulares(paginaAtual) { (movie) in
             //self.viewData.value = MovieViewData(model: movie)
-            self.delegate?.reloadData(movie: MovieViewData(model: movie))
+            self.delegate?.reloadData(movie: MovieViewData(model: self.filmeSelecionado!))
         } failure: { (error) in
             print(error)
         }
