@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Outlets
     
@@ -44,6 +44,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaFilme", for: indexPath) as! TendenciasCollectionViewCell
         
         celula.configuraCelula(Filmes(dicionarioDeFilme: listaDeTendecias[indexPath.row]))
+        celula.layer.borderWidth = 0.5
+        celula.layer.borderColor = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1).cgColor
+        celula.layer.cornerRadius = 8
         
         return celula
     }
@@ -58,6 +61,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         controller.filmeSelecionado = Filmes(dicionarioDeFilme: filmeSelecionado)
         self.present(controller, animated: true, completion: nil)
+    }
+    
+    // MARK: - CollectionViewDelegateFlowLayout
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width/2 - 10, height: collectionView.bounds.height/2 - 15)
     }
 
 }

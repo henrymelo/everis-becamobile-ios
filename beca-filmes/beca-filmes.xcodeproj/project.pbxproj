@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B3D4E1625AE32E90070F5A8 /* Pods_beca_filmes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129B7020B1E25353B02CFE3D /* Pods_beca_filmes.framework */; };
+		1B3D4E1725AE32E90070F5A8 /* Pods_beca_filmes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 129B7020B1E25353B02CFE3D /* Pods_beca_filmes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1B55913625A7742E00A98A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55913525A7742E00A98A55 /* AppDelegate.swift */; };
 		1B55913825A7742E00A98A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55913725A7742E00A98A55 /* ViewController.swift */; };
 		1B55913B25A7742E00A98A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B55913925A7742E00A98A55 /* Main.storyboard */; };
@@ -17,8 +19,21 @@
 		1BAB9D6425A8E3AC00A14BFB /* Filmes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB9D6325A8E3AC00A14BFB /* Filmes.swift */; };
 		1BD8098A25ACBD6B003AB95D /* TendenciasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD8098925ACBD6B003AB95D /* TendenciasCollectionViewCell.swift */; };
 		1BD8098E25ACDC96003AB95D /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD8098D25ACDC96003AB95D /* DetalhesViewController.swift */; };
-		D3591233DCC5F8F0F3BD91DD /* Pods_beca_filmes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129B7020B1E25353B02CFE3D /* Pods_beca_filmes.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1B3D4E1825AE32E90070F5A8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1B3D4E1725AE32E90070F5A8 /* Pods_beca_filmes.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		129B7020B1E25353B02CFE3D /* Pods_beca_filmes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beca_filmes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3591233DCC5F8F0F3BD91DD /* Pods_beca_filmes.framework in Frameworks */,
+				1B3D4E1625AE32E90070F5A8 /* Pods_beca_filmes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +178,7 @@
 				1B55912F25A7742E00A98A55 /* Frameworks */,
 				1B55913025A7742E00A98A55 /* Resources */,
 				C4B0F781E0662272AEBD605B /* [CP] Embed Pods Frameworks */,
+				1B3D4E1825AE32E90070F5A8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
