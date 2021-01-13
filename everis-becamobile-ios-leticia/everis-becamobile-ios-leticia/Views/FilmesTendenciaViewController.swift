@@ -19,6 +19,7 @@ class FilmesTendenciaViewController: UIViewController, UICollectionViewDataSourc
     var detalhesViewController:DetalhesViewController?
     var tendenciaSelecionada:Tendencia?
     
+    
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {

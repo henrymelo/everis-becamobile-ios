@@ -36,6 +36,7 @@ class FilmeService: FilmeServiceProtocol {
             }
         }
     }
+    
     func recuperaDetalhesServidor(_ tendencia:Tendencia, completion:@escaping() -> Void) {
         guard let mediaType = tendencia.media_type else { return }
         

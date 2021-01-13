@@ -19,7 +19,9 @@ class FilmeViewModel {
     // MARK: - Properts
     private let client: FilmeServiceProtocol
     var viewData: Bindable<FilmeViewData?> = Bindable(nil)
-    //var delegate: FilmeViewModelDelegate?
+    var delegate: FilmeViewModelDelegate?
+    
+    //var lista:[Result]
     
     // MARK: - Constructors
     init(client: FilmeServiceProtocol = FilmeService()) {
