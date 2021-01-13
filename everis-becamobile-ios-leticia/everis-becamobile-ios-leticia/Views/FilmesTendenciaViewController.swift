@@ -16,11 +16,8 @@ class FilmesTendenciaViewController: UIViewController, UICollectionViewDataSourc
     // MARK: - Atributos
     
     var tendencias:Array<Tendencia> = []
-    var detalhes:Array<Detalhes> = []
     var detalhesViewController:DetalhesViewController?
     var tendenciaSelecionada:Tendencia?
-    
-    var detalhesDAO:DetalhesDAO?
     
     // MARK: - View Lifecycle
 
@@ -31,30 +28,14 @@ class FilmesTendenciaViewController: UIViewController, UICollectionViewDataSourc
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        limpaCoreDataTendencia()
-        recuperaTendencias()
-    }
-    
-    // MARK: - Métodos
-    
-    func recuperaTendencias() {
+        FilmeViewModel().limpaCoreDataTendencia()
+        
         FilmeViewModel().recuperaTendencias { (listaDeTendencias) in
             self.tendencias = listaDeTendencias
             self.colecaoFilmesTendencia.reloadData()
         }
     }
     
-    func limpaCoreDataTendencia() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: NSFetchRequest<NSFetchRequestResult>(entityName: "Tendencia"))
-        do {
-            try managedContext.execute(DelAllReqVar)
-        }
-        catch {
-            print(error)
-        }
-    }
     
     // MARK: - Collection View
     

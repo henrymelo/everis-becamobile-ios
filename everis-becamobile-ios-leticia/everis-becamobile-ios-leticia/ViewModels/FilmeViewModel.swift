@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 protocol FilmeViewModelDelegate {
     //func reloadData(movie: MovieViewData)
@@ -26,6 +28,7 @@ class FilmeViewModel {
     
     // MARK: - Methods
     
+    // Tendência
     func recuperaTendencias(completion:@escaping(_ listaDeTendencias:Array<Tendencia>) -> Void) {
         var tendencias = TendenciaDAO().recuperaTendencia()
         
@@ -39,6 +42,19 @@ class FilmeViewModel {
         TendenciaDAO().salvaTendencia(dicionarioDeTendencia: tendencia)
     }
     
+    func limpaCoreDataTendencia() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: NSFetchRequest<NSFetchRequestResult>(entityName: "Tendencia"))
+        do {
+            try managedContext.execute(DelAllReqVar)
+        }
+        catch {
+            print(error)
+        }
+    }
+    
+    // Detalhes
     func recuperaDetalhes(_ tendencia:Tendencia, completion:@escaping(_ listaDeDetalhes:Array<Detalhes>) -> Void) {
         var detalhes = DetalhesDAO().recuperaDetalhes()
         
@@ -50,6 +66,18 @@ class FilmeViewModel {
     
     func salvaDetalhes(detalhe:Dictionary<String, Any>) {
         DetalhesDAO().salvaDetalhes(dicionarioDeDetalhes: detalhe)
+    }
+    
+    func limpaCoreDataDetalhes() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: NSFetchRequest<NSFetchRequestResult>(entityName: "Detalhes"))
+        do {
+            try managedContext.execute(DelAllReqVar)
+        }
+        catch {
+            print(error)
+        }
     }
     
     

@@ -29,7 +29,7 @@ class DetalhesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        limpaCoreDataDetalhes()
+        FilmeViewModel().limpaCoreDataDetalhes()
         
         guard let tendenciaSelecionada = tendencia else { return }
         FilmeViewModel().recuperaDetalhes(tendenciaSelecionada) { (listaDeDetalhes) in
@@ -61,20 +61,4 @@ class DetalhesViewController: UIViewController {
         }
     }
     
-
-    // MARK: - Métodos
-
-    func limpaCoreDataDetalhes() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: NSFetchRequest<NSFetchRequestResult>(entityName: "Detalhes"))
-        do {
-            try managedContext.execute(DelAllReqVar)
-        }
-        catch {
-            print(error)
-        }
-    }
-    
-
 }
