@@ -48,8 +48,7 @@ class FilmesRequisition: NSObject {
                             } else {
                                 lancaOuEstreia = "first_air_date"
                             }
-                            
-                            
+                                  
                             guard let id = filme["id"] else { return }
                             guard let nomeAtual = filme[tituloOuNome] else { return }
                             guard let caminhoAtual = filme["poster_path"] else { return }
@@ -65,7 +64,6 @@ class FilmesRequisition: NSObject {
                             ]
                             
                             filmesBruto.append(filmeAtual)
-     
                         }
                         completion(filmesBruto)
                     }
@@ -130,7 +128,6 @@ class FilmesRequisition: NSObject {
                 return filme == id
                 
             })
-            
             completion(filmeSelecionado)
         }
     }

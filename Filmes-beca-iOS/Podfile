@@ -6,7 +6,7 @@ target 'Filmes-beca-iOS' do
   use_frameworks!
 
   # Pods for Filmes-beca-iOS
-  pod 'Alamofire', '~> 4.7.0'
+  pod 'Alamofire', '~> 4.7'
   pod 'AlamofireImage', '~> 3.4.0'
 
 end

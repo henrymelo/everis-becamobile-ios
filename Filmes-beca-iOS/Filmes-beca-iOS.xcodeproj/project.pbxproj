@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32FA849C2ECA2ECF85594F6A /* Pods_Filmes_beca_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950E6208A1C28F2B66E79560 /* Pods_Filmes_beca_iOS.framework */; };
 		F01C5C8725A8926C00FC695F /* FilmeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C5C8625A8926C00FC695F /* FilmeCollectionViewCell.swift */; };
 		F01C5C8925A89BC500FC695F /* DetalhesFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C5C8825A89BC500FC695F /* DetalhesFilmeViewController.swift */; };
 		F01C5C8C25A8BCE800FC695F /* arrow-left.svg in Resources */ = {isa = PBXBuildFile; fileRef = F01C5C8B25A8BCE800FC695F /* arrow-left.svg */; };
+		F04DF3B025ACE93400A5C75D /* Pods_Filmes_beca_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950E6208A1C28F2B66E79560 /* Pods_Filmes_beca_iOS.framework */; };
 		F0663A7925AC7AEC00D87E8C /* SpinerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0663A7825AC7AEC00D87E8C /* SpinerViewController.swift */; };
 		F080269D25A737DA00C41194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080269C25A737DA00C41194 /* AppDelegate.swift */; };
 		F08026A225A737DA00C41194 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08026A025A737DA00C41194 /* Main.storyboard */; };
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32FA849C2ECA2ECF85594F6A /* Pods_Filmes_beca_iOS.framework in Frameworks */,
+				F04DF3B025ACE93400A5C75D /* Pods_Filmes_beca_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +412,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -430,6 +431,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
