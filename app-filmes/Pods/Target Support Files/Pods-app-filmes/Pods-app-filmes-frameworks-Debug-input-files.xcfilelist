@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-app-filmes/Pods-app-filmes-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework
