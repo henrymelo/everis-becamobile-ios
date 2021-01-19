@@ -1,18 +1,21 @@
 //
-//  FilmeAPI.swift
+//  FilmeService.swift
 //  everis-becamobile-ios-leticia
 //
-//  Created by Leticia Sousa Siqueira on 08/01/21.
+//  Created by Leticia Sousa Siqueira on 13/01/21.
 //  Copyright © 2021 Leticia Sousa Siqueira. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class FilmeAPI: NSObject {
-    
-    // MARK: - Requisição GET
+protocol FilmeServiceProtocol {
+    func recuperaTendenciasServidor(completion:@escaping() -> Void)
+    func recuperaDetalhesServidor(_ tendencia:Tendencia, completion:@escaping() -> Void)
+}
 
+class FilmeService: FilmeServiceProtocol {
+    
     func recuperaTendenciasServidor(completion:@escaping() -> Void) {
         Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=4d3af2ecd868ddee8ae767825e9a0d64&language=pt-BR", method: .get).responseJSON { (response) in
             switch response.result {
@@ -51,5 +54,5 @@ class FilmeAPI: NSObject {
             }
         }
     }
-
+    
 }
