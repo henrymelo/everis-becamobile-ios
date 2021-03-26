@@ -1,4 +1,6 @@
+# Branch de desenvolvimento
 # Avaliação Beca Mobile iOS
+# Becario: Lucas Werner Kuipers
 
 Criar um aplicativo que realize a listagem de filmes e exibição dos detalhes:
  * Tela principal, lista de filmes:
