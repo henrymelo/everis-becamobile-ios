@@ -1,0 +1,6 @@
+framework module Pods_Beca_FilmesUITests {
+  umbrella header "Pods-Beca FilmesUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
