@@ -46,3 +46,4 @@ Criar um aplicativo que realize a listagem de filmes e exibição dos detalhes:
     - ssh-add -K ~/.ssh/id_rsa
 
 * :clap: Parabéns por ter chegado até aqui! :smile: _Um grande abraço e bem vindo ao time Mobile iOS_ :iphone: :punch:
+
