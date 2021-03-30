@@ -39,7 +39,8 @@ Criar um aplicativo que realize a listagem de filmes e exibição dos detalhes:
 * Plus:
    - Se tiver um tempinho, você poderá fazer algumas melhorias, como:
        -  Refactory no código
-       -  Paginação de filmes
+       -  Paginação de filmes, adicionando o parâmetro "page", ex.:
+           - https://api.themoviedb.org/3/trending/movie/week?api_key=00000&language=pt-BR&page=8
        -  Filtro no SearchBar
        
 * Opcional: Se for usar o clone via SSH, segue ajuda do GitHub:
