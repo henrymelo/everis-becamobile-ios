@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eWM-HG-oTq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="190"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="570"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23X-Aa-YWb">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
@@ -67,29 +67,11 @@
                                                             </accessibility>
                                                             <gestureRecognizers/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Tite" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbO-Do-a2K">
-                                                            <rect key="frame" x="3" y="31" width="100" height="100"/>
-                                                            <accessibility key="accessibilityConfiguration">
-                                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                                            </accessibility>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="100" id="sf6-aJ-PwP"/>
-                                                                <constraint firstAttribute="height" constant="100" id="tbc-4M-sRM"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="UbO-Do-a2K" firstAttribute="centerX" secondItem="JSu-4s-Qj2" secondAttribute="centerX" id="GHS-71-VeL"/>
-                                                        <constraint firstItem="UbO-Do-a2K" firstAttribute="centerY" secondItem="JSu-4s-Qj2" secondAttribute="centerY" id="aIc-4A-srY"/>
-                                                    </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="106" height="162"/>
                                                 <connections>
                                                     <outlet property="moviePosterImage" destination="iVG-MH-c11" id="GY3-fY-fFC"/>
-                                                    <outlet property="movieTitleLabel" destination="UbO-Do-a2K" id="3M7-ax-ssB"/>
                                                     <segue destination="2dF-yK-dlH" kind="show" id="wbF-AR-pYe"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -97,6 +79,124 @@
                                         <connections>
                                             <outlet property="dataSource" destination="XBC-fn-CGi" id="DaC-5G-NT8"/>
                                             <outlet property="delegate" destination="XBC-fn-CGi" id="7Vt-P7-owM"/>
+                                        </connections>
+                                    </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fT9-E5-gEe">
+                                        <rect key="frame" x="0.0" y="190" width="375" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLi-PG-rGD">
+                                                <rect key="frame" x="15" y="5" width="88" height="33"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="CLi-PG-rGD" firstAttribute="leading" secondItem="fT9-E5-gEe" secondAttribute="leading" constant="15" id="amx-ua-i5F"/>
+                                            <constraint firstItem="CLi-PG-rGD" firstAttribute="top" secondItem="fT9-E5-gEe" secondAttribute="top" constant="5" id="jxW-2p-6k3"/>
+                                            <constraint firstAttribute="height" constant="40" id="m0J-EI-PcG"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xkP-aj-EKd">
+                                        <rect key="frame" x="0.0" y="230" width="375" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="ZVP-4j-cNm"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="gIU-OZ-PWV">
+                                            <size key="itemSize" width="106" height="162"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCell" id="lYb-sS-J2e" customClass="MovieCollectionViewCell" customModule="Mockflix" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-6" width="106" height="162"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EYj-Ev-vXN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="106" height="162"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCu-2g-WoZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="106" height="162"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                                            </accessibility>
+                                                            <gestureRecognizers/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="106" height="162"/>
+                                                <connections>
+                                                    <outlet property="moviePosterImage" destination="DCu-2g-WoZ" id="bsD-XI-IsD"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="XBC-fn-CGi" id="lN3-fi-bmr"/>
+                                            <outlet property="delegate" destination="XBC-fn-CGi" id="o1d-X3-Ecu"/>
+                                        </connections>
+                                    </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-Wa-dzj">
+                                        <rect key="frame" x="0.0" y="380" width="375" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-fT-8xE">
+                                                <rect key="frame" x="15" y="5" width="78.5" height="33"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="WPm-fT-8xE" firstAttribute="top" secondItem="cHx-Wa-dzj" secondAttribute="top" constant="5" id="3CN-gD-7sC"/>
+                                            <constraint firstAttribute="height" constant="40" id="Wy4-Et-BKJ"/>
+                                            <constraint firstItem="WPm-fT-8xE" firstAttribute="leading" secondItem="cHx-Wa-dzj" secondAttribute="leading" constant="15" id="uH0-Nx-K7R"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Jg-f7-Ud8">
+                                        <rect key="frame" x="0.0" y="420" width="375" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="elf-9i-LbT"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="aVl-zl-G38">
+                                            <size key="itemSize" width="106" height="162"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCell" id="suv-RS-h4v" customClass="MovieCollectionViewCell" customModule="Mockflix" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-6" width="106" height="162"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Tfx-ZK-rIg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="106" height="162"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qAS-gN-ac4">
+                                                            <rect key="frame" x="0.0" y="0.0" width="106" height="162"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                                            </accessibility>
+                                                            <gestureRecognizers/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="106" height="162"/>
+                                                <connections>
+                                                    <outlet property="moviePosterImage" destination="qAS-gN-ac4" id="xWl-Sv-Fox"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="XBC-fn-CGi" id="CGC-GR-9KL"/>
+                                            <outlet property="delegate" destination="XBC-fn-CGi" id="fIg-oW-MiM"/>
                                         </connections>
                                     </collectionView>
                                 </subviews>
@@ -138,13 +238,13 @@
                                     <constraint firstAttribute="height" constant="300" id="PGB-lz-PSX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jea-zJ-FZk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sniper Americano: A Origem" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jea-zJ-FZk">
                                 <rect key="frame" x="10" y="329" width="355" height="36"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt7-Ia-epC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="87%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt7-Ia-epC">
                                 <rect key="frame" x="10" y="368" width="355" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" name="AccentColor"/>

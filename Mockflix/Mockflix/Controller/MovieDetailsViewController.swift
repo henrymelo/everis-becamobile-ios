@@ -43,7 +43,7 @@ class MovieDetailsViewController: UIViewController, UINavigationControllerDelega
 		
 		// Setting up movie backdrop image
 		
-		let backdropImageBaseURL = "https://image.tmdb.org/t/p/w500/"
+		let backdropImageBaseURL = "https://image.tmdb.org/t/p/original/"
 		let backdropImageParameters = selectedMovieInfo.backdropPath
 		let backdropImageFullURLString = "\(backdropImageBaseURL)\(backdropImageParameters)"
 		let backdropImageURL = URL(string: backdropImageFullURLString)

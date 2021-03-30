@@ -13,7 +13,7 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 	
 	var selectedMovieID = -1
 	
-	let infiniteSize = 100000000
+	let infiniteSize = 10000
 	
 	var trendingMovies = [Movie]()
 	var movieRequester = MoviesRequester()
@@ -40,7 +40,7 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 
 		// MARK: - Setting up movie title
 		
-		cell.movieTitleLabel.text = movie.title
+//		cell.movieTitleLabel.text = movie.title
 		
 
 		// MARK: - Setting up movie poster

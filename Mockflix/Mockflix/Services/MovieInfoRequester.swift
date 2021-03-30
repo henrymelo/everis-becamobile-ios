@@ -16,7 +16,6 @@ class MovieInfoRequester {
 	func request(for movieID: Int) -> MovieInfo? {
 		
 		let emptyMovieInfo: MovieInfo? = nil
-		
 		let urlString = "\(baseURL)/\(movieID)?api_key=\(apiKey)"
 		
 		if let url = URL(string: urlString)  {
