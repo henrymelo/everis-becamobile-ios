@@ -16,10 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mockflix" translatesAutoresizingMaskIntoConstraints="NO" id="kn8-Jy-sjS">
-                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                                <rect key="frame" x="8" y="153.5" width="359" height="330"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kn8-Jy-sjS" secondAttribute="height" multiplier="359:330" id="kUd-KD-u02"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" by Lucas Werner Kuipers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RU4-iM-wJu">
-                                <rect key="frame" x="90" y="416" width="195.5" height="23.5"/>
+                                <rect key="frame" x="90" y="613.5" width="195.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -28,10 +31,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RU4-iM-wJu" firstAttribute="top" secondItem="kn8-Jy-sjS" secondAttribute="bottom" constant="-67.5" id="75z-wK-K3O"/>
-                            <constraint firstItem="kn8-Jy-sjS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VH1-cN-YB4"/>
-                            <constraint firstItem="kn8-Jy-sjS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dzk-2X-5QU"/>
-                            <constraint firstItem="RU4-iM-wJu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hud-7R-Lun"/>
+                            <constraint firstItem="kn8-Jy-sjS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9Dy-qr-sig"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RU4-iM-wJu" secondAttribute="bottom" constant="30" id="Gee-OJ-jaY"/>
+                            <constraint firstItem="kn8-Jy-sjS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-15" id="Ijv-Ck-nf4"/>
+                            <constraint firstItem="RU4-iM-wJu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VhO-Y6-JD2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kn8-Jy-sjS" secondAttribute="trailing" constant="8" id="Zx9-YO-Yda"/>
+                            <constraint firstItem="kn8-Jy-sjS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="tfb-Ec-iG0"/>
                         </constraints>
                     </view>
                 </viewController>
