@@ -19,9 +19,9 @@ class MoviesRequester {
 
 	// MARK: - Making request for list of movies
 	
-	func request(forCategory category: String) -> [Movie] {
+	func request(forCategory category: String, withExtra extra: String = "") -> [Movie] {
 		
-		let urlString = "\(baseURL)/\(category)?api_key=\(apiKey)" // full url of the request (as a string)
+		let urlString = "\(baseURL)/\(category)?api_key=\(apiKey)\(extra)" // full url of the request (as a string)
 		
 		if let url = URL(string: urlString)  {
 			
@@ -33,7 +33,8 @@ class MoviesRequester {
 					print("Sucesso ao pegar lista de filmes!")
 					return movies
 				} else {
-					print("Falha em decodificar dados: \(data) em objeto Movies seguindo protocolo do codable MovieInfo")
+					print("Falha em decodificar dados: \(data) em objeto Movies seguindo protocolo do codable Movies")
+					print("url: \(url)")
 				}
 			} else {
 				print("Falha em armazenar url: \(url) em dados (data) para lista de filmes")

@@ -1,36 +1,39 @@
 //
-//  MovieDetailsViewController.swift
+//  MovieDetailsSearchViewController.swift
 //  Mockflix
 //
-//  Created by Lucas Werner Kuipers on 29/03/2021.
+//  Created by Lucas Werner Kuipers on 31/03/2021.
 //
-
 // MARK: - Importing required modules
 
 import UIKit
 
 // MARK: - Entrance point to main class
 
-class MovieDetailsViewController: UIViewController, UINavigationControllerDelegate {
+class MovieDetailsSearchViewController: UIViewController, UINavigationControllerDelegate {
 	
 	// MARK: - IBOutlets
+	
+//	@IBOutlet weak var movieBackdropImage: UIImageView!
+//	@IBOutlet weak var movieTitle: UILabel!
+//	@IBOutlet weak var movieRating: UILabel!
+//	@IBOutlet weak var movieOverview: UILabel!
 	
 	@IBOutlet weak var movieBackdropImage: UIImageView!
 	@IBOutlet weak var movieTitle: UILabel!
 	@IBOutlet weak var movieRating: UILabel!
 	@IBOutlet weak var movieOverview: UILabel!
 	
+	
 	// MARK: - Global variables and constants
 	var movieInfoRequester = MovieInfoRequester() // Object with method to retrieve movie's info from API
-	var movieListViewController: MoviesListsViewController? // Instatiating main view controller to get access to its properties
 	var searchBarViewController: SearchMovieViewController?
 
-	
 	// MARK: - Life Cycle Methods
 	
 	// Loaded view
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
 //		 Allows swipe-right to dismiss details view
 		let popGestureRecognizer = self.navigationController!.interactivePopGestureRecognizer!
@@ -40,8 +43,9 @@ class MovieDetailsViewController: UIViewController, UINavigationControllerDelega
 		  self.view.addGestureRecognizer(gestureRecognizer)
 		}
 		
+		print(searchBarViewController!.selectedMovieID)
 //		 Retrieving selected movie's id that was clicked from main view
-		guard let selectedMovieID = movieListViewController?.selectedMovieID else { return }
+		guard let selectedMovieID = searchBarViewController?.selectedMovieID else { return }
 		
 		// Getting info for movie with corresponding id
 		guard let selectedMovieInfo = movieInfoRequester.request(for: selectedMovieID) else { return }
@@ -60,5 +64,5 @@ class MovieDetailsViewController: UIViewController, UINavigationControllerDelega
 		
 		movieBackdropImage.af_setImage(withURL: backdropImageURL!)
 		
-    }
+	}
 }
