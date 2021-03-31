@@ -1,37 +1,48 @@
 //
-//  API.swift
-//  ListagemFilmesBecaiOS
+//  MovieInfoRequester.swift
+//  Mockflix
 //
 //  Created by Lucas Werner Kuipers on 27/03/2021.
 //
+// MARK: - Importing required modules
 
 import Alamofire
 
+// MARK: - Entrance point to main class
+
 class MoviesRequester {
 	
-
+	// MARK: - API Basic parameters
+	
 	let baseURL = "https://api.themoviedb.org/3/trending/movie/day?"
 	let apiKey = "b9455c6f8158f3b4819771909e7a9dbc"
 
-	var urlString: String {
-		return "\(baseURL)api_key=\(apiKey)"
-	}
+	// MARK: - Making request for list of movies
 	
 	func request() -> [Movie] {
+		
+		let urlString = "\(baseURL)api_key=\(apiKey)" // full url of the request (as a string)
+		
 		if let url = URL(string: urlString)  {
+			
 			if let data = try? Data(contentsOf: url) {
-				
 				let decoder = JSONDecoder()
-				var movies: [Movie] = []
 				
 				if let jsonMovies = try? decoder.decode(Movies.self, from: data) {
-					movies = jsonMovies.results
-					print("Sucesso ao pegar os dados!")
+					let movies: [Movie] = jsonMovies.results
+					print("Sucesso ao pegar lista de filmes!")
 					return movies
-				} else { print("problema 1")}
-			} else { print("problema 2")}
-		} else { print("problema 3")}
-	print("Falha ao pegar os resultados")
+				} else {
+					print("Falha em decodificar dados: \(data) em objeto Movies seguindo protocolo do codable MovieInfo")
+				}
+			} else {
+				print("Falha em armazenar url: \(url) em dados (data) para lista de filmes")
+			}
+		} else {
+			print("Falha ao transformar urlString: \(urlString) em objeto URL para lista de filmes")
+		}
+		
+	print("Falha ao pegar a lista de filmes pela API! :(")
 	return []
 	}
 }

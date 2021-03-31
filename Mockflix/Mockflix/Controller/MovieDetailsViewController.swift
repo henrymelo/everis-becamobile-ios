@@ -5,21 +5,28 @@
 //  Created by Lucas Werner Kuipers on 29/03/2021.
 //
 
+// MARK: - Importing required modules
+
 import UIKit
+
+// MARK: - Entrance point to main class
 
 class MovieDetailsViewController: UIViewController, UINavigationControllerDelegate {
 	
+	// MARK: - IBOutlets
 	
 	@IBOutlet weak var movieBackdropImage: UIImageView!
 	@IBOutlet weak var movieTitle: UILabel!
 	@IBOutlet weak var movieRating: UILabel!
 	@IBOutlet weak var movieOverview: UILabel!
 	
-	var movieInfoRequester = MovieInfoRequester()
+	// MARK: - Global variables and constants
+	var movieInfoRequester = MovieInfoRequester() // Object with method to retrieve movie's info from API
+	var movieListViewController: MoviesListsViewController? // Instatiating main view controller to get access to its properties
 	
+	// MARK: - Life Cycle Methods
 	
-	var movieListViewController: MoviesListsViewController?
-	
+	// Loaded view
     override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -30,19 +37,20 @@ class MovieDetailsViewController: UIViewController, UINavigationControllerDelega
 		  gestureRecognizer.setValue(targets, forKey: "targets")
 		  self.view.addGestureRecognizer(gestureRecognizer)
 		}
+		
+		// Retrieving selected movie's id that was clicked from main view
 		guard let selectedMovieID = movieListViewController?.selectedMovieID else { return }
 		
-		// Getting info
+		// Getting info for movie with corresponding id
 		guard let selectedMovieInfo = movieInfoRequester.request(for: selectedMovieID) else { return }
 		
-		// Showing info
+		// Displaying corresponding text info on screen (on outlets)
 		movieTitle.text = selectedMovieInfo.originalTitle
 		movieRating.text = "\(Int(selectedMovieInfo.voteAverage * 10))%"
 		movieOverview.text = selectedMovieInfo.overview
 		
 		
-		// Setting up movie backdrop image
-		
+		// Displaing corresponding movie's backdrop image on screen
 		let backdropImageBaseURL = "https://image.tmdb.org/t/p/original/"
 		let backdropImageParameters = selectedMovieInfo.backdropPath
 		let backdropImageFullURLString = "\(backdropImageBaseURL)\(backdropImageParameters)"

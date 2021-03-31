@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eWM-HG-oTq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="570"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="720"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23X-Aa-YWb">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhp-zK-byU">
-                                                <rect key="frame" x="15" y="5" width="99" height="33"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                                <rect key="frame" x="10" y="12" width="90.5" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -34,16 +34,17 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstItem="nhp-zK-byU" firstAttribute="top" secondItem="23X-Aa-YWb" secondAttribute="top" constant="5" id="GBb-5H-tXf"/>
-                                            <constraint firstItem="nhp-zK-byU" firstAttribute="leading" secondItem="23X-Aa-YWb" secondAttribute="leading" constant="15" id="Gry-2W-nM9"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nhp-zK-byU" secondAttribute="trailing" constant="20" symbolic="YES" id="B0a-xe-sm1"/>
+                                            <constraint firstItem="nhp-zK-byU" firstAttribute="leading" secondItem="23X-Aa-YWb" secondAttribute="leading" constant="10" id="Gry-2W-nM9"/>
                                             <constraint firstAttribute="height" constant="40" id="IDa-VQ-Bzk"/>
+                                            <constraint firstItem="nhp-zK-byU" firstAttribute="top" secondItem="23X-Aa-YWb" secondAttribute="top" constant="12" id="UYX-va-eTx"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SF5-7U-ty1">
-                                        <rect key="frame" x="0.0" y="40" width="375" height="150"/>
+                                        <rect key="frame" x="0.0" y="40" width="375" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="txT-wM-q1B"/>
+                                            <constraint firstAttribute="height" constant="200" id="txT-wM-q1B"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="pWJ-Rs-fEa">
                                             <size key="itemSize" width="106" height="162"/>
@@ -53,7 +54,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCell" id="fDJ-lH-nEd" customClass="MovieCollectionViewCell" customModule="Mockflix" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-6" width="106" height="162"/>
+                                                <rect key="frame" x="0.0" y="19" width="106" height="162"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JSu-4s-Qj2">
                                                     <rect key="frame" x="0.0" y="0.0" width="106" height="162"/>
@@ -82,11 +83,11 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fT9-E5-gEe">
-                                        <rect key="frame" x="0.0" y="190" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="240" width="375" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLi-PG-rGD">
-                                                <rect key="frame" x="15" y="5" width="88" height="33"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                                <rect key="frame" x="10" y="12" width="80.5" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -94,16 +95,17 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstItem="CLi-PG-rGD" firstAttribute="leading" secondItem="fT9-E5-gEe" secondAttribute="leading" constant="15" id="amx-ua-i5F"/>
-                                            <constraint firstItem="CLi-PG-rGD" firstAttribute="top" secondItem="fT9-E5-gEe" secondAttribute="top" constant="5" id="jxW-2p-6k3"/>
+                                            <constraint firstItem="CLi-PG-rGD" firstAttribute="leading" secondItem="fT9-E5-gEe" secondAttribute="leading" constant="10" id="amx-ua-i5F"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CLi-PG-rGD" secondAttribute="trailing" constant="20" symbolic="YES" id="jt3-Kl-v6e"/>
+                                            <constraint firstItem="CLi-PG-rGD" firstAttribute="top" secondItem="fT9-E5-gEe" secondAttribute="top" constant="12" id="jxW-2p-6k3"/>
                                             <constraint firstAttribute="height" constant="40" id="m0J-EI-PcG"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xkP-aj-EKd">
-                                        <rect key="frame" x="0.0" y="230" width="375" height="150"/>
+                                        <rect key="frame" x="0.0" y="280" width="375" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="ZVP-4j-cNm"/>
+                                            <constraint firstAttribute="height" constant="200" id="ZVP-4j-cNm"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="gIU-OZ-PWV">
                                             <size key="itemSize" width="106" height="162"/>
@@ -113,7 +115,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCell" id="lYb-sS-J2e" customClass="MovieCollectionViewCell" customModule="Mockflix" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-6" width="106" height="162"/>
+                                                <rect key="frame" x="0.0" y="19" width="106" height="162"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EYj-Ev-vXN">
                                                     <rect key="frame" x="0.0" y="0.0" width="106" height="162"/>
@@ -141,11 +143,11 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-Wa-dzj">
-                                        <rect key="frame" x="0.0" y="380" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="480" width="375" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-fT-8xE">
-                                                <rect key="frame" x="15" y="5" width="78.5" height="33"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                                <rect key="frame" x="10" y="12" width="72" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -153,16 +155,17 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstItem="WPm-fT-8xE" firstAttribute="top" secondItem="cHx-Wa-dzj" secondAttribute="top" constant="5" id="3CN-gD-7sC"/>
+                                            <constraint firstItem="WPm-fT-8xE" firstAttribute="top" secondItem="cHx-Wa-dzj" secondAttribute="top" constant="12" id="3CN-gD-7sC"/>
                                             <constraint firstAttribute="height" constant="40" id="Wy4-Et-BKJ"/>
-                                            <constraint firstItem="WPm-fT-8xE" firstAttribute="leading" secondItem="cHx-Wa-dzj" secondAttribute="leading" constant="15" id="uH0-Nx-K7R"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WPm-fT-8xE" secondAttribute="trailing" constant="20" symbolic="YES" id="slj-a3-ctc"/>
+                                            <constraint firstItem="WPm-fT-8xE" firstAttribute="leading" secondItem="cHx-Wa-dzj" secondAttribute="leading" constant="10" id="uH0-Nx-K7R"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Jg-f7-Ud8">
-                                        <rect key="frame" x="0.0" y="420" width="375" height="150"/>
+                                        <rect key="frame" x="0.0" y="520" width="375" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="elf-9i-LbT"/>
+                                            <constraint firstAttribute="height" constant="200" id="elf-9i-LbT"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="aVl-zl-G38">
                                             <size key="itemSize" width="106" height="162"/>
@@ -172,7 +175,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCell" id="suv-RS-h4v" customClass="MovieCollectionViewCell" customModule="Mockflix" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-6" width="106" height="162"/>
+                                                <rect key="frame" x="0.0" y="19" width="106" height="162"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Tfx-ZK-rIg">
                                                     <rect key="frame" x="0.0" y="0.0" width="106" height="162"/>
@@ -222,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQp-zP-Nqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2636" y="342"/>
+            <point key="canvasLocation" x="2636" y="341.37931034482762"/>
         </scene>
         <!--Movie Details View Controller-->
         <scene sceneID="AaU-1X-5m8">

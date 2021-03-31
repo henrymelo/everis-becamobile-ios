@@ -1,6 +1,6 @@
 //
 //  Movie.swift
-//  ListagemFilmesBecaiOS
+//  Mockflix
 //
 //  Created by Lucas Werner Kuipers on 26/03/2021.
 //
