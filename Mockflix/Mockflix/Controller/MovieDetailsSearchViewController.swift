@@ -58,7 +58,7 @@ class MovieDetailsSearchViewController: UIViewController, UINavigationController
 		
 		// Displaing corresponding movie's backdrop image on screen
 		let backdropImageBaseURL = "https://image.tmdb.org/t/p/original/"
-		let backdropImageParameters = selectedMovieInfo.backdropPath
+		guard let backdropImageParameters = selectedMovieInfo.backdropPath else { return }
 		let backdropImageFullURLString = "\(backdropImageBaseURL)\(backdropImageParameters)"
 		let backdropImageURL = URL(string: backdropImageFullURLString)
 		

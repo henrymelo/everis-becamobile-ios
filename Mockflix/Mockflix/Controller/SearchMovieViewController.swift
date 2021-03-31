@@ -30,9 +30,8 @@ class SearchMovieViewController: UIViewController, UISearchBarDelegate, UITableV
 		
 		if query.count > 0 {
 			movieSearchResults = movieRequester.request(forCategory: category, withExtra: extra)
-			if movieSearchResults.count > 0 {
-				movieSarchResultsTableView.reloadData()
-			}
+			
+			movieSarchResultsTableView.reloadData()
 		}
 
 	}

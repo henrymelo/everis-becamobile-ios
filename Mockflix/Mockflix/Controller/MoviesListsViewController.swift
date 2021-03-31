@@ -90,7 +90,7 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 			// MARK: - Filling cell with corresponding movie's poster image
 			// Getting image's info
 			let posterImageBaseURL = "https://image.tmdb.org/t/p/w300/"
-			let posterImageParameters = movie.posterPath
+			guard let posterImageParameters = movie.posterPath else { return cell}
 			let posterImageFullURLString = "\(posterImageBaseURL)\(posterImageParameters)"
 			let posterImageURL = URL(string: posterImageFullURLString)
 			// Setting image on cell
@@ -111,7 +111,7 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 			// MARK: - Filling cell with corresponding movie's poster image
 			// Getting image's info
 			let posterImageBaseURL = "https://image.tmdb.org/t/p/w300/"
-			let posterImageParameters = movie.posterPath
+			guard let posterImageParameters = movie.posterPath else { return cell}
 			let posterImageFullURLString = "\(posterImageBaseURL)\(posterImageParameters)"
 			let posterImageURL = URL(string: posterImageFullURLString)
 			// Setting image on cell
@@ -132,7 +132,7 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 			// MARK: - Filling cell with corresponding movie's poster image
 			// Getting image's info
 			let posterImageBaseURL = "https://image.tmdb.org/t/p/w300/"
-			let posterImageParameters = movie.posterPath
+			guard let posterImageParameters = movie.posterPath else {return cell}
 			let posterImageFullURLString = "\(posterImageBaseURL)\(posterImageParameters)"
 			let posterImageURL = URL(string: posterImageFullURLString)
 			// Setting image on cell

@@ -11,7 +11,7 @@ import Foundation
 struct MovieInfo: Codable {
 	let originalTitle, overview: String
 	let voteAverage: Double
-	let backdropPath: String
+	let backdropPath: String?
 
 	
 	enum CodingKeys: String, CodingKey {

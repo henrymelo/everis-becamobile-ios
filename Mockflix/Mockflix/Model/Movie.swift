@@ -9,11 +9,11 @@ import Foundation
 
 // MARK: - Movie
 struct Movie: Codable {
-	let voteAverage: Double // rating
+	let voteAverage: Double? // rating
 	let title: String
 	let overview: String
 	let id: Int
-	let posterPath: String
+	let posterPath: String?
 
 	enum CodingKeys: String, CodingKey {
 		case voteAverage = "vote_average"
