@@ -14,14 +14,14 @@ class MoviesRequester {
 	
 	// MARK: - API Basic parameters
 	
-	let baseURL = "https://api.themoviedb.org/3/trending/movie/day?"
+	let baseURL = "https://api.themoviedb.org/3"
 	let apiKey = "b9455c6f8158f3b4819771909e7a9dbc"
 
 	// MARK: - Making request for list of movies
 	
-	func request() -> [Movie] {
+	func request(forCategory category: String) -> [Movie] {
 		
-		let urlString = "\(baseURL)api_key=\(apiKey)" // full url of the request (as a string)
+		let urlString = "\(baseURL)/\(category)?api_key=\(apiKey)" // full url of the request (as a string)
 		
 		if let url = URL(string: urlString)  {
 			

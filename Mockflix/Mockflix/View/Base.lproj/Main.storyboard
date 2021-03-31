@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eWM-HG-oTq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="720"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="612"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23X-Aa-YWb">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhp-zK-byU">
-                                                <rect key="frame" x="10" y="12" width="90.5" height="30.5"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
+                                                <rect key="frame" x="10" y="13" width="86.5" height="29"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -37,14 +37,14 @@
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nhp-zK-byU" secondAttribute="trailing" constant="20" symbolic="YES" id="B0a-xe-sm1"/>
                                             <constraint firstItem="nhp-zK-byU" firstAttribute="leading" secondItem="23X-Aa-YWb" secondAttribute="leading" constant="10" id="Gry-2W-nM9"/>
                                             <constraint firstAttribute="height" constant="40" id="IDa-VQ-Bzk"/>
-                                            <constraint firstItem="nhp-zK-byU" firstAttribute="top" secondItem="23X-Aa-YWb" secondAttribute="top" constant="12" id="UYX-va-eTx"/>
+                                            <constraint firstItem="nhp-zK-byU" firstAttribute="top" secondItem="23X-Aa-YWb" secondAttribute="top" constant="13" id="UYX-va-eTx"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SF5-7U-ty1">
-                                        <rect key="frame" x="0.0" y="40" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="40" width="375" height="164"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="txT-wM-q1B"/>
+                                            <constraint firstAttribute="height" constant="164" id="txT-wM-q1B"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="pWJ-Rs-fEa">
                                             <size key="itemSize" width="106" height="162"/>
@@ -53,8 +53,8 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCell" id="fDJ-lH-nEd" customClass="MovieCollectionViewCell" customModule="Mockflix" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="19" width="106" height="162"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCellTrending" id="fDJ-lH-nEd" customClass="MovieCollectionViewCellTrending" customModule="Mockflix" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="1" width="106" height="162"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JSu-4s-Qj2">
                                                     <rect key="frame" x="0.0" y="0.0" width="106" height="162"/>
@@ -72,7 +72,7 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="106" height="162"/>
                                                 <connections>
-                                                    <outlet property="moviePosterImage" destination="iVG-MH-c11" id="GY3-fY-fFC"/>
+                                                    <outlet property="moviePosterImageTrending" destination="iVG-MH-c11" id="5Vn-Bo-CFt"/>
                                                     <segue destination="2dF-yK-dlH" kind="show" id="wbF-AR-pYe"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -83,11 +83,11 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fT9-E5-gEe">
-                                        <rect key="frame" x="0.0" y="240" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="204" width="375" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLi-PG-rGD">
-                                                <rect key="frame" x="10" y="12" width="80.5" height="30.5"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
+                                                <rect key="frame" x="10" y="12" width="77" height="29"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -102,10 +102,10 @@
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xkP-aj-EKd">
-                                        <rect key="frame" x="0.0" y="280" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="244" width="375" height="164"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="ZVP-4j-cNm"/>
+                                            <constraint firstAttribute="height" constant="164" id="ZVP-4j-cNm"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="gIU-OZ-PWV">
                                             <size key="itemSize" width="106" height="162"/>
@@ -114,8 +114,8 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCell" id="lYb-sS-J2e" customClass="MovieCollectionViewCell" customModule="Mockflix" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="19" width="106" height="162"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCellPopular" id="lYb-sS-J2e" customClass="MovieCollectionViewCellPopular" customModule="Mockflix" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="1" width="106" height="162"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EYj-Ev-vXN">
                                                     <rect key="frame" x="0.0" y="0.0" width="106" height="162"/>
@@ -133,7 +133,8 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="106" height="162"/>
                                                 <connections>
-                                                    <outlet property="moviePosterImage" destination="DCu-2g-WoZ" id="bsD-XI-IsD"/>
+                                                    <outlet property="moviePosterImagePopular" destination="DCu-2g-WoZ" id="gcj-fI-piU"/>
+                                                    <segue destination="2dF-yK-dlH" kind="show" id="3On-n0-TOy"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -143,11 +144,11 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-Wa-dzj">
-                                        <rect key="frame" x="0.0" y="480" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="408" width="375" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-fT-8xE">
-                                                <rect key="frame" x="10" y="12" width="72" height="30.5"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top rated" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-fT-8xE">
+                                                <rect key="frame" x="10" y="12" width="96" height="29"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -161,11 +162,11 @@
                                             <constraint firstItem="WPm-fT-8xE" firstAttribute="leading" secondItem="cHx-Wa-dzj" secondAttribute="leading" constant="10" id="uH0-Nx-K7R"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Jg-f7-Ud8">
-                                        <rect key="frame" x="0.0" y="520" width="375" height="200"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Jg-f7-Ud8" userLabel="Latest Movies Collection View">
+                                        <rect key="frame" x="0.0" y="448" width="375" height="164"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="elf-9i-LbT"/>
+                                            <constraint firstAttribute="height" constant="164" id="elf-9i-LbT"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="aVl-zl-G38">
                                             <size key="itemSize" width="106" height="162"/>
@@ -174,8 +175,8 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCell" id="suv-RS-h4v" customClass="MovieCollectionViewCell" customModule="Mockflix" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="19" width="106" height="162"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviePosterCellLatest" id="suv-RS-h4v" customClass="MovieCollectionViewCellLatest" customModule="Mockflix" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="1" width="106" height="162"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Tfx-ZK-rIg">
                                                     <rect key="frame" x="0.0" y="0.0" width="106" height="162"/>
@@ -193,7 +194,8 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="106" height="162"/>
                                                 <connections>
-                                                    <outlet property="moviePosterImage" destination="qAS-gN-ac4" id="xWl-Sv-Fox"/>
+                                                    <outlet property="moviePosterImageLatest" destination="qAS-gN-ac4" id="CBu-My-BO3"/>
+                                                    <segue destination="2dF-yK-dlH" kind="show" id="8RA-Vg-hgO"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -214,12 +216,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eWM-HG-oTq" firstAttribute="trailing" secondItem="MjR-oS-D2i" secondAttribute="trailing" id="8Fy-LG-6xF"/>
-                            <constraint firstItem="eWM-HG-oTq" firstAttribute="top" secondItem="MjR-oS-D2i" secondAttribute="top" constant="20" id="Z1W-av-kq4"/>
+                            <constraint firstItem="eWM-HG-oTq" firstAttribute="top" secondItem="MjR-oS-D2i" secondAttribute="top" id="Z1W-av-kq4"/>
                             <constraint firstItem="eWM-HG-oTq" firstAttribute="leading" secondItem="MjR-oS-D2i" secondAttribute="leading" id="qtT-DZ-5X4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mockflix" id="IqF-1I-52i"/>
                     <connections>
+                        <outlet property="latestMoviesCollectionView" destination="1Jg-f7-Ud8" id="dFK-0G-0qV"/>
+                        <outlet property="popularMoviesCollectionView" destination="xkP-aj-EKd" id="TIt-Ly-9Hx"/>
                         <outlet property="trendingMoviesCollectionView" destination="SF5-7U-ty1" id="2XX-BF-LU2"/>
                     </connections>
                 </viewController>
@@ -236,25 +240,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticket.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wzn-Qf-Zrs">
-                                <rect key="frame" x="0.0" y="25.5" width="375" height="296.5"/>
+                                <rect key="frame" x="0.0" y="45.5" width="375" height="296.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="PGB-lz-PSX"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sniper Americano: A Origem" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jea-zJ-FZk">
-                                <rect key="frame" x="10" y="329" width="355" height="36"/>
+                                <rect key="frame" x="10" y="349" width="355" height="36"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="87%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt7-Ia-epC">
-                                <rect key="frame" x="10" y="368" width="355" height="25"/>
+                                <rect key="frame" x="10" y="388" width="355" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4r-BI-388">
-                                <rect key="frame" x="10" y="398" width="355" height="186"/>
+                                <rect key="frame" x="10" y="418" width="355" height="186"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="UvR-Q1-ulF"/>
                                 </constraints>
@@ -276,7 +280,7 @@
                             <constraint firstItem="rvZ-oU-SVr" firstAttribute="trailing" secondItem="o4r-BI-388" secondAttribute="trailing" constant="10" id="Zvn-rI-jAr"/>
                             <constraint firstItem="jea-zJ-FZk" firstAttribute="leading" secondItem="rvZ-oU-SVr" secondAttribute="leading" constant="10" id="cIo-1S-UUX"/>
                             <constraint firstItem="qt7-Ia-epC" firstAttribute="leading" secondItem="rvZ-oU-SVr" secondAttribute="leading" constant="10" id="gsC-g5-6jz"/>
-                            <constraint firstItem="wzn-Qf-Zrs" firstAttribute="top" secondItem="rvZ-oU-SVr" secondAttribute="top" constant="-20" id="jsA-D8-wbK"/>
+                            <constraint firstItem="wzn-Qf-Zrs" firstAttribute="top" secondItem="rvZ-oU-SVr" secondAttribute="top" id="jsA-D8-wbK"/>
                             <constraint firstItem="jea-zJ-FZk" firstAttribute="top" secondItem="wzn-Qf-Zrs" secondAttribute="bottom" constant="5" id="nfz-7x-Nod"/>
                             <constraint firstItem="rvZ-oU-SVr" firstAttribute="trailing" secondItem="jea-zJ-FZk" secondAttribute="trailing" constant="10" id="rfW-1q-OtJ"/>
                         </constraints>
@@ -312,6 +316,9 @@
             <point key="canvasLocation" x="1697" y="342"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wbF-AR-pYe"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>
         <image name="ticket.fill" catalog="system" width="128" height="84"/>
