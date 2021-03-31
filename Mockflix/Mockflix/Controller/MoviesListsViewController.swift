@@ -16,7 +16,6 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 	
 	// MARK: - IBOutlets
 	
-//	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var trendingMoviesCollectionView: UICollectionView!
 	@IBOutlet weak var popularMoviesCollectionView: UICollectionView!
 	@IBOutlet weak var latestMoviesCollectionView: UICollectionView!
@@ -25,7 +24,7 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 	// MARK: - Global variables and constants
 	
 	var firstLoad = true // So that position of cells are centered only when app is first opened (not when returning from other view)
-	var selectedMovieID = -1 // Index (property of movie's request's response) of clicked movie's poster (to be sent to next view)
+	var selectedMovieID: Int? // Index (property of movie's request's response) of clicked movie's poster (to be sent to next view)
 	let reallyBigInteger = 10000 // used to create lots of cells and pretend scroll is infinite
 	
 	// Initializing empty lists of movies that will store movies returned by request
