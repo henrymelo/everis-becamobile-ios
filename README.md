@@ -35,27 +35,26 @@ Toda vez que o texto na search bar muda, é feita uma nova requisição à API, 
 Ao clicar em qualquer célula o usuário é levado à tela de detalhes novamente, exibindo o filme correspondente.
 
 ## Problemas conhecidos
--Ao entrar na tela de pesquisa, o usuário precisa escolher um filme para voltar à tela inicial.
--Em dispositivos menores (como Iphone SE) parte da telas podem ficar cobertas.
+- Ao entrar na tela de pesquisa, o usuário precisa escolher um filme para voltar à tela inicial.
+- Em dispositivos menores (como Iphone SE) parte da telas podem ficar cobertas.
 
 ## Principais dificuldades
--Entender e implementar a comunicação de dados entre telas de maneira limpa e concisa.
--Encontrar o campo do codable que faz com que certa resposta da requisição não conforme com o formato interno e o filme não seja armazenado (e por conseguinte exibido na tela).
+- Entender e implementar a comunicação de dados entre telas de maneira limpa e concisa.
+- Encontrar o campo do codable que faz com que certa resposta da requisição não conforme com o formato interno e o filme não seja armazenado (e por conseguinte exibido na tela).
 
 ## Planejamento futuro
--Adicionar mais testes unitários (e mais completos).
--Refatorar código.
--Eliminar a necessidade de uma réplica da tela de detalhes para a tela de pesquisa (melhorar o fluxo de informação entre telas, facilitando sua integração.)
--Adicionar paginação aos resultados exibidos na tela de pesquisas (arrastando para baixo ou clicando em um botão para buscar mais resultados).
--Inserir coleções de filmes em uma table view e gerar cada coleção de maneira programática, apenas criando uma lista do nome e url de requisicao para cada seção e utilizando essa lista como argumento para a tableview.
--Implementar skeleton loading a ser exibido até que sejam carregadas as informações das requisicoes.
--Adicionar scroll view na tela de detalhes, permitindo maior acessibilidade à dispositivos menores e maior liberdade para adicionar mais detalhes.
--Adicionar mais detalhes na segunda tela: como diretor, ano, elenco, revenue, duracao, subtitulo, idiomas disponiveis, coloecoes que faz parte, classificacao indicativa e trailer.
--Adicionar tela de detalhes para ator (acessada pela lista do elenco) que exibe informacoes como em quais filmes participa.
--Adicionar secao com lista de filmes semelhantes, na parte inferior da tela de detalhes.
--Implementar lista de séries de maneira análoga à de filmes, mas com temporadas, episódios... entre outros.
--Melhorar experiencia no aplicativo através de respostas hapticas e sons agradáveis.
--Adicionar opçoes de favoritar filmes e/ou adicionar à uma playlist (e poder criar playlists). Salvar essas informaçoes na Core Data e posteriormente adicionar opção de logar-se ao aplicativo, sincronizando informacoes com algum servidor.
--Adicionar customizacao do aplicativo pela preferencia do  usuario (cores, modo noturno...)
--Adicionar sistema de notificacoes push (filmes lancados recentemente, recomendacoes semanais, filmes lancados de atores seguidos...)
-
+- Adicionar mais testes unitários (e mais completos).
+- Refatorar código.
+- Eliminar a necessidade de uma réplica da tela de detalhes para a tela de pesquisa (melhorar o fluxo de informação entre telas, facilitando sua integração.)
+- Adicionar paginação aos resultados exibidos na tela de pesquisas (arrastando para baixo ou clicando em um botão para buscar mais resultados).
+- Inserir coleções de filmes em uma table view e gerar cada coleção de maneira programática, apenas criando uma lista do nome e url de requisicao para cada seção e utilizando essa lista como argumento para a tableview.
+- Implementar skeleton loading a ser exibido até que sejam carregadas as informações das requisicoes.
+- Adicionar scroll view na tela de detalhes, permitindo maior acessibilidade à dispositivos menores e maior liberdade para adicionar mais detalhes.
+- Adicionar mais detalhes na segunda tela: como diretor, ano, elenco, revenue, duracao, subtitulo, idiomas disponiveis, coloecoes que faz parte, classificacao indicativa e trailer.
+- Adicionar tela de detalhes para ator (acessada pela lista do elenco) que exibe informacoes como em quais filmes participa.
+- Adicionar secao com lista de filmes semelhantes, na parte inferior da tela de detalhes.
+- Implementar lista de séries de maneira análoga à de filmes, mas com temporadas, episódios... entre outros.
+- Melhorar experiencia no aplicativo através de respostas hapticas e sons agradáveis.
+- Adicionar opçoes de favoritar filmes e/ou adicionar à uma playlist (e poder criar playlists). Salvar essas informaçoes na Core Data e posteriormente adicionar opção de logar-se ao aplicativo, sincronizando informacoes com algum servidor.
+- Adicionar customizacao do aplicativo pela preferencia do  usuario (cores, modo noturno...)
+- Adicionar sistema de notificacoes push (filmes lancados recentemente, recomendacoes semanais, filmes lancados de atores seguidos...)
