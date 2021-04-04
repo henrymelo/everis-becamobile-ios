@@ -22,7 +22,7 @@ class MovieDetailsSearchViewController: UIViewController, UINavigationController
 	@IBOutlet weak var movieBackdropImage: UIImageView!
 	@IBOutlet weak var movieTitle: UILabel!
 	@IBOutlet weak var movieRating: UILabel!
-	@IBOutlet weak var movieOverview: UILabel!
+	@IBOutlet weak var movieOverview: UITextView!
 	
 	
 	// MARK: - Global variables and constants
@@ -52,7 +52,7 @@ class MovieDetailsSearchViewController: UIViewController, UINavigationController
 		
 		// Displaying corresponding text info on screen (on outlets)
 		movieTitle.text = selectedMovieInfo.originalTitle
-		movieRating.text = "\(Int(selectedMovieInfo.voteAverage * 10))%"
+		movieRating.text = "Rating: \(Int(selectedMovieInfo.voteAverage * 10))%"
 		movieOverview.text = selectedMovieInfo.overview
 		
 		

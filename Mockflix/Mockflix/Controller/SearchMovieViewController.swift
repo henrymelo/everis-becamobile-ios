@@ -20,6 +20,7 @@ class SearchMovieViewController: UIViewController, UISearchBarDelegate, UITableV
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		movieSearchBar.becomeFirstResponder()
     }
 	
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -34,6 +35,11 @@ class SearchMovieViewController: UIViewController, UISearchBarDelegate, UITableV
 			movieSarchResultsTableView.reloadData()
 		}
 
+	}
+	
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		searchBar.resignFirstResponder()
+		self.movieSearchBar.endEditing(true)
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

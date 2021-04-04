@@ -239,15 +239,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="VfU-D8-dxh">
-                                <rect key="frame" x="0.0" y="83" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <searchBar contentMode="redraw" placeholder="I feel like watching..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VfU-D8-dxh">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="36s-gM-RUU" id="pRE-Yj-Lkk"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o4y-Gr-Ulu">
-                                <rect key="frame" x="0.0" y="139" width="375" height="479"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="movieSearchResultCell" textLabel="Ump-nt-XdQ" style="IBUITableViewCellStyleDefault" id="pHY-EH-R8n">
@@ -280,7 +284,7 @@
                         <viewLayoutGuide key="safeArea" id="WUe-I4-xrf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VfU-D8-dxh" firstAttribute="top" secondItem="WUe-I4-xrf" secondAttribute="top" constant="39" id="3sc-NX-UOx"/>
+                            <constraint firstItem="VfU-D8-dxh" firstAttribute="top" secondItem="WUe-I4-xrf" secondAttribute="top" id="3sc-NX-UOx"/>
                             <constraint firstItem="VfU-D8-dxh" firstAttribute="centerX" secondItem="PYY-6c-7VL" secondAttribute="centerX" id="B3B-U0-ljR"/>
                             <constraint firstItem="o4y-Gr-Ulu" firstAttribute="leading" secondItem="WUe-I4-xrf" secondAttribute="leading" id="DpI-38-rpE"/>
                             <constraint firstItem="WUe-I4-xrf" firstAttribute="bottom" secondItem="o4y-Gr-Ulu" secondAttribute="bottom" id="E06-e2-5Hk"/>
@@ -308,25 +312,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ops!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtZ-Ko-oht">
-                                <rect key="frame" x="10" y="349" width="355" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of the movie: And here is a great label that holds it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtZ-Ko-oht">
+                                <rect key="frame" x="10" y="347" width="355" height="71.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fim-A4-rSB">
-                                <rect key="frame" x="10" y="388" width="355" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fim-A4-rSB">
+                                <rect key="frame" x="10" y="421.5" width="355" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" name="AccentColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Não foi possível carregar as informações deste filme!! " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T2-u3-4Aq">
-                                <rect key="frame" x="10" y="418" width="355" height="165"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="5Op-eg-5HA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticket.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Qnp-bD-Pab">
@@ -335,30 +330,36 @@
                                     <constraint firstAttribute="height" constant="300" id="55S-UK-atq"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" keyboardDismissMode="onDrag" editable="NO" text="A long time ago, in a galaxy far, far away... No, just kidding... we could not find any overview for this particular movie :(" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tg0-nL-wrX">
+                                <rect key="frame" x="10" y="451.5" width="355" height="161.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g1G-qI-YGP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Fim-A4-rSB" firstAttribute="leading" secondItem="g1G-qI-YGP" secondAttribute="leading" constant="10" id="3Q8-UH-Ht2"/>
-                            <constraint firstItem="3T2-u3-4Aq" firstAttribute="leading" secondItem="g1G-qI-YGP" secondAttribute="leading" constant="10" id="3jr-cF-pBI"/>
+                            <constraint firstItem="tg0-nL-wrX" firstAttribute="leading" secondItem="g1G-qI-YGP" secondAttribute="leading" constant="10" id="3dh-UA-Cda"/>
                             <constraint firstItem="g1G-qI-YGP" firstAttribute="trailing" secondItem="Fim-A4-rSB" secondAttribute="trailing" constant="10" id="4ft-2d-dfj"/>
-                            <constraint firstItem="g1G-qI-YGP" firstAttribute="bottom" secondItem="3T2-u3-4Aq" secondAttribute="bottom" constant="35" id="5V4-eO-OQP"/>
                             <constraint firstItem="Qnp-bD-Pab" firstAttribute="trailing" secondItem="g1G-qI-YGP" secondAttribute="trailing" id="5c7-Ks-vs8"/>
                             <constraint firstItem="Qnp-bD-Pab" firstAttribute="top" secondItem="g1G-qI-YGP" secondAttribute="top" id="64C-F1-qDq"/>
                             <constraint firstItem="g1G-qI-YGP" firstAttribute="trailing" secondItem="EtZ-Ko-oht" secondAttribute="trailing" constant="10" id="CE3-kV-nAD"/>
-                            <constraint firstItem="3T2-u3-4Aq" firstAttribute="top" secondItem="Fim-A4-rSB" secondAttribute="bottom" constant="5" id="GUn-ZZ-MhL"/>
+                            <constraint firstItem="tg0-nL-wrX" firstAttribute="top" secondItem="Fim-A4-rSB" secondAttribute="bottom" constant="5" id="UvX-0b-cWP"/>
                             <constraint firstItem="EtZ-Ko-oht" firstAttribute="leading" secondItem="g1G-qI-YGP" secondAttribute="leading" constant="10" id="ZC3-wC-q8V"/>
-                            <constraint firstItem="EtZ-Ko-oht" firstAttribute="top" secondItem="Qnp-bD-Pab" secondAttribute="bottom" constant="5" id="bxJ-0e-YFr"/>
+                            <constraint firstItem="EtZ-Ko-oht" firstAttribute="top" secondItem="Qnp-bD-Pab" secondAttribute="bottom" constant="3" id="bxJ-0e-YFr"/>
+                            <constraint firstItem="g1G-qI-YGP" firstAttribute="bottom" secondItem="tg0-nL-wrX" secondAttribute="bottom" constant="5" id="g1m-Xr-5LM"/>
                             <constraint firstItem="Qnp-bD-Pab" firstAttribute="leading" secondItem="g1G-qI-YGP" secondAttribute="leading" id="gcW-Fj-evN"/>
-                            <constraint firstItem="3T2-u3-4Aq" firstAttribute="top" secondItem="Fim-A4-rSB" secondAttribute="bottom" constant="5" id="jwu-qF-7za"/>
-                            <constraint firstItem="g1G-qI-YGP" firstAttribute="trailing" secondItem="3T2-u3-4Aq" secondAttribute="trailing" constant="10" id="oJB-y6-ODx"/>
+                            <constraint firstItem="g1G-qI-YGP" firstAttribute="trailing" secondItem="tg0-nL-wrX" secondAttribute="trailing" constant="10" id="iJ3-Oc-gkA"/>
                             <constraint firstItem="Fim-A4-rSB" firstAttribute="top" secondItem="EtZ-Ko-oht" secondAttribute="bottom" constant="3" id="sIF-PT-z3L"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hFf-v4-eDE"/>
                     <connections>
                         <outlet property="movieBackdropImage" destination="Qnp-bD-Pab" id="q9v-gD-Or3"/>
-                        <outlet property="movieOverview" destination="3T2-u3-4Aq" id="3qH-eO-ziB"/>
+                        <outlet property="movieOverview" destination="tg0-nL-wrX" id="BI5-pk-WZi"/>
                         <outlet property="movieRating" destination="Fim-A4-rSB" id="xZ9-nF-CCJ"/>
                         <outlet property="movieTitle" destination="EtZ-Ko-oht" id="dnR-Kl-a4b"/>
                     </connections>
@@ -381,57 +382,55 @@
                                     <constraint firstAttribute="height" constant="300" id="PGB-lz-PSX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sniper Americano: A Origem" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jea-zJ-FZk">
-                                <rect key="frame" x="10" y="349" width="355" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of the movie: And here is a great label that holds it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jea-zJ-FZk">
+                                <rect key="frame" x="10" y="349" width="355" height="71.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="87%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt7-Ia-epC">
-                                <rect key="frame" x="10" y="388" width="355" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt7-Ia-epC">
+                                <rect key="frame" x="10" y="423.5" width="355" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4r-BI-388">
-                                <rect key="frame" x="10" y="418" width="355" height="186"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="UvR-Q1-ulF"/>
-                                </constraints>
-                                <string key="text">A summer fling born under the Sicilian sun quickly develops into a heartbreaking love story that forces a boy and girl to grow up too quickly. A summer fling born under the Sicilian sun quickly develops into a heartbreaking love story that forces a boy and girl to grow up too quickly. Bla bla also blabla bla movie story, blabla lorem ipsum.</string>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" keyboardDismissMode="onDrag" editable="NO" text="A long time ago, in a galaxy far, far away... No, just kidding... we could not find any overview for this particular movie :(" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzh-PK-fit">
+                                <rect key="frame" x="10" y="453.5" width="355" height="159.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rvZ-oU-SVr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rvZ-oU-SVr" firstAttribute="trailing" secondItem="qt7-Ia-epC" secondAttribute="trailing" constant="10" id="4g6-3k-MeW"/>
-                            <constraint firstItem="o4r-BI-388" firstAttribute="top" secondItem="qt7-Ia-epC" secondAttribute="bottom" constant="5" id="EoY-O2-iQo"/>
-                            <constraint firstItem="o4r-BI-388" firstAttribute="leading" secondItem="rvZ-oU-SVr" secondAttribute="leading" constant="10" id="LSk-WR-ge5"/>
+                            <constraint firstItem="rvZ-oU-SVr" firstAttribute="bottom" secondItem="hzh-PK-fit" secondAttribute="bottom" constant="5" id="5VO-qN-snY"/>
+                            <constraint firstItem="hzh-PK-fit" firstAttribute="leading" secondItem="rvZ-oU-SVr" secondAttribute="leading" constant="10" id="I9V-ly-BSc"/>
+                            <constraint firstItem="hzh-PK-fit" firstAttribute="top" secondItem="qt7-Ia-epC" secondAttribute="bottom" constant="5" id="Qs1-Q9-5AZ"/>
                             <constraint firstItem="wzn-Qf-Zrs" firstAttribute="trailing" secondItem="Tgu-9j-yar" secondAttribute="trailing" id="RXW-KE-rvX"/>
                             <constraint firstItem="wzn-Qf-Zrs" firstAttribute="leading" secondItem="Tgu-9j-yar" secondAttribute="leading" id="VtS-L4-hjw"/>
                             <constraint firstItem="qt7-Ia-epC" firstAttribute="top" secondItem="jea-zJ-FZk" secondAttribute="bottom" constant="3" id="Y7t-Vo-PjG"/>
-                            <constraint firstItem="rvZ-oU-SVr" firstAttribute="trailing" secondItem="o4r-BI-388" secondAttribute="trailing" constant="10" id="Zvn-rI-jAr"/>
                             <constraint firstItem="jea-zJ-FZk" firstAttribute="leading" secondItem="rvZ-oU-SVr" secondAttribute="leading" constant="10" id="cIo-1S-UUX"/>
                             <constraint firstItem="qt7-Ia-epC" firstAttribute="leading" secondItem="rvZ-oU-SVr" secondAttribute="leading" constant="10" id="gsC-g5-6jz"/>
                             <constraint firstItem="wzn-Qf-Zrs" firstAttribute="top" secondItem="rvZ-oU-SVr" secondAttribute="top" id="jsA-D8-wbK"/>
                             <constraint firstItem="jea-zJ-FZk" firstAttribute="top" secondItem="wzn-Qf-Zrs" secondAttribute="bottom" constant="5" id="nfz-7x-Nod"/>
+                            <constraint firstItem="rvZ-oU-SVr" firstAttribute="trailing" secondItem="hzh-PK-fit" secondAttribute="trailing" constant="10" id="oB7-SR-aya"/>
                             <constraint firstItem="rvZ-oU-SVr" firstAttribute="trailing" secondItem="jea-zJ-FZk" secondAttribute="trailing" constant="10" id="rfW-1q-OtJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0ju-XP-1uK"/>
                     <connections>
                         <outlet property="movieBackdropImage" destination="wzn-Qf-Zrs" id="11k-zl-jnl"/>
-                        <outlet property="movieOverview" destination="o4r-BI-388" id="bDE-Rt-SwI"/>
+                        <outlet property="movieOverview" destination="hzh-PK-fit" id="E7G-qy-6ZX"/>
                         <outlet property="movieRating" destination="qt7-Ia-epC" id="YTj-7Z-QbK"/>
                         <outlet property="movieTitle" destination="jea-zJ-FZk" id="GPl-f3-j2j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIR-ra-9mh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4394" y="341"/>
+            <point key="canvasLocation" x="4392.8000000000002" y="340.47976011994007"/>
         </scene>
         <!--Movies-->
         <scene sceneID="IBL-2P-dks">
@@ -501,6 +500,9 @@
         <namedColor name="AccentColor">
             <color red="1" green="0.23100000619888306" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
