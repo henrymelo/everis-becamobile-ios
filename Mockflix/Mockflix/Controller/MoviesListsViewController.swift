@@ -28,9 +28,9 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 	let reallyBigInteger = 10000 // used to create lots of cells and pretend scroll is infinite
 	
 	// Initializing empty lists of movies that will store movies returned by request
-	var trendingMovies = [Movie]()
-	var popularMovies = [Movie]()
-	var latestMovies = [Movie]()
+	var trendingMoviesViewModels = [MovieViewModel]()
+	var popularMoviesViewModels = [MovieViewModel]()
+	var topRatedMoviesViewModels = [MovieViewModel]()
 	
 	var movieRequester = MoviesRequester() // Object with methods to request movies from API
 	
@@ -39,16 +39,18 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 	// Loaded view
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		trendingMovies = movieRequester.request(forCategory: "trending/movie/day")
-		popularMovies = movieRequester.request(forCategory: "movie/popular")
-		latestMovies = movieRequester.request(forCategory: "movie/top_rated")
-//		scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
-
+		
+		fetchData()
+		
 	}
 	
-	// Seeing view
-	override func viewDidAppear(_ animated: Bool) {
-		// Centering collection to cell at mid index (illusion of infinite scroll)
+	fileprivate func fetchData() {
+		self.trendingMoviesViewModels = movieRequester.request(forCategory: "trending/movie/day").map({return MovieViewModel(movie: $0)})
+		self.popularMoviesViewModels = movieRequester.request(forCategory: "movie/popular").map({return MovieViewModel(movie: $0)})
+		self.topRatedMoviesViewModels = movieRequester.request(forCategory: "movie/top_rated").map({return MovieViewModel(movie: $0)})
+	}
+	
+	fileprivate func centerScroll() {
 		let midIndexPath = IndexPath(row: reallyBigInteger/2 + 1, section: 0) // scrolling to first movie (but at a big index halfway)
 		if firstLoad { //Only centering collection when first entering the view (on app's launch)
 			trendingMoviesCollectionView.scrollToItem(at: midIndexPath, at: .centeredHorizontally, animated: false)
@@ -56,6 +58,12 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 			latestMoviesCollectionView.scrollToItem(at: midIndexPath, at: .centeredHorizontally, animated: false)
 			firstLoad = false
 		}
+	}
+	
+	// Seeing view
+	override func viewDidAppear(_ animated: Bool) {
+		// Centering collection to cell at mid index (illusion of infinite scroll)
+		centerScroll()
 	}
 	
 	// Leaving view
@@ -81,10 +89,10 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviePosterCellTrending", for: indexPath) as! MovieCollectionViewCellTrending
 			
 			// In case no single movie is returned, preventing division by 0 on index access
-			if trendingMovies.count <= 0 { return cell }
+			if trendingMoviesViewModels.count <= 0 { return cell }
 			
 			// Storing corresponding movie in a local variable
-			let movie = trendingMovies[indexPath.row % trendingMovies.count]
+			let movie = trendingMoviesViewModels[indexPath.row % trendingMoviesViewModels.count]
 			
 			// MARK: - Filling cell with corresponding movie's poster image
 			// Getting image's info
@@ -102,10 +110,10 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviePosterCellPopular", for: indexPath) as! MovieCollectionViewCellPopular
 			
 			// In case no single movie is returned, preventing division by 0 on index access
-			if popularMovies.count <= 0 { return cell }
+			if popularMoviesViewModels.count <= 0 { return cell }
 			
 			// Storing corresponding movie in a local variable
-			let movie = popularMovies[indexPath.row % popularMovies.count]
+			let movie = popularMoviesViewModels[indexPath.row % popularMoviesViewModels.count]
 			
 			// MARK: - Filling cell with corresponding movie's poster image
 			// Getting image's info
@@ -123,10 +131,10 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviePosterCellLatest", for: indexPath) as! MovieCollectionViewCellLatest
 			
 			// In case no single movie is returned, preventing division by 0 on index access
-			if latestMovies.count <= 0 { return cell }
+			if topRatedMoviesViewModels.count <= 0 { return cell }
 			
 			// Storing corresponding movie in a local variable
-			let movie = latestMovies[indexPath.row % latestMovies.count]
+			let movie = topRatedMoviesViewModels[indexPath.row % topRatedMoviesViewModels.count]
 			
 			// MARK: - Filling cell with corresponding movie's poster image
 			// Getting image's info
@@ -151,11 +159,11 @@ class MoviesListsViewController: UIViewController, UICollectionViewDelegate, UIC
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		if collectionView == trendingMoviesCollectionView {
-			selectedMovieID = trendingMovies[indexPath.row % trendingMovies.count].id
+			selectedMovieID = trendingMoviesViewModels[indexPath.row % trendingMoviesViewModels.count].id
 		} else if collectionView == popularMoviesCollectionView {
-			selectedMovieID = popularMovies[indexPath.row % popularMovies.count].id
+			selectedMovieID = popularMoviesViewModels[indexPath.row % popularMoviesViewModels.count].id
 		} else if collectionView == latestMoviesCollectionView {
-			selectedMovieID = latestMovies[indexPath.row % latestMovies.count].id
+			selectedMovieID = topRatedMoviesViewModels[indexPath.row % topRatedMoviesViewModels.count].id
 
 		}
 	}
