@@ -24,6 +24,17 @@ public class TituloEveris: UIView {
     var contentView:UIView?
     var titulox = ""
     
+//    var titulo: TituloEveris? {
+//        didSet {
+//            updateView()
+//        }
+//    }
+//    private func updateView() {
+//        DispatchQueue.main.async {
+//            self.titulo?.titulox = "jjjjjjjjj"
+//        }
+//    }
+    
     struct enumTitulo {
         let name: String
         let background: UIColor
@@ -85,7 +96,10 @@ public class TituloEveris: UIView {
     }
     
     public func setupUI(title: String) {
-        self.titulox = title
+        DispatchQueue.main.async {
+            self.titulox = title
+            self.titulo?.text = title
+        }
     }
     
     @IBAction func botaoOuTituloAction(_ sender: UIButton) {

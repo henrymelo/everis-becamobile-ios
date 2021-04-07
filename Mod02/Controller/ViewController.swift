@@ -39,7 +39,7 @@ extension UIColor {
 }
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var stack: UIStackView!
     
     override func viewDidLoad() {
@@ -86,3 +86,12 @@ class ViewController: UIViewController {
 
 }
  
+extension ViewController: TituloEverisDelegate {
+    func buttonAction() {
+        print("*******************************")
+        print("buttonAction()")
+        print("*******************************")
+    }
+    
+    
+}
