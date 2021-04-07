@@ -49,19 +49,30 @@ class ViewController: UIViewController {
 
     func setupUI() {
         //Component com XIB
-        let myView = ViewEveris().loadNib()
+        let myView = ViewEveris().loadNib() // .fromNib()
         myView.backgroundColor = .cyan
-        stack.addArrangedSubview(myView)
+        //stack.addArrangedSubview(myView)
         
+        //fromNib()
+        let myTitulo1 = TituloEveris.fromNib() // .fromNib()
+        myTitulo1.setupUI(title: "titulo fromNib")
+        stack.addArrangedSubview(myTitulo1)
+
+        //loadNib()
+        let myTitulo2 = TituloEveris(title: "aaaaadddd").loadNib()
+        myTitulo2.setupUI(title: "cccccc")
+        stack.addArrangedSubview(myTitulo2)
+
         //Component ViewCode puro
-        let myTitulo = TituloEveris()
-        myTitulo.addTitulo(titulo: "Everis novo Titulo", y: 80, cor: .yellow)
-        myTitulo.addTitulo(titulo: "Everis sub Titulo", y: 150, cor: .novaCorViaExtension)
-        myTitulo.setupUI(cor: .corIOS)
-        stack.addArrangedSubview(myTitulo)
+        let myTitulo3 = TituloEveris(title: "bbbb").loadNib()
+        myTitulo3.backgroundColor = .cyan
+        myTitulo3.setupUI(title: "cccccc")
+        myTitulo3.addTitulo(titulo: "Everis novo Titulo", y: 80, cor: .yellow)
+        myTitulo3.addTitulo(titulo: "Everis sub Titulo", y: 150, cor: .novaCorViaExtension)
+        stack.addArrangedSubview(myTitulo3)
         
         
-        //stack.translatesAutoresizingMaskIntoConstraints = false
+       // stack.translatesAutoresizingMaskIntoConstraints = false
 
         apiFilmes(categoria: .Semana, cor: .corEveris)
      }
@@ -74,4 +85,4 @@ class ViewController: UIViewController {
     }
 
 }
-
+ 
