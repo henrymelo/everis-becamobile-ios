@@ -22,5 +22,4 @@ struct MovieViewModel {
 			self.posterPath = ""
 		}
 	}
-	
 }
